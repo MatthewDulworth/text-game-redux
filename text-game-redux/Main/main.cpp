@@ -7,15 +7,9 @@
 //
 
 #include <iostream>
-#include "classes.hpp"
+#include "BaseClass.hpp"
 
 int main() {
-    
-    Passage passage;
-    
-    passage.getName(); 
-    
-    
     
     return 0;
 }

@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34A2F888224BE8F600ABB248 /* MapClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F886224BE8F600ABB248 /* MapClasses.cpp */; };
+		34A2F88B224BE90400ABB248 /* PhysicalObjectClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F889224BE90400ABB248 /* PhysicalObjectClasses.cpp */; };
+		34A2F88E224BE91F00ABB248 /* SetupClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F88C224BE91F00ABB248 /* SetupClasses.cpp */; };
 		34F53A33224BCD6500437F64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F53A32224BCD6500437F64 /* main.cpp */; };
-		34F53A3B224BCD8500437F64 /* classes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F53A39224BCD8500437F64 /* classes.cpp */; };
+		34F53A3B224BCD8500437F64 /* BaseClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F53A39224BCD8500437F64 /* BaseClass.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +27,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		34A2F886224BE8F600ABB248 /* MapClasses.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MapClasses.cpp; sourceTree = "<group>"; };
+		34A2F887224BE8F600ABB248 /* MapClasses.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MapClasses.hpp; sourceTree = "<group>"; };
+		34A2F889224BE90400ABB248 /* PhysicalObjectClasses.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicalObjectClasses.cpp; sourceTree = "<group>"; };
+		34A2F88A224BE90400ABB248 /* PhysicalObjectClasses.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PhysicalObjectClasses.hpp; sourceTree = "<group>"; };
+		34A2F88C224BE91F00ABB248 /* SetupClasses.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SetupClasses.cpp; sourceTree = "<group>"; };
+		34A2F88D224BE91F00ABB248 /* SetupClasses.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SetupClasses.hpp; sourceTree = "<group>"; };
+		34A2F891224BEBBB00ABB248 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		34F53A2F224BCD6400437F64 /* text-game-redux */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "text-game-redux"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F53A32224BCD6500437F64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		34F53A39224BCD8500437F64 /* classes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = classes.cpp; sourceTree = "<group>"; };
-		34F53A3A224BCD8500437F64 /* classes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = classes.hpp; sourceTree = "<group>"; };
+		34F53A39224BCD8500437F64 /* BaseClass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseClass.cpp; sourceTree = "<group>"; };
+		34F53A3A224BCD8500437F64 /* BaseClass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BaseClass.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +51,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34A2F88F224BE94200ABB248 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				34F53A3A224BCD8500437F64 /* BaseClass.hpp */,
+				34F53A39224BCD8500437F64 /* BaseClass.cpp */,
+				34A2F887224BE8F600ABB248 /* MapClasses.hpp */,
+				34A2F886224BE8F600ABB248 /* MapClasses.cpp */,
+				34A2F88A224BE90400ABB248 /* PhysicalObjectClasses.hpp */,
+				34A2F889224BE90400ABB248 /* PhysicalObjectClasses.cpp */,
+				34A2F88D224BE91F00ABB248 /* SetupClasses.hpp */,
+				34A2F88C224BE91F00ABB248 /* SetupClasses.cpp */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		34A2F890224BEB8E00ABB248 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				34F53A32224BCD6500437F64 /* main.cpp */,
+				34A2F891224BEBBB00ABB248 /* Constants.h */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		34F53A26224BCD6400437F64 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +94,8 @@
 		34F53A31224BCD6500437F64 /* text-game-redux */ = {
 			isa = PBXGroup;
 			children = (
-				34F53A32224BCD6500437F64 /* main.cpp */,
-				34F53A3A224BCD8500437F64 /* classes.hpp */,
-				34F53A39224BCD8500437F64 /* classes.cpp */,
+				34A2F890224BEB8E00ABB248 /* Main */,
+				34A2F88F224BE94200ABB248 /* Classes */,
 			);
 			path = "text-game-redux";
 			sourceTree = "<group>";
@@ -123,8 +156,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34F53A3B224BCD8500437F64 /* classes.cpp in Sources */,
+				34A2F88B224BE90400ABB248 /* PhysicalObjectClasses.cpp in Sources */,
+				34F53A3B224BCD8500437F64 /* BaseClass.cpp in Sources */,
 				34F53A33224BCD6500437F64 /* main.cpp in Sources */,
+				34A2F888224BE8F600ABB248 /* MapClasses.cpp in Sources */,
+				34A2F88E224BE91F00ABB248 /* SetupClasses.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
