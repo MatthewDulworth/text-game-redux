@@ -1,7 +1,7 @@
 //
 //  MapClasses.hpp
 //  text-game-redux
-//  Holds the Location and Passage classes that make up the game map. 
+//  The Location and Passage classes that make up the game map. 
 //
 //  Created by Matthew Dulworth on 3/27/19.
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
@@ -25,7 +25,7 @@ class Location : public Base {
 private:
     Passage* exits[DIRECTIONS]; // an array of pointers to passages, can be any type of passage
 public:
-    void pureVirtualFunction();
+    string derivedType();
 };
 
 
@@ -58,10 +58,8 @@ public:
 // Passages that are always open
 class OpenPassage : public Passage {
 private:
-    
 public:
-    void pureVirtualFunction();
-    
+    string derivedType();
 };
 
 // ------- Closed Passage ------- //
@@ -81,7 +79,7 @@ public:
 class Trapdoor : public ClosedPassage {
 private:
 public:
-    void pureVirtualFunction();
+    string derivedType();
 };
 
 // ------- RegularDoor ------- //
@@ -89,7 +87,7 @@ public:
 class RegularDoor : public ClosedPassage {
 private:
 public:
-    void pureVirtualFunction();
+    string derivedType();
 };
 
 #endif /* MapClasses_hpp */

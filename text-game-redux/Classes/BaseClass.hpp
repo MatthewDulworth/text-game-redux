@@ -1,6 +1,7 @@
 //
 //  classes.hpp
 //  text-game-redux
+//  The Base class for all game-objects.
 //
 //  Created by Matthew Dulworth on 3/27/19.
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
@@ -24,7 +25,7 @@ protected:
     int code;
     string name;
 public:
-    virtual void pureVirtualFunction() = 0;
+    virtual string derivedType() = 0;
     // setters
     virtual void setCode(int new_code);
     virtual void setName(string new_name);

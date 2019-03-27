@@ -15,8 +15,8 @@ using namespace std;
 // ------------------------------------------------
 
 // ------- Location ------- //
-void Location::pureVirtualFunction(){
-    cout << "This is not an abstract class\n";
+string Location::derivedType(){
+    return "Location";
 }
 
 
@@ -51,8 +51,8 @@ Location* Passage::getLocation_2(){
 
 
 // ------- OpenPassage ------- //
-void OpenPassage::pureVirtualFunction(){
-    cout << "This is not an abstract class\n";
+string OpenPassage::derivedType(){
+    return "Passage";
 }
 
 
@@ -68,13 +68,13 @@ bool ClosedPassage::isOpen(){
 
 
 // ------- Trapdoor ------- //
-void Trapdoor::pureVirtualFunction(){
-    cout << "This is not an abstract class\n";
+string Trapdoor::derivedType(){
+    return "Passage";
 }
 
 
 // ------- // RegularDoor ------- //
-void RegularDoor::pureVirtualFunction(){
-    cout << "This is not an abstract class\n";
+string RegularDoor::derivedType(){
+    return "Passage";
 }
 
