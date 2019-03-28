@@ -50,6 +50,12 @@ Location* Passage::getLocation_2(){
 }
 
 
+// -------  OpenPassage ------- //
+string Deadend::derivedType(){
+    return "Passage";
+}
+
+
 // ------- OpenPassage ------- //
 string OpenPassage::derivedType(){
     return "Passage";

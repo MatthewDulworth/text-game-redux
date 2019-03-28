@@ -19,8 +19,6 @@ const int PHYSICALOBJECTS = 2;
 const int ACTIONS = 2;
 const int NONE = -1;
 
-
-
 const bool UNLOCKED = true;
 const bool LOCKED = false;
 const bool OPEN = true;

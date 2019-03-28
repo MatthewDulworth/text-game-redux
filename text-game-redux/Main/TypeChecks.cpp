@@ -79,5 +79,3 @@ bool isDirection(Base* unkown_object){
     else
         return false;
 }
-
-

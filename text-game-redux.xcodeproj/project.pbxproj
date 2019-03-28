@@ -11,6 +11,7 @@
 		34A2F88B224BE90400ABB248 /* PhysicalObjectClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F889224BE90400ABB248 /* PhysicalObjectClasses.cpp */; };
 		34A2F88E224BE91F00ABB248 /* SetupClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F88C224BE91F00ABB248 /* SetupClasses.cpp */; };
 		34A2F894224C49CC00ABB248 /* TypeChecks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F892224C49CC00ABB248 /* TypeChecks.cpp */; };
+		34A2F898224C501D00ABB248 /* MapSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F896224C501D00ABB248 /* MapSetup.cpp */; };
 		34F53A33224BCD6500437F64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F53A32224BCD6500437F64 /* main.cpp */; };
 		34F53A3B224BCD8500437F64 /* BaseClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F53A39224BCD8500437F64 /* BaseClass.cpp */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,8 @@
 		34A2F891224BEBBB00ABB248 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		34A2F892224C49CC00ABB248 /* TypeChecks.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TypeChecks.cpp; sourceTree = "<group>"; };
 		34A2F893224C49CC00ABB248 /* TypeChecks.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TypeChecks.hpp; sourceTree = "<group>"; };
+		34A2F896224C501D00ABB248 /* MapSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MapSetup.cpp; sourceTree = "<group>"; };
+		34A2F897224C501D00ABB248 /* MapSetup.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MapSetup.hpp; sourceTree = "<group>"; };
 		34F53A2F224BCD6400437F64 /* text-game-redux */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "text-game-redux"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F53A32224BCD6500437F64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34F53A39224BCD8500437F64 /* BaseClass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseClass.cpp; sourceTree = "<group>"; };
@@ -80,6 +83,15 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		34A2F895224C4FDE00ABB248 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				34A2F896224C501D00ABB248 /* MapSetup.cpp */,
+				34A2F897224C501D00ABB248 /* MapSetup.hpp */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
 		34F53A26224BCD6400437F64 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +113,7 @@
 			children = (
 				34A2F890224BEB8E00ABB248 /* Main */,
 				34A2F88F224BE94200ABB248 /* Classes */,
+				34A2F895224C4FDE00ABB248 /* Setup */,
 			);
 			path = "text-game-redux";
 			sourceTree = "<group>";
@@ -162,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34A2F894224C49CC00ABB248 /* TypeChecks.cpp in Sources */,
+				34A2F898224C501D00ABB248 /* MapSetup.cpp in Sources */,
 				34A2F88B224BE90400ABB248 /* PhysicalObjectClasses.cpp in Sources */,
 				34F53A3B224BCD8500437F64 /* BaseClass.cpp in Sources */,
 				34F53A33224BCD6500437F64 /* main.cpp in Sources */,

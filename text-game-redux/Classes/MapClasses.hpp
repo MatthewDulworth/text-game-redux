@@ -54,11 +54,15 @@ public:
     virtual Location* getLocation_2();
 };
 
+// -------  Deadend ------- //
+class Deadend : public Passage {
+public:
+    string derivedType();
+};
 
 // -------  OpenPassage ------- //
 // Passages that are always open
 class OpenPassage : public Passage {
-private:
 public:
     string derivedType();
 };
