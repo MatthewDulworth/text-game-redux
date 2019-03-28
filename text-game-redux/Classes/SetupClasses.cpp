@@ -8,3 +8,17 @@
 //
 
 #include "SetupClasses.hpp"
+
+// ------------------------------------------------
+// Action Methods
+// ------------------------------------------------
+string Action::derivedType(){
+    return "Action";
+}
+
+// ------------------------------------------------
+// Direction Methods
+// ------------------------------------------------
+string Direction::derivedType(){
+    return "Direction";
+}

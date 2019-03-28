@@ -10,6 +10,7 @@
 		34A2F888224BE8F600ABB248 /* MapClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F886224BE8F600ABB248 /* MapClasses.cpp */; };
 		34A2F88B224BE90400ABB248 /* PhysicalObjectClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F889224BE90400ABB248 /* PhysicalObjectClasses.cpp */; };
 		34A2F88E224BE91F00ABB248 /* SetupClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F88C224BE91F00ABB248 /* SetupClasses.cpp */; };
+		34A2F894224C49CC00ABB248 /* TypeChecks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F892224C49CC00ABB248 /* TypeChecks.cpp */; };
 		34F53A33224BCD6500437F64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F53A32224BCD6500437F64 /* main.cpp */; };
 		34F53A3B224BCD8500437F64 /* BaseClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F53A39224BCD8500437F64 /* BaseClass.cpp */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,8 @@
 		34A2F88C224BE91F00ABB248 /* SetupClasses.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SetupClasses.cpp; sourceTree = "<group>"; };
 		34A2F88D224BE91F00ABB248 /* SetupClasses.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SetupClasses.hpp; sourceTree = "<group>"; };
 		34A2F891224BEBBB00ABB248 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		34A2F892224C49CC00ABB248 /* TypeChecks.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TypeChecks.cpp; sourceTree = "<group>"; };
+		34A2F893224C49CC00ABB248 /* TypeChecks.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TypeChecks.hpp; sourceTree = "<group>"; };
 		34F53A2F224BCD6400437F64 /* text-game-redux */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "text-game-redux"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F53A32224BCD6500437F64 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34F53A39224BCD8500437F64 /* BaseClass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BaseClass.cpp; sourceTree = "<group>"; };
@@ -71,6 +74,8 @@
 			children = (
 				34F53A32224BCD6500437F64 /* main.cpp */,
 				34A2F891224BEBBB00ABB248 /* Constants.h */,
+				34A2F892224C49CC00ABB248 /* TypeChecks.cpp */,
+				34A2F893224C49CC00ABB248 /* TypeChecks.hpp */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A2F894224C49CC00ABB248 /* TypeChecks.cpp in Sources */,
 				34A2F88B224BE90400ABB248 /* PhysicalObjectClasses.cpp in Sources */,
 				34F53A3B224BCD8500437F64 /* BaseClass.cpp in Sources */,
 				34F53A33224BCD6500437F64 /* main.cpp in Sources */,

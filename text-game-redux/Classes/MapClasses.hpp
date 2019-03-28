@@ -23,9 +23,10 @@ class Passage;
 // Location class: locations that physical objects and the player can be in
 class Location : public Base {
 private:
+    string description;
     Passage* exits[DIRECTIONS]; // an array of pointers to passages, can be any type of passage
 public:
-    string derivedType();
+    string derivedType(); // returns a string based on what first level derived class it is (or is derived from). In this case returns: "Location"
 };
 
 
@@ -39,8 +40,8 @@ public:
 class Passage : public Base {
 protected:
     bool hidden_state;
-    Location* location_1;
-    Location* location_2;
+    Location* location_1; // the Location on one side of the passage
+    Location* location_2; // the Location on the other side of the passage
 public:
     // checks
     virtual bool isHidden();

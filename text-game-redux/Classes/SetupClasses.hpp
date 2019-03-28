@@ -12,20 +12,22 @@
 
 #include "BaseClass.hpp"
 
-// action class
+// ------------------------------------------------
+// Action Class
+// ------------------------------------------------
 class Action : public Base {
-private:
-    
 public:
-    void func();
+    string derivedType();
 };
 
-// direction class
+// ------------------------------------------------
+// Direction Class
+// ------------------------------------------------
 class Direction : public Base {
 private:
     
 public:
-    void func();
+    string derivedType();
 };
 
 #endif /* SetupClasses_hpp */

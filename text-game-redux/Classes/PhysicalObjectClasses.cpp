@@ -14,4 +14,38 @@
 // ------------------------------------------------
 
 // ------- PhysicalObject ------- //
+// setters
+void PhysicalObject::setDescription(string new_description){
+    description = new_description;
+}
+void PhysicalObject::setLocation(Location* new_location){
+    location = new_location;
+}
 
+// getters
+string PhysicalObject::getDescription(){
+    return description;
+};
+Location* PhysicalObject::getLocation(){
+    return location;
+}
+
+
+// ------- Item ------- //
+string Item::derivedType(){
+    return "PhysicalObject";
+}
+
+
+// ------- Money ------- //
+string Money::derivedType(){
+    return "PhysicalObject";
+}
+// setters
+void Money::setWorth(double new_worth){
+    worth = new_worth;
+}
+// getters
+double Money::getWorth(){
+    return worth;
+}

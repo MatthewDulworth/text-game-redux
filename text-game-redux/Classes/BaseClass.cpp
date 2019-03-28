@@ -31,3 +31,5 @@ int Base::getCode() {
 string Base::getName() {
     return name;
 }
+
+

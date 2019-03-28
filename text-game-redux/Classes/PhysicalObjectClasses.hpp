@@ -20,9 +20,15 @@
 // abstract physical object class
 class PhysicalObject : public Base {
 protected:
+    string description;
     Location* location;
 public:
-    virtual void getLocation();
+    // setters
+    virtual void setDescription(string new_description);
+    virtual void setLocation(Location* new_location);
+    // getters
+    virtual string getDescription();
+    virtual Location* getLocation();
 };
 
 // ------- Item ------- //
@@ -35,9 +41,15 @@ public:
 // ------- Money ------- //
 class Money : public PhysicalObject {
 private:
+    double worth;
 public:
     string derivedType();
+    // setters
+    void setWorth(double new_worth);
+    // getters
+    double getWorth();
 };
+
 
 // ------- UnmoveableObject ------- //
 class UnmoveableObject : public PhysicalObject {
