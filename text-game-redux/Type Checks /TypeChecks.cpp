@@ -9,19 +9,38 @@
 
 #include "TypeChecks.hpp"
 
-// ------- Location ------- //
-bool isLocation(Base* unkown_object){
-    Location* known_object;
-    if( (known_object = dynamic_cast<Location*>(unkown_object)) )
+// ------------------------------------------------
+// Location classes
+// ------------------------------------------------
+
+// ------- Room ------- //
+bool isRoom(Base* unkown_object){
+    Room* known_object;
+    if( (known_object = dynamic_cast<Room*>(unkown_object)) )
         return true;
     else
         return false;
 }
 
-// ------- OpenPassage ------- //
-bool isOpenPassage(Base* unkown_object){
-    OpenPassage* known_object;
-    if( (known_object = dynamic_cast<OpenPassage*>(unkown_object)) ) return true;
+// ------- Room ------- //
+bool isAdminLocation(Base* unkown_object){
+    AdminLocation* known_object;
+    if( (known_object = dynamic_cast<AdminLocation*>(unkown_object)) )
+        return true;
+    else
+        return false;
+}
+
+
+// ------------------------------------------------
+// Passage classes
+// ------------------------------------------------
+
+// ------- Room ------- //
+bool isDeadend(Base* unkown_object){
+    Deadend* known_object;
+    if( (known_object = dynamic_cast<Deadend*>(unkown_object)) )
+        return true;
     else
         return false;
 }
@@ -44,6 +63,10 @@ bool isRegularDoor(Base* unkown_object){
         return false;
 }
 
+// ------------------------------------------------
+// PhysicalObject classes
+// ------------------------------------------------
+
 // ------- Item ------- //
 bool isItem(Base* unkown_object){
     Item* known_object;
@@ -61,6 +84,10 @@ bool isMoney(Base* unkown_object){
     else
         return false;
 }
+
+// ------------------------------------------------
+// Setup classes
+// ------------------------------------------------
 
 // ------- Action ------- //
 bool isAction(Base* unkown_object){

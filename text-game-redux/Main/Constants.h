@@ -13,9 +13,10 @@
 // number of each type of thing
 // -------------------------------------------
 const int LOCATIONS = 4;
-const int PASSAGES = 1;
+const int PASSAGES = 4;
 const int DIRECTIONS = 4;
 const int PHYSICALOBJECTS = 2;
+const int ITEMS = 1;
 const int ACTIONS = 2;
 const int NONE = -1;
 
@@ -32,7 +33,7 @@ const bool HIDDEN = false;
 // -------------------------------------------
 enum enum_DIRECTIONS {NORTH, SOUTH, EAST, WEST, UP, DOWN};
 enum enum_LOCATIONS {KITCHEN, BEDROOM, INVENTORY, TRASH};
-enum enum_PASSAGES {KITCHEN_TO_BEDROOM};
+enum enum_PASSAGES {P1, P2, P3, P4};
 enum enum_OBJECTS {DESK, KEY};
 enum enum_ACTIONS {GO, LOOK};
 

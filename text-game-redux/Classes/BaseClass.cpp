@@ -7,7 +7,6 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 
-
 #include <string>
 #include <iostream>
 #include "BaseClass.hpp"

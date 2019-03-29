@@ -15,7 +15,31 @@ using namespace std;
 // ------------------------------------------------
 
 // ------- Location ------- //
-string Location::derivedType(){
+// sets the description of the location
+void Location::setDescription(string new_description){
+    description = new_description;
+}
+// returns the description of the location
+string Location::getDescription(){
+    return description;
+}
+
+
+// ------- Room ------- //
+string Room::derivedType(){ // returns first level subclass name
+    return "Location";
+}
+// sets a single exit from the room
+void Room::setExit(int direction, Passage* exit){
+    
+}
+// sets all exits from the room
+void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down){
+    
+}
+
+// ------- Framework ------- //
+string AdminLocation::derivedType(){
     return "Location";
 }
 
@@ -25,11 +49,10 @@ string Location::derivedType(){
 // ------------------------------------------------
 
 // ------- Passage ------- //
-// checks
-bool Passage::isHidden(){
-    return hidden_state;
+bool Passage::isHidden(){ // returns true of the passage is hidden
+    if(hidden_state == HIDDEN) return true;
+    else return false;
 }
-
 // setters
 void Passage::setHiddenState(bool new_state){
     hidden_state = new_state;
@@ -40,7 +63,6 @@ void Passage::setLocation_1(Location* new_location){
 void Passage::setLocation_2(Location* new_location){
     location_2 = new_location;
 }
-
 // getters
 Location* Passage::getLocation_1(){
     return location_1;
@@ -51,13 +73,13 @@ Location* Passage::getLocation_2(){
 
 
 // -------  OpenPassage ------- //
-string Deadend::derivedType(){
+string Deadend::derivedType(){ // returns first level subclass name
     return "Passage";
 }
 
 
 // ------- OpenPassage ------- //
-string OpenPassage::derivedType(){
+string OpenPassage::derivedType(){ // returns first level subclass name
     return "Passage";
 }
 
@@ -74,13 +96,13 @@ bool ClosedPassage::isOpen(){
 
 
 // ------- Trapdoor ------- //
-string Trapdoor::derivedType(){
+string Trapdoor::derivedType(){ // returns first level subclass name
     return "Passage";
 }
 
 
 // ------- // RegularDoor ------- //
-string RegularDoor::derivedType(){
+string RegularDoor::derivedType(){ // returns first level subclass name
     return "Passage";
 }
 

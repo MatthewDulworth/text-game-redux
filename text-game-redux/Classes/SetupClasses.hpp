@@ -24,8 +24,6 @@ public:
 // Direction Class
 // ------------------------------------------------
 class Direction : public Base {
-private:
-    
 public:
     string derivedType();
 };

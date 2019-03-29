@@ -7,9 +7,8 @@
 //
 
 #include <iostream>
-#include "BaseClass.hpp"
 
 int main() {
-    
+
     return 0;
 }

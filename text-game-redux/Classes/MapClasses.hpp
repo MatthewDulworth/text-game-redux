@@ -20,13 +20,32 @@ class Passage;
 // ------------------------------------------------
 
 // ------- Location ------- //
-// Location class: locations that physical objects and the player can be in
+// locations that physical objects and the player can be in
+// abstract, first level subclass
 class Location : public Base {
-private:
+protected:
     string description;
-    Passage* exits[DIRECTIONS]; // an array of pointers to passages, can be any type of passage
 public:
-    string derivedType(); // returns a string based on what first level derived class it is (or is derived from). In this case returns: "Location"
+    virtual void setDescription(string new_string);
+    virtual string getDescription();
+};
+
+// ------- Room ------- //
+// map locations, have exits, connect to other locations
+class Room : public Location {
+private:
+    Passage* exits[DIRECTIONS];
+public:
+    string derivedType();
+    void setExit(int direction, Passage* exit);
+    void setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down);
+};
+
+// ------- AdminLocation ------- //
+// administrative locations, not part of map, e.g. trash, inventory
+class AdminLocation : public Location {
+public:
+    string derivedType();
 };
 
 
@@ -36,7 +55,7 @@ public:
 
 // ------- Passage ------- //
 // connects locations together
-// abstract
+// abstract, first level subclass
 class Passage : public Base {
 protected:
     bool hidden_state;
@@ -55,6 +74,7 @@ public:
 };
 
 // -------  Deadend ------- //
+// Player cannot move through
 class Deadend : public Passage {
 public:
     string derivedType();
@@ -68,8 +88,8 @@ public:
 };
 
 // ------- Closed Passage ------- //
-// Passages that can be closed
-// abstract
+// Passages that can be closed and locked
+// abstract, second level subclass 
 class ClosedPassage : public Passage {
 protected:
     bool lock_state;

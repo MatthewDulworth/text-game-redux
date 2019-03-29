@@ -1,6 +1,7 @@
 //
 //  TypeChecks.hpp
 //  text-game-redux
+//  Checks the class type of an object
 //
 //  Created by Matthew Dulworth on 3/27/19.
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
