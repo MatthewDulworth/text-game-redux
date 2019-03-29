@@ -76,10 +76,28 @@ bool isItem(Base* unkown_object){
         return false;
 }
 
+// ------- Item ------- //
+bool isKey(Base* unkown_object){
+    Key* known_object;
+    if( (known_object = dynamic_cast<Key*>(unkown_object)) )
+        return true;
+    else
+        return false;
+}
+
 // ------- Money ------- //
 bool isMoney(Base* unkown_object){
     Money* known_object;
     if( (known_object = dynamic_cast<Money*>(unkown_object)) )
+        return true;
+    else
+        return false;
+}
+
+// ------- ImmoveableObject ------- //
+bool isImmoveableObject(Base* unkown_object){
+    Immovable* known_object;
+    if( (known_object = dynamic_cast<Immovable*>(unkown_object)) )
         return true;
     else
         return false;

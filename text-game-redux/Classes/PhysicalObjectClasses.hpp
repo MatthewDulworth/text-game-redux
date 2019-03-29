@@ -33,9 +33,13 @@ public:
 
 // ------- Item ------- //
 class Item : public PhysicalObject {
-private:
 public:
     string derivedType();
+};
+
+// -------- Key ------- //
+class Key : public Item {
+    
 };
 
 // ------- Money ------- //
@@ -52,10 +56,9 @@ public:
 
 
 // ------- UnmoveableObject ------- //
-class UnmoveableObject : public PhysicalObject {
-protected:
-    
+class Immovable : public PhysicalObject {
 public:
+    string derivedType();
 };
 
 #endif /* PhysicalObjectClasses_hpp */

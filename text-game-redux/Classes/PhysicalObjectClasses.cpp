@@ -49,3 +49,9 @@ void Money::setWorth(double new_worth){
 double Money::getWorth(){
     return worth;
 }
+
+
+// ------- ImmoveableObject ------- //
+string Immovable::derivedType(){
+    return "PhysicalObject";
+}
