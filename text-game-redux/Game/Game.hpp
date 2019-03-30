@@ -19,7 +19,7 @@
 // ------------------------------------------------
 class Game {
 private:
-    Player player;
+    Location* player_location;
     
     // arrays of pinters to game-objects
     Location* locations[LOCATIONS];
@@ -33,7 +33,6 @@ private:
     vector<string> tokens;
     vector<int> commands;
     
-    
 public:
     // setup functions
     void mapSetup();
@@ -45,8 +44,8 @@ public:
     // run functions
     void parse();
     void initCommands();
+    bool enactCommands();
     void commandLoop();
-    
 };
 
 #endif /* Game_hpp */

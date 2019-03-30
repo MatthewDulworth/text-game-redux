@@ -15,7 +15,7 @@
 const int LOCATIONS = 4;
 const int PASSAGES = 1;
 const int DIRECTIONS = 6;
-const int PHYSICALOBJECTS = 2;
+const int PHYSICALOBJECTS = 4;
 const int ITEMS = 1;
 const int ACTIONS = 2;
 const int NONE = -1;

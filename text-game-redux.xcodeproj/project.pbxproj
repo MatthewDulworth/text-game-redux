@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		346D9B2E224EF6AA00950AD7 /* enactCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */; };
 		34A2F888224BE8F600ABB248 /* MapClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F886224BE8F600ABB248 /* MapClasses.cpp */; };
 		34A2F88B224BE90400ABB248 /* PhysicalObjectClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F889224BE90400ABB248 /* PhysicalObjectClasses.cpp */; };
 		34A2F88E224BE91F00ABB248 /* SetupClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F88C224BE91F00ABB248 /* SetupClasses.cpp */; };
@@ -33,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enactCommands.cpp; sourceTree = "<group>"; };
 		34A2F886224BE8F600ABB248 /* MapClasses.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MapClasses.cpp; sourceTree = "<group>"; };
 		34A2F887224BE8F600ABB248 /* MapClasses.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MapClasses.hpp; sourceTree = "<group>"; };
 		34A2F889224BE90400ABB248 /* PhysicalObjectClasses.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicalObjectClasses.cpp; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				34A2F89A224D110A00ABB248 /* SetupFunctions.cpp */,
 				34A2F8A1224EAEA500ABB248 /* parse.cpp */,
 				34A2F8A5224EB6AB00ABB248 /* initCommands.cpp */,
+				346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */,
 				34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */,
 			);
 			path = Game;
@@ -199,6 +202,7 @@
 				34A2F894224C49CC00ABB248 /* TypeChecks.cpp in Sources */,
 				34A2F89F224D112700ABB248 /* Player.cpp in Sources */,
 				34A2F8A6224EB6AB00ABB248 /* initCommands.cpp in Sources */,
+				346D9B2E224EF6AA00950AD7 /* enactCommands.cpp in Sources */,
 				34A2F88B224BE90400ABB248 /* PhysicalObjectClasses.cpp in Sources */,
 				34A2F8A4224EB69D00ABB248 /* commandLoop.cpp in Sources */,
 				34A2F8A2224EAEA500ABB248 /* parse.cpp in Sources */,

@@ -7,7 +7,6 @@
 //
 
 #include "Game.hpp"
-using namespace std;
 
 void Game::parse(){
     
