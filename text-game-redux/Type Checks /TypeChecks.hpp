@@ -16,7 +16,9 @@
 #include "SetupClasses.hpp"
 #include <typeinfo>
 
-bool isLocation(Base*);
+bool isRoom(Base*);
+bool isAdminLocation(Base*);
+bool isDeadend(Base*);
 bool isOpenPassage(Base*);
 bool isTrapdoor(Base*);
 bool isRegularDoor(Base*);

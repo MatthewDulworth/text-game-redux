@@ -23,6 +23,10 @@ void Location::setDescription(string new_description){
 string Location::getDescription(){
     return description;
 }
+// prints the description
+void Location::printDescription(){
+    cout << description;
+}
 
 
 // ------- Room ------- //
@@ -57,18 +61,18 @@ bool Passage::isHidden(){ // returns true of the passage is hidden
 void Passage::setHiddenState(bool new_state){
     hidden_state = new_state;
 }
-void Passage::setLocation_1(Location* new_location){
-    location_1 = new_location;
+void Passage::setRoom_1(Room* new_location){
+    room_1 = new_location;
 }
-void Passage::setLocation_2(Location* new_location){
-    location_2 = new_location;
+void Passage::setRoom_2(Room* new_location){
+    room_2 = new_location;
 }
 // getters
-Location* Passage::getLocation_1(){
-    return location_1;
+Room* Passage::getRoom_1(){
+    return room_1;
 }
-Location* Passage::getLocation_2(){
-    return location_2;
+Room* Passage::getRoom_2(){
+    return room_2;
 }
 
 

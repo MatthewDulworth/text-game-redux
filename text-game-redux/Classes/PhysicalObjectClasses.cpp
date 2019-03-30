@@ -29,6 +29,10 @@ string PhysicalObject::getDescription(){
 Location* PhysicalObject::getLocation(){
     return location;
 }
+//
+void PhysicalObject::printDescription(){
+    cout << description;
+}
 
 
 // ------- Item ------- //

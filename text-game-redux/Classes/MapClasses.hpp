@@ -28,6 +28,7 @@ protected:
 public:
     virtual void setDescription(string new_string);
     virtual string getDescription();
+    virtual void printDescription();
 };
 
 // ------- Room ------- //
@@ -39,6 +40,9 @@ public:
     string derivedType();
     void setExit(int direction, Passage* exit);
     void setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down);
+    Passage* exitTo(int direction){
+        return exits[direction];
+    }
 };
 
 // ------- AdminLocation ------- //
@@ -59,18 +63,18 @@ public:
 class Passage : public Base {
 protected:
     bool hidden_state;
-    Location* location_1; // the Location on one side of the passage
-    Location* location_2; // the Location on the other side of the passage
+    Room* room_1; // the Room on one side of the passage
+    Room* room_2; // the Room on the other side of the passage
 public:
     // checks
     virtual bool isHidden();
     // setters
     virtual void setHiddenState(bool new_state);
-    virtual void setLocation_1(Location* new_location);
-    virtual void setLocation_2(Location* new_location);
+    virtual void setRoom_1(Room* new_location);
+    virtual void setRoom_2(Room* new_location);
     // getters
-    virtual Location* getLocation_1();
-    virtual Location* getLocation_2();
+    virtual Room* getRoom_1();
+    virtual Room* getRoom_2();
 };
 
 // -------  Deadend ------- //

@@ -29,6 +29,8 @@ public:
     // getters
     virtual string getDescription();
     virtual Location* getLocation();
+    //
+    virtual void printDescription();
 };
 
 // ------- Item ------- //

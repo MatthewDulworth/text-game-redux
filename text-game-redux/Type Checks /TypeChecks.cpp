@@ -22,7 +22,7 @@ bool isRoom(Base* unkown_object){
         return false;
 }
 
-// ------- Room ------- //
+// ------- AdminLocation ------- //
 bool isAdminLocation(Base* unkown_object){
     AdminLocation* known_object;
     if( (known_object = dynamic_cast<AdminLocation*>(unkown_object)) )
@@ -36,7 +36,7 @@ bool isAdminLocation(Base* unkown_object){
 // Passage classes
 // ------------------------------------------------
 
-// ------- Room ------- //
+// ------- Deadend ------- //
 bool isDeadend(Base* unkown_object){
     Deadend* known_object;
     if( (known_object = dynamic_cast<Deadend*>(unkown_object)) )

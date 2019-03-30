@@ -19,7 +19,7 @@
 // ------------------------------------------------
 class Game {
 private:
-    Location* player_location;
+    Room* player_location;
     
     // arrays of pinters to game-objects
     Location* locations[LOCATIONS];

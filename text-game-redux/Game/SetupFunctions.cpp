@@ -92,6 +92,7 @@ void Game::mapSetup(){
     // ----- set attributes ----- //
     kitchen.setCode(KITCHEN);
     kitchen.setName("KITCHEN");
+    kitchen.setExit(NORTH, 0);
     
     // ----- set arrays ----- //
 }
