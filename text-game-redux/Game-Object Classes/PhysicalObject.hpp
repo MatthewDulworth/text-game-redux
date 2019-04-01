@@ -10,8 +10,8 @@
 #ifndef PhysicalObjectClasses_hpp
 #define PhysicalObjectClasses_hpp
 
-#include "BaseClass.hpp"
-#include "MapClasses.hpp"
+#include "Base.hpp"
+#include "Location.hpp"
 // ------------------------------------------------
 // PhysicalObject classes
 // ------------------------------------------------

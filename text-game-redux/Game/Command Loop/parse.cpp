@@ -8,7 +8,7 @@
 
 #include "Game.hpp"
 
-void Game::parse(){
+void Game::parse(string player_input){
     
     string temp;
     
@@ -30,7 +30,7 @@ void Game::parse(){
             temp.insert(temp.end(), player_input.at(i) );
         }
         // if the end of player_input is reached, add temp to tokens
-        if(i == player_input.size() ){
+        if(i == player_input.size()-1 ){
             tokens.push_back(temp);
             temp.clear();
         }

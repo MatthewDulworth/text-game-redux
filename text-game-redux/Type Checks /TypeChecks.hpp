@@ -10,10 +10,12 @@
 #ifndef TypeChecks_hpp
 #define TypeChecks_hpp
 
-#include "BaseClass.hpp"
-#include "MapClasses.hpp"
-#include "PhysicalObjectClasses.hpp"
-#include "SetupClasses.hpp"
+#include "Base.hpp"
+#include "Location.hpp"
+#include "Passage.hpp"
+#include "PhysicalObject.hpp"
+#include "Action.hpp"
+#include "Direction.hpp"
 #include <typeinfo>
 
 bool isRoom(Base*);

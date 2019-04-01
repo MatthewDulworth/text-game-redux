@@ -29,20 +29,20 @@ private:
     Direction* directions[DIRECTIONS];
     
     // run vars
-    string player_input;
     vector<string> tokens;
     vector<int> commands;
     
 public:
     // setup functions
     void mapSetup();
-    void objectSetup();
+    void physicalObjectSetup();
     void actionSetup();
     void directionSetup();
     void setup();
+    void setPlayer_location(Room* new_room);
     
     // run functions
-    void parse();
+    void parse(string player_input);
     void initCommands();
     bool enactCommands();
     void commandLoop();

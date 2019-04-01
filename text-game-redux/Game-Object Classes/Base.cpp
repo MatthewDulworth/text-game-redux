@@ -9,7 +9,8 @@
 
 #include <string>
 #include <iostream>
-#include "BaseClass.hpp"
+#include "Base.hpp"
+
 using namespace std;
 
 // ------------------------------------------------

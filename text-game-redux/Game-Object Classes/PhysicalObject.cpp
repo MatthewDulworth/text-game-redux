@@ -7,7 +7,7 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 
-#include "PhysicalObjectClasses.hpp"
+#include "PhysicalObject.hpp"
 
 // ------------------------------------------------
 // PhysicalObject methods
