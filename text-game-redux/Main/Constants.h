@@ -10,24 +10,20 @@
 #define Constants_h
 
 // -------------------------------------------
-// number of each type of thing
+// array indexes
 // -------------------------------------------
 const int LOCATIONS = 4;
 const int PASSAGES = 1;
 const int DIRECTIONS = 6;
 const int PHYSICALOBJECTS = 4;
-const int ITEMS = 1;
 const int ACTIONS = 2;
-const int NONE = -1;
 
 
 // -------------------------------------------
-//
+// boolean constants
 // -------------------------------------------
 const bool UNLOCKED = true;
 const bool LOCKED = false;
-const bool OPEN = true;
-const bool CLOSED = false;
 const bool VISIBLE = true;
 const bool HIDDEN = false;
 

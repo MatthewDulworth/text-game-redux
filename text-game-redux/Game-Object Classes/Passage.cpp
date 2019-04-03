@@ -11,12 +11,15 @@
 // ------------------------------------------------
 // Passage methods
 // ------------------------------------------------
-
-// ------- Passage ------- //
-bool Passage::isHidden(){ // returns true of the passage is hidden
-    if(hidden_state == HIDDEN) return true;
+// checks
+bool Passage::isVisible(){
+    if(hidden_state == VISIBLE) return true;
     else return false;
 }
+bool Passage::isLocked(){
+    return false;
+}
+
 // setters
 void Passage::setHiddenState(bool new_state){
     hidden_state = new_state;
@@ -36,36 +39,39 @@ Room* Passage::getRoom_2(){
 }
 
 
-// -------  OpenPassage ------- //
-string Deadend::derivedType(){ // returns first level subclass name
-    return "Passage";
-}
-
-
-// ------- OpenPassage ------- //
+// ------------------------------------------------
+// OpenPassage methods
+// ------------------------------------------------
 string OpenPassage::derivedType(){ // returns first level subclass name
     return "Passage";
 }
 
 
-// ------- ClosedPassage ------- //
+// ------------------------------------------------
+// ClosedPassage methods
+// ------------------------------------------------
+// checks
 bool ClosedPassage::isLocked(){
     if(lock_state == LOCKED) return true;
     else return false;
 }
-bool ClosedPassage::isOpen(){
-    if(open_state == OPEN) return true;
-    else return false;
+// setters
+void ClosedPassage::setLockState(bool state){
+    lock_state = state;
 }
 
 
-// ------- Trapdoor ------- //
+// ------------------------------------------------
+// Trapdoor methods
+// ------------------------------------------------
 string Trapdoor::derivedType(){ // returns first level subclass name
     return "Passage";
 }
 
 
-// ------- // RegularDoor ------- //
+// ------------------------------------------------
+// RegularDoor methods
+// ------------------------------------------------
 string RegularDoor::derivedType(){ // returns first level subclass name
     return "Passage";
 }

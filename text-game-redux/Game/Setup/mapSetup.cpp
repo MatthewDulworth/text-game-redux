@@ -14,31 +14,31 @@
 // popluates the loctions and passages arrays
 void Game::mapSetup(){
     
-    // ----- object declarations ----- //
+    // ----- declarations ----- //
+    // locations
     static Room kitchen, bedroom;
     static AdminLocation inventory, trash;
+    // passages
     static OpenPassage kitchen_to_bedroom;
     
+    // ----- set player starting location ----- //
     setPlayer_location(&kitchen);
     
     // ----- set rooms ----- //
+    // KITCHEN
     kitchen.setCode(KITCHEN);
     kitchen.setName("KITCHEN");
     kitchen.setDescription("a kitchen");
     kitchen.setExit(NORTH, &kitchen_to_bedroom);
-    kitchen.setExit(SOUTH, 0);
-    kitchen.setExit(EAST, 0);
-    kitchen.setExit(WEST, 0);
-    kitchen.setExit(UP, 0);
-    kitchen.setExit(DOWN, 0);
-    
+    // BEDROOM
     bedroom.setCode(BEDROOM);
     bedroom.setName("BEDROOM");
     bedroom.setDescription("a bedroom");
-    bedroom.setAllExits(0, &kitchen_to_bedroom, 0, 0, 0, 0);
+    bedroom.setExit(SOUTH, &kitchen_to_bedroom);
     
     
     // ----- set passages ----- //
+    // KITCHEN_TO_BEDROOM : OpenPassage
     kitchen_to_bedroom.setCode(KITCHEN_TO_BEDROOM);
     kitchen_to_bedroom.setName("KITCHEN_TO_BEDROOM");
     kitchen_to_bedroom.setHiddenState(VISIBLE);
@@ -47,10 +47,11 @@ void Game::mapSetup(){
     
 
     // ----- set adminlocations ----- //
+    // INVENTORY
     inventory.setCode(INVENTORY);
     inventory.setName("INVENTORY");
     inventory.setDescription("the player inventory");
-    
+    // TRASH
     trash.setCode(TRASH);
     trash.setName("TRASH");
     trash.setDescription("trash for unneeded physical objects");

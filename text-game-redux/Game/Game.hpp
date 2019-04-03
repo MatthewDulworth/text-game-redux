@@ -45,6 +45,9 @@ public:
     void initCommands();
     bool enactCommands();
     void commandLoop();
+    
+    // commands
+    bool movePlayerThroughPassage(Passage* passage);
 };
 
 #endif /* Game_hpp */

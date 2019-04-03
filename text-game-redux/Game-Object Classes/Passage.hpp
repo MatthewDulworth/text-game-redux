@@ -22,12 +22,13 @@ class Room;
 // abstract, first level subclass
 class Passage : public Base {
 protected:
-    bool hidden_state;
-    Room* room_1; // the Room on one side of the passage
-    Room* room_2; // the Room on the other side of the passage
+    bool hidden_state;  // whether or not the passage is visible to the player
+    Room* room_1;       // the Room on one side of the passage
+    Room* room_2;       // the Room on the other side of the passage
 public:
     // checks
-    virtual bool isHidden();
+    virtual bool isVisible();
+    virtual bool isLocked();    // do nothing for now
     // setters
     virtual void setHiddenState(bool new_state);
     virtual void setRoom_1(Room* new_location);
@@ -35,13 +36,6 @@ public:
     // getters
     virtual Room* getRoom_1();
     virtual Room* getRoom_2();
-};
-
-// -------  Deadend ------- //
-// Player cannot move through
-class Deadend : public Passage {
-public:
-    string derivedType();
 };
 
 // -------  OpenPassage ------- //
@@ -57,10 +51,9 @@ public:
 class ClosedPassage : public Passage {
 protected:
     bool lock_state;
-    bool open_state;
 public:
-    virtual bool isLocked();
-    virtual bool isOpen();
+    virtual void setLockState(bool state);
+    bool isLocked();
 };
 
 // ------- Trapdoor ------- //

@@ -34,36 +34,38 @@ bool Game::enactCommands(){
             // set current_passage
             Passage* current_passage = player_location->exitTo(current_direction->getCode());
             
-            if(current_passage != 0 ){
-            
-                // set room_1 and room_2 to the rooms attached to current_passage
-                Room* room_1 = player_location->exitTo(current_direction->getCode())->getRoom_1();
-                Room* room_2 = player_location->exitTo(current_direction->getCode())->getRoom_2();
-                
-                // move player
-                if(player_location == room_1){
-                    player_location = room_2;
-                    return true;
+            if(current_passage != 0){ // if current passage exists
+                if( current_passage->isVisible() ){ // if current passage is visible to the player
+                    
+                    if( isOpenPassage(current_passage) ){ 
+                        movePlayerThroughPassage(current_passage);
+                        return true;
+                    }
+                    else if( isRegularDoor(current_passage) ){
+                        if(current_passage->isLocked() ) cout << "that door is locked\n";
+                        else movePlayerThroughPassage(current_passage);
+                        return true;
+                    }
+                    else if( isTrapdoor(current_passage) ){
+                        if(current_passage->isLocked() ) cout << "that trapdoor is locked\n";
+                        else movePlayerThroughPassage(current_passage);
+                        return true;
+                    }
+                    else {
+                        cout << "ERROR: undefined passage type, 'GO' \n";
+                        return false;
+                    }
+                    
                 }
-                else if(player_location == room_2){
-                    player_location = room_1;
-                    return true;
-                }
-                else{
-                    cout << "ERROR: player location no connected to current passage, 'GO'" << endl;
-                    return false;
-                }
-            }
-            else{
+            } else{
                 cout << "there is no exit: " << current_direction->getName() << endl;
                 return false;
             }
-        }
-        else{
+            
+        } else{
             cout << "invalid direction" << endl;
             return false;
         }
-        
     }
     
     // ------------------------------------------------
@@ -74,9 +76,7 @@ bool Game::enactCommands(){
         cout << endl;
 
         for(int i=0; i<DIRECTIONS; i++){
-            if(player_location->exitTo(i) !=0){
-                cout << "there is an exit to the " << directions[i]->getName() << endl;
-            }
+            Passage* current_passage = player_location->exitTo(i);
         }
         for(int i=0; i<PHYSICALOBJECTS; i++){
             if(physical_objects[i]->getLocation() == player_location){
