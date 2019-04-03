@@ -33,16 +33,13 @@ public:
 // ------- Room ------- //
 // map locations, have exits, connect to other locations
 class Room : public Location {
-//private:
-public:
+private:
     Passage* exits[DIRECTIONS];
-//public:
+public:
     string derivedType();
     void setExit(int direction, Passage* exit);
     void setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down);
-    Passage* exitTo(int direction){
-        return exits[direction];
-    }
+    Passage* exitTo(int direction);
 };
 
 // ------- AdminLocation ------- //

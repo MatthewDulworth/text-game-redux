@@ -35,11 +35,20 @@ string Room::derivedType(){ // returns first level subclass name
 }
 // sets a single exit from the room
 void Room::setExit(int direction, Passage* exit){
-    
+    exits[direction] = exit;
 }
 // sets all exits from the room
 void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down){
-    
+    exits[NORTH] = exit_north;
+    exits[SOUTH] = exit_south;
+    exits[EAST] = exit_east;
+    exits[WEST] = exit_west;
+    exits[UP] = exit_up;
+    exits[DOWN] = exit_down;
+}
+// sets a single exit from the room 
+Passage* Room::exitTo(int direction){
+    return exits[direction];
 }
 
 // ------- AdminLocation ------- //
