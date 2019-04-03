@@ -19,7 +19,6 @@
 		34A2F888224BE8F600ABB248 /* Location.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F886224BE8F600ABB248 /* Location.cpp */; };
 		34A2F88B224BE90400ABB248 /* PhysicalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F889224BE90400ABB248 /* PhysicalObject.cpp */; };
 		34A2F894224C49CC00ABB248 /* TypeChecks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F892224C49CC00ABB248 /* TypeChecks.cpp */; };
-		34A2F89F224D112700ABB248 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F89D224D112700ABB248 /* Player.cpp */; };
 		34A2F8A2224EAEA500ABB248 /* parse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F8A1224EAEA500ABB248 /* parse.cpp */; };
 		34A2F8A4224EB69D00ABB248 /* commandLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */; };
 		34A2F8A6224EB6AB00ABB248 /* initCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F8A5224EB6AB00ABB248 /* initCommands.cpp */; };
@@ -60,8 +59,6 @@
 		34A2F892224C49CC00ABB248 /* TypeChecks.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TypeChecks.cpp; sourceTree = "<group>"; };
 		34A2F893224C49CC00ABB248 /* TypeChecks.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TypeChecks.hpp; sourceTree = "<group>"; };
 		34A2F89B224D110A00ABB248 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
-		34A2F89D224D112700ABB248 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
-		34A2F89E224D112700ABB248 /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		34A2F8A1224EAEA500ABB248 /* parse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parse.cpp; sourceTree = "<group>"; };
 		34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = commandLoop.cpp; sourceTree = "<group>"; };
 		34A2F8A5224EB6AB00ABB248 /* initCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = initCommands.cpp; sourceTree = "<group>"; };
@@ -127,8 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				34F53A32224BCD6500437F64 /* main.cpp */,
-				34A2F89E224D112700ABB248 /* Player.hpp */,
-				34A2F89D224D112700ABB248 /* Player.cpp */,
 				34A2F891224BEBBB00ABB248 /* Constants.h */,
 			);
 			path = Main;
@@ -238,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				34A2F894224C49CC00ABB248 /* TypeChecks.cpp in Sources */,
-				34A2F89F224D112700ABB248 /* Player.cpp in Sources */,
 				346D9B35224F15A000950AD7 /* Action.cpp in Sources */,
 				34A2F8A6224EB6AB00ABB248 /* initCommands.cpp in Sources */,
 				346D9B30224F13D900950AD7 /* mapSetup.cpp in Sources */,

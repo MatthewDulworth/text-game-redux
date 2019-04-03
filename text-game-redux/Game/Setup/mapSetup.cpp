@@ -55,6 +55,7 @@ void Game::mapSetup(){
     trash.setName("TRASH");
     trash.setDescription("trash for unneeded physical objects");
     
+    
     // ----- set locations array ----- //
     locations[KITCHEN] = &kitchen;
     locations[BEDROOM] = &bedroom;

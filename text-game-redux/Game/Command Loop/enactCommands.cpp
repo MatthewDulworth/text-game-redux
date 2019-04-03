@@ -49,8 +49,21 @@ bool Game::enactCommands(){
                     player_location = room_1;
                     return true;
                 }
+                else{
+                    cout << "ERROR: player location no connected to current passage, 'GO'" << endl;
+                    return false;
+                }
+            }
+            else{
+                cout << "there is no exit: " << current_direction->getName() << endl;
+                return false;
             }
         }
+        else{
+            cout << "invalid direction" << endl;
+            return false;
+        }
+        
     }
     
     // ------------------------------------------------
@@ -62,12 +75,12 @@ bool Game::enactCommands(){
 
         for(int i=0; i<DIRECTIONS; i++){
             if(player_location->exitTo(i) !=0){
-                cout << "there is an exit to the" << directions[i]->getName() << endl;
+                cout << "there is an exit to the " << directions[i]->getName() << endl;
             }
         }
         for(int i=0; i<PHYSICALOBJECTS; i++){
             if(physical_objects[i]->getLocation() == player_location){
-                cout << "There is " << physical_objects[i]->getDescription() << endl;
+                cout << "there is " << physical_objects[i]->getDescription() << endl;
             }
         }
         return true;

@@ -12,7 +12,6 @@
 #include <string>
 #include <vector>
 #include "TypeChecks.hpp"
-#include "Player.hpp"
 
 // ------------------------------------------------
 // Game class

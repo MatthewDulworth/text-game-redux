@@ -12,8 +12,8 @@
 void Game::setup(){
     directionSetup();
     actionSetup();
-    physicalObjectSetup();
     mapSetup();
+    physicalObjectSetup();
 }
 
 void Game::setPlayer_location(Room* new_room){
