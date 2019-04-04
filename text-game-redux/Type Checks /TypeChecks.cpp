@@ -45,19 +45,10 @@ bool isOpenPassage(Base* unkown_object){
         return false;
 }
 
-// ------- Trapdoor ------- //
-bool isTrapdoor(Base* unkown_object){
-    Trapdoor* known_object;
-    if( (known_object = dynamic_cast<Trapdoor*>(unkown_object)) )
-        return true;
-    else
-        return false;
-}
-
-// ------- RegularDoor ------- //
-bool isRegularDoor(Base* unkown_object){
-    RegularDoor* known_object;
-    if( (known_object = dynamic_cast<RegularDoor*>(unkown_object)) )
+// ------- ClosedPassage ------- //
+bool isClosedPassage(Base* unkown_object){
+    ClosedPassage* known_object;
+    if( (known_object = dynamic_cast<ClosedPassage*>(unkown_object)) )
         return true;
     else
         return false;

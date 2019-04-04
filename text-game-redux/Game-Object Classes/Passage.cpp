@@ -50,6 +50,9 @@ string OpenPassage::derivedType(){ // returns first level subclass name
 // ------------------------------------------------
 // ClosedPassage methods
 // ------------------------------------------------
+string ClosedPassage::derivedType(){ // returns first level subclass name
+    return "Passage";
+}
 // checks
 bool ClosedPassage::isLocked(){
     if(lock_state == LOCKED) return true;
@@ -60,18 +63,3 @@ void ClosedPassage::setLockState(bool state){
     lock_state = state;
 }
 
-
-// ------------------------------------------------
-// Trapdoor methods
-// ------------------------------------------------
-string Trapdoor::derivedType(){ // returns first level subclass name
-    return "Passage";
-}
-
-
-// ------------------------------------------------
-// RegularDoor methods
-// ------------------------------------------------
-string RegularDoor::derivedType(){ // returns first level subclass name
-    return "Passage";
-}

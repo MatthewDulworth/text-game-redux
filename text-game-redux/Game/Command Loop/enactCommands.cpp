@@ -41,13 +41,8 @@ bool Game::enactCommands(){
                         movePlayerThroughPassage(current_passage);
                         return true;
                     }
-                    else if( isRegularDoor(current_passage) ){
+                    else if( isClosedPassage(current_passage) ){
                         if(current_passage->isLocked() ) cout << "that door is locked\n";
-                        else movePlayerThroughPassage(current_passage);
-                        return true;
-                    }
-                    else if( isTrapdoor(current_passage) ){
-                        if(current_passage->isLocked() ) cout << "that trapdoor is locked\n";
                         else movePlayerThroughPassage(current_passage);
                         return true;
                     }

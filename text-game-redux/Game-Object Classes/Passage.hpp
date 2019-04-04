@@ -52,25 +52,9 @@ class ClosedPassage : public Passage {
 protected:
     bool lock_state;
 public:
+    string derivedType();
     virtual void setLockState(bool state);
     bool isLocked();
 };
-
-// ------- Trapdoor ------- //
-// ClosedPassages that open Up or Down
-class Trapdoor : public ClosedPassage {
-private:
-public:
-    string derivedType();
-};
-
-// ------- RegularDoor ------- //
-// ClosedPassages that open in the four regular directions
-class RegularDoor : public ClosedPassage {
-private:
-public:
-    string derivedType();
-};
-
 
 #endif /* Passage_hpp */

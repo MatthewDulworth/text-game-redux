@@ -16,6 +16,5 @@ int main() {
     game.setup();
     game.commandLoop();
     
-    
     return 0;
 }

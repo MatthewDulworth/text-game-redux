@@ -20,10 +20,8 @@
 
 bool isRoom(Base*);
 bool isAdminLocation(Base*);
-bool isDeadend(Base*);
 bool isOpenPassage(Base*);
-bool isTrapdoor(Base*);
-bool isRegularDoor(Base*);
+bool isClosedPassage(Base* );
 bool isItem(Base*);
 bool isMoney(Base*);
 bool isAction(Base*);
