@@ -11,7 +11,6 @@
 void Game::parse(string player_input){
     
     string temp;
-    
     char space = ' ';
     
     // convert player_input to uppercase

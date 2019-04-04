@@ -77,6 +77,22 @@ bool Game::enactCommands(){
 
         for(int i=0; i<DIRECTIONS; i++){
             Passage* current_passage = player_location->exitTo(i);
+            string lock;
+            
+            if(current_passage != 0){
+                if(current_passage->isLocked() ){
+                    lock = "locked ";
+                } else {
+                    lock = "";
+                }
+                
+                if(i == UP || i == DOWN) {
+                    cout << "there is a " << lock << " ladder going " << directions[i]->getName() << endl;
+                } else{
+                    cout << "there is a " << lock << " door to the " << directions[i]->getName() << endl;
+                }
+            }
+            
         }
         for(int i=0; i<PHYSICALOBJECTS; i++){
             if(physical_objects[i]->getLocation() == player_location){

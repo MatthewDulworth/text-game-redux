@@ -12,18 +12,16 @@ void Game::commandLoop(){
     string player_input;
     
     do{
+        cout << "Enter a command: ";
+        getline(cin, player_input);
+        
         if(player_input != "quit"){
-            
-            cout << "Enter a command: ";
-            getline(cin, player_input);
-            
             parse(player_input);
             initCommands();
             enactCommands();
         }
         tokens.clear();
         commands.clear();
-        player_input.clear();
     }while(player_input != "quit");
 }
 
