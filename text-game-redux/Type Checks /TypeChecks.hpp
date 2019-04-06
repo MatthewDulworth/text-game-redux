@@ -16,12 +16,10 @@
 #include "PhysicalObject.hpp"
 #include "Action.hpp"
 #include "Direction.hpp"
-#include <typeinfo>
 
 bool isRoom(Base*);
 bool isAdminLocation(Base*);
-bool isOpenPassage(Base*);
-bool isClosedPassage(Base* );
+bool isPassage(Base* );
 bool isItem(Base*);
 bool isMoney(Base*);
 bool isAction(Base*);

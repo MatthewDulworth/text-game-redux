@@ -6,15 +6,11 @@
 //  Created by Matthew Dulworth on 3/27/19.
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
-
 #include "Location.hpp"
-using namespace std;
 
 // ------------------------------------------------
 // Location methods
 // ------------------------------------------------
-
-// ------- Location ------- //
 // sets the description of the location
 void Location::setDescription(string new_description){
     description = new_description;
@@ -27,9 +23,16 @@ string Location::getDescription(){
 void Location::printDescription(){
     cout << description;
 }
+//
+Passage* Location::exitTo(int direction){
+    Passage* a = 0;
+    return a;
+}
 
 
-// ------- Room ------- //
+// ------------------------------------------------
+// Room methods
+// ------------------------------------------------
 string Room::derivedType(){ // returns first level subclass name
     return "Location";
 }
@@ -51,11 +54,28 @@ Passage* Room::exitTo(int direction){
     return exits[direction];
 }
 
-// ------- AdminLocation ------- //
+
+// ------------------------------------------------
+// AdminLocation methods
+// ------------------------------------------------
 string AdminLocation::derivedType(){
     return "Location";
 }
 
-
+// ------------------------------------------------
+// Elevator methods
+// ------------------------------------------------
+string Elevator::derivedType(){
+    return "Location";
+}
+void Elevator::setExit(int floor, Passage* exit){
+    exits[floor] = exit;
+}
+void Elevator::setFloor(int floor){
+    current_exit = exits[floor];
+}
+Passage* Elevator::getCurrent_exit(){
+    return current_exit;
+}
 
 

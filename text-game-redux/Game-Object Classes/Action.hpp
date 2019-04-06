@@ -5,7 +5,6 @@
 //  Created by Matthew Dulworth on 3/29/19.
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
-
 #ifndef ActionClasses_hpp
 #define ActionClasses_hpp
 

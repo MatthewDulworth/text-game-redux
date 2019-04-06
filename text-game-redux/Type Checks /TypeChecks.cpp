@@ -8,6 +8,7 @@
 //
 
 #include "TypeChecks.hpp"
+#include <typeinfo>
 
 // ------------------------------------------------
 // Location classes
@@ -36,23 +37,15 @@ bool isAdminLocation(Base* unkown_object){
 // Passage classes
 // ------------------------------------------------
 
-// ------- OpenPassage ------- //
-bool isOpenPassage(Base* unkown_object){
-    OpenPassage* known_object;
-    if( (known_object = dynamic_cast<OpenPassage*>(unkown_object)) )
+// ------- Passage ------- //
+bool isPassage(Base* unkown_object){
+    Passage* known_object;
+    if( (known_object = dynamic_cast<Passage*>(unkown_object)) )
         return true;
      else
         return false;
 }
 
-// ------- ClosedPassage ------- //
-bool isClosedPassage(Base* unkown_object){
-    ClosedPassage* known_object;
-    if( (known_object = dynamic_cast<ClosedPassage*>(unkown_object)) )
-        return true;
-    else
-        return false;
-}
 
 // ------------------------------------------------
 // PhysicalObject classes

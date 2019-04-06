@@ -5,7 +5,6 @@
 //  Created by Matthew Dulworth on 3/28/19.
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
-
 #ifndef Game_hpp
 #define Game_hpp
 
@@ -18,7 +17,7 @@
 // ------------------------------------------------
 class Game {
 private:
-    Room* player_location;
+    Location* player_location;
     
     // arrays of pinters to game-objects
     Location* locations[LOCATIONS];

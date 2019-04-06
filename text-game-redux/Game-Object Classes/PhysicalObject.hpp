@@ -11,7 +11,7 @@
 #define PhysicalObjectClasses_hpp
 
 #include "Base.hpp"
-#include "Location.hpp"
+class Location;
 // ------------------------------------------------
 // PhysicalObject classes
 // ------------------------------------------------
