@@ -14,19 +14,20 @@
 void Game::mapSetup(){
     
     // ----- location declarations ----- //
-    static Room lobby, street;                                  // first floor
-    static Room large_empty_room, supply_closet, r1, r2, r3;    // second floor
-    static Elevator elevator_1;                                 // elevators
-    static AdminLocation inventory, trash;                      // admin locations
+    static Room lobby, street;                                                              // first floor
+    static Room cubicle_room, supply_closet, managers_office, llama_shrine, break_room;     // second floor
+    static Elevator elevator_1;                                                             // elevators
+    static AdminLocation inventory, trash;                                                  // admin locations
     
     // ----- passage declarations ----- //
-    static Passage lobby_to_street, lobby_to_elevator1;                                                            // 1st floor
-    static Passage elevator1_to_LEroom, LEroom_to_supplyCloset, LEroom_to_r1, r1_to_r2, r2_to_r3, LEroom_to_r3;    // 2nd floor
+    static Passage lobby_to_street, lobby_to_elevator1;                                                 // 1st floor
+    static Passage cubicleRoom_to_elevator1, cubicleRoom_to_supplyCloset, cubicleRoom_to_breakRoom;     // 2nd floor
+    static Passage breakRoom_to_llamaShrine, managersOffice_to_llamaShrine, cubicleRoom_to_managersOffice; // 2nd floor
     
     // ----- set player starting location ----- //
     setPlayer_location(&lobby);
     
-    // ----- set rooms ----- //
+    // ----- set first floor rooms ----- //
     // LOBBY
     lobby.setCode(LOBBY);
     lobby.setName("LOBBY");
@@ -38,28 +39,46 @@ void Game::mapSetup(){
     street.setName("STREET");
     street.setDescription("a busy street");
     street.setExit(NORTH, &lobby_to_street);
+    
+    // ----- set second floor rooms ----- //
     // LARGE_EMPTY_ROOM
-    large_empty_room.setCode(LARGE_EMPTY_ROOM);
-    large_empty_room.setName("large empty room");
-    large_empty_room.setDescription("a large empty room");
-    large_empty_room.setExit(NORTH, &elevator1_to_LEroom);
-    large_empty_room.setExit(SOUTH, &LEroom_to_r3);
-    large_empty_room.setExit(EAST, &LEroom_to_supplyCloset);
-    large_empty_room.setExit(WEST, &LEroom_to_r1);
+    cubicle_room.setCode(CUBICLE_ROOM);
+    cubicle_room.setName("large empty room");
+    cubicle_room.setDescription("a large empty room");
+    cubicle_room.setExit(NORTH, &cubicleRoom_to_elevator1);
+    cubicle_room.setExit(SOUTH, &cubicleRoom_to_managersOffice);
+    cubicle_room.setExit(EAST, &cubicleRoom_to_supplyCloset);
+    cubicle_room.setExit(WEST, &cubicleRoom_to_breakRoom);
     // SUPPLY CLOSET
     supply_closet.setCode(SUPPLY_CLOSET);
-    supply_closet.setName("");
-    supply_closet.setDescription("a large empty room");
-    supply_closet.setExit(NORTH, &elevator1_to_LEroom);
-    supply_closet.setExit(SOUTH, &LEroom_to_r3);
-    supply_closet.setExit(EAST, &LEroom_to_supplyCloset);
-    supply_closet.setExit(WEST, &LEroom_to_r1);
+    supply_closet.setName("SUPPLY CLOSET");
+    supply_closet.setDescription("a supply closet");
+    supply_closet.setExit(WEST, &cubicleRoom_to_supplyCloset);
+    // MANAGERS_OFFICE
+    managers_office.setCode(MANAGERS_OFFICE);
+    managers_office.setName("MANAGERS OFFICE");
+    managers_office.setDescription("a managers office");
+    managers_office.setExit(NORTH, &cubicleRoom_to_managersOffice);
+    // LLAMA_SHRINE
+    llama_shrine.setCode(LLAMA_SHRINE);
+    llama_shrine.setName("LLAMA SHRINE");
+    llama_shrine.setDescription("a shrine for the llama god");
+    llama_shrine.setExit(NORTH, &breakRoom_to_llamaShrine);
+    llama_shrine.setExit(EAST, &managersOffice_to_llamaShrine);
+    // BREAK_ROOM
+    break_room.setCode(BREAK_ROOM);
+    break_room.setName("BREAK ROOM");
+    break_room.setDescription("an office break room");
+    break_room.setExit(EAST, &cubicleRoom_to_breakRoom);
+    break_room.setExit(SOUTH, &breakRoom_to_llamaShrine);
+    
+    // ----- set elevators ----- //
     // ELEVATOR 1
     elevator_1.setCode(ELEVATOR_1);
     elevator_1.setName("ELEVATOR ONE");
     elevator_1.setDescription("an elevator");
     elevator_1.setExit(FIRST_FLOOR, &lobby_to_elevator1);
-    elevator_1.setExit(SECOND_FLOOR, &elevator1_to_LEroom);
+    elevator_1.setExit(SECOND_FLOOR, &cubicleRoom_to_elevator1);
     elevator_1.setFloor(FIRST_FLOOR);
     
     // ----- set passages ----- //
