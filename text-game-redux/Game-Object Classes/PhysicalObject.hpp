@@ -10,8 +10,10 @@
 #ifndef PhysicalObjectClasses_hpp
 #define PhysicalObjectClasses_hpp
 
+#include <vector>
 #include "Base.hpp"
 class Location;
+class Passage;
 // ------------------------------------------------
 // PhysicalObject classes
 // ------------------------------------------------
@@ -41,7 +43,11 @@ public:
 
 // -------- Key ------- //
 class Key : public Item {
-    
+private:
+    vector<Passage*> doors;
+public:
+    string derivedType();
+    bool canUnlock(Passage* door);
 };
 
 // ------- Money ------- //
@@ -58,7 +64,7 @@ public:
 
 
 // ------- UnmoveableObject ------- //
-class Immovable : public PhysicalObject {
+class ImmovableObject : public PhysicalObject {
 public:
     string derivedType();
 };

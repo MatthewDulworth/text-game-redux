@@ -80,8 +80,8 @@ bool isMoney(Base* unkown_object){
 
 // ------- ImmoveableObject ------- //
 bool isImmoveableObject(Base* unkown_object){
-    Immovable* known_object;
-    if( (known_object = dynamic_cast<Immovable*>(unkown_object)) )
+    ImmovableObject* known_object;
+    if( (known_object = dynamic_cast<ImmovableObject*>(unkown_object)) )
         return true;
     else
         return false;

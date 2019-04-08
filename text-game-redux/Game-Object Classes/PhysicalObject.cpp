@@ -11,8 +11,6 @@
 // ------------------------------------------------
 // PhysicalObject methods
 // ------------------------------------------------
-
-// ------- PhysicalObject ------- //
 // setters
 void PhysicalObject::setDescription(string new_description){
     description = new_description;
@@ -33,14 +31,31 @@ void PhysicalObject::printDescription(){
     cout << description;
 }
 
-
-// ------- Item ------- //
+// ------------------------------------------------
+// Item methods
+// ------------------------------------------------
 string Item::derivedType(){
     return "PhysicalObject";
 }
 
+// ------------------------------------------------
+// Key methods
+// ------------------------------------------------
+string Key::derivedType(){
+    return "PhysicalObject";
+}
+bool Key::canUnlock(Passage* door){
+    for(int i=0; i<doors.size(); i++){
+        if(door == doors.at(i) ){
+            return true;
+        }
+    }
+    return false;
+}
 
-// ------- Money ------- //
+// ------------------------------------------------
+// Money methods
+// ------------------------------------------------
 string Money::derivedType(){
     return "PhysicalObject";
 }
@@ -54,7 +69,9 @@ double Money::getWorth(){
 }
 
 
-// ------- ImmoveableObject ------- //
-string Immovable::derivedType(){
+/// ------------------------------------------------
+// Immovable methods
+// ------------------------------------------------
+string ImmovableObject::derivedType(){
     return "PhysicalObject";
 }
