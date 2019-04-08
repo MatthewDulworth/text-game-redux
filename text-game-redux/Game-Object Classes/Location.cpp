@@ -54,6 +54,29 @@ Passage* Room::exitTo(int direction){
     return exits[direction];
 }
 
+// ------------------------------------------------
+// Elevator methods
+// ------------------------------------------------
+string Elevator::derivedType(){
+    return "Location";
+}
+// setters
+void Elevator::setExit_direction(int direction){
+    exit_direction = direction;
+}
+void Elevator::setExit(int floor, Passage* exit){
+    exits[floor] = exit;
+}
+void Elevator::setFloor(int floor){
+    current_exit = exits[floor];
+}
+// getters
+int Elevator::getExit_direction(){
+    return exit_direction;
+}
+Passage* Elevator::getCurrent_exit(){
+    return current_exit;
+}
 
 // ------------------------------------------------
 // AdminLocation methods
@@ -62,20 +85,6 @@ string AdminLocation::derivedType(){
     return "Location";
 }
 
-// ------------------------------------------------
-// Elevator methods
-// ------------------------------------------------
-string Elevator::derivedType(){
-    return "Location";
-}
-void Elevator::setExit(int floor, Passage* exit){
-    exits[floor] = exit;
-}
-void Elevator::setFloor(int floor){
-    current_exit = exits[floor];
-}
-Passage* Elevator::getCurrent_exit(){
-    return current_exit;
-}
+
 
 

@@ -39,23 +39,24 @@ public:
 class Item : public PhysicalObject {
 public:
     string derivedType();
+    bool isInInventory();
 };
 
 // -------- Key ------- //
 class Key : public Item {
 private:
-    vector<Passage*> doors;
+    int door_type;
 public:
-    string derivedType();
+    void setDoor_Type(int type);
+    int getDoor_type();
     bool canUnlock(Passage* door);
 };
 
 // ------- Money ------- //
-class Money : public PhysicalObject {
+class Money : public Item {
 private:
     double worth;
 public:
-    string derivedType();
     // setters
     void setWorth(double new_worth);
     // getters

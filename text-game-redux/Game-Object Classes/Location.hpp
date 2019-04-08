@@ -15,10 +15,8 @@
 class Passage;
 
 // ------------------------------------------------
-// Location classes
+// Location
 // ------------------------------------------------
-
-// ------- Location ------- //
 // locations that physical objects and the player can be in
 // abstract, first level subclass
 class Location : public Base {
@@ -31,31 +29,44 @@ public:
     virtual Passage* exitTo(int direction);
 };
 
-// ------- Room ------- //
+// ------------------------------------------------
+// Room
+// ------------------------------------------------
 // map locations, have exits, connect to other locations
 class Room : public Location {
 private:
     Passage* exits[DIRECTIONS];
 public:
     string derivedType();
+    // setters
     void setExit(int direction, Passage* exit);
     void setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down);
+    // getters
     Passage* exitTo(int direction);
 };
 
-// ------- Elevator ------- //
+// ------------------------------------------------
+// Elevator
+// ------------------------------------------------
 class Elevator : public Location{
 private:
+    int exit_direction;
     Passage* exits[FLOORS];
     Passage* current_exit;
 public:
     string derivedType();
+    // setters
+    void setExit_direction(int direction);
     void setExit(int floor, Passage* exit);
     void setFloor(int floor);
+    // getters
+    int getExit_direction();
     Passage* getCurrent_exit();
 };
 
-// ------- AdminLocation ------- //
+// ------------------------------------------------
+// AdminLocation
+// ------------------------------------------------
 // administrative locations, not part of map, e.g. trash, inventory
 class AdminLocation : public Location {
 public:

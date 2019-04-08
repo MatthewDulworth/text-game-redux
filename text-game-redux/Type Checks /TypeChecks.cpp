@@ -23,6 +23,15 @@ bool isRoom(Base* unkown_object){
         return false;
 }
 
+// ------- Elevator ------- //
+bool isElevator(Base* unkown_object){
+    Elevator* known_object;
+    if( (known_object = dynamic_cast<Elevator*>(unkown_object)) )
+        return true;
+    else
+        return false;
+}
+
 // ------- AdminLocation ------- //
 bool isAdminLocation(Base* unkown_object){
     AdminLocation* known_object;

@@ -7,6 +7,8 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 #include "PhysicalObject.hpp"
+#include "Location.hpp"
+#include "Passage.hpp"
 
 // ------------------------------------------------
 // PhysicalObject methods
@@ -37,28 +39,32 @@ void PhysicalObject::printDescription(){
 string Item::derivedType(){
     return "PhysicalObject";
 }
+bool Item::isInInventory(){
+    if(location->getCode() == INVENTORY)
+        return true;
+    else
+        return false;
+}
 
 // ------------------------------------------------
 // Key methods
 // ------------------------------------------------
-string Key::derivedType(){
-    return "PhysicalObject";
+void Key::setDoor_Type(int type){
+    door_type = type;
+}
+int Key::getDoor_type(){
+    return door_type;
 }
 bool Key::canUnlock(Passage* door){
-    for(int i=0; i<doors.size(); i++){
-        if(door == doors.at(i) ){
-            return true;
-        }
-    }
-    return false;
+    if(door_type == door->getDoor_type() )
+        return true;
+    else
+        return false;
 }
 
 // ------------------------------------------------
 // Money methods
 // ------------------------------------------------
-string Money::derivedType(){
-    return "PhysicalObject";
-}
 // setters
 void Money::setWorth(double new_worth){
     worth = new_worth;

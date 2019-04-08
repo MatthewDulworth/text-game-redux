@@ -22,6 +22,7 @@ class Passage : public Base {
 protected:
     bool lock_state;    // whether or not the passage is locked
     bool hidden_state;  // whether or not the passage is visible to the player
+    int door_type;
     Location* room_1;       // the Room on one side of the passage
     Location* room_2;       // the Room on the other side of the passage
 public:
@@ -32,9 +33,11 @@ public:
     // setters
     void setLockState(bool state);
     void setHiddenState(bool new_state);
+    void setDoor_type(int type);
     void setRoom_1(Location* new_location);
     void setRoom_2(Location* new_location);
     // getters
+    int getDoor_type();
     Location* getRoom_1();
     Location* getRoom_2();
 };

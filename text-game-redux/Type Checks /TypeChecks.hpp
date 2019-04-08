@@ -18,6 +18,7 @@
 #include "Direction.hpp"
 
 bool isRoom(Base*);
+bool isElevator(Base*);
 bool isAdminLocation(Base*);
 bool isPassage(Base* );
 bool isItem(Base*);

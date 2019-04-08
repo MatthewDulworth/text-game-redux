@@ -14,7 +14,7 @@
 const int LOCATIONS = 10;
 const int PASSAGES = 8;
 const int DIRECTIONS = 6;
-const int PHYSICALOBJECTS = 0;
+const int PHYSICALOBJECTS = 1;
 const int ACTIONS = 2;
 const int FLOORS = 2;
 
@@ -80,14 +80,16 @@ enum enum_PASSAGES {
 };
 
 // -------------------------------------------
+// DOOR TYPES
+// -------------------------------------------
+enum enum_DOOR_TYPES{
+    SIMPLE
+};
+// -------------------------------------------
 // OBJECTS
 // -------------------------------------------
 enum enum_OBJECTS {
-    DESK,
-    KEY,
-    WAFFLE_BAT,
-    COINS
-    
+    SIMPLE_KEY_1
 };
 
 // -------------------------------------------
