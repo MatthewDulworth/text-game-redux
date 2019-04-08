@@ -23,6 +23,7 @@ bool Game::enactCommands(){
     // ------------------------------------------------
     // GO
     // ------------------------------------------------
+    // if the player types "GO" *DIRECTION* and there is an unlocked, visible, passage in that direction, move the player through that passage
     if(commands.at(0) == GO){
         Base* current_direction = directions[commands.at(1)];
         
@@ -34,7 +35,7 @@ bool Game::enactCommands(){
                     
                     if(current_passage->isLocked() ){
                         cout << "that door is locked\n";
-                        return true;
+                            return true;
                     } else{
                         movePlayerThroughPassage(current_passage);
                         return true;
@@ -55,6 +56,7 @@ bool Game::enactCommands(){
     // ------------------------------------------------
     // LOOK
     // ------------------------------------------------
+    // if the player types "LOOK", output all visible exits and all objects in the room
     if(commands.at(0) == LOOK){
         cout << "You are in "; player_location->printDescription();
         cout << endl;

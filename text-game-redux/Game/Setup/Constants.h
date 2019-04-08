@@ -29,13 +29,73 @@ const bool HIDDEN = false;
 
 
 // -------------------------------------------
-// parser codes
+// FLOORS
 // -------------------------------------------
-enum enum_FLOORS {FIRST_FLOOR, SECOND_FLOOR};
-enum enum_DIRECTIONS {NORTH, SOUTH, EAST, WEST, UP, DOWN};
-enum enum_LOCATIONS {LOBBY, STREET, ELEVATOR_1, CUBICLE_ROOM, SUPPLY_CLOSET, MANAGERS_OFFICE, LLAMA_SHRINE, BREAK_ROOM, INVENTORY, TRASH};
-enum enum_PASSAGES {LOBBY_TO_ELEVATOR_1};
-enum enum_OBJECTS {DESK, KEY, WAFFLE_BAT, COINS};
-enum enum_ACTIONS {GO, LOOK};
+enum enum_FLOORS {
+    FIRST_FLOOR,
+    SECOND_FLOOR
+    
+};
+
+// -------------------------------------------
+// DIRECTIONS
+// -------------------------------------------
+enum enum_DIRECTIONS {
+    NORTH,
+    SOUTH,
+    EAST,
+    WEST,
+    UP,
+    DOWN
+};
+
+// -------------------------------------------
+// LOCATIONS
+// -------------------------------------------
+enum enum_LOCATIONS {
+    LOBBY,
+    STREET,
+    ELEVATOR_1,
+    CUBICLE_ROOM,
+    SUPPLY_CLOSET,
+    MANAGERS_OFFICE,
+    LLAMA_SHRINE,
+    BREAK_ROOM,
+    INVENTORY,
+    TRASH}
+;
+
+// -------------------------------------------
+// PASSAGES
+// -------------------------------------------
+enum enum_PASSAGES {
+    LOBBY_TO_ELEVATOR_1,
+    LOBBY_TO_STREET,
+    CUBICLE_ROOM_TO_ELEVATOR_1,
+    CUBICLE_ROOM_TO_SUPPLY_CLOSET,
+    CUBICLE_ROOM_TO_BREAK_ROOM,
+    CUBICLE_ROOM_TO_MANAGERS_OFFICE,
+    BREAK_ROOM_TO_LLAMA_SHRINE,
+    MANAGERS_OFFICE_TO_LLAMA_SHRINE
+};
+
+// -------------------------------------------
+// OBJECTS
+// -------------------------------------------
+enum enum_OBJECTS {
+    DESK,
+    KEY,
+    WAFFLE_BAT,
+    COINS
+    
+};
+
+// -------------------------------------------
+// ACTIONS
+// -------------------------------------------
+enum enum_ACTIONS {
+    GO,
+    LOOK
+};
 
 #endif /* Constants_h */
