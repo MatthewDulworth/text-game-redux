@@ -23,10 +23,10 @@ class Location : public Base {
 protected:
     string description;
 public:
+    // setters
     virtual void setDescription(string new_string);
+    // getters
     virtual string getDescription();
-    virtual void printDescription();
-    virtual Passage* exitTo(int direction);
 };
 
 // ------------------------------------------------
@@ -35,13 +35,16 @@ public:
 // map locations, have exits, connect to other locations
 class Room : public Location {
 private:
+        int floor;
     Passage* exits[DIRECTIONS];
 public:
     string derivedType();
     // setters
+        virtual void setFloor(int new_floor);
     void setExit(int direction, Passage* exit);
     void setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down);
     // getters
+        virtual int getFloor();
     Passage* exitTo(int direction);
 };
 
@@ -51,6 +54,7 @@ public:
 class Elevator : public Location{
 private:
     int exit_direction;
+    int floor;
     Passage* exits[FLOORS];
     Passage* current_exit;
 public:
@@ -60,6 +64,7 @@ public:
     void setExit(int floor, Passage* exit);
     void setFloor(int floor);
     // getters
+    int getFloor();
     int getExit_direction();
     Passage* getCurrent_exit();
 };

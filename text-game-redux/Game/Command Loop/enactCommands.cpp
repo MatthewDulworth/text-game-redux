@@ -25,28 +25,42 @@ bool Game::enactCommands(){
     // ------------------------------------------------
     // if the player types "GO" *DIRECTION* and there is an unlocked, visible, passage in that direction, move the player through that passage
     if(commands.at(0) == GO){
-        Base* current_direction = directions[commands.at(1)];
+        Base* current_direction = directions[ commands.at(1) ];
         
         if(isDirection(current_direction) ){
-            Passage* current_passage = player_location->exitTo(current_direction->getCode());
-            
-            if(current_passage != 0){
-                if(current_passage->isVisible() ){
-                    
-                    if(current_passage->isLocked() ){
-                        cout << "that door is locked\n";
-                            return true;
-                    } else{
-                        movePlayerThroughPassage(current_passage);
-                        return true;
-                    }
-                    
+            // ----------------------------------------------------------------------------
+            if( isElevator(player_location) ){
+                Elevator* current_elevator = static_cast<Elevator*>(player_location);
+                
+                if(current_direction->getCode() == current_elevator->getExit_direction() ){
+                    Passage* current_passage = current_elevator->getCurrent_exit();
+                    movePlayerThroughPassage(current_passage);
+                } else {
+                    cout << " the elevator doors do not open in that direction ";
+                    return false;
                 }
-            } else {
-                cout << "there is no exit: " << current_direction->getName() << endl;
-                return false;
             }
-            
+            // ----------------------------------------------------------------------------
+            else if( isRoom(player_location) ){
+                Room* current_room = static_cast<Room*>(player_location);
+                Passage* current_passage = current_room->exitTo( current_direction->getCode() );
+                
+                if(current_passage != 0){
+                    if(current_passage->isVisible() ){
+                        if(current_passage->isLocked() ){
+                            cout << "that door is locked\n";
+                            return false;
+                        } else{
+                            movePlayerThroughPassage(current_passage);
+                            return true;
+                        }
+                    }
+                } else {
+                    cout << "there is no exit: " << current_direction->getName() << endl;
+                    return false;
+                }
+            }
+            // ----------------------------------------------------------------------------
         } else {
             cout << "invalid direction" << endl;
             return false;
@@ -58,40 +72,64 @@ bool Game::enactCommands(){
     // ------------------------------------------------
     // if the player types "LOOK", output all visible exits and all objects in the room
     if(commands.at(0) == LOOK){
-        cout << "You are in "; player_location->printDescription();
-        cout << endl;
-
-        for(int i=0; i<DIRECTIONS; i++){
-            Passage* current_passage = player_location->exitTo(i);
-            string lock;
+        cout << "You are in " << player_location->getDescription() << endl;
+        // ----------------------------------------------------------------------------
+        if( isElevator(player_location) ){
+            Elevator* current_elevator = static_cast<Elevator*>(player_location);
+            cout << "you are on the " << current_elevator->getFloor() << " floor" << endl;
+            cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName();
+        }
+        // ----------------------------------------------------------------------------
+        else{ // is room
+            for(int i=0; i<DIRECTIONS; i++){
+                Room* current_room = static_cast<Room*>(player_location);
+                Passage* current_passage = current_room->exitTo(i);
+                string lock;
             
-            if(current_passage != 0){
-                if(current_passage->isVisible() ){
-                    
-                    if(current_passage->isLocked() ){
-                        lock = "locked ";
-                    } else {
-                        lock = "";
+                if(current_passage != 0){
+                    if(current_passage->isVisible() ){
+                        // -----------------------------
+                        if(current_passage->isLocked() ){
+                            lock = "locked ";
+                        } else {
+                            lock = "n ";
+                        }
+                        // -----------------------------
+                        if(i == UP || i == DOWN) {
+                            cout << "there is a" << lock << "ladder going " << directions[i]->getName() << endl;
+                        } else{
+                            cout << "there is a" << lock << "exit to the " << directions[i]->getName() << endl;
+                        }
+                        // -----------------------------
                     }
-                    
-                    if(i == UP || i == DOWN) {
-                        cout << "there is a " << lock << " ladder going " << directions[i]->getName() << endl;
-                    } else{
-                        cout << "there is a " << lock << " door to the " << directions[i]->getName() << endl;
-                    }
-                    
                 }
             }
         }
+        // ----------------------------------------------------------------------------
         for(int i=0; i<PHYSICALOBJECTS; i++){
+            
+//            if(isElevator(player_location) ){
+//
+//
+//
+//            }
+//            else if (isRoom(player_location) ){
+//
+//
+//
+//            }
+            
             if(physical_objects[i]->getLocation() == player_location){
                 cout << "there is " << physical_objects[i]->getDescription() << endl;
             }
         }
+        // ----------------------------------------------------------------------------
         return true;
     }
     
-    
+    // ------------------------------------------------
+    // no valid command entered 0
+    // ------------------------------------------------
     cout << "ERROR: No valid command entered.\n";
     return false;
 }

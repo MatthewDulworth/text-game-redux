@@ -7,6 +7,7 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 #include "Location.hpp"
+#include "Passage.hpp"
 
 // ------------------------------------------------
 // Location methods
@@ -18,15 +19,6 @@ void Location::setDescription(string new_description){
 // returns the description of the location
 string Location::getDescription(){
     return description;
-}
-// prints the description
-void Location::printDescription(){
-    cout << description;
-}
-//
-Passage* Location::exitTo(int direction){
-    Passage* a = 0;
-    return a;
 }
 
 
@@ -49,10 +41,17 @@ void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_e
     exits[UP] = exit_up;
     exits[DOWN] = exit_down;
 }
+void Room::setFloor(int new_floor){
+    floor = new_floor;
+}
+int Room::getFloor(){
+    return floor;
+}
 // sets a single exit from the room 
 Passage* Room::exitTo(int direction){
     return exits[direction];
 }
+
 
 // ------------------------------------------------
 // Elevator methods
@@ -64,13 +63,25 @@ string Elevator::derivedType(){
 void Elevator::setExit_direction(int direction){
     exit_direction = direction;
 }
-void Elevator::setExit(int floor, Passage* exit){
-    exits[floor] = exit;
+void Elevator::setExit(int new_floor, Passage* exit){
+    exits[new_floor] = exit;
 }
 void Elevator::setFloor(int floor){
     current_exit = exits[floor];
+    
+    if(this == exits[floor]->getRoom_1() ){
+        Room* room_2 = static_cast<Room*>(exits[floor]->getRoom_2() );
+        this->floor = room_2->getFloor();
+    }
+    else if (this == exits[floor]->getRoom_2() ) {
+        Room* room_1 = static_cast<Room*>(exits[floor]->getRoom_1() );
+        this->floor = room_1->getFloor();
+    }
 }
 // getters
+int Elevator::getFloor(){
+    return floor;
+}
 int Elevator::getExit_direction(){
     return exit_direction;
 }
@@ -78,13 +89,10 @@ Passage* Elevator::getCurrent_exit(){
     return current_exit;
 }
 
+
 // ------------------------------------------------
 // AdminLocation methods
 // ------------------------------------------------
 string AdminLocation::derivedType(){
     return "Location";
 }
-
-
-
-
