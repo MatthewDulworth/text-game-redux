@@ -22,8 +22,6 @@ void Game::physicalObjectSetup(){
     simple_key_1.setDoor_Type(SIMPLE);
     simple_key_1.setLocation(locations[LOBBY]);
 
-    
-
     // ----- set arrays ----- //
-    
+    physical_objects[SIMPLE_KEY_1] = &simple_key_1;
 }
