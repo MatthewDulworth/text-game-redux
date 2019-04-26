@@ -18,6 +18,7 @@ void Game::commandLoop(){
             parse(player_input);
             initCommands();
             enactCommands();
+            cout << endl; 
         }
         tokens.clear();
         commands.clear();

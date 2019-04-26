@@ -25,7 +25,7 @@ bool Game::enactCommands(){
     // ------------------------------------------------
     // if the player types "GO" *DIRECTION* and there is an unlocked, visible, passage in that direction, move the player through that passage
     if(commands.at(0) == GO){
-        Base* current_direction = directions[ commands.at(1) ];
+        Base* current_direction = directions[commands.at(1)];
         
         if(isDirection(current_direction) ){
             // ----------------------------------------------------------------------------
@@ -61,11 +61,16 @@ bool Game::enactCommands(){
                 }
             }
             // ----------------------------------------------------------------------------
+            else {  // if the location the player is in is somehow not an Elevator or a Room, this should never happen.
+                cout << "ERROR: invalid room, GO command, enactCommands.cpp, line " << __LINE__ << endl;
+                return false;
+            }
+            // ----------------------------------------------------------------------------
         } else {
             cout << "invalid direction" << endl;
             return false;
         }
-    }
+    } // end GO
     
     // ------------------------------------------------
     // LOOK
@@ -74,13 +79,13 @@ bool Game::enactCommands(){
     if(commands.at(0) == LOOK){
         cout << "You are in " << player_location->getDescription() << endl;
         // ----------------------------------------------------------------------------
-        if( isElevator(player_location) ){
+        if( isElevator(player_location) ){ // if the player is in an elevator
             Elevator* current_elevator = static_cast<Elevator*>(player_location);
-            cout << "you are on the " << current_elevator->getFloor() << " floor" << endl;
+            cout << "you are on floor: " << current_elevator->getFloor() << endl;
             cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName();
         }
         // ----------------------------------------------------------------------------
-        else{ // is room
+        else if( isRoom(player_location) ){ // if the player is in a room
             for(int i=0; i<DIRECTIONS; i++){
                 Room* current_room = static_cast<Room*>(player_location);
                 Passage* current_passage = current_room->exitTo(i);
@@ -106,19 +111,12 @@ bool Game::enactCommands(){
             }
         }
         // ----------------------------------------------------------------------------
-        for(int i=0; i<PHYSICALOBJECTS; i++){
-            
-//            if(isElevator(player_location) ){
-//
-//
-//
-//            }
-//            else if (isRoom(player_location) ){
-//
-//
-//
-//            }
-            
+        else{   // if the location the player is in is somehow not an Elevator or a Room, this should never happen.
+            cout << "ERROR: invalid room, LOOK command, enactCommands.cpp, line " << __LINE__ << endl;
+            return false;
+        }
+        // ----------------------------------------------------------------------------
+        for(int i=0; i<PHYSICALOBJECTS; i++){   // output the descriptions of all the objects in the room.
             if(physical_objects[i]->getLocation() == player_location){
                 cout << "there is " << physical_objects[i]->getDescription() << endl;
             }
