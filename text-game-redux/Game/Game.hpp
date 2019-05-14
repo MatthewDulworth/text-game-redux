@@ -28,7 +28,7 @@ private:
     
     // run vars
     vector<string> tokens;
-    vector<int> commands;
+    vector<int> command;
     
 public:
     // setup functions

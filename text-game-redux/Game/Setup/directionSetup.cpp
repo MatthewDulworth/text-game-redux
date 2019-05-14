@@ -14,7 +14,7 @@
 void Game::directionSetup(){
     
     // ----- object declarations ----- //
-    static Direction north, south, east, west, up, down;
+    static Direction north, south, east, west;
     
     // ----- set attributes ----- //
     // NORTH
@@ -29,18 +29,10 @@ void Game::directionSetup(){
     // WEST
     west.setCode(WEST);
     west.setName("WEST");
-    // UP
-    up.setCode(UP);
-    up.setName("UP");
-    // DOWN
-    down.setCode(DOWN);
-    down.setName("DOWN");
     
     // ----- set array ----- //
     directions[NORTH] = &north;
     directions[SOUTH] = &south;
     directions[EAST] = &east;
     directions[WEST] = &west;
-    directions[UP] = &up;
-    directions[DOWN] = &down;
 }

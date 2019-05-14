@@ -7,127 +7,225 @@
 //
 #include "Game.hpp"
 
-// -----------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 // enactCommands method
-// -----------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 bool Game::enactCommands(){
     
-    // ------------------------------------------------
+    
+    // --------------------------------------------------------------------------------------------------
     // no command entered
-    // ------------------------------------------------
-    if(commands.size() == 0){
+    // --------------------------------------------------------------------------------------------------
+    if(command.size() == 0){
         cout << "ERROR: No command entered.\n";
         return false;
     }
     
-    // ------------------------------------------------
+    
+    // --------------------------------------------------------------------------------------------------
     // GO
-    // ------------------------------------------------
+    // --------------------------------------------------------------------------------------------------
     // if the player types "GO" *DIRECTION* and there is an unlocked, visible, passage in that direction, move the player through that passage
-    if(commands.at(0) == GO){
-        Base* current_direction = directions[commands.at(1)];
+    
+    if(command.at(0) == GO){
         
+        Base* current_direction;
+        
+        // if the command is only one word long, no valid command entered
+        if(command.size() == 1){
+            cout << "No valid command entered" << endl;
+            return false;
+        }
+        // otherwise set the current direction equal to the second command
+        else{
+            current_direction = directions[command.at(1)];
+        }
+        
+        // ------------------------------------------------------------------------------
+        // check direction : if the current direction exists and actually is a direction
+        // ------------------------------------------------------------------------------
         if(isDirection(current_direction) ){
-            // ----------------------------------------------------------------------------
+            
+            
+            // ---------------------------------------------------------
+            // move player : player is in an elevator
+            // ---------------------------------------------------------
             if( isElevator(player_location) ){
-                Elevator* current_elevator = static_cast<Elevator*>(player_location);
+                Elevator* current_elevator = static_cast<Elevator*>(player_location);           // set the current elevator to the player location
                 
-                if(current_direction->getCode() == current_elevator->getExit_direction() ){
-                    Passage* current_passage = current_elevator->getCurrent_exit();
-                    movePlayerThroughPassage(current_passage);
-                } else {
-                    cout << " the elevator doors do not open in that direction ";
-                    return false;
-                }
+                cout << current_elevator->getName() << " cannot move" << endl;
+                
+                
+                
             }
-            // ----------------------------------------------------------------------------
+            
+            
+            // ---------------------------------------------------------
+            // move player : player is in a room
+            // ---------------------------------------------------------
             else if( isRoom(player_location) ){
-                Room* current_room = static_cast<Room*>(player_location);
-                Passage* current_passage = current_room->exitTo( current_direction->getCode() );
                 
-                if(current_passage != 0){
-                    if(current_passage->isVisible() ){
+                Room* current_room = static_cast<Room*>(player_location);                           // set the current room to the player location
+                Passage* current_passage = current_room->exitTo( current_direction->getCode() );    // set the current passage to the passage in current direction of the current room
+                
+                
+                // -------------------------------------
+                if(current_passage != 0){                   // check to see that the current passage exists
+                    if(current_passage->isVisible() ){      // check to see that the current passage is visible
+                        
+                        // if the current passage is locked, inform the player
                         if(current_passage->isLocked() ){
                             cout << "that door is locked\n";
                             return false;
-                        } else{
+                        }
+                        
+                        // if the current passage is not locked, move the player throught the current passage
+                        else{
                             movePlayerThroughPassage(current_passage);
+                            cout << "you went " << current_direction->getName() << endl;
                             return true;
                         }
+                        
+                        
                     }
-                } else {
+                }
+                // -------------------------------------
+                
+                // if the current passage does not exist, inform the player
+                else {
                     cout << "there is no exit: " << current_direction->getName() << endl;
                     return false;
                 }
             }
-            // ----------------------------------------------------------------------------
-            else {  // if the location the player is in is somehow not an Elevator or a Room, this should never happen.
+            
+            
+            // ---------------------------------------------------------
+            // ERROR : player is not in an elevator or a room
+            // ---------------------------------------------------------
+            else {
                 cout << "ERROR: invalid room, GO command, enactCommands.cpp, line " << __LINE__ << endl;
                 return false;
             }
-            // ----------------------------------------------------------------------------
-        } else {
+        }
+        
+        
+        // ------------------------------------------------------------------------------
+        // check direction : current_direction is not a valid direction
+        // ------------------------------------------------------------------------------
+        else {
             cout << "invalid direction" << endl;
             return false;
         }
-    } // end GO
+        
+    }
+    // --------------------------------------------------------------------------------------------------
     
-    // ------------------------------------------------
+    
+    
+    
+    
+    
+    
+    // --------------------------------------------------------------------------------------------------
     // LOOK
-    // ------------------------------------------------
+    // --------------------------------------------------------------------------------------------------
     // if the player types "LOOK", output all visible exits and all objects in the room
-    if(commands.at(0) == LOOK){
-        cout << "You are in " << player_location->getDescription() << endl;
-        // ----------------------------------------------------------------------------
-        if( isElevator(player_location) ){ // if the player is in an elevator
+    
+    if(command.at(0) == LOOK){
+        
+        
+        // ---------------------------------------------------------
+        // output exits : if the player is in an elevator
+        // ---------------------------------------------------------
+        if( isElevator(player_location) ){
+            
+            // set the current elevator to the player location
             Elevator* current_elevator = static_cast<Elevator*>(player_location);
+            
+            cout << "you are in " << current_elevator->getName() << endl;
             cout << "you are on floor: " << current_elevator->getFloor() << endl;
-            cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName();
+            cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName() << endl;
+            
         }
-        // ----------------------------------------------------------------------------
-        else if( isRoom(player_location) ){ // if the player is in a room
+        
+        
+        // ---------------------------------------------------------
+        // output exits : if the player is in a room
+        // ---------------------------------------------------------
+        else if( isRoom(player_location) ){
+        
+            // output the description of the location
+            cout << "You are in " << player_location->getDescription() << endl;
+            
+            
+            // loop once for each direction
             for(int i=0; i<DIRECTIONS; i++){
-                Room* current_room = static_cast<Room*>(player_location);
-                Passage* current_passage = current_room->exitTo(i);
+                
+                Room* current_room = static_cast<Room*>(player_location);   // point current_room to the player location
+                Passage* current_passage = current_room->exitTo(i);         // set the current passage equal to the exit of the player location at i
                 string lock;
             
-                if(current_passage != 0){
-                    if(current_passage->isVisible() ){
+                
+                // ---------------------------------------------
+                if(current_passage != 0){                   // check to see if the current passage exists
+                    if(current_passage->isVisible() ){      // check to see if the current passage is visible
+                        
                         // -----------------------------
+                        // if the passage is locked, set the lock string equal to locked
                         if(current_passage->isLocked() ){
-                            lock = "locked ";
-                        } else {
+                            lock = " locked ";
+                        }
+                        
+                        // if the passage isnot locked, don't set the lock string equal to locked
+                        else {
                             lock = "n ";
                         }
+                        
+                        // output the exit state
+                        cout << "there is a" << lock << "exit to the " << directions[i]->getName() << endl;
                         // -----------------------------
-                        if(i == UP || i == DOWN) {
-                            cout << "there is a" << lock << "ladder going " << directions[i]->getName() << endl;
-                        } else{
-                            cout << "there is a" << lock << "exit to the " << directions[i]->getName() << endl;
-                        }
-                        // -----------------------------
+                        
                     }
                 }
+                // --------------------------------------------
+                
+                
             }
         }
-        // ----------------------------------------------------------------------------
-        else{   // if the location the player is in is somehow not an Elevator or a Room, this should never happen.
+        
+    
+        // ---------------------------------------------------------
+        // ERROR : if the player is not in an elevator or a room
+        // ---------------------------------------------------------
+        else{
             cout << "ERROR: invalid room, LOOK command, enactCommands.cpp, line " << __LINE__ << endl;
             return false;
         }
-        // ----------------------------------------------------------------------------
-        for(int i=0; i<PHYSICALOBJECTS; i++){   // output the descriptions of all the objects in the room.
+        
+        
+        // ---------------------------------------------------------
+        // output the descriptions of all the objects in the room
+        // ---------------------------------------------------------
+        for(int i=0; i<PHYSICALOBJECTS; i++){
             if(physical_objects[i]->getLocation() == player_location){
                 cout << "there is " << physical_objects[i]->getDescription() << endl;
             }
         }
-        // ----------------------------------------------------------------------------
+        
+        
         return true;
     }
+    // --------------------------------------------------------------------------------------------------
     
-    // ------------------------------------------------
-    // no valid command entered 0
-    // ------------------------------------------------
-    cout << "ERROR: No valid command entered.\n";
+    
+    
+    
+    
+    
+    
+    // --------------------------------------------------------------------------------------------------
+    // no valid command entered
+    // --------------------------------------------------------------------------------------------------
+    cout << "No valid command entered.\n";
     return false;
 }

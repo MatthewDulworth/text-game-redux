@@ -21,7 +21,8 @@ void Game::commandLoop(){
             cout << endl; 
         }
         tokens.clear();
-        commands.clear();
+        command.clear();
+        
     }while(player_input != "quit");
 }
 

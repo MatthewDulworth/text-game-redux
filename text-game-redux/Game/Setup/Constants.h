@@ -13,7 +13,7 @@
 // -------------------------------------------
 const int LOCATIONS = 10;
 const int PASSAGES = 8;
-const int DIRECTIONS = 6;
+const int DIRECTIONS = 4;
 const int PHYSICALOBJECTS = 1;
 const int ACTIONS = 2;
 const int FLOORS = 2;
@@ -45,8 +45,6 @@ enum enum_DIRECTIONS {
     SOUTH,
     EAST,
     WEST,
-    UP,
-    DOWN
 };
 
 // -------------------------------------------

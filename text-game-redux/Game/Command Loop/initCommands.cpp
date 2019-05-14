@@ -15,31 +15,25 @@ void Game::initCommands(){
     
         for(j=0; j<DIRECTIONS; j++){
             if(tokens.at(i) == directions[j]->getName() ){
-                commands.push_back(directions[j]->getCode() );
+                command.push_back(directions[j]->getCode() );
                 goto end_of_loop;
             }
         }
         for(j=0; j<ACTIONS; j++){
             if(tokens.at(i) == actions[j]->getName() ){
-                commands.push_back(actions[j]->getCode() );
+                command.push_back(actions[j]->getCode() );
                 goto end_of_loop;
             }
         }
         for(j=0; j<PHYSICALOBJECTS; j++){
             if(tokens.at(i) == physical_objects[j]->getName() ){
-                commands.push_back(physical_objects[j]->getCode() );
+                command.push_back(physical_objects[j]->getCode() );
                 goto end_of_loop;
             }
         }
         for(j=0; j<LOCATIONS; j++){
             if(tokens.at(i) == locations[j]->getName() ){
-                commands.push_back(locations[j]->getCode() );
-                goto end_of_loop;
-            }
-        }
-        for(j=0; j<PASSAGES; j++){
-            if(tokens.at(i) == passages[j]->getName() ){
-                commands.push_back(passages[j]->getCode() );
+                command.push_back(locations[j]->getCode() );
                 goto end_of_loop;
             }
         }

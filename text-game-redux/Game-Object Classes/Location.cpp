@@ -38,8 +38,6 @@ void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_e
     exits[SOUTH] = exit_south;
     exits[EAST] = exit_east;
     exits[WEST] = exit_west;
-    exits[UP] = exit_up;
-    exits[DOWN] = exit_down;
 }
 void Room::setFloor(int new_floor){
     floor = new_floor;
