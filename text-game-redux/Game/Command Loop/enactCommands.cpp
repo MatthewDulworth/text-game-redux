@@ -7,6 +7,16 @@
 //
 #include "Game.hpp"
 
+
+/*
+ TO DO:
+ 
+ add floor buttons in an elevator
+ add ability to change floors
+ add ability to exit elevators in GO
+ 
+ */
+
 // ------------------------------------------------------------------------------------------------------
 // enactCommands method
 // ------------------------------------------------------------------------------------------------------

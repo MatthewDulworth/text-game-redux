@@ -34,7 +34,6 @@ const bool HIDDEN = false;
 enum enum_FLOORS {
     FIRST_FLOOR,
     SECOND_FLOOR
-    
 };
 
 // -------------------------------------------
@@ -53,7 +52,7 @@ enum enum_DIRECTIONS {
 enum enum_LOCATIONS {
     LOBBY,
     STREET,
-    ELEVATOR_1,
+    ELEVATOR_ONE,
     CUBICLE_ROOM,
     SUPPLY_CLOSET,
     MANAGERS_OFFICE,

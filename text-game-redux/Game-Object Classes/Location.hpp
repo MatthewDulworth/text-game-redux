@@ -35,7 +35,7 @@ public:
 // map locations, have exits, connect to other locations
 class Room : public Location {
 private:
-        int floor;
+    int floor;
     Passage* exits[DIRECTIONS];
 public:
     string derivedType();
@@ -48,6 +48,25 @@ public:
     Passage* exitTo(int direction);
 };
 
+
+// ------------------------------------------------
+// FloorButton
+// ------------------------------------------------
+class FloorButton{
+private:
+    int floor;
+    bool visible_state;
+public:
+    // methods
+    bool isVisible();
+    // setters
+    void setVisibleState(bool new_visible_state);
+    void setFloor(int new_floor);
+    // getters
+    int getFloor();
+};
+
+
 // ------------------------------------------------
 // Elevator
 // ------------------------------------------------
@@ -55,6 +74,9 @@ class Elevator : public Location{
 private:
     int exit_direction;
     int floor;
+    int lowest_floor;
+    int highest_floor;
+    FloorButton* buttons[FLOORS];
     Passage* exits[FLOORS];
     Passage* current_exit;
 public:
@@ -63,6 +85,9 @@ public:
     void setExit_direction(int direction);
     void setExit(int floor, Passage* exit);
     void setFloor(int floor);
+    void setLowest_floor(int floor);
+    void setHighest_floor(int floor);
+    void setAllButtons();
     // getters
     int getFloor();
     int getExit_direction();

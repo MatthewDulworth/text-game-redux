@@ -76,6 +76,23 @@ void Elevator::setFloor(int floor){
         this->floor = room_1->getFloor();
     }
 }
+void Elevator::setLowest_floor(int floor){
+    lowest_floor = floor;
+}
+void Elevator::setHighest_floor(int floor){
+    highest_floor = floor;
+}
+void Elevator::setAllButtons(){
+    
+    for(int i=0; i<FLOORS; i++){
+        if(i>=lowest_floor && i<=highest_floor){
+            buttons[i]->setVisibleState(VISIBLE);
+        } else {
+            buttons[i]->setVisibleState(HIDDEN);
+        }
+    }
+}
+
 // getters
 int Elevator::getFloor(){
     return floor;
@@ -86,6 +103,31 @@ int Elevator::getExit_direction(){
 Passage* Elevator::getCurrent_exit(){
     return current_exit;
 }
+
+
+// ------------------------------------------------
+// FloorButton
+// ------------------------------------------------
+bool FloorButton::isVisible(){
+    if(visible_state == VISIBLE){
+        return true;
+    } else{
+        return false;
+    }
+}
+
+void FloorButton::setVisibleState(bool new_visible_state){
+    visible_state = new_visible_state;
+}
+
+void FloorButton::setFloor(int new_floor){
+    floor = new_floor;
+}
+
+int FloorButton::getFloor(){
+    return floor;
+}
+
 
 
 // ------------------------------------------------

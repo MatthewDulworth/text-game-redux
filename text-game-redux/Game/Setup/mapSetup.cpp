@@ -89,7 +89,7 @@ void Game::mapSetup(){
     // passages
     // ------------------------------------------------
     // ----- set first floor passages ----- //
-    // LOBBY to ELEVATOR_1
+    // LOBBY to ELEVATOR_ONE
     lobby_to_elevator1.setCode(LOBBY_TO_ELEVATOR_1);    // index in the passages array
     lobby_to_elevator1.setLockState(UNLOCKED);          // if the door is locked or unlocked
     lobby_to_elevator1.setHiddenState(VISIBLE);         // if the passage is hidden or visible
@@ -103,7 +103,7 @@ void Game::mapSetup(){
     lobby_to_street.setRoom_2(&street);
     
     // ----- set second floor passages ----- //
-    // CUBICLE_ROOM to ELEVATOR_1
+    // CUBICLE_ROOM to ELEVATOR_ONE
     cubicleRoom_to_elevator1.setCode(CUBICLE_ROOM_TO_ELEVATOR_1);
     cubicleRoom_to_elevator1.setLockState(UNLOCKED);
     cubicleRoom_to_elevator1.setHiddenState(VISIBLE);
@@ -144,13 +144,16 @@ void Game::mapSetup(){
     // ------------------------------------------------
     // elevators
     // ------------------------------------------------
-    // ELEVATOR 1
-    elevator_1.setCode(ELEVATOR_1);                                 // index of the elevator in the locations array
+    // ELEVATOR ONE
+    elevator_1.setCode(ELEVATOR_ONE);                               // index of the elevator in the locations array
     elevator_1.setName("ELEVATOR ONE");                             // in-game name
     elevator_1.setDescription("an elevator");                       // in-game description
     elevator_1.setExit(FIRST_FLOOR, &lobby_to_elevator1);           // first floor passage
     elevator_1.setExit(SECOND_FLOOR, &cubicleRoom_to_elevator1);    // second floor passage
     elevator_1.setFloor(FIRST_FLOOR);                               // starting floor
+    elevator_1.setLowest_floor(FIRST_FLOOR);
+    elevator_1.setHighest_floor(SECOND_FLOOR);
+    elevator_1.setAllButtons();
     
     
     // ------------------------------------------------
@@ -170,7 +173,7 @@ void Game::mapSetup(){
     // ----- set locations array ----- //
     locations[LOBBY] = &lobby;
     locations[STREET] = &lobby;
-    locations[ELEVATOR_1] = &elevator_1;
+    locations[ELEVATOR_ONE] = &elevator_1;
     locations[CUBICLE_ROOM] = &cubicle_room;
     locations[SUPPLY_CLOSET] = &supply_closet;
     locations[BREAK_ROOM] = &break_room;
