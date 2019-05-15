@@ -7,7 +7,7 @@
 //
 #include "Game.hpp"
 
-// calls all setup functions
+// calls all setup methods
 void Game::setup(){
     directionSetup();
     actionSetup();
@@ -15,10 +15,12 @@ void Game::setup(){
     physicalObjectSetup();
 }
 
+// sets the players location
 void Game::setPlayer_location(Room* new_room){
     player_location = new_room;
 }
 
+// moves the player through a passage
 bool Game::movePlayerThroughPassage(Passage* passage){
     if(player_location == passage->getRoom_1() ){
         player_location = passage->getRoom_2();

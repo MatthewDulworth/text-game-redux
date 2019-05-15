@@ -20,11 +20,14 @@ using namespace std;
 // ------------------------------------------------
 
 // Virtual base game-object class: all game-objects are derived from this class
-class Base {
+class Base { 
 protected:
     int code;
     string name;
 public:
+    // virtual destructor
+    virtual ~Base();
+    // pure virtual method
     virtual string derivedType() = 0;
     // setters
     virtual void setCode(int new_code);

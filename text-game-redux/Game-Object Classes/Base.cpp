@@ -11,6 +11,12 @@
 // ------------------------------------------------
 // Base methods
 // ------------------------------------------------
+
+// destructor
+Base::~Base(){
+    // nothing
+}
+
 // setters
 void Base::setCode(int new_code){
     code = new_code;

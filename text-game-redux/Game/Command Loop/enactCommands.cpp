@@ -153,7 +153,7 @@ bool Game::enactCommands(){
             Elevator* current_elevator = static_cast<Elevator*>(player_location);
             
             cout << "you are in " << current_elevator->getName() << endl;
-            cout << "you are on floor: " << current_elevator->getFloor() << endl;
+            cout << "you are on floor: " << current_elevator->getCurrent_floor() << endl;
             cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName() << endl;
             
         }

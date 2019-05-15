@@ -28,6 +28,11 @@ public:
     // getters
     virtual string getDescription();
 };
+// ------------------------------------------------
+
+
+
+
 
 // ------------------------------------------------
 // Room
@@ -47,6 +52,10 @@ public:
         virtual int getFloor();
     Passage* exitTo(int direction);
 };
+// ------------------------------------------------
+
+
+
 
 
 // ------------------------------------------------
@@ -65,34 +74,91 @@ public:
     // getters
     int getFloor();
 };
+// ------------------------------------------------
+
+
+
+
 
 
 // ------------------------------------------------
 // Elevator
 // ------------------------------------------------
-class Elevator : public Location{
+class Elevator : public Location {
+    
 private:
+    
+    // ------------------------------
+    // private member variables
+    // ------------------------------
+    
+    // the direction the elevator doors open
     int exit_direction;
-    int floor;
-    int lowest_floor;
-    int highest_floor;
+    
+    // the current floor the elevator
+    int current_floor;
+    
+    // elevator buttons for every floor
     FloorButton* buttons[FLOORS];
+    
+    // the passages which the elevator connects to at each floor
     Passage* exits[FLOORS];
+    
+    // the passage on the floor that the elevator is currently at
     Passage* current_exit;
+    
+
 public:
+    
+    // ------------------------------
+    // destructor
+    // ------------------------------
+    ~Elevator();
+    
+    // ------------------------------
+    // public methods
+    // ------------------------------
+
+    // returns the first level subclass name
+    // must be overriden for the class not to be abstract
     string derivedType();
-    // setters
+    
+    
+    // ----- setters ----- //
+    
+    // sets the direction that the elevator doors open
     void setExit_direction(int direction);
+    
+    // sets the exit at a given floor
     void setExit(int floor, Passage* exit);
-    void setFloor(int floor);
-    void setLowest_floor(int floor);
-    void setHighest_floor(int floor);
-    void setAllButtons();
-    // getters
-    int getFloor();
+    
+    // sets the current floor and current exit
+    void setCurrent_floor(int floor);
+    
+    // creates the buttons and gives them
+    void initButtons();
+    
+    //
+    void updateButtonsVisibility();
+    
+    
+    // ----- getters ----- //
+    
+    //
+    int getCurrent_floor();
+    
+    //
     int getExit_direction();
+    
+    //
     Passage* getCurrent_exit();
+    
 };
+// ------------------------------------------------
+
+
+
+
 
 // ------------------------------------------------
 // AdminLocation

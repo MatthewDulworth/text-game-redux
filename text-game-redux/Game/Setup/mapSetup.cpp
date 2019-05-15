@@ -150,10 +150,8 @@ void Game::mapSetup(){
     elevator_1.setDescription("an elevator");                       // in-game description
     elevator_1.setExit(FIRST_FLOOR, &lobby_to_elevator1);           // first floor passage
     elevator_1.setExit(SECOND_FLOOR, &cubicleRoom_to_elevator1);    // second floor passage
-    elevator_1.setFloor(FIRST_FLOOR);                               // starting floor
-    elevator_1.setLowest_floor(FIRST_FLOOR);
-    elevator_1.setHighest_floor(SECOND_FLOOR);
-    elevator_1.setAllButtons();
+    elevator_1.setCurrent_floor(FIRST_FLOOR);                               // starting floor
+   
     
     
     // ------------------------------------------------
