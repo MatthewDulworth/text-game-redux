@@ -13,8 +13,6 @@
  
  add elevator call buttons to rooms that can call elevators
  add ability to change floors
- add ability to exit elevators in GO
- add something in the GO command to make sure you cannot walk into an elevator that is not on the same floor as you.
  
  */
 
