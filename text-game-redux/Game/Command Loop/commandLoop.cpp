@@ -25,6 +25,6 @@ void Game::commandLoop(){
         
     }while(player_input != "quit");
 
-    cout << "bye, loser" << endl;
+    cout << "quitting game" << endl;
 }
 

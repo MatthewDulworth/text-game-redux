@@ -30,4 +30,5 @@ void Game::actionSetup(){
     // ----- set array ----- //
     actions[GO] = &go;
     actions[LOOK] = &look;
+    actions[PRESS] = &press;
 }

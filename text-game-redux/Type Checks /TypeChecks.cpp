@@ -100,10 +100,21 @@ bool isImmoveableObject(Base* unkown_object){
 // Setup classes
 // ------------------------------------------------
 
+// ------- Number ------- //
+bool isNumber(Base* unknown_object){
+    Number* known_object;
+    if( (known_object = dynamic_cast<Number*>(unknown_object)) ){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 // ------- Action ------- //
-bool isAction(Base* unkown_object){
+bool isAction(Base* unknown_object){
     Action* known_object;
-    if( (known_object = dynamic_cast<Action*>(unkown_object)) )
+    if( (known_object = dynamic_cast<Action*>(unknown_object)) )
         return true;
     else
         return false;

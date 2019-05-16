@@ -23,6 +23,7 @@ bool isAdminLocation(Base*);
 bool isPassage(Base* );
 bool isItem(Base*);
 bool isMoney(Base*);
+bool isNumber(Base*);
 bool isAction(Base*);
 bool isDirection(Base*);
 

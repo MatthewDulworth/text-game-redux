@@ -38,17 +38,14 @@ bool Game::enactCommands(){
     
     if(command.at(0) == GO){
         
-        Base* current_direction;
-        
         // if the command is only one word long, no valid command entered
         if(command.size() == 1){
             cout << "no valid command entered" << endl;
             return false;
         }
-        // otherwise set the current direction equal to the second command
-        else{
-            current_direction = directions[command.at(1)];
-        }
+        
+        // set the current direction equal to the second command
+        Base* current_direction = directions[command.at(1)];
         
         // ------------------------------------------------------------------------------
         // check direction : if the current direction exists and actually is a direction
@@ -303,8 +300,37 @@ bool Game::enactCommands(){
     
     
     // --------------------------------------------------------------------------------------------------
+    // PRESS
+    // --------------------------------------------------------------------------------------------------
+    if(command.at(0) == PRESS){
+        
+        
+        // if the command is only one word long, no valid command entered
+        if(command.size() == 1){
+            cout << "no valid command entered" << endl;
+            return false;
+        }
+        
+        
+        Base* number = numbers[command.at(1)];
+    
+        if(isNumber(number)){
+            
+        }
+        
+        
+        
+        
+        
+        
+    }
+    // --------------------------------------------------------------------------------------------------
+    
+    
+    
+    // --------------------------------------------------------------------------------------------------
     // no valid command entered
     // --------------------------------------------------------------------------------------------------
-    cout << "no valid command entered.\n";
+    cout << "no valid command entered" << endl;
     return false;
 }

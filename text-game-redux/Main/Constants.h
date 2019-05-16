@@ -98,7 +98,7 @@ enum enum_OBJECTS {
 // -------------------------------------------
 // ACTIONS
 // -------------------------------------------
-const int ACTIONS = 2;
+const int ACTIONS = 3;
 enum enum_ACTIONS {
     GO,
     LOOK,
