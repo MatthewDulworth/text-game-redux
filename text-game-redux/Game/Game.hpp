@@ -10,7 +10,6 @@
 
 #include <string>
 #include <vector>
-//#include "Base.hpp"
 #include "TypeChecks.hpp"
 
 // ------------------------------------------------
@@ -33,21 +32,21 @@ private:
     vector<int> command;
     
 public:
-    // setup functions
+    // setup methods
     void mapSetup();
     void physicalObjectSetup();
     void actionSetup();
     void directionSetup();
     void setup();
-    void setPlayer_location(Room* new_room);
+    void setPlayer_location(Location* new_location);
     
-    // run functions
+    // run methods
     void createTokens(string player_input);
-    void parse();
+    void parseTokens();
     bool enactCommands();
     void commandLoop();
     
-    // enactCommands functions
+    // enactCommands methods
     Location* createTargetLocation(Passage* current_passage, Location*);
     void movePlayerThroughPassage(Passage* passage);
 };

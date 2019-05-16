@@ -16,8 +16,8 @@ void Game::setup(){
 }
 
 // sets the players location
-void Game::setPlayer_location(Room* new_room){
-    player_location = new_room;
+void Game::setPlayer_location(Location* new_location){
+    player_location = new_location;
 }
 
 // moves the player through a passage

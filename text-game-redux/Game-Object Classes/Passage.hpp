@@ -29,7 +29,7 @@ public:
     string derivedType();
     // checks
     bool isVisible();
-    bool isLocked();    // do nothing for now
+    bool isUnlocked();    
     // setters
     void setLockState(bool state);
     void setHiddenState(bool new_state);

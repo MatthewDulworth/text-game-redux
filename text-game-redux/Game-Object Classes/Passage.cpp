@@ -18,8 +18,8 @@ bool Passage::isVisible(){
     if(hidden_state == VISIBLE) return true;
     else return false;
 }
-bool Passage::isLocked(){
-    if(lock_state == LOCKED) return true;
+bool Passage::isUnlocked(){
+    if(lock_state == UNLOCKED) return true;
     else return false;
 }
 

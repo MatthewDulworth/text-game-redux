@@ -1,5 +1,5 @@
 //
-//  initCommands.cpp
+//  parseTokens.cpp
 //  text-game-redux
 //
 //  Created by Matthew Dulworth on 3/29/19.
@@ -7,7 +7,7 @@
 //
 #include "Game.hpp"
 
-void Game::parse(){
+void Game::parseTokens(){
     
     for(int i=0; i<tokens.size(); i++){
         
