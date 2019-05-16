@@ -33,6 +33,7 @@ private:
     
 public:
     // setup methods
+    void test();
     void mapSetup();
     void physicalObjectSetup();
     void actionSetup();
