@@ -35,40 +35,38 @@ string Location::getDescription(){
 // Room methods
 // ------------------------------------------------
 
-// returns first level subclass name
+// ----- derivedType ----- //
 string Room::derivedType(){
     return "Location";
 }
 
 
-// ----- setters ----- //
+// ************ setters ************ //
 
-// sets a single exit from the room
+// ----- setExit ----- //
 void Room::setExit(int direction, Passage* exit){
     exits[direction] = exit;
 }
-
-// sets all exits from the room
+// ----- setAllExits ----- //
 void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down){
     exits[NORTH] = exit_north;
     exits[SOUTH] = exit_south;
     exits[EAST] = exit_east;
     exits[WEST] = exit_west;
 }
-
-// sets the current_floor of the room
+// ----- setFloor ----- //
 void Room::setFloor(int new_floor){
     floor = new_floor;
 }
 
 
-// ----- getters ----- //
+// ************ getters ************ //
 
-// returns the current_floor of the room
+// ----- getFloor ----- //
 int Room::getFloor(){
     return floor;
 }
-// sets a single exit from the room 
+// ----- exitTo ----- //
 Passage* Room::exitTo(int direction){
     return exits[direction];
 }
@@ -96,6 +94,15 @@ Elevator::~Elevator(){
     }
 }
 
+// buttonIsVisible
+bool Elevator::buttonIsVisibile(int floor){
+    if(buttons[floor]->isVisible() == true){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 // ----- setters ----- //
 
@@ -120,7 +127,7 @@ void Elevator::setCurrent_floor(int floor){
 void Elevator::initButtons() {
     
     for(int i=0; i<FLOORS; i++){
-        buttons[i] = new FloorButton();
+        buttons[i] = new ElevatorButton();
     }
     updateButtonsVisibility();
 }
@@ -165,9 +172,9 @@ Passage* Elevator::getCurrent_exit(){
 
 
 // ------------------------------------------------
-// FloorButton
+// ElevatorButton
 // ------------------------------------------------
-bool FloorButton::isVisible(){
+bool ElevatorButton::isVisible(){
     if(visible_state == VISIBLE){
         return true;
     } else{
@@ -175,15 +182,15 @@ bool FloorButton::isVisible(){
     }
 }
 
-void FloorButton::setVisibleState(bool new_visible_state){
+void ElevatorButton::setVisibleState(bool new_visible_state){
     visible_state = new_visible_state;
 }
 
-void FloorButton::setFloor(int new_floor){
+void ElevatorButton::setFloor(int new_floor){
     floor = new_floor;
 }
 
-int FloorButton::getFloor(){
+int ElevatorButton::getFloor(){
     return floor;
 }
 

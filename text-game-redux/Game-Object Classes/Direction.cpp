@@ -13,3 +13,10 @@
 string Direction::derivedType(){
     return "Direction";
 }
+
+// ------------------------------------------------
+// Direction Methods
+// ------------------------------------------------
+string Number::derivedType(){
+    return "FloorButton";
+}

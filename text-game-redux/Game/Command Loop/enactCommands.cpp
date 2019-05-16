@@ -65,8 +65,7 @@ bool Game::enactCommands(){
                 
                 cout << current_elevator->getName() << " cannot move" << endl;
                 
-                
-                
+                return true;
             }
             
             
@@ -156,6 +155,14 @@ bool Game::enactCommands(){
             cout << "you are on floor: " << current_elevator->getCurrent_floor() << endl;
             cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName() << endl;
             
+            
+            for(int i=0; i<FLOORS; i++){
+                if(current_elevator->buttonIsVisibile(i)){
+                    cout << "there is an elevator button with a: " << i << " on it" << endl;
+                }
+            }
+            
+            
         }
         
         
@@ -186,7 +193,7 @@ bool Game::enactCommands(){
                             lock = " locked ";
                         }
                         
-                        // if the passage isnot locked, don't set the lock string equal to locked
+                        // if the passage is not locked, don't set the lock string equal to locked
                         else {
                             lock = "n ";
                         }

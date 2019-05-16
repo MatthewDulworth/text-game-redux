@@ -8,16 +8,6 @@
 #ifndef Constants_h
 #define Constants_h
 
-// -------------------------------------------
-// array indexes
-// -------------------------------------------
-const int LOCATIONS = 10;
-const int PASSAGES = 8;
-const int DIRECTIONS = 4;
-const int PHYSICALOBJECTS = 1;
-const int ACTIONS = 2;
-const int FLOORS = 2;
-
 
 // -------------------------------------------
 // boolean constants
@@ -31,14 +21,25 @@ const bool HIDDEN = false;
 // -------------------------------------------
 // FLOORS
 // -------------------------------------------
+const int FLOORS = 2;
 enum enum_FLOORS {
     FIRST_FLOOR,
     SECOND_FLOOR
 };
 
 // -------------------------------------------
+// NUMBERS
+// -------------------------------------------
+const int NUMBERS = 2;
+enum enum_NUMBERS {
+    ONE,
+    TWO
+};
+
+// -------------------------------------------
 // DIRECTIONS
 // -------------------------------------------
+const int DIRECTIONS = 4;
 enum enum_DIRECTIONS {
     NORTH,
     SOUTH,
@@ -49,6 +50,7 @@ enum enum_DIRECTIONS {
 // -------------------------------------------
 // LOCATIONS
 // -------------------------------------------
+const int LOCATIONS = 10;
 enum enum_LOCATIONS {
     LOBBY,
     STREET,
@@ -59,12 +61,14 @@ enum enum_LOCATIONS {
     LLAMA_SHRINE,
     BREAK_ROOM,
     INVENTORY,
-    TRASH}
-;
+    TRASH
+    
+};
 
 // -------------------------------------------
 // PASSAGES
 // -------------------------------------------
+const int PASSAGES = 8;
 enum enum_PASSAGES {
     LOBBY_TO_ELEVATOR_1,
     LOBBY_TO_STREET,
@@ -79,12 +83,14 @@ enum enum_PASSAGES {
 // -------------------------------------------
 // DOOR TYPES
 // -------------------------------------------
+const int DOOR_TYPES = 1;
 enum enum_DOOR_TYPES{
     SIMPLE
 };
 // -------------------------------------------
-// OBJECTS
+// PHYSICAL OBJECTS
 // -------------------------------------------
+const int PHYSICALOBJECTS = 1;
 enum enum_OBJECTS {
     SIMPLE_KEY_1
 };
@@ -92,9 +98,11 @@ enum enum_OBJECTS {
 // -------------------------------------------
 // ACTIONS
 // -------------------------------------------
+const int ACTIONS = 2;
 enum enum_ACTIONS {
     GO,
-    LOOK
+    LOOK,
+    PRESS
 };
 
 #endif /* Constants_h */

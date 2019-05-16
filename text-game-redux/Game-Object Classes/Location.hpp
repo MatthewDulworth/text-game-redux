@@ -59,9 +59,9 @@ public:
 
 
 // ------------------------------------------------
-// FloorButton
+// ElevatorButton
 // ------------------------------------------------
-class FloorButton{
+class ElevatorButton{
 private:
     int floor;
     bool visible_state;
@@ -99,7 +99,7 @@ private:
     int current_floor;
     
     // elevator buttons for every floor
-    FloorButton* buttons[FLOORS];
+    ElevatorButton* buttons[FLOORS];
     
     // the passages which the elevator connects to at each floor
     Passage* exits[FLOORS];
@@ -115,6 +115,7 @@ public:
     // ------------------------------
     ~Elevator();
     
+    
     // ------------------------------
     // public methods
     // ------------------------------
@@ -123,9 +124,11 @@ public:
     // must be overriden for the class not to be abstract
     string derivedType();
     
+    // checks if the button for a floor is visble to the player
+    bool buttonIsVisibile(int floor);
+    
     
     // ----- setters ----- //
-    
     // sets the direction that the elevator doors open
     void setExit_direction(int direction);
     
@@ -135,22 +138,21 @@ public:
     // sets the current floor and current exit
     void setCurrent_floor(int floor);
     
-    // creates the buttons and gives them
+    // creates the buttons calls updateButtonVisibility()
     void initButtons();
     
-    //
+    // updates the visibility of eaach button based on whether or not the elevator can go to that floor and whether or not the exit on the floor is visible
     void updateButtonsVisibility();
     
     
     // ----- getters ----- //
-    
-    //
+    // returns the floor the elevator is currently on
     int getCurrent_floor();
     
-    //
+    // returns direction direction the elevator doors open
     int getExit_direction();
     
-    //
+    // returns the current exit
     Passage* getCurrent_exit();
     
 };

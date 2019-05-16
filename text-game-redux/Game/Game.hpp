@@ -23,6 +23,7 @@ private:
     Location* locations[LOCATIONS];
     Passage* passages[PASSAGES];
     PhysicalObject* physical_objects[PHYSICALOBJECTS];
+    Number* numbers[NUMBERS];
     Action* actions[ACTIONS];
     Direction* directions[DIRECTIONS];
     

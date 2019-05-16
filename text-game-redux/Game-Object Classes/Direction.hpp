@@ -11,9 +11,17 @@
 #include "Base.hpp"
 
 // ------------------------------------------------
-// Direction Class
+// Direction
 // ------------------------------------------------
 class Direction : public Base {
+public:
+    string derivedType();
+};
+
+// ------------------------------------------------
+// Number
+// ------------------------------------------------
+class Number : public Base {
 public:
     string derivedType();
 };

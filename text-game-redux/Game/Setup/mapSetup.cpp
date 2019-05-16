@@ -7,31 +7,50 @@
 //
 #include "Game.hpp"
 
-// --------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------
 // mapSetup
-// --------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------
 // popluates the loctions and passages arrays
 void Game::mapSetup(){
     
-    // ------------------------------------------------
+    
+    // --------------------------------------------------------------------------------------
     // delarations
-    // ------------------------------------------------
-    // ----- location declarations ----- //
-    static Room lobby, street;                                                              // first floor
-    static Room cubicle_room, supply_closet, managers_office, llama_shrine, break_room;     // second floor
-    static Elevator elevator_1;                                                             // elevators
-    static AdminLocation inventory, trash;                                                  // admin locations
-    
-    // ----- passage declarations ----- //
-    static Passage lobby_to_street, lobby_to_elevator1;                                                     // 1st floor
-    static Passage cubicleRoom_to_elevator1, cubicleRoom_to_supplyCloset, cubicleRoom_to_breakRoom;         // 2nd floor
-    static Passage breakRoom_to_llamaShrine, managersOffice_to_llamaShrine, cubicleRoom_to_managersOffice;  // 2nd floor
-    
-    
+    // --------------------------------------------------------------------------------------
     
     // ------------------------------------------------
+    // location declarations
+    // ------------------------------------------------
+    
+    // 1st floor rooms
+    static Room lobby, street;
+    
+    // 2nd floor rooms
+    static Room cubicle_room, supply_closet, managers_office, llama_shrine, break_room;
+    
+    // elevators
+    static Elevator elevator_1;
+    
+    // admin locations
+    static AdminLocation inventory, trash;
+    
+    
+    // ------------------------------------------------
+    // passage declarations
+    // ------------------------------------------------
+    
+    // 1st floor passages
+    static Passage lobby_to_street, lobby_to_elevator1;
+    
+    // 2nd floor passages
+    static Passage cubicleRoom_to_elevator1, cubicleRoom_to_supplyCloset, cubicleRoom_to_breakRoom;
+    static Passage breakRoom_to_llamaShrine, managersOffice_to_llamaShrine, cubicleRoom_to_managersOffice;
+    
+    
+    
+    // --------------------------------------------------------------------------------------
     // rooms
-    // ------------------------------------------------
+    // --------------------------------------------------------------------------------------
     // ----- set first floor rooms ----- //
     // LOBBY
     lobby.setCode(LOBBY);                                           // index in the locations array
@@ -85,9 +104,9 @@ void Game::mapSetup(){
     break_room.setExit(SOUTH, &breakRoom_to_llamaShrine);
     
     
-    // ------------------------------------------------
+    // --------------------------------------------------------------------------------------
     // passages
-    // ------------------------------------------------
+    // --------------------------------------------------------------------------------------
     // ----- set first floor passages ----- //
     // LOBBY to ELEVATOR_ONE
     lobby_to_elevator1.setCode(LOBBY_TO_ELEVATOR_1);    // index in the passages array
@@ -141,22 +160,24 @@ void Game::mapSetup(){
     breakRoom_to_llamaShrine.setRoom_2(&llama_shrine);
     
     
-    // ------------------------------------------------
+    // --------------------------------------------------------------------------------------
     // elevators
-    // ------------------------------------------------
+    // --------------------------------------------------------------------------------------
     // ELEVATOR ONE
     elevator_1.setCode(ELEVATOR_ONE);                               // index of the elevator in the locations array
     elevator_1.setName("ELEVATOR ONE");                             // in-game name
     elevator_1.setDescription("an elevator");                       // in-game description
     elevator_1.setExit(FIRST_FLOOR, &lobby_to_elevator1);           // first floor passage
     elevator_1.setExit(SECOND_FLOOR, &cubicleRoom_to_elevator1);    // second floor passage
-    elevator_1.setCurrent_floor(FIRST_FLOOR);                               // starting floor
+    elevator_1.setExit_direction(SOUTH);                            // sets the direction the doors open
+    elevator_1.setCurrent_floor(FIRST_FLOOR);                       // starting floor
+    elevator_1.initButtons();                                       // initializes the elevator buttons
    
     
     
-    // ------------------------------------------------
+    // --------------------------------------------------------------------------------------
     // admin locations
-    // ------------------------------------------------
+    // --------------------------------------------------------------------------------------
     // ----- set adminlocations ----- //
     // INVENTORY
     inventory.setCode(INVENTORY);
