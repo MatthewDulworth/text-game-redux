@@ -21,16 +21,22 @@ void Game::setPlayer_location(Room* new_room){
 }
 
 // moves the player through a passage
-bool Game::movePlayerThroughPassage(Passage* passage){
-    if(player_location == passage->getRoom_1() ){
-        player_location = passage->getRoom_2();
-        return true;
+void Game::movePlayerThroughPassage(Passage* passage){
+    Location* target_location = createTargetLocation(passage, player_location);
+    player_location = target_location;
+}
+
+// creates a target location 
+Location* Game::createTargetLocation(Passage* passage, Location* location){
+    Location* target_location = 0;
+    
+    if(location == passage->getLocation_1()){
+        target_location = passage->getLocation_2();
     }
-    else if(player_location == passage->getRoom_2() ){
-        player_location = passage->getRoom_1();
-        return true;
+    
+    else if(location == passage->getLocation_2()){
+        target_location = passage->getLocation_1();
     }
-    else{
-        return false;
-    }
+    
+    return target_location;
 }

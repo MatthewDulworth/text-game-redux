@@ -112,52 +112,52 @@ void Game::mapSetup(){
     lobby_to_elevator1.setCode(LOBBY_TO_ELEVATOR_1);    // index in the passages array
     lobby_to_elevator1.setLockState(UNLOCKED);          // if the door is locked or unlocked
     lobby_to_elevator1.setHiddenState(VISIBLE);         // if the passage is hidden or visible
-    lobby_to_elevator1.setRoom_1(&lobby);               // the room on one side of the passage
-    lobby_to_elevator1.setRoom_2(&elevator_1);          // the room on the other side the passage
+    lobby_to_elevator1.setLocation_1(&lobby);               // the room on one side of the passage
+    lobby_to_elevator1.setLocation_2(&elevator_1);          // the room on the other side the passage
     // LOBBY to STREET
     lobby_to_street.setCode(LOBBY_TO_STREET);
     lobby_to_street.setLockState(UNLOCKED);
     lobby_to_street.setHiddenState(VISIBLE);
-    lobby_to_street.setRoom_1(&lobby);
-    lobby_to_street.setRoom_2(&street);
+    lobby_to_street.setLocation_1(&lobby);
+    lobby_to_street.setLocation_2(&street);
     
     // ----- set second floor passages ----- //
     // CUBICLE_ROOM to ELEVATOR_ONE
     cubicleRoom_to_elevator1.setCode(CUBICLE_ROOM_TO_ELEVATOR_1);
     cubicleRoom_to_elevator1.setLockState(UNLOCKED);
     cubicleRoom_to_elevator1.setHiddenState(VISIBLE);
-    cubicleRoom_to_elevator1.setRoom_1(&cubicle_room);
-    cubicleRoom_to_elevator1.setRoom_2(&elevator_1);
+    cubicleRoom_to_elevator1.setLocation_1(&cubicle_room);
+    cubicleRoom_to_elevator1.setLocation_2(&elevator_1);
     // CUBICLE_ROOM to SUPPLY_CLOSET
     cubicleRoom_to_supplyCloset.setCode(CUBICLE_ROOM_TO_SUPPLY_CLOSET);
     cubicleRoom_to_supplyCloset.setLockState(UNLOCKED);
     cubicleRoom_to_supplyCloset.setHiddenState(VISIBLE);
-    cubicleRoom_to_supplyCloset.setRoom_1(&cubicle_room);
-    cubicleRoom_to_supplyCloset.setRoom_2(&supply_closet);
+    cubicleRoom_to_supplyCloset.setLocation_1(&cubicle_room);
+    cubicleRoom_to_supplyCloset.setLocation_2(&supply_closet);
     // CUBICLE_ROOM to BREAK_ROOM
     cubicleRoom_to_breakRoom.setCode(CUBICLE_ROOM_TO_BREAK_ROOM);
     cubicleRoom_to_breakRoom.setLockState(UNLOCKED);
     cubicleRoom_to_breakRoom.setHiddenState(VISIBLE);
-    cubicleRoom_to_breakRoom.setRoom_1(&cubicle_room);
-    cubicleRoom_to_breakRoom.setRoom_2(&break_room  );
+    cubicleRoom_to_breakRoom.setLocation_1(&cubicle_room);
+    cubicleRoom_to_breakRoom.setLocation_2(&break_room  );
     // CUBICLE_ROOM to MANAGERS_OFFICE
     cubicleRoom_to_managersOffice.setCode(CUBICLE_ROOM_TO_MANAGERS_OFFICE);
     cubicleRoom_to_managersOffice.setLockState(UNLOCKED);
     cubicleRoom_to_managersOffice.setHiddenState(VISIBLE);
-    cubicleRoom_to_managersOffice.setRoom_1(&cubicle_room);
-    cubicleRoom_to_managersOffice.setRoom_2(&managers_office);
+    cubicleRoom_to_managersOffice.setLocation_1(&cubicle_room);
+    cubicleRoom_to_managersOffice.setLocation_2(&managers_office);
     // MANAGERS_OFFICE to LLAMA SHRINE
     managersOffice_to_llamaShrine.setCode(MANAGERS_OFFICE_TO_LLAMA_SHRINE);
     managersOffice_to_llamaShrine.setLockState(UNLOCKED);
     managersOffice_to_llamaShrine.setHiddenState(VISIBLE);
-    managersOffice_to_llamaShrine.setRoom_1(&managers_office);
-    managersOffice_to_llamaShrine.setRoom_2(&llama_shrine);
+    managersOffice_to_llamaShrine.setLocation_1(&managers_office);
+    managersOffice_to_llamaShrine.setLocation_2(&llama_shrine);
     // BREAK_ROOM to LLAMA SHRINE
     breakRoom_to_llamaShrine.setCode(BREAK_ROOM_TO_LLAMA_SHRINE);
     breakRoom_to_llamaShrine.setLockState(UNLOCKED);
     breakRoom_to_llamaShrine.setHiddenState(VISIBLE);
-    breakRoom_to_llamaShrine.setRoom_1(&break_room);
-    breakRoom_to_llamaShrine.setRoom_2(&llama_shrine);
+    breakRoom_to_llamaShrine.setLocation_1(&break_room);
+    breakRoom_to_llamaShrine.setLocation_2(&llama_shrine);
     
     
     // --------------------------------------------------------------------------------------
@@ -170,7 +170,7 @@ void Game::mapSetup(){
     elevator_1.setExit(FIRST_FLOOR, &lobby_to_elevator1);           // first floor passage
     elevator_1.setExit(SECOND_FLOOR, &cubicleRoom_to_elevator1);    // second floor passage
     elevator_1.setExit_direction(SOUTH);                            // sets the direction the doors open
-    elevator_1.setCurrent_floor(FIRST_FLOOR);                       // starting floor
+    elevator_1.setCurrent_floor(SECOND_FLOOR);                       // starting floor
     elevator_1.initButtons();                                       // initializes the elevator buttons
    
     

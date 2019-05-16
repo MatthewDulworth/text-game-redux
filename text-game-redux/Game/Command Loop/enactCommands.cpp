@@ -11,9 +11,10 @@
 /*
  TO DO:
  
- add floor buttons in an elevator
+ add elevator call buttons to rooms that can call elevators
  add ability to change floors
  add ability to exit elevators in GO
+ add something in the GO command to make sure you cannot walk into an elevator that is not on the same floor as you.
  
  */
 
@@ -78,18 +79,38 @@ bool Game::enactCommands(){
                 Passage* current_passage = current_room->exitTo( current_direction->getCode() );    // set the current passage to the passage in current direction of the current room
                 
                 
+                
                 // -------------------------------------
                 if(current_passage != 0){                   // check to see that the current passage exists
                     if(current_passage->isVisible() ){      // check to see that the current passage is visible
                         
+                        
+                        
                         // if the current passage is locked, inform the player
                         if(current_passage->isLocked() ){
                             cout << "that door is locked\n";
-                            return false;
+                            return true;
                         }
                         
                         // if the current passage is not locked, move the player throught the current passage
                         else{
+                            
+
+                            // -------------------------------------
+                            // check to see if the player is trying to enter an elevator not on the same floor
+                            Location* target_location = createTargetLocation(current_passage, player_location);
+                            
+                            if(isElevator(target_location)){
+                                Elevator* target_elevator = static_cast<Elevator*>(target_location);
+                                
+                                if(target_elevator->getCurrent_floor() != current_room->getFloor() ){
+                                    cout << target_elevator->getName() << " is not on your floor" << endl;
+                                    return true;
+                                }
+                            }
+                            // -------------------------------------
+                            
+
                             movePlayerThroughPassage(current_passage);
                             cout << "you went " << current_direction->getName() << endl;
                             return true;
@@ -99,6 +120,9 @@ bool Game::enactCommands(){
                     }
                 }
                 // -------------------------------------
+                
+                
+                
                 
                 // if the current passage does not exist, inform the player
                 else {
@@ -243,6 +267,6 @@ bool Game::enactCommands(){
     // --------------------------------------------------------------------------------------------------
     // no valid command entered
     // --------------------------------------------------------------------------------------------------
-    cout << "No valid command entered.\n";
+    cout << "no valid command entered.\n";
     return false;
 }

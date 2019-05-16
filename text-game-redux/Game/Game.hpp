@@ -10,6 +10,7 @@
 
 #include <string>
 #include <vector>
+//#include "Base.hpp"
 #include "TypeChecks.hpp"
 
 // ------------------------------------------------
@@ -41,13 +42,14 @@ public:
     void setPlayer_location(Room* new_room);
     
     // run functions
-    void parse(string player_input);
-    void initCommands();
+    void createTokens(string player_input);
+    void parse();
     bool enactCommands();
     void commandLoop();
     
-    // commands
-    bool movePlayerThroughPassage(Passage* passage);
+    // enactCommands functions
+    Location* createTargetLocation(Passage* current_passage, Location*);
+    void movePlayerThroughPassage(Passage* passage);
 };
 
 #endif /* Game_hpp */

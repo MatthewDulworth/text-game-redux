@@ -23,8 +23,8 @@ protected:
     bool lock_state;    // whether or not the passage is locked
     bool hidden_state;  // whether or not the passage is visible to the player
     int door_type;
-    Location* room_1;       // the Room on one side of the passage
-    Location* room_2;       // the Room on the other side of the passage
+    Location* location_1;       // the Room on one side of the passage
+    Location* location_2;       // the Room on the other side of the passage
 public:
     string derivedType();
     // checks
@@ -34,12 +34,12 @@ public:
     void setLockState(bool state);
     void setHiddenState(bool new_state);
     void setDoor_type(int type);
-    void setRoom_1(Location* new_location);
-    void setRoom_2(Location* new_location);
+    void setLocation_1(Location* new_location);
+    void setLocation_2(Location* new_location);
     // getters
     int getDoor_type();
-    Location* getRoom_1();
-    Location* getRoom_2();
+    Location* getLocation_1();
+    Location* getLocation_2();
 };
 
 #endif /* Passage_hpp */

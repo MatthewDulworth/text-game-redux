@@ -11,13 +11,13 @@ void Game::commandLoop(){
     string player_input;
     
     do{
-        cout << "Enter a command: ";
+        cout << "Enter a command: "; 
         getline(cin, player_input);
         
         if(player_input != "quit"){
-            parse(player_input);
-            initCommands();
-            enactCommands();
+            createTokens(player_input);     // splits the player input into tokens
+            parse();                        // creates a command based of the tokens
+            enactCommands();                // if the command is valid, run the command
             cout << endl; 
         }
         tokens.clear();
