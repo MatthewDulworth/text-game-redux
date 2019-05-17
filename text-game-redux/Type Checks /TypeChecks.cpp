@@ -60,6 +60,21 @@ bool isPassage(Base* unkown_object){
 // PhysicalObject classes
 // ------------------------------------------------
 
+// ------- PhysicalObject ------- //
+bool isPhysical_object(Base* unkown_object){
+    PhysicalObject* known_object;
+    if( (known_object = dynamic_cast<PhysicalObject*>(unkown_object)) ){
+        return true;
+    }
+    else return false;
+}
+bool isPhysical_object(int code){
+    if(code >= PHYSICAL_OBJECTS_min && code<PHYSICAL_OBJECTS_max){
+        return true;
+    }
+    else return false;
+}
+
 // ------- Item ------- //
 bool isItem(Base* unkown_object){
     Item* known_object;
@@ -69,7 +84,7 @@ bool isItem(Base* unkown_object){
         return false;
 }
 
-// ------- Item ------- //
+// ------- Key ------- //
 bool isKey(Base* unkown_object){
     Key* known_object;
     if( (known_object = dynamic_cast<Key*>(unkown_object)) )
@@ -106,10 +121,15 @@ bool isNumber(Base* unknown_object){
     if( (known_object = dynamic_cast<Number*>(unknown_object)) ){
         return true;
     }
-    else{
-        return false;
-    }
+    else return false;
 }
+bool isNumber(int code){
+    if(code >= NUMBERS_min && code<NUMBERS_min){
+        return true;
+    }
+    else return false;
+}
+
 
 // ------- Action ------- //
 bool isAction(Base* unknown_object){
@@ -119,6 +139,12 @@ bool isAction(Base* unknown_object){
     else
         return false;
 }
+bool isAction(int code){
+    if(code >= ACTIONS_min && code<ACTIONS_max){
+        return true;
+    }
+    else return false;
+}
 
 // ------- Direction ------- //
 bool isDirection(Base* unkown_object){
@@ -127,4 +153,10 @@ bool isDirection(Base* unkown_object){
         return true;
     else
         return false;
+}
+bool isDirection(int code){
+    if(code >= DIRECTIONS_min && code < DIRECTIONS_max){
+        return true;
+    }
+    else return false;
 }

@@ -89,7 +89,7 @@ string Elevator::derivedType(){
 
 // ----- destructor ----- //
 Elevator::~Elevator(){
-    for(int i=0; i<FLOORS; i++){
+    for(int i=FLOORS_min; i<FLOORS_max; i++){
         delete buttons[i];
     }
 }
@@ -126,7 +126,7 @@ void Elevator::setCurrent_floor(int floor){
 //
 void Elevator::initButtons() {
     
-    for(int i=0; i<FLOORS; i++){
+    for(int i=FLOORS_min; i<FLOORS_max; i++){
         buttons[i] = new ElevatorButton();
     }
     updateButtonsVisibility();
@@ -134,7 +134,8 @@ void Elevator::initButtons() {
 
 //
 void Elevator::updateButtonsVisibility(){
-    for(int i=0; i<FLOORS; i++){
+    for(int i=FLOORS_min; i<FLOORS_max; i++){
+        
         if(exits[i] != 0){
             if(exits[i]->isVisible() ){
                 buttons[i]->setVisibleState(VISIBLE);
@@ -144,6 +145,7 @@ void Elevator::updateButtonsVisibility(){
         } else {
             buttons[i]->setVisibleState(HIDDEN);
         }
+        
     }
 }
 

@@ -14,6 +14,7 @@
 void Game::mapSetup(){
     
     
+    
     // --------------------------------------------------------------------------------------
     // delarations
     // --------------------------------------------------------------------------------------
@@ -170,7 +171,7 @@ void Game::mapSetup(){
     elevator_1.setExit(FIRST_FLOOR, &lobby_to_elevator1);           // first floor passage
     elevator_1.setExit(SECOND_FLOOR, &cubicleRoom_to_elevator1);    // second floor passage
     elevator_1.setExit_direction(SOUTH);                            // sets the direction the doors open
-    elevator_1.setCurrent_floor(SECOND_FLOOR);                       // starting floor
+    elevator_1.setCurrent_floor(FIRST_FLOOR);                       // starting floor
     elevator_1.initButtons();                                       // initializes the elevator buttons
    
     

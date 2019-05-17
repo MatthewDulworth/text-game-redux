@@ -11,6 +11,7 @@
 #define Location_hpp
 
 #include "Base.hpp"
+#include "OffsetArray.h"
 #include <vector>
 class Passage;
 
@@ -41,7 +42,7 @@ public:
 class Room : public Location {
 private:
     int floor;
-    Passage* exits[DIRECTIONS];
+    OffsetArray<Passage*, DIRECTIONS_min, DIRECTIONS_max> exits;
 public:
     string derivedType();
     // setters
@@ -99,10 +100,10 @@ private:
     int current_floor;
     
     // elevator buttons for every floor
-    ElevatorButton* buttons[FLOORS];
+    OffsetArray<ElevatorButton*, FLOORS_min, FLOORS_max> buttons;
     
     // the passages which the elevator connects to at each floor
-    Passage* exits[FLOORS];
+    OffsetArray<Passage*, FLOORS_min, FLOORS_max> exits;
     
     // the passage on the floor that the elevator is currently at
     Passage* current_exit;

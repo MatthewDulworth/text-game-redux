@@ -44,13 +44,13 @@ bool Game::enactCommands(){
             return false;
         }
         
-        // set the current direction equal to the second command
-        Base* current_direction = directions[command.at(1)];
-        
         // ------------------------------------------------------------------------------
         // check direction : if the current direction exists and actually is a direction
         // ------------------------------------------------------------------------------
-        if(isDirection(current_direction) ){
+        if(isDirection(command.at(1)) ){
+            
+            // set the current direction equal to the second command
+            Base* current_direction = directions[command.at(1)];
             
             
             // ---------------------------------------------------------
@@ -181,7 +181,7 @@ bool Game::enactCommands(){
         // check direction : current_direction is not a valid direction
         // ------------------------------------------------------------------------------
         else {
-            cout << "invalid direction" << endl;
+            cout << "no valid command entered" << endl;
             return false;
         }
         
@@ -211,13 +211,13 @@ bool Game::enactCommands(){
             Elevator* current_elevator = static_cast<Elevator*>(player_location);
             
             cout << "you are in " << current_elevator->getName() << endl;
-            cout << "you are on floor: " << current_elevator->getCurrent_floor() + 1 << endl;
+            cout << "you are on floor: " << current_elevator->getCurrent_floor() + (1 - FLOORS_min) << endl;
             cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName() << endl;
             
             
-            for(int i=0; i<FLOORS; i++){
+            for(int i=FLOORS_min; i<FLOORS_max; i++){
                 if(current_elevator->buttonIsVisibile(i)){
-                    cout << "there is an elevator button with a: " << i+1 << " on it" << endl;
+                    cout << "there is an elevator button with a " << (i+1-FLOORS_min) << " on it" << endl;
                 }
             }
             
@@ -235,7 +235,7 @@ bool Game::enactCommands(){
             
             
             // loop once for each direction
-            for(int i=0; i<DIRECTIONS; i++){
+            for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
                 
                 Room* current_room = static_cast<Room*>(player_location);   // point current_room to the player location
                 Passage* current_passage = current_room->exitTo(i);         // set the current passage equal to the exit of the player location at i
@@ -282,7 +282,7 @@ bool Game::enactCommands(){
         // ---------------------------------------------------------
         // output the descriptions of all the objects in the room
         // ---------------------------------------------------------
-        for(int i=0; i<PHYSICALOBJECTS; i++){
+        for(int i=PHYSICAL_OBJECTS_min; i<PHYSICAL_OBJECTS_max; i++){
             if(physical_objects[i]->getLocation() == player_location){
                 cout << "there is " << physical_objects[i]->getDescription() << endl;
             }

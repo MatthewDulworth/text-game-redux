@@ -27,4 +27,10 @@ bool isNumber(Base*);
 bool isAction(Base*);
 bool isDirection(Base*);
 
+bool isPhysical_object(int);
+bool isNumber(int);
+bool isAction(int);
+bool isDirection(int);
+
+
 #endif /* TypeChecks_hpp */

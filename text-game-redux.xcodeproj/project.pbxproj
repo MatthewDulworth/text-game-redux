@@ -39,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3426AFEA228E166A00EC5A31 /* OffsetArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OffsetArray.h; sourceTree = "<group>"; };
 		346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enactCommands.cpp; sourceTree = "<group>"; };
 		346D9B2F224F13D900950AD7 /* mapSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mapSetup.cpp; sourceTree = "<group>"; };
 		346D9B31224F140600950AD7 /* physicalObjectSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = physicalObjectSetup.cpp; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 			children = (
 				34F53A32224BCD6500437F64 /* main.cpp */,
 				34A2F891224BEBBB00ABB248 /* Constants.h */,
+				3426AFEA228E166A00EC5A31 /* OffsetArray.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";

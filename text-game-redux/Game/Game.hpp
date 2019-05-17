@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include "TypeChecks.hpp"
+#include "OffsetArray.h"
 
 // ------------------------------------------------
 // Game class
@@ -18,14 +19,15 @@
 class Game {
 private:
     Location* player_location;
+
+    // arrays of pointers to game-objects
+    OffsetArray<Location*, LOCATIONS_min, LOCATIONS_max> locations;
+    OffsetArray<Passage*, PASSAGES_min, PASSAGES_max> passages;
+    OffsetArray<PhysicalObject*, PHYSICAL_OBJECTS_min, PHYSICAL_OBJECTS_max> physical_objects;
+    OffsetArray<Number*, NUMBERS_min, NUMBERS_max> numbers;
+    OffsetArray<Action*, ACTIONS_min, ACTIONS_max> actions;
+    OffsetArray<Direction*, DIRECTIONS_min, DIRECTIONS_max> directions;
     
-    // arrays of pinters to game-objects
-    Location* locations[LOCATIONS];
-    Passage* passages[PASSAGES];
-    PhysicalObject* physical_objects[PHYSICALOBJECTS];
-    Number* numbers[NUMBERS];
-    Action* actions[ACTIONS];
-    Direction* directions[DIRECTIONS];
     
     // run vars
     vector<string> tokens;
