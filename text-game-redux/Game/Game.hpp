@@ -31,7 +31,7 @@ private:
     
     // run vars
     vector<string> tokens;
-    vector<int> command;
+    vector<int> commands;
     
 public:
     // setup methods
@@ -50,7 +50,7 @@ public:
     void commandLoop();
     
     // enactCommands methods
-    Location* createTargetLocation(Passage* current_passage, Location*);
+    Location* getTargetLocation(Passage* current_passage, Location*);
     void movePlayerThroughPassage(Passage* passage);
 };
 

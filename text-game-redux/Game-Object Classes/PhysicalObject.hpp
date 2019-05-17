@@ -64,7 +64,7 @@ public:
 };
 
 
-// ------- UnmoveableObject ------- //
+// ------- ImmoveableObject ------- //
 class ImmovableObject : public PhysicalObject {
 public:
     string derivedType();

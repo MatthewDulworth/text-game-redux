@@ -25,8 +25,8 @@ bool Game::enactCommands(){
     // --------------------------------------------------------------------------------------------------
     // no command entered
     // --------------------------------------------------------------------------------------------------
-    if(command.size() == 0){
-        cout << "no command entered" << endl;;
+    if(commands.size() == 0){
+        cout << "no command entered" << endl;
         return false;
     }
     
@@ -36,10 +36,10 @@ bool Game::enactCommands(){
     // --------------------------------------------------------------------------------------------------
     // if the player types "GO" *DIRECTION* and there is an unlocked, visible, passage in that direction, move the player through that passage
     
-    if(command.at(0) == GO){
+    if(commands.at(0) == GO){
         
         // if the command is only one word long, no valid command entered
-        if(command.size() == 1){
+        if(commands.size() == 1){
             cout << "no valid command entered" << endl;
             return false;
         }
@@ -47,10 +47,10 @@ bool Game::enactCommands(){
         // ------------------------------------------------------------------------------
         // check direction : if the current direction exists and actually is a direction
         // ------------------------------------------------------------------------------
-        if(isDirection(command.at(1)) ){
+        if(isDirection(commands.at(1)) ){
             
             // set the current direction equal to the second command
-            Base* current_direction = directions[command.at(1)];
+            Base* current_direction = directions[commands.at(1)];
             
             
             // ---------------------------------------------------------
@@ -76,6 +76,7 @@ bool Game::enactCommands(){
                             if(current_passage->isUnlocked() ){
                                 movePlayerThroughPassage(current_passage);
                                 cout << "you went " << current_direction->getName() << endl;
+                                cout << "you are in " << player_location->getDescription() << endl;
                                 return true;
                                 
                             }
@@ -127,7 +128,7 @@ bool Game::enactCommands(){
                         if(current_passage->isUnlocked() ){
                             
                             // check to see if the player is trying to enter an elevator not on the same floor
-                            Location* target_location = createTargetLocation(current_passage, player_location);
+                            Location* target_location = getTargetLocation(current_passage, player_location);
                             if(isElevator(target_location)){
                                 Elevator* target_elevator = static_cast<Elevator*>(target_location);
                                 
@@ -140,6 +141,7 @@ bool Game::enactCommands(){
                             // move the player
                             movePlayerThroughPassage(current_passage);
                             cout << "you went " << current_direction->getName() << endl;
+                            cout << "you are in " << player_location->getDescription() << endl;
                             return true;
                         }
                         // ----------
@@ -199,7 +201,7 @@ bool Game::enactCommands(){
     // --------------------------------------------------------------------------------------------------
     // if the player types "LOOK", output all visible exits and all objects in the room
     
-    if(command.at(0) == LOOK){
+    if(commands.at(0) == LOOK){
         
         
         // ---------------------------------------------------------
@@ -211,13 +213,13 @@ bool Game::enactCommands(){
             Elevator* current_elevator = static_cast<Elevator*>(player_location);
             
             cout << "you are in " << current_elevator->getName() << endl;
-            cout << "you are on floor: " << current_elevator->getCurrent_floor() + (1 - FLOORS_min) << endl;
+            cout << "you are on floor: " << current_elevator->getCurrentFloorNumber() << endl;
             cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName() << endl;
             
             
             for(int i=FLOORS_min; i<FLOORS_max; i++){
                 if(current_elevator->buttonIsVisibile(i)){
-                    cout << "there is an elevator button with a " << (i+1-FLOORS_min) << " on it" << endl;
+                    cout << "there is an elevator button with a " << current_elevator->getCurrentFloorNumber()+i-100 << " on it" << endl;
                 }
             }
             
@@ -231,7 +233,7 @@ bool Game::enactCommands(){
         else if( isRoom(player_location) ){
         
             // output the description of the location
-            cout << "You are in " << player_location->getDescription() << endl;
+            cout << "you are in " << player_location->getDescription() << endl;
             
             
             // loop once for each direction
@@ -246,28 +248,44 @@ bool Game::enactCommands(){
                 if(current_passage != 0){                   // check to see if the current passage exists
                     if(current_passage->isVisible() ){      // check to see if the current passage is visible
                         
-                        // -----------------------------
-                        // if the passage is unlocked
-                        if(current_passage->isUnlocked() ){
-                            lock = "n ";
+                        Location* target_location = getTargetLocation(current_passage, player_location);
+                        if(isElevator(target_location)){
+                            
+                            // if the passage is unlocked
+                            if(current_passage->isUnlocked() ){
+                                lock = " ";
+                            }
+                            
+                            // if the passage is locked
+                            else {
+                                lock = " locked ";
+                            }
+                            
+                            // output the exit state
+                            cout << "there are" << lock << "elevator doors to the " << directions[i]->getName() << endl;
                         }
                         
-                        // if the passage is locked
                         else {
-                            lock = " locked ";
+                            // if the passage is unlocked
+                            if(current_passage->isUnlocked() ){
+                                lock = "n ";
+                            }
+                            
+                            // if the passage is locked
+                            else {
+                                lock = " locked ";
+                            }
+                            
+                            // output the exit state
+                            cout << "there is a" << lock << "exit to the " << directions[i]->getName() << endl;
                         }
-                        
-                        // output the exit state
-                        cout << "there is a" << lock << "exit to the " << directions[i]->getName() << endl;
-                        // -----------------------------
                         
                     }
                 }
                 // --------------------------------------------
-                
-                
             }
         }
+        
         
     
         // ---------------------------------------------------------
@@ -302,27 +320,38 @@ bool Game::enactCommands(){
     // --------------------------------------------------------------------------------------------------
     // PRESS
     // --------------------------------------------------------------------------------------------------
-    if(command.at(0) == PRESS){
+    if(commands.at(0) == PRESS){
         
         
         // if the command is only one word long, no valid command entered
-        if(command.size() == 1){
+        if(commands.size() == 1){
             cout << "no valid command entered" << endl;
             return false;
         }
         
-        
-        Base* number = numbers[command.at(1)];
-    
-        if(isNumber(number)){
+        if(isElevator(player_location)){
             
+            Elevator* current_elevator = static_cast<Elevator*>(player_location);
+            
+            if(isNumber(commands.at(1)) ){
+                
+                int target_floor = commands.at(1) - 100;
+                
+                if(current_elevator->getCurrent_floor() != target_floor){
+                    current_elevator->setCurrent_floor(target_floor);
+                    cout << "you are now on floor: " << current_elevator->getCurrentFloorNumber() << endl;
+                } else {
+                    cout << "you are already on that floor" << endl;
+                }
+                
+                return true;
+            }
+            else {
+                cout << "no valid command entered" << endl;
+                return false;
+            }
         }
-        
-        
-        
-        
-        
-        
+    
     }
     // --------------------------------------------------------------------------------------------------
     

@@ -83,10 +83,10 @@
 		346D9B3D224F28A700950AD7 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
+				346D9B41224F291900950AD7 /* directionSetup.cpp */,
+				346D9B3F224F290400950AD7 /* actionSetup.cpp */,
 				346D9B2F224F13D900950AD7 /* mapSetup.cpp */,
 				346D9B31224F140600950AD7 /* physicalObjectSetup.cpp */,
-				346D9B3F224F290400950AD7 /* actionSetup.cpp */,
-				346D9B41224F291900950AD7 /* directionSetup.cpp */,
 			);
 			path = Setup;
 			sourceTree = "<group>";

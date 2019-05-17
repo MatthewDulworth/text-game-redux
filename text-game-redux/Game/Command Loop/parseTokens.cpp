@@ -15,25 +15,25 @@ void Game::parseTokens(){
     
         for(j=ACTIONS_min; j<ACTIONS_max; j++){
             if(tokens.at(i) == actions[j]->getName() ){
-                command.push_back(actions[j]->getCode() );
+                commands.push_back(actions[j]->getCode() );
                 goto end_of_loop;
             }
         }
         for(j=DIRECTIONS_min; j<DIRECTIONS_max; j++){
             if(tokens.at(i) == directions[j]->getName() ){
-                command.push_back(directions[j]->getCode() );
+                commands.push_back(directions[j]->getCode() );
                 goto end_of_loop;
             }
         }
         for(j=NUMBERS_min; j<NUMBERS_max; j++){
             if(tokens.at(i) == numbers[j]->getName() ){
-                command.push_back(numbers[j]->getCode() );
+                commands.push_back(numbers[j]->getCode() );
                 goto end_of_loop;
             }
         }
         for(j=PHYSICAL_OBJECTS_min; j<PHYSICAL_OBJECTS_max; j++){
             if(tokens.at(i) == physical_objects[j]->getName() ){
-                command.push_back(physical_objects[j]->getCode() );
+                commands.push_back(physical_objects[j]->getCode() );
                 goto end_of_loop;
             }
         }

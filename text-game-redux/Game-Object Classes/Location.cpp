@@ -8,6 +8,7 @@
 //
 #include "Location.hpp"
 #include "Passage.hpp"
+#include <algorithm>
 
 
 // ------------------------------------------------
@@ -17,6 +18,15 @@
 // sets the description of the location
 void Location::setDescription(string new_description){
     description = new_description;
+}
+
+//
+void Location::addObject(PhysicalObject* object){
+    contents.push_back(object);
+}
+
+void Location::removeObject(PhysicalObject* object){
+    contents.erase(std::remove(contents.begin(), contents.end(), object ), contents.end() );
 }
 
 // returns the description of the location
@@ -159,6 +169,10 @@ int Elevator::getCurrent_floor(){
 //
 int Elevator::getExit_direction(){
     return exit_direction;
+}
+
+int Elevator::getCurrentFloorNumber(){
+    return (current_floor - 100 + 1);
 }
 
 //

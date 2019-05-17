@@ -11,6 +11,7 @@
 #define Location_hpp
 
 #include "Base.hpp"
+#include "PhysicalObject.hpp"
 #include "OffsetArray.h"
 #include <vector>
 class Passage;
@@ -23,9 +24,12 @@ class Passage;
 class Location : public Base {
 protected:
     string description;
+    vector<PhysicalObject*> contents;
 public:
     // setters
     virtual void setDescription(string new_string);
+    virtual void addObject(PhysicalObject* object);
+    virtual void removeObject(PhysicalObject* object);
     // getters
     virtual string getDescription();
 };
@@ -152,6 +156,9 @@ public:
     
     // returns direction direction the elevator doors open
     int getExit_direction();
+    
+    // returns 1 if on the first floor etc.
+    int getCurrentFloorNumber();
     
     // returns the current exit
     Passage* getCurrent_exit();

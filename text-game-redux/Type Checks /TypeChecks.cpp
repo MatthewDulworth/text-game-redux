@@ -124,7 +124,7 @@ bool isNumber(Base* unknown_object){
     else return false;
 }
 bool isNumber(int code){
-    if(code >= NUMBERS_min && code<NUMBERS_min){
+    if(code >= NUMBERS_min && code<NUMBERS_max){
         return true;
     }
     else return false;

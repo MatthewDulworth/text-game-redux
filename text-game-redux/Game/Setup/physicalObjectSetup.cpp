@@ -24,4 +24,5 @@ void Game::physicalObjectSetup(){
 
     // ----- set arrays ----- //
     physical_objects[SIMPLE_KEY_1] = &simple_key_1;
+    
 }

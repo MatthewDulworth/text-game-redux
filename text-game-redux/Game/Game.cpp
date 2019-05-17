@@ -22,12 +22,12 @@ void Game::setPlayer_location(Location* new_location){
 
 // moves the player through a passage
 void Game::movePlayerThroughPassage(Passage* passage){
-    Location* target_location = createTargetLocation(passage, player_location);
+    Location* target_location = getTargetLocation(passage, player_location);
     player_location = target_location;
 }
 
 // creates a target location 
-Location* Game::createTargetLocation(Passage* passage, Location* location){
+Location* Game::getTargetLocation(Passage* passage, Location* location){
     Location* target_location = 0;
     
     if(location == passage->getLocation_1()){
