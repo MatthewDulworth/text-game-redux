@@ -16,7 +16,7 @@ void Game::commandLoop(){
         
         if(player_input != "quit"){
             createTokens(player_input);     // splits the player input into tokens
-            parseTokens();                        // creates a command based of the tokens
+            parseTokens();                  // creates a command based of the tokens
             enactCommands();                // if the command is valid, run the command
             cout << endl; 
         }

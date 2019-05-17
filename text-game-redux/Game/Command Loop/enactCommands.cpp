@@ -360,6 +360,38 @@ bool Game::enactCommands(){
                 return false;
             }
         }
+        
+        
+        if(isRoom(player_location)){
+            Room* current_room = static_cast<Room*>(player_location);
+            
+            if(isDirection(commands.at(1)) ){
+                Passage* current_passage = current_room->exitTo(commands.at(1));
+                Location* target_location = getTargetLocation(current_passage, current_room);
+                
+                if(current_room->hasCallButton(commands.at(1)) ){
+                    Elevator* target_elevator = static_cast<Elevator*>(target_location);
+                    
+                    if(target_elevator->getCurrent_floor() == current_room->getFloor()){
+                        cout << "the elevator is already on your floor" << endl;
+                        return true;
+                    }
+                    else{
+                        target_elevator->setCurrent_floor(current_room->getFloor());
+                        cout << "the elevator is now your floor " << endl;
+                        return true;
+                    }
+                }
+                else {
+                    cout << "there is no elevator call button in that direction" << endl;
+                    return true;
+                }
+            }
+            else{
+                cout << "no valid command entered" << endl;
+                return false;
+            }
+        }
     
     }
     // --------------------------------------------------------------------------------------------------
