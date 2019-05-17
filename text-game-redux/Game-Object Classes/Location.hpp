@@ -11,9 +11,9 @@
 #define Location_hpp
 
 #include "Base.hpp"
-#include "PhysicalObject.hpp"
 #include "OffsetArray.h"
 #include <vector>
+class PhysicalObject;
 class Passage;
 
 // ------------------------------------------------
@@ -39,6 +39,10 @@ public:
 
 
 
+
+
+
+
 // ------------------------------------------------
 // Room
 // ------------------------------------------------
@@ -47,14 +51,19 @@ class Room : public Location {
 private:
     int floor;
     OffsetArray<Passage*, DIRECTIONS_min, DIRECTIONS_max> exits;
+    OffsetArray<bool, DIRECTIONS_min, DIRECTIONS_max> call_buttons;
 public:
+    
     string derivedType();
     // setters
-        virtual void setFloor(int new_floor);
+    void setFloor(int new_floor);
     void setExit(int direction, Passage* exit);
     void setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down);
+    void initCallButtons();
+    //
+    bool hasCallButton(int direction);
     // getters
-        virtual int getFloor();
+    int getFloor();
     Passage* exitTo(int direction);
 };
 // ------------------------------------------------
@@ -66,7 +75,7 @@ public:
 // ------------------------------------------------
 // ElevatorButton
 // ------------------------------------------------
-class ElevatorButton{
+class ElevatorFloorButton{
 private:
     int floor;
     bool visible_state;
@@ -104,7 +113,7 @@ private:
     int current_floor;
     
     // elevator buttons for every floor
-    OffsetArray<ElevatorButton*, FLOORS_min, FLOORS_max> buttons;
+    OffsetArray<ElevatorFloorButton*, FLOORS_min, FLOORS_max> floor_buttons;
     
     // the passages which the elevator connects to at each floor
     OffsetArray<Passage*, FLOORS_min, FLOORS_max> exits;

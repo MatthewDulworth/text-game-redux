@@ -8,6 +8,8 @@
 //
 #include "Location.hpp"
 #include "Passage.hpp"
+#include "PhysicalObject.hpp"
+#include "typeChecks.hpp"
 #include <algorithm>
 
 
@@ -68,6 +70,32 @@ void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_e
 void Room::setFloor(int new_floor){
     floor = new_floor;
 }
+// ----- initCallButtons ----- //
+void Room::initCallButtons(){
+    
+    for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
+        Passage* current_passage = exits[i];
+        
+        if(current_passage != 0){
+            Location* target_location = getTargetLocation(current_passage, this);
+            
+            if(isElevator(target_location)){
+                call_buttons[i] = true;
+            }
+            else{
+                call_buttons[i] = false;
+            }
+        }
+
+    }
+}
+// ----- hasCallButton ----- //
+bool Room::hasCallButton(int direction){
+    if(call_buttons[direction] == true){
+        return true;
+    }
+    else return false;
+}
 
 
 // ************ getters ************ //
@@ -100,13 +128,13 @@ string Elevator::derivedType(){
 // ----- destructor ----- //
 Elevator::~Elevator(){
     for(int i=FLOORS_min; i<FLOORS_max; i++){
-        delete buttons[i];
+        delete floor_buttons[i];
     }
 }
 
 // buttonIsVisible
 bool Elevator::buttonIsVisibile(int floor){
-    if(buttons[floor]->isVisible() == true){
+    if(floor_buttons[floor]->isVisible() == true){
         return true;
     }
     else{
@@ -137,7 +165,7 @@ void Elevator::setCurrent_floor(int floor){
 void Elevator::initButtons() {
     
     for(int i=FLOORS_min; i<FLOORS_max; i++){
-        buttons[i] = new ElevatorButton();
+        floor_buttons[i] = new ElevatorFloorButton();
     }
     updateButtonsVisibility();
 }
@@ -148,12 +176,12 @@ void Elevator::updateButtonsVisibility(){
         
         if(exits[i] != 0){
             if(exits[i]->isVisible() ){
-                buttons[i]->setVisibleState(VISIBLE);
+                floor_buttons[i]->setVisibleState(VISIBLE);
             } else {
-                buttons[i]->setVisibleState(HIDDEN);
+                floor_buttons[i]->setVisibleState(HIDDEN);
             }
         } else {
-            buttons[i]->setVisibleState(HIDDEN);
+            floor_buttons[i]->setVisibleState(HIDDEN);
         }
         
     }
@@ -190,7 +218,7 @@ Passage* Elevator::getCurrent_exit(){
 // ------------------------------------------------
 // ElevatorButton
 // ------------------------------------------------
-bool ElevatorButton::isVisible(){
+bool ElevatorFloorButton::isVisible(){
     if(visible_state == VISIBLE){
         return true;
     } else{
@@ -198,15 +226,15 @@ bool ElevatorButton::isVisible(){
     }
 }
 
-void ElevatorButton::setVisibleState(bool new_visible_state){
+void ElevatorFloorButton::setVisibleState(bool new_visible_state){
     visible_state = new_visible_state;
 }
 
-void ElevatorButton::setFloor(int new_floor){
+void ElevatorFloorButton::setFloor(int new_floor){
     floor = new_floor;
 }
 
-int ElevatorButton::getFloor(){
+int ElevatorFloorButton::getFloor(){
     return floor;
 }
 

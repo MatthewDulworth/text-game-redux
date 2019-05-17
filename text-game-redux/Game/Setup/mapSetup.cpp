@@ -70,8 +70,8 @@ void Game::mapSetup(){
     // ----- set second floor rooms ----- //
     // LARGE_EMPTY_ROOM
     cubicle_room.setCode(CUBICLE_ROOM);
-    cubicle_room.setName("large empty room");
-    cubicle_room.setDescription("a large empty room");
+    cubicle_room.setName("CUBICLE ROOM");
+    cubicle_room.setDescription("a room full of regular office cubicles");
     cubicle_room.setFloor(SECOND_FLOOR);
     cubicle_room.setExit(NORTH, &cubicleRoom_to_elevator1);
     cubicle_room.setExit(SOUTH, &cubicleRoom_to_managersOffice);
@@ -190,6 +190,15 @@ void Game::mapSetup(){
     trash.setDescription("trash for unneeded physical objects");
     
     
+    
+   
+
+
+    
+    
+    // --------------------------------------------------------------------------------------
+    // set arrays
+    // --------------------------------------------------------------------------------------
     // ----- set locations array ----- //
     locations[LOBBY] = &lobby;
     locations[STREET] = &lobby;
@@ -214,4 +223,12 @@ void Game::mapSetup(){
     
     // ----- set player starting location ----- //
     setPlayer_location(&lobby);
+    
+    lobby.initCallButtons();
+    street.initCallButtons();
+    cubicle_room.initCallButtons();
+    supply_closet.initCallButtons();
+    managers_office.initCallButtons();
+    llama_shrine.initCallButtons();
+    break_room.initCallButtons();
 }

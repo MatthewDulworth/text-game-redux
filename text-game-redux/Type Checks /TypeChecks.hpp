@@ -32,5 +32,7 @@ bool isNumber(int);
 bool isAction(int);
 bool isDirection(int);
 
+Location* getTargetLocation(Passage*, Location*);
+
 
 #endif /* TypeChecks_hpp */

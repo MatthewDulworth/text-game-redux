@@ -50,7 +50,6 @@ public:
     void commandLoop();
     
     // enactCommands methods
-    Location* getTargetLocation(Passage* current_passage, Location*);
     void movePlayerThroughPassage(Passage* passage);
 };
 

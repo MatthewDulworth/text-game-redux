@@ -160,3 +160,22 @@ bool isDirection(int code){
     }
     else return false;
 }
+
+
+
+
+// ------- getTargetLocation ------- //
+// creates a target location
+Location* getTargetLocation(Passage* passage, Location* location){
+    Location* target_location = 0;
+    
+    if(location == passage->getLocation_1()){
+        target_location = passage->getLocation_2();
+    }
+    
+    else if(location == passage->getLocation_2()){
+        target_location = passage->getLocation_1();
+    }
+    
+    return target_location;
+}

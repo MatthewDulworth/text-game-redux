@@ -12,7 +12,6 @@
  TO DO:
  
  add elevator call buttons to rooms that can call elevators
- add ability to change floors
  
  */
 
@@ -231,6 +230,8 @@ bool Game::enactCommands(){
         // output exits : if the player is in a room
         // ---------------------------------------------------------
         else if( isRoom(player_location) ){
+            
+            Room* current_room = static_cast<Room*>(player_location);   // point current_room to the player location
         
             // output the description of the location
             cout << "you are in " << player_location->getDescription() << endl;
@@ -239,7 +240,7 @@ bool Game::enactCommands(){
             // loop once for each direction
             for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
                 
-                Room* current_room = static_cast<Room*>(player_location);   // point current_room to the player location
+                
                 Passage* current_passage = current_room->exitTo(i);         // set the current passage equal to the exit of the player location at i
                 string lock;
             
@@ -280,9 +281,17 @@ bool Game::enactCommands(){
                             cout << "there is a" << lock << "exit to the " << directions[i]->getName() << endl;
                         }
                         
+                        
                     }
                 }
                 // --------------------------------------------
+            }
+            
+            for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
+                Direction* current_direction = directions[i];
+                if(current_room->hasCallButton(i)){
+                    cout << "there is an elevator call button on the " << current_direction->getName() << " wall" << endl;
+                }
             }
         }
         
