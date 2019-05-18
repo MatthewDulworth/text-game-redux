@@ -14,7 +14,7 @@
 void Game::actionSetup(){
     
     // ----- object declarations ----- //
-    static Action go, look, press;
+    static Action go, look, press, get, drop;
     
     // ----- set attributes ----- //
     // GO
@@ -26,9 +26,17 @@ void Game::actionSetup(){
     // PRESS
     press.setCode(PRESS);
     press.setName("PRESS");
+    // GET
+    get.setCode(GET);
+    get.setName("GET");
+    // DROP
+    drop.setCode(DROP);
+    drop.setName("DROP");
     
     // ----- set array ----- //
     actions[GO] = &go;
     actions[LOOK] = &look;
     actions[PRESS] = &press;
+    actions[GET] = &get;
+    actions[DROP] = &drop;
 }

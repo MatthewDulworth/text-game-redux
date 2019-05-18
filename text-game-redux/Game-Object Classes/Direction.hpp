@@ -9,6 +9,7 @@
 #define Direction_hpp
 
 #include "Base.hpp"
+#include <vector>
 
 // ------------------------------------------------
 // Direction
@@ -22,8 +23,12 @@ public:
 // Number
 // ------------------------------------------------
 class Number : public Base {
+private:
+    string synonym;
 public:
     string derivedType();
+    void setSynonym(string synonym);
+    string getSynonym();
 };
 
 #endif /* Direction_hpp */

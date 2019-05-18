@@ -11,6 +11,8 @@
 /*
  TO DO:
  
+ Add USE command
+ Add ability to unlock doors
  
  */
 
@@ -394,6 +396,81 @@ bool Game::enactCommands(){
     
     }
     // --------------------------------------------------------------------------------------------------
+    
+    
+    
+    
+    
+    
+    
+    
+    // --------------------------------------------------------------------------------------------------
+    // GET
+    // --------------------------------------------------------------------------------------------------
+    if(commands.at(0) == GET){
+        
+        // if the command is only one word long, no valid command entered
+        if(commands.size() == 1){
+            cout << "no valid command entered" << endl;
+            return false;
+        }
+        
+        if(isPhysical_object(commands.at(1)) ){
+            PhysicalObject* current_object = physical_objects[commands.at(1)];
+            
+            if(current_object->getLocation() == player_location){
+                if(isDerivedFrom<Item>(current_object)){
+                    Item* current_item = static_cast<Item*>(current_object);
+                    current_item->moveTo(locations[INVENTORY]);
+                    cout << current_item->getDescription() << " is now in your inventory" << endl;
+                    return true;
+                }
+                else {
+                    cout << "you cannot pick that up" << endl;
+                }
+            }
+        }
+    }
+    // --------------------------------------------------------------------------------------------------
+
+    
+    
+    
+    
+    
+    
+    // --------------------------------------------------------------------------------------------------
+    // DROP
+    // --------------------------------------------------------------------------------------------------
+    if(commands.at(0) == DROP){
+        
+        // if the command is only one word long, no valid command entered
+        if(commands.size() == 1){
+            cout << "no valid command entered" << endl;
+            return false;
+        }
+        
+        if(isPhysical_object(commands.at(1)) ){
+            PhysicalObject* current_object = physical_objects[commands.at(1)];
+            
+            if(current_object->getLocation() == locations[INVENTORY] ){
+                if(isDerivedFrom<Item>(current_object)){
+                    Item* current_item = static_cast<Item*>(current_object);
+                    current_item->moveTo(player_location);
+                    cout << "you dropped " << current_item->getDescription() << endl;
+                    return true;
+                }
+                else{
+                    cout << "ERROR: non item in inventory " << endl;
+                    return false;
+                }
+            }
+        }
+    }
+    // --------------------------------------------------------------------------------------------------
+ 
+    
+    
     
     
     

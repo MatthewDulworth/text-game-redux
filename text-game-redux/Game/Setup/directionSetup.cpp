@@ -35,9 +35,11 @@ void Game::directionSetup(){
     // ONE
     one.setCode(ONE);
     one.setName("ONE");
+    one.setSynonym("1");
     // TWO
     two.setCode(TWO);
     two.setName("TWO");
+    two.setSynonym("2");
     
     
     

@@ -34,5 +34,12 @@ bool isDirection(int);
 
 Location* getTargetLocation(Passage*, Location*);
 
+// ------- isType ------- //
+// checks if an object is a given type or is derived from a given type
+// source: https://stackoverflow.com/questions/307765/how-do-i-check-if-an-objects-type-is-a-particular-subclass-in-c
+template <class DstType, class SrcType>
+bool isDerivedFrom(const SrcType* src){
+    return dynamic_cast<const DstType*>(src) != nullptr;
+}
 
 #endif /* TypeChecks_hpp */

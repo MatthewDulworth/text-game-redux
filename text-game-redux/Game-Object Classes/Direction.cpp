@@ -20,3 +20,11 @@ string Direction::derivedType(){
 string Number::derivedType(){
     return "FloorButton";
 }
+
+void Number::setSynonym(string synonym){
+    this->synonym = synonym;
+}
+
+string Number::getSynonym(){
+    return synonym;
+}

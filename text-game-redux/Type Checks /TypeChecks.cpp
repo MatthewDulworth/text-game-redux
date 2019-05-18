@@ -164,6 +164,7 @@ bool isDirection(int code){
 
 
 
+
 // ------- getTargetLocation ------- //
 // creates a target location
 Location* getTargetLocation(Passage* passage, Location* location){
@@ -179,3 +180,5 @@ Location* getTargetLocation(Passage* passage, Location* location){
     
     return target_location;
 }
+
+

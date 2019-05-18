@@ -26,7 +26,7 @@ void Game::parseTokens(){
             }
         }
         for(j=NUMBERS_min; j<NUMBERS_max; j++){
-            if(tokens.at(i) == numbers[j]->getName() ){
+            if(tokens.at(i) == numbers[j]->getName() || tokens.at(i) == numbers[j]->getSynonym() ){
                 commands.push_back(numbers[j]->getCode() );
                 goto end_of_loop;
             }

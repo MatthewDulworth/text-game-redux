@@ -45,6 +45,10 @@ bool Item::isInInventory(){
     else
         return false;
 }
+void Item::moveTo(Location* location){
+    this->location = location;
+}
+
 
 // ------------------------------------------------
 // Key methods

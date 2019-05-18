@@ -126,14 +126,16 @@ enum enum_OBJECTS {
 // -------------------------------------------
 // ACTIONS
 // -------------------------------------------
-const int ACTIONS = 3;
+const int ACTIONS = 5;
 const int ACTIONS_min = 800;
 const int ACTIONS_max = (ACTIONS_min + ACTIONS);
 
 enum enum_ACTIONS {
     GO = 800,
     LOOK,
-    PRESS
+    PRESS,
+    GET,
+    DROP
 };
 
 

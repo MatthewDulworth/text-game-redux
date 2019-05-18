@@ -37,9 +37,12 @@ public:
 
 // ------- Item ------- //
 class Item : public PhysicalObject {
+protected:
+    
 public:
-    string derivedType();
-    bool isInInventory();
+    virtual string derivedType();
+    virtual bool isInInventory();
+    virtual void moveTo(Location* location);
 };
 
 // -------- Key ------- //
