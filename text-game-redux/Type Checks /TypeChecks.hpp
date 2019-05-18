@@ -15,6 +15,7 @@
 class Location;
 class Passage;
 
+bool isWord(int);
 bool isPhysical_object(int);
 bool isNumber(int);
 bool isAction(int);

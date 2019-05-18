@@ -61,5 +61,29 @@ void Game::adminClassesSetup(){
     // ----- set array ----- //
     numbers[ONE] = &one;
     numbers[TWO] = &two;
+    
+    
+    // ------------------------------------------------
+    // WORDS
+    // ------------------------------------------------
+    
+    // ----- declarations ----- //
+    static Word exit, elevator, button, key;
+    
+    // ----- set variables ----- //
+    // EXIT
+    exit.setCode(EXIT);
+    exit.setName("EXIT");
+    // ELEVATOR
+    elevator.setCode(ELEVATOR);
+    elevator.setName("ELEVATOR");
+    // BUTTON
+    button.setCode(BUTTON);
+    button.setName("BUTTON");
+
+    // ----- set array ----- //
+    words[EXIT] = &exit;
+    words[ELEVATOR] = &elevator;
+    words[BUTTON] = &button;
 }
 

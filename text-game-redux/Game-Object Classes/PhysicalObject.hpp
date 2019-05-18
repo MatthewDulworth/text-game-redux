@@ -56,14 +56,14 @@ public:
 // ------------------------------------------------
 class Key : public Item {
 private:
-    int door_type;
+    int key_type;
 public:
     // checks
     bool canUnlock(Passage* door);
     // setters
     void setDoor_Type(int type);
     // getters
-    int getDoor_type();
+    int getKey_type();
 };
 
 // ------------------------------------------------

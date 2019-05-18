@@ -61,18 +61,18 @@ void Item::overridden(){}
 // ------------------------------------------------
 // ----- canUnlock ----- //
 bool Key::canUnlock(Passage* door){
-    if(door_type == door->getDoor_type() )
+    if(key_type == door->getKey_type() )
         return true;
     else
         return false;
 }
 // ----- setDoor_Type ----- //
 void Key::setDoor_Type(int type){
-    door_type = type;
+    key_type = type;
 }
-// ----- getDoor_type ----- //
-int Key::getDoor_type(){
-    return door_type;
+// ----- getKey_type ----- //
+int Key::getKey_type(){
+    return key_type;
 }
 
 

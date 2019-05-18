@@ -20,7 +20,7 @@ class Passage : public Base {
 protected:
     bool lock_state;
     bool visibility;
-    int door_type;
+    int key_type;
     Location* location_1;
     Location* location_2;
 public:
@@ -30,11 +30,11 @@ public:
     // setters
     void setLockState(bool state);
     void setVisibility(bool state);
-    void setDoor_type(int type);
+    void setKey_type(int type);
     void setLocation_1(Location* new_location);
     void setLocation_2(Location* new_location);
     // getters
-    int getDoor_type();
+    int getKey_type();
     Location* getLocation_1();
     Location* getLocation_2();
     // overridden

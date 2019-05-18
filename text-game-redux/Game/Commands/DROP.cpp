@@ -15,7 +15,7 @@ int Game::theDROPcommand(){
     if(commands.at(0) == DROP){
         
         // if the command is only one word long, no valid command entered
-        if(commands.size() == 1){
+        if(commands.size() < 2){
             return invalidCommand();
         }
         

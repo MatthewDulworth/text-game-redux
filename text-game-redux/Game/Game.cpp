@@ -31,3 +31,8 @@ bool Game::invalidCommand(){
     return false; 
 }
 
+bool Game::noExit(){
+    cout << "there is no exit in that direction" << endl;
+    return false;
+}
+

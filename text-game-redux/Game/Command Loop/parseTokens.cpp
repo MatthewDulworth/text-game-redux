@@ -39,6 +39,14 @@ void Game::parseTokens(){
             }
         }
         
+        // ------- Words ------- //
+        for(j=WORDS_min; j<WORDS_max; j++){
+            if(tokens.at(i) == words[j]->getName() ){
+                commands.push_back(words[j]->getCode() );
+                goto end_of_loop;
+            }
+        }
+        
         // ------- Numbers ------- //
         for(j=NUMBERS_min; j<NUMBERS_max; j++){
             if(tokens.at(i) == numbers[j]->getName() || tokens.at(i) == numbers[j]->getSynonym() ){

@@ -40,6 +40,7 @@ private:
     OffsetArray<Number*, NUMBERS_min, NUMBERS_max> numbers;
     OffsetArray<Action*, ACTIONS_min, ACTIONS_max> actions;
     OffsetArray<Direction*, DIRECTIONS_min, DIRECTIONS_max> directions;
+    OffsetArray<Word*, WORDS_min, WORDS_max> words;
     // run vars
     
     vector<string> tokens;
@@ -70,6 +71,7 @@ private:
     // methods used in commands
     void movePlayerThroughPassage(Passage* passage);
     bool invalidCommand();
+    bool noExit();
     
     // run methods
     void createTokens(string player_input);

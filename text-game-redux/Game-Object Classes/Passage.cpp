@@ -28,9 +28,9 @@ void Passage::setLockState(bool state){
 void Passage::setVisibility(bool state){
     visibility = state;
 }
-// ----- setDoor_type ----- //
-void Passage::setDoor_type(int type){
-    door_type = type;
+// ----- setKey_type ----- //
+void Passage::setKey_type(int type){
+    key_type = type;
 }
 // ----- setLocation_1 ----- //
 void Passage::setLocation_1(Location* new_location){
@@ -40,9 +40,9 @@ void Passage::setLocation_1(Location* new_location){
 void Passage::setLocation_2(Location* new_location){
     location_2 = new_location;
 }
-// ----- getDoor_type ----- //
-int Passage::getDoor_type(){
-    return door_type;
+// ----- getKey_type ----- //
+int Passage::getKey_type(){
+    return key_type;
 }
 // ----- getLocation_1 ----- //
 Location* Passage::getLocation_1(){

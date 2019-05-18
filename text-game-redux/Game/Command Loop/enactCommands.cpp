@@ -73,10 +73,10 @@ bool Game::enactCommands(){
     // ------------------------------------------------
     // DROP
     // ------------------------------------------------
-//    return_value = theUSEcommand();
-//    if(return_value != WRONG_COMMAND){
-//        return return_value;
-//    }
+    return_value = theUSEcommand();
+    if(return_value != WRONG_COMMAND){
+        return return_value;
+    }
 
     // ------------------------------------------------
     // no valid command entered

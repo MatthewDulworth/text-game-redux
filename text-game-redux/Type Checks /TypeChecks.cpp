@@ -13,18 +13,17 @@
 #include <typeinfo>
 
 // ------------------------------------------------
-// Location classes
+// isWord
 // ------------------------------------------------
-
+bool isWord(int code){
+    if(code >= WORDS_min && code<WORDS_max){
+        return true;
+    }
+    else return false;
+}
 
 // ------------------------------------------------
-// Passage classes
-// ------------------------------------------------
-
-
-
-// ------------------------------------------------
-// PhysicalObject classes
+// isPhysicalObject
 // ------------------------------------------------
 bool isPhysical_object(int code){
     if(code >= PHYSICAL_OBJECTS_min && code<PHYSICAL_OBJECTS_max){
@@ -33,9 +32,8 @@ bool isPhysical_object(int code){
     else return false;
 }
 
-
 // ------------------------------------------------
-// Setup classes
+// isNumber
 // ------------------------------------------------
 bool isNumber(int code){
     if(code >= NUMBERS_min && code<NUMBERS_max){
@@ -44,6 +42,9 @@ bool isNumber(int code){
     else return false;
 }
 
+// ------------------------------------------------
+// isAction
+// ------------------------------------------------
 bool isAction(int code){
     if(code >= ACTIONS_min && code<ACTIONS_max){
         return true;
@@ -51,6 +52,9 @@ bool isAction(int code){
     else return false;
 }
 
+// ------------------------------------------------
+// isDirection
+// ------------------------------------------------
 bool isDirection(int code){
     if(code >= DIRECTIONS_min && code < DIRECTIONS_max){
         return true;
@@ -58,10 +62,9 @@ bool isDirection(int code){
     else return false;
 }
 
-
-
-// ------- getTargetLocation ------- //
-// creates a target location
+// ------------------------------------------------
+// getTargetLocation
+// ------------------------------------------------
 Location* getTargetLocation(Passage* passage, Location* location){
     Location* target_location = 0;
     

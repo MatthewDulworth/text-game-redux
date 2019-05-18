@@ -113,7 +113,7 @@ const int DOOR_TYPES_min = 600;
 const int DOOR_TYPES_max = (DOOR_TYPES_min + DOOR_TYPES);
 
 enum enum_DOOR_TYPES{
-    SIMPLE = 600
+    SILVER = 600
 };
 
 
@@ -143,6 +143,20 @@ enum enum_ACTIONS {
     GET,
     DROP,
     USE
+};
+
+
+// -------------------------------------------
+// WORDS
+// -------------------------------------------
+const int WORDS = 3;
+const int WORDS_min = 900;
+const int WORDS_max = (WORDS_min + WORDS);
+
+enum enum_WORDS {
+    EXIT = 900,
+    ELEVATOR,
+    BUTTON,
 };
 
 

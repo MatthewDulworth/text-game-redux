@@ -20,13 +20,29 @@ int Game::theLOOKcommand(){
         // if the player is in an elevator 
         if( isType<Elevator>(player_location)){
             Elevator* current_elevator = static_cast<Elevator*>(player_location);
+            Passage* current_passage = current_elevator->getCurrent_exit();
+            bool passage_flag = false;
+            
             cout << "you are in " << current_elevator->getName() << endl;
             cout << "you are on floor: " << current_elevator->getCurrentFloorNumber() << endl;
-            cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName() << endl;
+            
+            if(current_passage != 0){
+                if(current_passage->isVisible()){
+                    passage_flag = true;
+                    cout << "the elevator doors open to the " << directions[current_elevator->getExit_direction()]->getName() << endl;
+                    if( !(current_passage->isUnlocked()) ){
+                        cout << "the elevator doors are locked" << endl;
+                    }
+                }
+            }
+            
+            if(passage_flag == false){
+                cout << "the elevator doors do not open on this floor" << endl;
+            }
             
             for(int i=FLOORS_min; i<FLOORS_max; i++){
                 if(current_elevator->buttonIsVisibile(i)){
-                    cout << "there is an elevator button with a " << current_elevator->getCurrentFloorNumber()+i-100 << " on it" << endl;
+                    cout << "there is an elevator button with a " << (i+1-100) << " on it" << endl;
                 }
             }
         }
