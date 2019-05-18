@@ -65,9 +65,9 @@
 		34A2F892224C49CC00ABB248 /* TypeChecks.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TypeChecks.cpp; sourceTree = "<group>"; };
 		34A2F893224C49CC00ABB248 /* TypeChecks.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TypeChecks.hpp; sourceTree = "<group>"; };
 		34A2F89B224D110A00ABB248 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
-		34A2F8A1224EAEA500ABB248 /* createTokens.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = createTokens.cpp; path = ../createTokens.cpp; sourceTree = "<group>"; };
-		34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = commandLoop.cpp; path = ../commandLoop.cpp; sourceTree = "<group>"; };
-		34A2F8A5224EB6AB00ABB248 /* parseTokens.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = parseTokens.cpp; path = ../parseTokens.cpp; sourceTree = "<group>"; };
+		34A2F8A1224EAEA500ABB248 /* createTokens.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = createTokens.cpp; sourceTree = "<group>"; };
+		34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = commandLoop.cpp; sourceTree = "<group>"; };
+		34A2F8A5224EB6AB00ABB248 /* parseTokens.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parseTokens.cpp; sourceTree = "<group>"; };
 		34B0C2D522906B5A00FD2C77 /* GO.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GO.cpp; sourceTree = "<group>"; };
 		34B0C2D822906B8400FD2C77 /* LOOK.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LOOK.cpp; sourceTree = "<group>"; };
 		34B0C2DA22906B9B00FD2C77 /* GET.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GET.cpp; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 				34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */,
 			);
 			name = "Command Loop";
-			path = "text-game-redux/Game/Command Loop/Commands";
+			path = "text-game-redux/Game/Command Loop";
 			sourceTree = SOURCE_ROOT;
 		};
 		34A2F88F224BE94200ABB248 /* Game-Object Classes */ = {
