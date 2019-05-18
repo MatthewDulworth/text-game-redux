@@ -18,6 +18,7 @@
 // ------------------------------------------------
 class Game {
 private:
+    // the location of the player
     Location* player_location;
 
     // arrays of pointers to game-objects
@@ -49,16 +50,16 @@ public:
     bool enactCommands();
     void commandLoop();
     
-    // enactCommands methods
-    void movePlayerThroughPassage(Passage* passage);
-    bool invalidCommand();
-    
     // commands
     int theGOcommand();
     int theLOOKcommand();
     int thePRESScommand();
     int theGETcommand();
     int theDROPcommand();
+    
+    // methods used in commands
+    void movePlayerThroughPassage(Passage* passage);
+    bool invalidCommand();
 };
 
 #endif /* Game_hpp */
