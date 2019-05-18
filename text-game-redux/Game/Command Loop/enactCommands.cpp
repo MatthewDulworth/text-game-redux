@@ -56,7 +56,7 @@ bool Game::enactCommands(){
             // ---------------------------------------------------------
             // move player : player is in an elevator
             // ---------------------------------------------------------
-            if( isElevator(player_location) ){
+            if( isType<Elevator>(player_location) ){
                 
                 // set the current elevator to the player location
                 Elevator* current_elevator = static_cast<Elevator*>(player_location);
@@ -110,7 +110,7 @@ bool Game::enactCommands(){
             // ---------------------------------------------------------
             // move player : player is in a room
             // ---------------------------------------------------------
-            else if( isRoom(player_location) ){
+            else if( isType<Room>(player_location) ){
                 
                 // set current_room to player_location
                 // set current_passage to the current_direction passage of current_room
@@ -129,7 +129,7 @@ bool Game::enactCommands(){
                             
                             // check to see if the player is trying to enter an elevator not on the same floor
                             Location* target_location = getTargetLocation(current_passage, player_location);
-                            if(isElevator(target_location)){
+                            if(isType<Elevator>(target_location)){
                                 Elevator* target_elevator = static_cast<Elevator*>(target_location);
                                 
                                 if(target_elevator->getCurrent_floor() != current_room->getFloor() ){
@@ -207,7 +207,7 @@ bool Game::enactCommands(){
         // ---------------------------------------------------------
         // output exits : if the player is in an elevator
         // ---------------------------------------------------------
-        if( isElevator(player_location) ){
+        if( isType<Elevator>(player_location) ){
             
             // set the current elevator to the player location
             Elevator* current_elevator = static_cast<Elevator*>(player_location);
@@ -230,7 +230,7 @@ bool Game::enactCommands(){
         // ---------------------------------------------------------
         // output exits : if the player is in a room
         // ---------------------------------------------------------
-        else if( isRoom(player_location) ){
+        else if(isType<Room>(player_location)){
             
             Room* current_room = static_cast<Room*>(player_location);   // point current_room to the player location
         
@@ -251,7 +251,7 @@ bool Game::enactCommands(){
                     if(current_passage->isVisible() ){      // check to see if the current passage is visible
                         
                         Location* target_location = getTargetLocation(current_passage, player_location);
-                        if(isElevator(target_location)){
+                        if(isType<Elevator>(target_location)){
                             
                             // if the passage is unlocked
                             if(current_passage->isUnlocked() ){
@@ -339,8 +339,7 @@ bool Game::enactCommands(){
             return false;
         }
         
-        if(isElevator(player_location)){
-            
+        if(isType<Elevator>(player_location)){
             Elevator* current_elevator = static_cast<Elevator*>(player_location);
             
             if(isNumber(commands.at(1)) ){
@@ -363,7 +362,7 @@ bool Game::enactCommands(){
         }
         
         
-        if(isRoom(player_location)){
+        if(isType<Room>(player_location)){
             Room* current_room = static_cast<Room*>(player_location);
             
             if(isDirection(commands.at(1)) ){
@@ -419,7 +418,7 @@ bool Game::enactCommands(){
             PhysicalObject* current_object = physical_objects[commands.at(1)];
             
             if(current_object->getLocation() == player_location){
-                if(isDerivedFrom<Item>(current_object)){
+                if(isType<Item>(current_object)){
                     Item* current_item = static_cast<Item*>(current_object);
                     current_item->moveTo(locations[INVENTORY]);
                     cout << current_item->getDescription() << " is now in your inventory" << endl;
@@ -454,7 +453,7 @@ bool Game::enactCommands(){
             PhysicalObject* current_object = physical_objects[commands.at(1)];
             
             if(current_object->getLocation() == locations[INVENTORY] ){
-                if(isDerivedFrom<Item>(current_object)){
+                if(isType<Item>(current_object)){
                     Item* current_item = static_cast<Item*>(current_object);
                     current_item->moveTo(player_location);
                     cout << "you dropped " << current_item->getDescription() << endl;

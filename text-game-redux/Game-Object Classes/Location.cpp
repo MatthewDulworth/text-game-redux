@@ -79,7 +79,7 @@ void Room::initCallButtons(){
         if(current_passage != 0){
             Location* target_location = getTargetLocation(current_passage, this);
             
-            if(isElevator(target_location)){
+            if(isType<Elevator>(target_location)){
                 call_buttons[i] = true;
             }
             else{
