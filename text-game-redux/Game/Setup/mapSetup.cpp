@@ -149,13 +149,13 @@ void Game::mapSetup(){
     cubicleRoom_to_managersOffice.setLocation_2(&managers_office);
     // MANAGERS_OFFICE to LLAMA SHRINE
     managersOffice_to_llamaShrine.setCode(MANAGERS_OFFICE_TO_LLAMA_SHRINE);
-    managersOffice_to_llamaShrine.setLockState(UNLOCKED);
-    managersOffice_to_llamaShrine.setHiddenState(VISIBLE);
+    managersOffice_to_llamaShrine.setLockState(LOCKED);
+    managersOffice_to_llamaShrine.setHiddenState(HIDDEN);
     managersOffice_to_llamaShrine.setLocation_1(&managers_office);
     managersOffice_to_llamaShrine.setLocation_2(&llama_shrine);
     // BREAK_ROOM to LLAMA SHRINE
     breakRoom_to_llamaShrine.setCode(BREAK_ROOM_TO_LLAMA_SHRINE);
-    breakRoom_to_llamaShrine.setLockState(UNLOCKED);
+    breakRoom_to_llamaShrine.setLockState(LOCKED);
     breakRoom_to_llamaShrine.setHiddenState(VISIBLE);
     breakRoom_to_llamaShrine.setLocation_1(&break_room);
     breakRoom_to_llamaShrine.setLocation_2(&llama_shrine);
@@ -171,7 +171,7 @@ void Game::mapSetup(){
     elevator_1.setExit(FIRST_FLOOR, &lobby_to_elevator1);           // first floor passage
     elevator_1.setExit(SECOND_FLOOR, &cubicleRoom_to_elevator1);    // second floor passage
     elevator_1.setExit_direction(SOUTH);                            // sets the direction the doors open
-    elevator_1.setCurrent_floor(SECOND_FLOOR);                       // starting floor
+    elevator_1.setCurrent_floor(SECOND_FLOOR);                      // starting floor
     elevator_1.initButtons();                                       // initializes the elevator buttons
    
     

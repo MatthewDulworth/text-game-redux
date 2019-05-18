@@ -7,6 +7,9 @@
 //
 #include "Game.hpp"
 
+// ------------------------------------------------
+// createTokens
+// ------------------------------------------------
 void Game::createTokens(string player_input){
     
     string temp;

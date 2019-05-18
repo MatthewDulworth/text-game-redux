@@ -26,3 +26,8 @@ void Game::movePlayerThroughPassage(Passage* passage){
     player_location = target_location;
 }
 
+bool Game::invalidCommand(){
+    cout << "no valid command entered" << endl;
+    return false; 
+}
+

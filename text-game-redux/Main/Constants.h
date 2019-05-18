@@ -19,6 +19,14 @@ const bool HIDDEN = false;
 
 
 // -------------------------------------------
+// integer constants
+// -------------------------------------------
+const int False = 0;
+const int True = 1;
+const int Neither = -1;
+
+
+// -------------------------------------------
 // FLOORS
 // -------------------------------------------
 const int FLOORS = 2;

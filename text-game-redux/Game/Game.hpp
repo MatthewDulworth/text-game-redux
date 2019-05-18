@@ -28,10 +28,10 @@ private:
     OffsetArray<Action*, ACTIONS_min, ACTIONS_max> actions;
     OffsetArray<Direction*, DIRECTIONS_min, DIRECTIONS_max> directions;
     
-    
     // run vars
     vector<string> tokens;
     vector<int> commands;
+    
     
 public:
     // setup methods
@@ -51,6 +51,8 @@ public:
     
     // enactCommands methods
     void movePlayerThroughPassage(Passage* passage);
+    bool invalidCommand();
+    int theGetCommand();
 };
 
 #endif /* Game_hpp */
