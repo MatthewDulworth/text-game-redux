@@ -6,6 +6,10 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 #include "Game.hpp"
+#include "Location.hpp"
+#include "Passage.hpp"
+#include "PhysicalObject.hpp"
+
 
 // --------------------------------------------------------------------------------------------------
 // GO
@@ -58,7 +62,7 @@ int Game::theGOcommand(){
             // if the player is in a room
             else if( isType<Room>(player_location) ){
                 Room* current_room = static_cast<Room*>(player_location);
-                Passage* current_passage = current_room->exitTo( current_direction->getCode() );
+                Passage* current_passage = current_room->getExit( current_direction->getCode() );
                 
                 if(current_passage != 0){
                     if(current_passage->isVisible() ){
@@ -70,17 +74,17 @@ int Game::theGOcommand(){
                                 
                                 if(target_elevator->getCurrent_floor() != current_room->getFloor() ){
                                     cout << target_elevator->getName() << " is not on your floor" << endl;
-                                    return True;
+                                    return true;
                                 }
                             }
                             movePlayerThroughPassage(current_passage);
                             cout << "you went " << current_direction->getName() << endl;
                             cout << "you are in " << player_location->getDescription() << endl;
-                            return True;
+                            return true;
                         }
                         else{
                             cout << "that door is locked" << endl;
-                            return True;
+                            return true;
                         }
                     }
                     else{
@@ -89,14 +93,14 @@ int Game::theGOcommand(){
                 }
                 else{
                     cout << "there is no exit in that direction" << endl;
-                    return False;
+                    return false;
                 }
             }
             
             // ERROR: if the player is in neither
             else {
                 cout << "ERROR: invalid room, GO command, enactCommands.cpp, line " << __LINE__ << endl;
-                return False;
+                return false;
             }
             
         }

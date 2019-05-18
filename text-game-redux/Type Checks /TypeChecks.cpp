@@ -8,6 +8,8 @@
 //
 
 #include "TypeChecks.hpp"
+#include "Passage.hpp"
+#include "Location.hpp"
 #include <typeinfo>
 
 // ------------------------------------------------

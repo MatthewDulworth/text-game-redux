@@ -9,7 +9,7 @@
 
 // calls all setup methods
 void Game::setup(){
-    directionSetup();
+    adminClassesSetup();
     actionSetup();
     mapSetup();
     physicalObjectSetup();

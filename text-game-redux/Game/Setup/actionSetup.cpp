@@ -6,15 +6,16 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 #include "Game.hpp"
+#include "AdminClasses.hpp"
 
-// ------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 // actionSetup
-// ------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 // popluates the actions array
 void Game::actionSetup(){
     
     // ----- object declarations ----- //
-    static Action go, look, press, get, drop;
+    static Action go, look, press, get, drop, use;
     
     // ----- set attributes ----- //
     // GO
@@ -32,6 +33,9 @@ void Game::actionSetup(){
     // DROP
     drop.setCode(DROP);
     drop.setName("DROP");
+    //USE
+    use.setCode(USE);
+    use.setName("USE");
     
     // ----- set array ----- //
     actions[GO] = &go;
@@ -39,4 +43,5 @@ void Game::actionSetup(){
     actions[PRESS] = &press;
     actions[GET] = &get;
     actions[DROP] = &drop;
+    actions[USE] = &use;
 }

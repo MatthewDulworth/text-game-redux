@@ -9,15 +9,30 @@
 #define Direction_hpp
 
 #include "Base.hpp"
-#include <vector>
+
+// ------------------------------------------------------------------------------------------------------
+// Admin Classes
+// ------------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------
+// Action
+// ------------------------------------------------
+class Action : public Base {
+public:
+    // getters
+    string derivedType();
+};
+
 
 // ------------------------------------------------
 // Direction
 // ------------------------------------------------
 class Direction : public Base {
 public:
+    // getters
     string derivedType();
 };
+
 
 // ------------------------------------------------
 // Number
@@ -26,9 +41,11 @@ class Number : public Base {
 private:
     string synonym;
 public:
-    string derivedType();
+    // setters
     void setSynonym(string synonym);
+    // getters
     string getSynonym();
+    string derivedType();
 };
 
 #endif /* Direction_hpp */

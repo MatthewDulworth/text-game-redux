@@ -11,28 +11,25 @@
 #include "Base.hpp"
 class Location;
 
-// ------------------------------------------------
-// Passage Classes
-// ------------------------------------------------
-
-// ------- Passage ------- //
+// ------------------------------------------------------------------------------------------------------
+// Passage class
+// ------------------------------------------------------------------------------------------------------
 // connects locations together
 // abstract, first level subclass
 class Passage : public Base {
 protected:
-    bool lock_state;    // whether or not the passage is locked
-    bool hidden_state;  // whether or not the passage is visible to the player
+    bool lock_state;
+    bool visibility;
     int door_type;
-    Location* location_1;       // the Room on one side of the passage
-    Location* location_2;       // the Room on the other side of the passage
+    Location* location_1;
+    Location* location_2;
 public:
-    string derivedType();
     // checks
     bool isVisible();
     bool isUnlocked();    
     // setters
     void setLockState(bool state);
-    void setHiddenState(bool new_state);
+    void setVisibility(bool state);
     void setDoor_type(int type);
     void setLocation_1(Location* new_location);
     void setLocation_2(Location* new_location);
@@ -40,6 +37,7 @@ public:
     int getDoor_type();
     Location* getLocation_1();
     Location* getLocation_2();
+    string derivedType();
 };
 
 #endif /* Passage_hpp */

@@ -13,6 +13,14 @@
 #include "TypeChecks.hpp"
 #include "OffsetArray.h"
 
+class Base;
+class Location;
+class Passage;
+class PhysicalObject;
+class Action;
+class Direction;
+class Number;
+
 // ------------------------------------------------
 // Game class
 // ------------------------------------------------
@@ -40,7 +48,7 @@ public:
     void mapSetup();
     void physicalObjectSetup();
     void actionSetup();
-    void directionSetup();
+    void adminClassesSetup();
     void setup();
     void setPlayer_location(Location* new_location);
     
@@ -56,6 +64,7 @@ public:
     int thePRESScommand();
     int theGETcommand();
     int theDROPcommand();
+    int theUSEcommand();
     
     // methods used in commands
     void movePlayerThroughPassage(Passage* passage);

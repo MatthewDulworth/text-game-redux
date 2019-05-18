@@ -21,8 +21,6 @@ const bool HIDDEN = false;
 // -------------------------------------------
 // integer constants
 // -------------------------------------------
-const int False = 0;
-const int True = 1;
 const int WRONG_COMMAND = -1;
 
 
@@ -127,14 +125,14 @@ const int PHYSICAL_OBJECTS_min = 700;
 const int PHYSICAL_OBJECTS_max = (PHYSICAL_OBJECTS_min + PHYSICAL_OBJECTS);
 
 enum enum_OBJECTS {
-    SIMPLE_KEY_1 = 700
+    SILVER_KEY = 700
 };
 
 
 // -------------------------------------------
 // ACTIONS
 // -------------------------------------------
-const int ACTIONS = 5;
+const int ACTIONS = 6;
 const int ACTIONS_min = 800;
 const int ACTIONS_max = (ACTIONS_min + ACTIONS);
 
@@ -143,7 +141,8 @@ enum enum_ACTIONS {
     LOOK,
     PRESS,
     GET,
-    DROP
+    DROP,
+    USE
 };
 
 

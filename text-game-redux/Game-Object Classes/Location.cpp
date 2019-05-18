@@ -13,32 +13,30 @@
 #include <algorithm>
 
 
+// ------------------------------------------------------------------------------------------------------
+// Location classes methods
+// ------------------------------------------------------------------------------------------------------
+
 // ------------------------------------------------
 // Location methods
 // ------------------------------------------------
-
-// sets the description of the location
-void Location::setDescription(string new_description){
-    description = new_description;
-}
-
-//
+// ----- addObject ----- //
 void Location::addObject(PhysicalObject* object){
     contents.push_back(object);
 }
-
+// ----- removeObject ----- //
 void Location::removeObject(PhysicalObject* object){
     contents.erase(std::remove(contents.begin(), contents.end(), object ), contents.end() );
 }
-
-// returns the description of the location
+// ----- setDescription ----- //
+void Location::setDescription(string new_description){
+    description = new_description;
+}
+// ----- getDescription ----- //
 string Location::getDescription(){
     return description;
 }
-
 // ------------------------------------------------
-
-
 
 
 
@@ -46,30 +44,6 @@ string Location::getDescription(){
 // ------------------------------------------------
 // Room methods
 // ------------------------------------------------
-
-// ----- derivedType ----- //
-string Room::derivedType(){
-    return "Location";
-}
-
-
-// ************ setters ************ //
-
-// ----- setExit ----- //
-void Room::setExit(int direction, Passage* exit){
-    exits[direction] = exit;
-}
-// ----- setAllExits ----- //
-void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down){
-    exits[NORTH] = exit_north;
-    exits[SOUTH] = exit_south;
-    exits[EAST] = exit_east;
-    exits[WEST] = exit_west;
-}
-// ----- setFloor ----- //
-void Room::setFloor(int new_floor){
-    floor = new_floor;
-}
 // ----- initCallButtons ----- //
 void Room::initCallButtons(){
     
@@ -86,7 +60,7 @@ void Room::initCallButtons(){
                 call_buttons[i] = false;
             }
         }
-
+        
     }
 }
 // ----- hasCallButton ----- //
@@ -97,137 +71,52 @@ bool Room::hasCallButton(int direction){
     else return false;
 }
 
-
-// ************ getters ************ //
-
+// ----- setExit ----- //
+void Room::setExit(int direction, Passage* exit){
+    exits[direction] = exit;
+}
+// ----- setAllExits ----- //
+void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down){
+    exits[NORTH] = exit_north;
+    exits[SOUTH] = exit_south;
+    exits[EAST] = exit_east;
+    exits[WEST] = exit_west;
+}
+// ----- setFloor ----- //
+void Room::setFloor(int new_floor){
+    floor = new_floor;
+}
 // ----- getFloor ----- //
 int Room::getFloor(){
     return floor;
 }
-// ----- exitTo ----- //
-Passage* Room::exitTo(int direction){
+// ----- getExit ----- //
+Passage* Room::getExit(int direction){
     return exits[direction];
 }
-
-// ------------------------------------------------
-
-
-
-
-
-
-// ------------------------------------------------
-// Elevator methods
-// ------------------------------------------------
-
-// returns first level subclass name
-string Elevator::derivedType(){
+// ----- derivedType ----- //
+string Room::derivedType(){
     return "Location";
 }
-
-// ----- destructor ----- //
-Elevator::~Elevator(){
-    for(int i=FLOORS_min; i<FLOORS_max; i++){
-        delete floor_buttons[i];
-    }
-}
-
-// buttonIsVisible
-bool Elevator::buttonIsVisibile(int floor){
-    if(floor_buttons[floor]->isVisible() == true){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
-// ----- setters ----- //
-
-// sets the direction the elevator doors open
-void Elevator::setExit_direction(int direction){
-    exit_direction = direction;
-}
-
-// sets
-void Elevator::setExit(int new_floor, Passage* exit){
-    exits[new_floor] = exit;
-}
-
-// sets the floor that the elevator is currently at
-// sets the current exit
-void Elevator::setCurrent_floor(int floor){
-    current_floor = floor;
-    current_exit = exits[current_floor];
-}
-
-//
-void Elevator::initButtons() {
-    
-    for(int i=FLOORS_min; i<FLOORS_max; i++){
-        floor_buttons[i] = new ElevatorFloorButton();
-    }
-    updateButtonsVisibility();
-}
-
-//
-void Elevator::updateButtonsVisibility(){
-    for(int i=FLOORS_min; i<FLOORS_max; i++){
-        
-        if(exits[i] != 0){
-            if(exits[i]->isVisible() ){
-                floor_buttons[i]->setVisibleState(VISIBLE);
-            } else {
-                floor_buttons[i]->setVisibleState(HIDDEN);
-            }
-        } else {
-            floor_buttons[i]->setVisibleState(HIDDEN);
-        }
-        
-    }
-}
-
-// ----- getters ----- //
-
-//
-int Elevator::getCurrent_floor(){
-    return current_floor;
-}
-
-//
-int Elevator::getExit_direction(){
-    return exit_direction;
-}
-
-int Elevator::getCurrentFloorNumber(){
-    return (current_floor - 100 + 1);
-}
-
-//
-Passage* Elevator::getCurrent_exit(){
-    return current_exit;
-}
-
 // ------------------------------------------------
 
 
 
 
-
-
 // ------------------------------------------------
-// ElevatorButton
+// ElevatorFloorButton
 // ------------------------------------------------
+// ----- isVisible ----- //
 bool ElevatorFloorButton::isVisible(){
-    if(visible_state == VISIBLE){
+    if(visibility == VISIBLE){
         return true;
     } else{
         return false;
     }
 }
-
-void ElevatorFloorButton::setVisibleState(bool new_visible_state){
-    visible_state = new_visible_state;
+// ----- 
+void ElevatorFloorButton::setVisibility(bool visibility){
+    this->visibility = visibility;
 }
 
 void ElevatorFloorButton::setFloor(int new_floor){
@@ -243,12 +132,91 @@ int ElevatorFloorButton::getFloor(){
 
 
 
+// ------------------------------------------------
+// Elevator methods
+// ------------------------------------------------
+// ----- destructor ----- //
+Elevator::~Elevator(){
+    for(int i=FLOORS_min; i<FLOORS_max; i++){
+        delete floor_buttons[i];
+    }
+}
+// ----- initButtons ----- //
+void Elevator::initButtons() {
+    
+    for(int i=FLOORS_min; i<FLOORS_max; i++){
+        floor_buttons[i] = new ElevatorFloorButton();
+    }
+    updateButtonsVisibility();
+}
+
+// ----- buttonIsVisible ----- //
+bool Elevator::buttonIsVisibile(int floor){
+    if(floor_buttons[floor]->isVisible() == true){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+// ----- updateButtonVisibility ----- //
+void Elevator::updateButtonsVisibility(){
+    for(int i=FLOORS_min; i<FLOORS_max; i++){
+        
+        if(exits[i] != 0){
+            if(exits[i]->isVisible() ){
+                floor_buttons[i]->setVisibility(VISIBLE);
+            } else {
+                floor_buttons[i]->setVisibility(HIDDEN);
+            }
+        } else {
+            floor_buttons[i]->setVisibility(HIDDEN);
+        }
+        
+    }
+}
+// ----- setExit_direction ----- //
+void Elevator::setExit_direction(int direction){
+    exit_direction = direction;
+}
+// ----- setExit ----- //
+void Elevator::setExit(int new_floor, Passage* exit){
+    exits[new_floor] = exit;
+}
+// ----- setCurrent_floor ----- //
+void Elevator::setCurrent_floor(int floor){
+    current_floor = floor;
+    current_exit = exits[current_floor];
+}
+// ----- getCurrent_floor ----- //
+int Elevator::getCurrent_floor(){
+    return current_floor;
+}
+// ----- getExit_direction ----- //
+int Elevator::getExit_direction(){
+    return exit_direction;
+}
+// ----- getCurrentFloorNumber ----- //
+int Elevator::getCurrentFloorNumber(){
+    return (current_floor - 100 + 1);
+}
+// ----- getCurrent_exit ----- //
+Passage* Elevator::getCurrent_exit(){
+    return current_exit;
+}
+// ----- derivedType ----- //
+string Elevator::derivedType(){
+    return "Location";
+}
+// ------------------------------------------------
+
 
 
 
 // ------------------------------------------------
 // AdminLocation methods
 // ------------------------------------------------
+// ----- derivedType ----- //
 string AdminLocation::derivedType(){
     return "Location";
 }

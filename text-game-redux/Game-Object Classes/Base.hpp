@@ -10,15 +10,13 @@
 #ifndef BaseClass_hpp
 #define BaseClass_hpp
 
-#include <iostream>
 #include <string>
 #include "Constants.h"
 using namespace std;
 
-// ------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 // Base class
-// ------------------------------------------------
-
+// ------------------------------------------------------------------------------------------------------
 // Virtual base game-object class: all game-objects are derived from this class
 class Base { 
 protected:

@@ -7,6 +7,7 @@
 //
 
 #include "Game.hpp"
+#include "Location.hpp"
 
 // --------------------------------------------------------------------------------------------------
 // PRESS
@@ -29,11 +30,11 @@ int Game::thePRESScommand(){
                 if(current_elevator->getCurrent_floor() != target_floor){
                     current_elevator->setCurrent_floor(target_floor);
                     cout << "you are now on floor: " << current_elevator->getCurrentFloorNumber() << endl;
-                    return True;
+                    return true;
                 }
                 else {
                     cout << "you are already on that floor" << endl;
-                    return True;
+                    return true;
                 }
             }
             else {
@@ -47,7 +48,7 @@ int Game::thePRESScommand(){
             
             // if the second command is a direction
             if(isDirection(commands.at(1)) ){
-                Passage* current_passage = current_room->exitTo(commands.at(1));
+                Passage* current_passage = current_room->getExit(commands.at(1));
                 Location* target_location = getTargetLocation(current_passage, current_room);
                 
                 if(current_room->hasCallButton(commands.at(1)) ){
@@ -55,12 +56,12 @@ int Game::thePRESScommand(){
                     
                     if(target_elevator->getCurrent_floor() == current_room->getFloor()){
                         cout << "the elevator is already on your floor" << endl;
-                        return True;
+                        return true;
                     }
                     else{
                         target_elevator->setCurrent_floor(current_room->getFloor());
                         cout << "the elevator is now your floor " << endl;
-                        return True;
+                        return true;
                     }
                     
                 }
@@ -79,7 +80,7 @@ int Game::thePRESScommand(){
         // if the player is in neither a room or an elevator
         else {
             cout << "ERROR: player is not in a room or elevator" << endl;
-            return False;
+            return false;
         }
 
 

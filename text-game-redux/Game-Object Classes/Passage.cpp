@@ -10,43 +10,49 @@
 // ------------------------------------------------
 // Passage methods
 // ------------------------------------------------
-string Passage::derivedType(){ // returns first level subclass name
-    return "Passage";
-}
-// checks
+// ----- isVisible ----- //
 bool Passage::isVisible(){
-    if(hidden_state == VISIBLE) return true;
+    if(visibility == VISIBLE) return true;
     else return false;
 }
+// ----- isUnlocked ----- //
 bool Passage::isUnlocked(){
     if(lock_state == UNLOCKED) return true;
     else return false;
 }
-
-// setters
+// ----- setLockState ----- //
 void Passage::setLockState(bool state){
     lock_state = state;
 }
-void Passage::setHiddenState(bool new_state){
-    hidden_state = new_state;
+// ----- setVisibility ----- //
+void Passage::setVisibility(bool state){
+    visibility = state;
 }
+// ----- setDoor_type ----- //
 void Passage::setDoor_type(int type){
     door_type = type;
 }
+// ----- setLocation_1 ----- //
 void Passage::setLocation_1(Location* new_location){
     location_1 = new_location;
 }
+// ----- setLocation_2 ----- //
 void Passage::setLocation_2(Location* new_location){
     location_2 = new_location;
 }
-// getters
+// ----- getDoor_type ----- //
 int Passage::getDoor_type(){
     return door_type;
 }
+// ----- getLocation_1 ----- //
 Location* Passage::getLocation_1(){
     return location_1;
 }
+// ----- getLocation_2 ----- //
 Location* Passage::getLocation_2(){
     return location_2;
 }
-
+// ----- derivedType ----- //
+string Passage::derivedType(){
+    return "Passage";
+}

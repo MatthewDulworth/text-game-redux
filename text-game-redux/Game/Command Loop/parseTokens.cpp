@@ -6,6 +6,8 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 #include "Game.hpp"
+#include "AdminClasses.hpp"
+#include "PhysicalObject.hpp"
 
 // ------------------------------------------------
 // parseTokens

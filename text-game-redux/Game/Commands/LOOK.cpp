@@ -7,6 +7,9 @@
 //
 
 #include "Game.hpp"
+#include "Location.hpp"
+#include "Passage.hpp"
+#include "PhysicalObject.hpp"
 
 // --------------------------------------------------------------------------------------------------
 // LOOK
@@ -34,7 +37,7 @@ int Game::theLOOKcommand(){
             cout << "you are in " << player_location->getDescription() << endl;
             
             for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
-                Passage* current_passage = current_room->exitTo(i);
+                Passage* current_passage = current_room->getExit(i);
                 string lock;
                 
                 if(current_passage != 0){
@@ -74,7 +77,7 @@ int Game::theLOOKcommand(){
         // if the player is in neither
         else{
             cout << "ERROR: invalid room, LOOK command, enactCommands.cpp, line " << __LINE__ << endl;
-            return False;
+            return false;
         }
         
         // output all physical object in the room
@@ -83,7 +86,7 @@ int Game::theLOOKcommand(){
                 cout << "there is " << physical_objects[i]->getDescription() << endl;
             }
         }
-        return True;
+        return true;
     }
     
     // if the first command is not LOOK

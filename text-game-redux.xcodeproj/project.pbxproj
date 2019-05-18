@@ -10,11 +10,10 @@
 		346D9B2E224EF6AA00950AD7 /* enactCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */; };
 		346D9B30224F13D900950AD7 /* mapSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B2F224F13D900950AD7 /* mapSetup.cpp */; };
 		346D9B32224F140600950AD7 /* physicalObjectSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B31224F140600950AD7 /* physicalObjectSetup.cpp */; };
-		346D9B35224F15A000950AD7 /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B33224F15A000950AD7 /* Action.cpp */; };
-		346D9B38224F15C500950AD7 /* Direction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B36224F15C500950AD7 /* Direction.cpp */; };
+		346D9B38224F15C500950AD7 /* AdminClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B36224F15C500950AD7 /* AdminClasses.cpp */; };
 		346D9B3B224F161E00950AD7 /* Passage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B39224F161E00950AD7 /* Passage.cpp */; };
 		346D9B40224F290400950AD7 /* actionSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B3F224F290400950AD7 /* actionSetup.cpp */; };
-		346D9B42224F291900950AD7 /* directionSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B41224F291900950AD7 /* directionSetup.cpp */; };
+		346D9B42224F291900950AD7 /* AdminClassesSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B41224F291900950AD7 /* AdminClassesSetup.cpp */; };
 		346D9B44224F295C00950AD7 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B43224F295C00950AD7 /* Game.cpp */; };
 		34A2F888224BE8F600ABB248 /* Location.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F886224BE8F600ABB248 /* Location.cpp */; };
 		34A2F88B224BE90400ABB248 /* PhysicalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F889224BE90400ABB248 /* PhysicalObject.cpp */; };
@@ -29,6 +28,7 @@
 		34F53A33224BCD6500437F64 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F53A32224BCD6500437F64 /* main.cpp */; };
 		34F53A3B224BCD8500437F64 /* Base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F53A39224BCD8500437F64 /* Base.cpp */; };
 		34F5465022907A6E00E1B77B /* DROP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F5464F22907A6E00E1B77B /* DROP.cpp */; };
+		34F54652229085DD00E1B77B /* USE.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34F54651229085DD00E1B77B /* USE.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -48,14 +48,12 @@
 		346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = enactCommands.cpp; path = "text-game-redux/Game/Command Loop/enactCommands.cpp"; sourceTree = SOURCE_ROOT; };
 		346D9B2F224F13D900950AD7 /* mapSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mapSetup.cpp; sourceTree = "<group>"; };
 		346D9B31224F140600950AD7 /* physicalObjectSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = physicalObjectSetup.cpp; sourceTree = "<group>"; };
-		346D9B33224F15A000950AD7 /* Action.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Action.cpp; sourceTree = "<group>"; };
-		346D9B34224F15A000950AD7 /* Action.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Action.hpp; sourceTree = "<group>"; };
-		346D9B36224F15C500950AD7 /* Direction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Direction.cpp; sourceTree = "<group>"; };
-		346D9B37224F15C500950AD7 /* Direction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Direction.hpp; sourceTree = "<group>"; };
+		346D9B36224F15C500950AD7 /* AdminClasses.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AdminClasses.cpp; sourceTree = "<group>"; };
+		346D9B37224F15C500950AD7 /* AdminClasses.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AdminClasses.hpp; sourceTree = "<group>"; };
 		346D9B39224F161E00950AD7 /* Passage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Passage.cpp; sourceTree = "<group>"; };
 		346D9B3A224F161E00950AD7 /* Passage.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Passage.hpp; sourceTree = "<group>"; };
 		346D9B3F224F290400950AD7 /* actionSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = actionSetup.cpp; sourceTree = "<group>"; };
-		346D9B41224F291900950AD7 /* directionSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = directionSetup.cpp; sourceTree = "<group>"; };
+		346D9B41224F291900950AD7 /* AdminClassesSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AdminClassesSetup.cpp; sourceTree = "<group>"; };
 		346D9B43224F295C00950AD7 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		34A2F886224BE8F600ABB248 /* Location.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Location.cpp; sourceTree = "<group>"; };
 		34A2F887224BE8F600ABB248 /* Location.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Location.hpp; sourceTree = "<group>"; };
@@ -77,6 +75,7 @@
 		34F53A39224BCD8500437F64 /* Base.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Base.cpp; sourceTree = "<group>"; };
 		34F53A3A224BCD8500437F64 /* Base.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Base.hpp; sourceTree = "<group>"; };
 		34F5464F22907A6E00E1B77B /* DROP.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DROP.cpp; sourceTree = "<group>"; };
+		34F54651229085DD00E1B77B /* USE.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = USE.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +92,7 @@
 		346D9B3D224F28A700950AD7 /* Setup */ = {
 			isa = PBXGroup;
 			children = (
-				346D9B41224F291900950AD7 /* directionSetup.cpp */,
+				346D9B41224F291900950AD7 /* AdminClassesSetup.cpp */,
 				346D9B3F224F290400950AD7 /* actionSetup.cpp */,
 				346D9B2F224F13D900950AD7 /* mapSetup.cpp */,
 				346D9B31224F140600950AD7 /* physicalObjectSetup.cpp */,
@@ -124,10 +123,8 @@
 				346D9B39224F161E00950AD7 /* Passage.cpp */,
 				34A2F88A224BE90400ABB248 /* PhysicalObject.hpp */,
 				34A2F889224BE90400ABB248 /* PhysicalObject.cpp */,
-				346D9B33224F15A000950AD7 /* Action.cpp */,
-				346D9B34224F15A000950AD7 /* Action.hpp */,
-				346D9B36224F15C500950AD7 /* Direction.cpp */,
-				346D9B37224F15C500950AD7 /* Direction.hpp */,
+				346D9B37224F15C500950AD7 /* AdminClasses.hpp */,
+				346D9B36224F15C500950AD7 /* AdminClasses.cpp */,
 			);
 			path = "Game-Object Classes";
 			sourceTree = "<group>";
@@ -171,6 +168,7 @@
 				34B0C2DC22906F0000FD2C77 /* PRESS.cpp */,
 				34B0C2DA22906B9B00FD2C77 /* GET.cpp */,
 				34F5464F22907A6E00E1B77B /* DROP.cpp */,
+				34F54651229085DD00E1B77B /* USE.cpp */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -261,7 +259,6 @@
 				34F5465022907A6E00E1B77B /* DROP.cpp in Sources */,
 				34A2F894224C49CC00ABB248 /* TypeChecks.cpp in Sources */,
 				34B0C2DB22906B9B00FD2C77 /* GET.cpp in Sources */,
-				346D9B35224F15A000950AD7 /* Action.cpp in Sources */,
 				34A2F8A6224EB6AB00ABB248 /* parseTokens.cpp in Sources */,
 				34B0C2D722906B5A00FD2C77 /* GO.cpp in Sources */,
 				346D9B30224F13D900950AD7 /* mapSetup.cpp in Sources */,
@@ -270,7 +267,8 @@
 				34A2F88B224BE90400ABB248 /* PhysicalObject.cpp in Sources */,
 				34A2F8A4224EB69D00ABB248 /* commandLoop.cpp in Sources */,
 				34A2F8A2224EAEA500ABB248 /* createTokens.cpp in Sources */,
-				346D9B42224F291900950AD7 /* directionSetup.cpp in Sources */,
+				34F54652229085DD00E1B77B /* USE.cpp in Sources */,
+				346D9B42224F291900950AD7 /* AdminClassesSetup.cpp in Sources */,
 				346D9B44224F295C00950AD7 /* Game.cpp in Sources */,
 				346D9B3B224F161E00950AD7 /* Passage.cpp in Sources */,
 				34B0C2D922906B8400FD2C77 /* LOOK.cpp in Sources */,
@@ -279,7 +277,7 @@
 				34F53A33224BCD6500437F64 /* main.cpp in Sources */,
 				346D9B32224F140600950AD7 /* physicalObjectSetup.cpp in Sources */,
 				34A2F888224BE8F600ABB248 /* Location.cpp in Sources */,
-				346D9B38224F15C500950AD7 /* Direction.cpp in Sources */,
+				346D9B38224F15C500950AD7 /* AdminClasses.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

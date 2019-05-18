@@ -13,6 +13,7 @@
  
  Add USE command
  Add ability to unlock doors
+ rework elevator call button PRESS command
  
  */
 
@@ -68,6 +69,14 @@ bool Game::enactCommands(){
     if(return_value != WRONG_COMMAND){
         return return_value;
     }
+    
+    // ------------------------------------------------
+    // DROP
+    // ------------------------------------------------
+//    return_value = theUSEcommand();
+//    if(return_value != WRONG_COMMAND){
+//        return return_value;
+//    }
 
     // ------------------------------------------------
     // no valid command entered

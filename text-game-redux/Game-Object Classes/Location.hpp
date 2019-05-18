@@ -6,15 +6,20 @@
 //  Created by Matthew Dulworth on 3/27/19.
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
-
 #ifndef Location_hpp
 #define Location_hpp
 
+#include <string>
+#include <vector>
 #include "Base.hpp"
 #include "OffsetArray.h"
-#include <vector>
+
 class PhysicalObject;
 class Passage;
+
+// ------------------------------------------------------------------------------------------------------
+// Location classes
+// ------------------------------------------------------------------------------------------------------
 
 // ------------------------------------------------
 // Location
@@ -26,21 +31,15 @@ protected:
     string description;
     vector<PhysicalObject*> contents;
 public:
-    // setters
-    virtual void setDescription(string new_string);
+    // vector admin
     virtual void addObject(PhysicalObject* object);
     virtual void removeObject(PhysicalObject* object);
+    // setters
+    virtual void setDescription(string new_string);
+
     // getters
     virtual string getDescription();
 };
-// ------------------------------------------------
-
-
-
-
-
-
-
 
 
 // ------------------------------------------------
@@ -52,131 +51,71 @@ private:
     int floor;
     OffsetArray<Passage*, DIRECTIONS_min, DIRECTIONS_max> exits;
     OffsetArray<bool, DIRECTIONS_min, DIRECTIONS_max> call_buttons;
-public:
     
-    string derivedType();
+public:
+    // init
+    void initCallButtons();
+    // checks
+    bool hasCallButton(int direction);
     // setters
     void setFloor(int new_floor);
     void setExit(int direction, Passage* exit);
     void setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down);
-    void initCallButtons();
-    //
-    bool hasCallButton(int direction);
     // getters
     int getFloor();
-    Passage* exitTo(int direction);
+    Passage* getExit(int direction);
+    string derivedType();
 };
-// ------------------------------------------------
-
-
-
 
 
 // ------------------------------------------------
-// ElevatorButton
+// ElevatorFloorButton
 // ------------------------------------------------
 class ElevatorFloorButton{
 private:
     int floor;
-    bool visible_state;
+    bool visibility;
 public:
-    // methods
+    // checks
     bool isVisible();
     // setters
-    void setVisibleState(bool new_visible_state);
-    void setFloor(int new_floor);
+    void setVisibility(bool visibility);
+    void setFloor(int floor);
     // getters
     int getFloor();
 };
-// ------------------------------------------------
-
-
-
-
 
 
 // ------------------------------------------------
 // Elevator
 // ------------------------------------------------
 class Elevator : public Location {
-    
 private:
-    
-    // ------------------------------
-    // private member variables
-    // ------------------------------
-    
-    // the direction the elevator doors open
     int exit_direction;
-    
-    // the current floor the elevator
     int current_floor;
-    
-    // elevator buttons for every floor
     OffsetArray<ElevatorFloorButton*, FLOORS_min, FLOORS_max> floor_buttons;
-    
-    // the passages which the elevator connects to at each floor
     OffsetArray<Passage*, FLOORS_min, FLOORS_max> exits;
-    
-    // the passage on the floor that the elevator is currently at
     Passage* current_exit;
     
-
 public:
-    
-    // ------------------------------
     // destructor
-    // ------------------------------
     ~Elevator();
-    
-    
-    // ------------------------------
-    // public methods
-    // ------------------------------
-
-    // returns the first level subclass name
-    // must be overriden for the class not to be abstract
-    string derivedType();
-    
-    // checks if the button for a floor is visble to the player
-    bool buttonIsVisibile(int floor);
-    
-    
-    // ----- setters ----- //
-    // sets the direction that the elevator doors open
-    void setExit_direction(int direction);
-    
-    // sets the exit at a given floor
-    void setExit(int floor, Passage* exit);
-    
-    // sets the current floor and current exit
-    void setCurrent_floor(int floor);
-    
-    // creates the buttons calls updateButtonVisibility()
+    // init
     void initButtons();
-    
-    // updates the visibility of eaach button based on whether or not the elevator can go to that floor and whether or not the exit on the floor is visible
     void updateButtonsVisibility();
-    
-    
-    // ----- getters ----- //
-    // returns the floor the elevator is currently on
+    // checks
+    bool buttonIsVisibile(int floor);
+    // setters
+    void setExit_direction(int direction);
+    void setExit(int floor, Passage* exit);
+    void setCurrent_floor(int floor);
+    // getters
     int getCurrent_floor();
-    
-    // returns direction direction the elevator doors open
     int getExit_direction();
-    
-    // returns 1 if on the first floor etc.
     int getCurrentFloorNumber();
-    
-    // returns the current exit
     Passage* getCurrent_exit();
-    
+    string derivedType();
 };
-// ------------------------------------------------
-
-
-
 
 
 // ------------------------------------------------

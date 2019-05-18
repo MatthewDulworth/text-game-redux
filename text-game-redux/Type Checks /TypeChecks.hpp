@@ -10,12 +10,10 @@
 #ifndef TypeChecks_hpp
 #define TypeChecks_hpp
 
-#include "Base.hpp"
-#include "Location.hpp"
-#include "Passage.hpp"
-#include "PhysicalObject.hpp"
-#include "Action.hpp"
-#include "Direction.hpp"
+#include "AdminClasses.hpp"
+
+class Location;
+class Passage;
 
 bool isPhysical_object(int);
 bool isNumber(int);

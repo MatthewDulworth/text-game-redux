@@ -6,20 +6,23 @@
 //  Created by Matthew Dulworth on 3/27/19.
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
-
 #ifndef PhysicalObjectClasses_hpp
 #define PhysicalObjectClasses_hpp
 
 #include <vector>
+#include <string> 
 #include "Base.hpp"
+
 class Location;
 class Passage;
-// ------------------------------------------------
-// PhysicalObject classes
-// ------------------------------------------------
 
-// ------- PhysicalObject ------- //
-// abstract physical object class
+// ------------------------------------------------------------------------------------------------------
+// PhysicalObject classes
+// ------------------------------------------------------------------------------------------------------
+
+// ------------------------------------------------
+// PhysicalObject
+// ------------------------------------------------
 class PhysicalObject : public Base {
 protected:
     string description;
@@ -31,45 +34,57 @@ public:
     // getters
     virtual string getDescription();
     virtual Location* getLocation();
-    //
+    // output
     virtual void printDescription();
 };
 
-// ------- Item ------- //
+// ------------------------------------------------
+// Item
+// ------------------------------------------------
 class Item : public PhysicalObject {
-protected:
-    
 public:
-    virtual string derivedType();
-    virtual bool isInInventory();
+    // var management
     virtual void moveTo(Location* location);
+    // checks
+    virtual bool isInInventory();
+    // getters
+    virtual string derivedType();
 };
 
-// -------- Key ------- //
+// ------------------------------------------------
+// Key
+// ------------------------------------------------
 class Key : public Item {
 private:
     int door_type;
 public:
-    void setDoor_Type(int type);
-    int getDoor_type();
+    // checks
     bool canUnlock(Passage* door);
+    // setters
+    void setDoor_Type(int type);
+    // getters
+    int getDoor_type();
 };
 
-// ------- Money ------- //
+// ------------------------------------------------
+// Money
+// ------------------------------------------------
 class Money : public Item {
 private:
-    double worth;
+    double value;
 public:
     // setters
-    void setWorth(double new_worth);
+    void setValue(double new_value);
     // getters
-    double getWorth();
+    double getValue();
 };
 
-
-// ------- ImmoveableObject ------- //
+// ------------------------------------------------
+// ImmovableObject
+// ------------------------------------------------
 class ImmovableObject : public PhysicalObject {
 public:
+    // getters
     string derivedType();
 };
 

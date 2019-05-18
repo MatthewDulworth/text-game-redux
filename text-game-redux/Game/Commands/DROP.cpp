@@ -6,6 +6,7 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 #include "Game.hpp"
+#include "PhysicalObject.hpp"
 
 // --------------------------------------------------------------------------------------------------
 // DROP
@@ -28,11 +29,11 @@ int Game::theDROPcommand(){
                     Item* current_item = static_cast<Item*>(current_object);
                     current_item->moveTo(player_location);
                     cout << "you dropped " << current_item->getDescription() << endl;
-                    return True;
+                    return true;
                 }
                 else{
                     cout << "ERROR: non item in inventory " << endl;
-                    return False;
+                    return false;
                 }
             }
             else{

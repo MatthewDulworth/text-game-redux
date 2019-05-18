@@ -6,10 +6,12 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 #include "Game.hpp"
+#include "Location.hpp"
+#include "Passage.hpp"
 
-// ---------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 // mapSetup
-// ---------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 // popluates the loctions and passages arrays
 void Game::mapSetup(){
     
@@ -112,13 +114,13 @@ void Game::mapSetup(){
     // LOBBY to ELEVATOR_ONE
     lobby_to_elevator1.setCode(LOBBY_TO_ELEVATOR_1);    // index in the passages array
     lobby_to_elevator1.setLockState(UNLOCKED);          // if the door is locked or unlocked
-    lobby_to_elevator1.setHiddenState(VISIBLE);         // if the passage is hidden or visible
+    lobby_to_elevator1.setVisibility(VISIBLE);         // if the passage is hidden or visible
     lobby_to_elevator1.setLocation_1(&lobby);               // the room on one side of the passage
     lobby_to_elevator1.setLocation_2(&elevator_1);          // the room on the other side the passage
     // LOBBY to STREET
     lobby_to_street.setCode(LOBBY_TO_STREET);
     lobby_to_street.setLockState(UNLOCKED);
-    lobby_to_street.setHiddenState(VISIBLE);
+    lobby_to_street.setVisibility(VISIBLE);
     lobby_to_street.setLocation_1(&lobby);
     lobby_to_street.setLocation_2(&street);
     
@@ -126,37 +128,37 @@ void Game::mapSetup(){
     // CUBICLE_ROOM to ELEVATOR_ONE
     cubicleRoom_to_elevator1.setCode(CUBICLE_ROOM_TO_ELEVATOR_1);
     cubicleRoom_to_elevator1.setLockState(UNLOCKED);
-    cubicleRoom_to_elevator1.setHiddenState(VISIBLE);
+    cubicleRoom_to_elevator1.setVisibility(VISIBLE);
     cubicleRoom_to_elevator1.setLocation_1(&cubicle_room);
     cubicleRoom_to_elevator1.setLocation_2(&elevator_1);
     // CUBICLE_ROOM to SUPPLY_CLOSET
     cubicleRoom_to_supplyCloset.setCode(CUBICLE_ROOM_TO_SUPPLY_CLOSET);
     cubicleRoom_to_supplyCloset.setLockState(UNLOCKED);
-    cubicleRoom_to_supplyCloset.setHiddenState(VISIBLE);
+    cubicleRoom_to_supplyCloset.setVisibility(VISIBLE);
     cubicleRoom_to_supplyCloset.setLocation_1(&cubicle_room);
     cubicleRoom_to_supplyCloset.setLocation_2(&supply_closet);
     // CUBICLE_ROOM to BREAK_ROOM
     cubicleRoom_to_breakRoom.setCode(CUBICLE_ROOM_TO_BREAK_ROOM);
     cubicleRoom_to_breakRoom.setLockState(UNLOCKED);
-    cubicleRoom_to_breakRoom.setHiddenState(VISIBLE);
+    cubicleRoom_to_breakRoom.setVisibility(VISIBLE);
     cubicleRoom_to_breakRoom.setLocation_1(&cubicle_room);
     cubicleRoom_to_breakRoom.setLocation_2(&break_room  );
     // CUBICLE_ROOM to MANAGERS_OFFICE
     cubicleRoom_to_managersOffice.setCode(CUBICLE_ROOM_TO_MANAGERS_OFFICE);
     cubicleRoom_to_managersOffice.setLockState(UNLOCKED);
-    cubicleRoom_to_managersOffice.setHiddenState(VISIBLE);
+    cubicleRoom_to_managersOffice.setVisibility(VISIBLE);
     cubicleRoom_to_managersOffice.setLocation_1(&cubicle_room);
     cubicleRoom_to_managersOffice.setLocation_2(&managers_office);
     // MANAGERS_OFFICE to LLAMA SHRINE
     managersOffice_to_llamaShrine.setCode(MANAGERS_OFFICE_TO_LLAMA_SHRINE);
     managersOffice_to_llamaShrine.setLockState(LOCKED);
-    managersOffice_to_llamaShrine.setHiddenState(HIDDEN);
+    managersOffice_to_llamaShrine.setVisibility(HIDDEN);
     managersOffice_to_llamaShrine.setLocation_1(&managers_office);
     managersOffice_to_llamaShrine.setLocation_2(&llama_shrine);
     // BREAK_ROOM to LLAMA SHRINE
     breakRoom_to_llamaShrine.setCode(BREAK_ROOM_TO_LLAMA_SHRINE);
     breakRoom_to_llamaShrine.setLockState(LOCKED);
-    breakRoom_to_llamaShrine.setHiddenState(VISIBLE);
+    breakRoom_to_llamaShrine.setVisibility(VISIBLE);
     breakRoom_to_llamaShrine.setLocation_1(&break_room);
     breakRoom_to_llamaShrine.setLocation_2(&llama_shrine);
     
