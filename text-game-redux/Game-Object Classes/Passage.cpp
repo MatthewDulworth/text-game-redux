@@ -52,7 +52,5 @@ Location* Passage::getLocation_1(){
 Location* Passage::getLocation_2(){
     return location_2;
 }
-// ----- derivedType ----- //
-string Passage::derivedType(){
-    return "Passage";
-}
+// ----- overridden ----- //
+void Passage::overridden(){}

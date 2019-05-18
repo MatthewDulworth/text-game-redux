@@ -94,10 +94,8 @@ int Room::getFloor(){
 Passage* Room::getExit(int direction){
     return exits[direction];
 }
-// ----- derivedType ----- //
-string Room::derivedType(){
-    return "Location";
-}
+// ----- overridden ----- //
+void Room::overridden(){}
 // ------------------------------------------------
 
 
@@ -114,19 +112,18 @@ bool ElevatorFloorButton::isVisible(){
         return false;
     }
 }
-// ----- 
+// ----- setVisibility ----- //
 void ElevatorFloorButton::setVisibility(bool visibility){
     this->visibility = visibility;
 }
-
+// ----- setFloor ----- //
 void ElevatorFloorButton::setFloor(int new_floor){
     floor = new_floor;
 }
-
+// ----- getFloor ----- //
 int ElevatorFloorButton::getFloor(){
     return floor;
 }
-
 // ------------------------------------------------
 
 
@@ -204,10 +201,8 @@ int Elevator::getCurrentFloorNumber(){
 Passage* Elevator::getCurrent_exit(){
     return current_exit;
 }
-// ----- derivedType ----- //
-string Elevator::derivedType(){
-    return "Location";
-}
+// ----- overridden ----- //
+void Elevator::overridden(){}
 // ------------------------------------------------
 
 
@@ -216,9 +211,6 @@ string Elevator::derivedType(){
 // ------------------------------------------------
 // AdminLocation methods
 // ------------------------------------------------
-// ----- derivedType ----- //
-string AdminLocation::derivedType(){
-    return "Location";
-}
+void AdminLocation::overridden(){}
 
 // ------------------------------------------------

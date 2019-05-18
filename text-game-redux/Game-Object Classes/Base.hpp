@@ -26,7 +26,7 @@ public:
     // virtual destructor
     virtual ~Base();
     // pure virtual method
-    virtual string derivedType() = 0;
+    virtual void overridden() = 0;
     // setters
     virtual void setCode(int new_code);
     virtual void setName(string new_name);

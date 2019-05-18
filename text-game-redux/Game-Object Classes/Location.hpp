@@ -36,7 +36,6 @@ public:
     virtual void removeObject(PhysicalObject* object);
     // setters
     virtual void setDescription(string new_string);
-
     // getters
     virtual string getDescription();
 };
@@ -64,7 +63,8 @@ public:
     // getters
     int getFloor();
     Passage* getExit(int direction);
-    string derivedType();
+    // overridden
+    void overridden();
 };
 
 
@@ -114,7 +114,8 @@ public:
     int getExit_direction();
     int getCurrentFloorNumber();
     Passage* getCurrent_exit();
-    string derivedType();
+    // overridden
+    void overridden();
 };
 
 
@@ -124,7 +125,7 @@ public:
 // administrative locations, not part of map, e.g. trash, inventory
 class AdminLocation : public Location {
 public:
-    string derivedType();
+    void overridden();
 };
 
 #endif /* Location */

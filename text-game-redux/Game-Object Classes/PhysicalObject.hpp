@@ -47,8 +47,8 @@ public:
     virtual void moveTo(Location* location);
     // checks
     virtual bool isInInventory();
-    // getters
-    virtual string derivedType();
+    // overridden
+    virtual void overridden();
 };
 
 // ------------------------------------------------
@@ -84,8 +84,8 @@ public:
 // ------------------------------------------------
 class ImmovableObject : public PhysicalObject {
 public:
-    // getters
-    string derivedType();
+    // overridden
+    void overridden();
 };
 
 #endif /* PhysicalObjectClasses_hpp */

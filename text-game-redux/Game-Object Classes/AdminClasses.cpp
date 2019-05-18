@@ -10,18 +10,12 @@
 // ------------------------------------------------
 // Action methods
 // ------------------------------------------------
-// ----- derivedType ----- //
-string Action::derivedType(){
-    return "Action";
-}
+void Action::overridden(){}
 
 // ------------------------------------------------
 // Direction methods
 // ------------------------------------------------
-// ----- derivedType ----- //
-string Direction::derivedType(){
-    return "Direction";
-}
+void Direction::overridden(){}
 
 // ------------------------------------------------
 // Number methods
@@ -34,7 +28,10 @@ void Number::setSynonym(string synonym){
 string Number::getSynonym(){
     return synonym;
 }
-// ----- derivedType ----- //
-string Number::derivedType(){
-    return "FloorButton";
-}
+// ----- overridden ----- //
+void Number::overridden(){}
+
+// ------------------------------------------------
+// Word methods
+// ------------------------------------------------
+void Word::overridden(){}

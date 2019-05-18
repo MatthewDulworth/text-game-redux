@@ -20,7 +20,7 @@
 class Action : public Base {
 public:
     // getters
-    string derivedType();
+    void overridden();
 };
 
 
@@ -29,8 +29,8 @@ public:
 // ------------------------------------------------
 class Direction : public Base {
 public:
-    // getters
-    string derivedType();
+    // overridden
+    void overridden();
 };
 
 
@@ -45,7 +45,17 @@ public:
     void setSynonym(string synonym);
     // getters
     string getSynonym();
-    string derivedType();
+    // overridden
+    void overridden();
+};
+
+// ------------------------------------------------
+// Number
+// ------------------------------------------------
+class Word : public Base {
+public:
+    // overridden
+    void overridden();
 };
 
 #endif /* Direction_hpp */

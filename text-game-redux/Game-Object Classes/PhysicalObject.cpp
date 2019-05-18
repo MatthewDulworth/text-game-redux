@@ -52,10 +52,8 @@ bool Item::isInInventory(){
     if(location->getCode() == INVENTORY) return true;
     else return false;
 }
-// ----- derivedType ----- //
-string Item::derivedType(){
-    return "PhysicalObject";
-}
+// ----- overridden ----- //
+void Item::overridden(){}
 
 
 // ------------------------------------------------
@@ -94,6 +92,4 @@ double Money::getValue(){
 // ------------------------------------------------
 // Immovable methods
 // ------------------------------------------------
-string ImmovableObject::derivedType(){
-    return "PhysicalObject";
-}
+void ImmovableObject::overridden(){}

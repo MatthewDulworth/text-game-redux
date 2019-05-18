@@ -37,7 +37,8 @@ public:
     int getDoor_type();
     Location* getLocation_1();
     Location* getLocation_2();
-    string derivedType();
+    // overridden
+    void overridden();
 };
 
 #endif /* Passage_hpp */
