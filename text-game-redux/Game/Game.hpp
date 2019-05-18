@@ -21,14 +21,18 @@ class Action;
 class Direction;
 class Number;
 
-// ------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 // Game class
-// ------------------------------------------------
+// ------------------------------------------------------------------------------------------------------
 class Game {
 private:
+    // ------------------------------------------------
+    // member variables
+    // ------------------------------------------------
+    
     // the location of the player
     Location* player_location;
-
+    
     // arrays of pointers to game-objects
     OffsetArray<Location*, LOCATIONS_min, LOCATIONS_max> locations;
     OffsetArray<Passage*, PASSAGES_min, PASSAGES_max> passages;
@@ -36,29 +40,26 @@ private:
     OffsetArray<Number*, NUMBERS_min, NUMBERS_max> numbers;
     OffsetArray<Action*, ACTIONS_min, ACTIONS_max> actions;
     OffsetArray<Direction*, DIRECTIONS_min, DIRECTIONS_max> directions;
-    
     // run vars
+    
     vector<string> tokens;
     vector<int> commands;
     
     
-public:
+    
+    // ------------------------------------------------
+    // private methods
+    // ------------------------------------------------
+    
     // setup methods
     void test();
     void mapSetup();
     void physicalObjectSetup();
     void actionSetup();
     void adminClassesSetup();
-    void setup();
     void setPlayer_location(Location* new_location);
     
-    // run methods
-    void createTokens(string player_input);
-    void parseTokens();
-    bool enactCommands();
-    void commandLoop();
-    
-    // commands
+    // command methods
     int theGOcommand();
     int theLOOKcommand();
     int thePRESScommand();
@@ -69,6 +70,19 @@ public:
     // methods used in commands
     void movePlayerThroughPassage(Passage* passage);
     bool invalidCommand();
+    
+    // run methods
+    void createTokens(string player_input);
+    void parseTokens();
+    bool enactCommands();
+    
+    
+public:
+    // ------------------------------------------------
+    // public methods
+    // ------------------------------------------------
+    void setup();
+    void commandLoop();
 };
 
 #endif /* Game_hpp */
