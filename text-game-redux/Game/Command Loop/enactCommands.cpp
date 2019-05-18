@@ -33,7 +33,7 @@ bool Game::enactCommands(){
     // GO
     // ------------------------------------------------
     return_value = theGOcommand();
-    if(return_value != Neither){
+    if(return_value != WRONG_COMMAND){
         return return_value;
     }
 
@@ -41,7 +41,7 @@ bool Game::enactCommands(){
     // LOOK
     // ------------------------------------------------
     return_value = theLOOKcommand();
-    if(return_value != Neither){
+    if(return_value != WRONG_COMMAND){
         return return_value;
     }
     
@@ -49,7 +49,7 @@ bool Game::enactCommands(){
     // PRESS
     // ------------------------------------------------
     return_value = thePRESScommand();
-    if(return_value != Neither){
+    if(return_value != WRONG_COMMAND){
         return return_value;
     }
     
@@ -57,7 +57,7 @@ bool Game::enactCommands(){
     // GET
     // ------------------------------------------------
     return_value = theGETcommand();
-    if(return_value != Neither){
+    if(return_value != WRONG_COMMAND){
         return return_value;
     }
 
@@ -65,7 +65,7 @@ bool Game::enactCommands(){
     // DROP
     // ------------------------------------------------
     return_value = theDROPcommand();
-    if(return_value != Neither){
+    if(return_value != WRONG_COMMAND){
         return return_value;
     }
 

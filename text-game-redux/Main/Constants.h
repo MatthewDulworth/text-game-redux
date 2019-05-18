@@ -23,7 +23,7 @@ const bool HIDDEN = false;
 // -------------------------------------------
 const int False = 0;
 const int True = 1;
-const int Neither = -1;
+const int WRONG_COMMAND = -1;
 
 
 // -------------------------------------------

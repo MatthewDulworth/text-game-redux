@@ -110,6 +110,6 @@ int Game::theGOcommand(){
     
     // if the first command is not GO
     else {
-        return Neither;
+        return WRONG_COMMAND;
     }
 }

@@ -87,6 +87,6 @@ int Game::thePRESScommand(){
 
     // if the first command is not PRESS
     else {
-        return Neither;
+        return WRONG_COMMAND;
     }
 }

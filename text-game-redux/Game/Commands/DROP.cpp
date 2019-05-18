@@ -48,6 +48,6 @@ int Game::theDROPcommand(){
     
     // if the first command is not DROP
     else{
-        return Neither;
+        return WRONG_COMMAND;
     }
 }

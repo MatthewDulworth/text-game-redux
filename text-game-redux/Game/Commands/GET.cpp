@@ -48,6 +48,6 @@ int Game::theGETcommand(){
     
     // if the first command is not GET
     else {
-        return Neither;
+        return WRONG_COMMAND;
     }
 }

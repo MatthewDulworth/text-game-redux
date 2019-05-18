@@ -88,6 +88,6 @@ int Game::theLOOKcommand(){
     
     // if the first command is not LOOK
     else {
-        return Neither;
+        return WRONG_COMMAND;
     }
 }
