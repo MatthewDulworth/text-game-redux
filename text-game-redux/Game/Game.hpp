@@ -52,7 +52,13 @@ public:
     // enactCommands methods
     void movePlayerThroughPassage(Passage* passage);
     bool invalidCommand();
-    int theGetCommand();
+    
+    // commands
+    int theGOcommand();
+    int theLOOKcommand();
+    int thePRESScommand();
+    int theGETcommand();
+    int theDROPcommand();
 };
 
 #endif /* Game_hpp */
