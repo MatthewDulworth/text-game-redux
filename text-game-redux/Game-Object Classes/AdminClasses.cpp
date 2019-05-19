@@ -11,6 +11,15 @@
 // Action methods
 // ------------------------------------------------
 void Action::overridden(){}
+// ----- setSynonym ----- //
+void Action::setSynonym(string synonym){
+    this->synonym = synonym;
+}
+// ----- getSynonym ----- //
+string Action::getSynonym(){
+    return synonym;
+}
+
 
 // ------------------------------------------------
 // Direction methods

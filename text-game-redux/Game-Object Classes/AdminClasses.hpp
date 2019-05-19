@@ -9,6 +9,7 @@
 #define Direction_hpp
 
 #include "Base.hpp"
+#include <string>
 
 // ------------------------------------------------------------------------------------------------------
 // Admin Classes
@@ -18,8 +19,14 @@
 // Action
 // ------------------------------------------------
 class Action : public Base {
+private:
+    string synonym;
 public:
+    // setters
+    void setSynonym(string synonym);
     // getters
+    string getSynonym();
+    // overridden
     void overridden();
 };
 

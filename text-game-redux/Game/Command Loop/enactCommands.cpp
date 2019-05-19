@@ -11,14 +11,12 @@
 /*
  TO DO:
  
- Add USE command
- Add ability to unlock doors
  rework elevator call button PRESS command
  
  */
 
 // ------------------------------------------------------------------------------------------------------
-// enactCommands method
+// enactCommands
 // ------------------------------------------------------------------------------------------------------
 bool Game::enactCommands(){
     int return_value;

@@ -112,16 +112,16 @@ void Game::mapSetup(){
     // ----- set first floor passages ----- //
     // LOBBY to ELEVATOR_ONE
     lobby_to_elevator1.setCode(LOBBY_TO_ELEVATOR_1);    // index in the passages array
-    lobby_to_elevator1.setLockState(LOCKED);            // if the door is locked or unlocked
+    lobby_to_elevator1.setLockState(UNLOCKED);            // if the door is locked or unlocked
     lobby_to_elevator1.setVisibility(VISIBLE);          // if the passage is hidden or visible
-    lobby_to_elevator1.setKey_type(SILVER);            // the type of key that can unlock this door
+    lobby_to_elevator1.setKey_type(NONE);             // the type of key that can unlock this door
     lobby_to_elevator1.setLocation_1(&lobby);           // the room on one side of the passage
     lobby_to_elevator1.setLocation_2(&elevator_1);      // the room on the other side the passage
     // LOBBY to STREET
     lobby_to_street.setCode(LOBBY_TO_STREET);
-    lobby_to_street.setLockState(LOCKED);
+    lobby_to_street.setLockState(UNLOCKED);
     lobby_to_street.setVisibility(VISIBLE);
-    lobby_to_street.setKey_type(SILVER);
+    lobby_to_street.setKey_type(NONE);
     lobby_to_street.setLocation_1(&lobby);
     lobby_to_street.setLocation_2(&street);
     
@@ -130,28 +130,28 @@ void Game::mapSetup(){
     cubicleRoom_to_elevator1.setCode(CUBICLE_ROOM_TO_ELEVATOR_1);
     cubicleRoom_to_elevator1.setLockState(UNLOCKED);
     cubicleRoom_to_elevator1.setVisibility(VISIBLE);
+    cubicleRoom_to_elevator1.setKey_type(NONE);
     cubicleRoom_to_elevator1.setLocation_1(&cubicle_room);
-    cubicleRoom_to_elevator1.setKey_type(SILVER);
     cubicleRoom_to_elevator1.setLocation_2(&elevator_1);
     // CUBICLE_ROOM to SUPPLY_CLOSET
     cubicleRoom_to_supplyCloset.setCode(CUBICLE_ROOM_TO_SUPPLY_CLOSET);
     cubicleRoom_to_supplyCloset.setLockState(UNLOCKED);
     cubicleRoom_to_supplyCloset.setVisibility(VISIBLE);
-    cubicleRoom_to_supplyCloset.setKey_type(SILVER);
+    cubicleRoom_to_supplyCloset.setKey_type(NONE);
     cubicleRoom_to_supplyCloset.setLocation_1(&cubicle_room);
     cubicleRoom_to_supplyCloset.setLocation_2(&supply_closet);
     // CUBICLE_ROOM to BREAK_ROOM
     cubicleRoom_to_breakRoom.setCode(CUBICLE_ROOM_TO_BREAK_ROOM);
     cubicleRoom_to_breakRoom.setLockState(UNLOCKED);
     cubicleRoom_to_breakRoom.setVisibility(VISIBLE);
-    cubicleRoom_to_breakRoom.setKey_type(SILVER);
+    cubicleRoom_to_breakRoom.setKey_type(NONE);
     cubicleRoom_to_breakRoom.setLocation_1(&cubicle_room);
     cubicleRoom_to_breakRoom.setLocation_2(&break_room  );
     // CUBICLE_ROOM to MANAGERS_OFFICE
     cubicleRoom_to_managersOffice.setCode(CUBICLE_ROOM_TO_MANAGERS_OFFICE);
     cubicleRoom_to_managersOffice.setLockState(UNLOCKED);
     cubicleRoom_to_managersOffice.setVisibility(VISIBLE);
-    cubicleRoom_to_managersOffice.setKey_type(SILVER);
+    cubicleRoom_to_managersOffice.setKey_type(NONE);
     cubicleRoom_to_managersOffice.setLocation_1(&cubicle_room);
     cubicleRoom_to_managersOffice.setLocation_2(&managers_office);
     // MANAGERS_OFFICE to LLAMA SHRINE
@@ -184,7 +184,6 @@ void Game::mapSetup(){
     elevator_1.initButtons();                                       // initializes the elevator buttons
    
     
-    
     // --------------------------------------------------------------------------------------
     // admin locations
     // --------------------------------------------------------------------------------------
@@ -197,12 +196,6 @@ void Game::mapSetup(){
     trash.setCode(TRASH);
     trash.setName("TRASH");
     trash.setDescription("trash for unneeded physical objects");
-    
-    
-    
-   
-
-
     
     
     // --------------------------------------------------------------------------------------
@@ -231,7 +224,7 @@ void Game::mapSetup(){
     passages[BREAK_ROOM_TO_LLAMA_SHRINE] = &breakRoom_to_llamaShrine;
     
     // ----- set player starting location ----- //
-    setPlayer_location(&elevator_1);
+    setPlayer_location(&lobby);
     
     lobby.initCallButtons();
     street.initCallButtons();

@@ -113,7 +113,8 @@ const int DOOR_TYPES_min = 600;
 const int DOOR_TYPES_max = (DOOR_TYPES_min + DOOR_TYPES);
 
 enum enum_DOOR_TYPES{
-    SILVER = 600
+    NONE = 600,
+    SILVER
 };
 
 

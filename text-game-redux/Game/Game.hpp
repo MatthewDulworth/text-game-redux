@@ -77,6 +77,7 @@ private:
     void createTokens(string player_input);
     void parseTokens();
     bool enactCommands();
+    void enactEvents();
     
     
 public:
