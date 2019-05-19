@@ -42,8 +42,36 @@ string Location::getDescription(){
 
 
 // ------------------------------------------------
+// ElevatorCallButton methods
+// ------------------------------------------------
+bool ElevatorCallButton::isVisible(){
+    if(visibility == VISIBLE)return true;
+    else return false;
+}
+void ElevatorCallButton::setVisibility(bool state){
+    visibility = state;
+}
+void ElevatorCallButton::setElevator(Elevator* new_elevator){
+    elevator = new_elevator;
+}
+Elevator* ElevatorCallButton::getElevator(){
+    return elevator;
+}
+// ------------------------------------------------
+
+
+
+
+// ------------------------------------------------
 // Room methods
 // ------------------------------------------------
+Room::~Room(){
+    for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
+        if(call_buttons[i] != 0){
+            delete call_buttons[i];
+        }
+    }
+}
 // ----- initCallButtons ----- //
 void Room::initCallButtons(){
     
@@ -52,23 +80,34 @@ void Room::initCallButtons(){
         
         if(current_passage != 0){
             Location* target_location = getTargetLocation(current_passage, this);
+            call_buttons[i];
             
             if(isType<Elevator>(target_location)){
-                call_buttons[i] = true;
-            }
-            else{
-                call_buttons[i] = false;
+                call_buttons[i] = new ElevatorCallButton();
+                call_buttons[i]->setElevator(static_cast<Elevator*>(target_location));
+                if(current_passage->isVisible()){
+                    call_buttons[i]->setVisibility(VISIBLE);
+                }
+                else{
+                     call_buttons[i]->setVisibility(HIDDEN);
+                }
             }
         }
-        
     }
 }
-// ----- hasCallButton ----- //
-bool Room::hasCallButton(int direction){
-    if(call_buttons[direction] == true){
-        return true;
+// ----- hasVisibleButton ----- //
+bool Room::hasVisibleButton(int direction){
+    if(call_buttons[direction] != 0){
+        if(call_buttons[direction]->isVisible()){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
-    else return false;
+    else {
+        return false;
+    }
 }
 
 // ----- setExit ----- //
@@ -93,6 +132,9 @@ int Room::getFloor(){
 // ----- getExit ----- //
 Passage* Room::getExit(int direction){
     return exits[direction];
+}
+ElevatorCallButton* Room::getButton(int direction){
+    return call_buttons[direction];
 }
 // ----- overridden ----- //
 void Room::overridden(){}

@@ -83,9 +83,17 @@ int Game::theLOOKcommand(){
             }
             
             for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
-                Direction* current_direction = directions[i];
-                if(current_room->hasCallButton(i)){
-                    cout << "there is an elevator call button on the " << current_direction->getName() << " wall" << endl;
+                Passage* current_passage = current_room->getExit(i);
+                
+                if(current_room->hasVisibleButton(i)){
+                    Location* target_location = getTargetLocation(current_passage, current_room);
+                    
+                    if(isType<Elevator>(target_location)){
+                        cout << "there is an elevator call button labeled: " << target_location->getName() << endl;
+                    }
+                    else{
+                        cout << "ERROR: " << __FILE__ << ", " << __LINE__ << endl;
+                    }
                 }
             }
         }

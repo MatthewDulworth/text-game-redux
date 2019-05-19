@@ -46,35 +46,43 @@ int Game::thePRESScommand(){
         else if(isType<Room>(player_location)){
             Room* current_room = static_cast<Room*>(player_location);
             
-            // if the second command is a direction
-            if(isDirection(commands.at(1)) ){
-                Passage* current_passage = current_room->getExit(commands.at(1));
-                Location* target_location = getTargetLocation(current_passage, current_room);
-                
-                if(current_room->hasCallButton(commands.at(1)) ){
-                    Elevator* target_elevator = static_cast<Elevator*>(target_location);
+            // if the command is only one word long, no valid command entered
+            if(commands.size() < 3){
+                return invalidCommand();
+            }
+            
+            if(commands.at(1) == ELEVATOR){
+                if(isNumber(commands.at(2))){
+                    string elevator_string = words[ELEVATOR]->getName();
+                    string number_string = numbers[commands.at(2)]->getName();
                     
-                    if(target_elevator->getCurrent_floor() == current_room->getFloor()){
-                        cout << "the elevator is already on your floor" << endl;
-                        return true;
+                    for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
+                        if(current_room->hasVisibleButton(i)){
+                            ElevatorCallButton* button = current_room->getButton(i);
+                            Elevator* target_elevator = button->getElevator();
+                            
+                            if( (elevator_string + " " + number_string) == target_elevator->getName() ){
+                                if(target_elevator->getCurrent_floor() != current_room->getFloor() ){
+                                    target_elevator->setCurrent_floor(current_room->getFloor());
+                                    cout << target_elevator->getName() << " is now on your floor" << endl;
+                                    return true;
+                                }
+                                else{
+                                    cout << target_elevator->getName() << " is already on your floor" << endl;
+                                    return true;
+                                }
+                            }
+                        }
                     }
-                    else{
-                        target_elevator->setCurrent_floor(current_room->getFloor());
-                        cout << "the elevator is now your floor " << endl;
-                        return true;
-                    }
-                    
+                    return invalidCommand();
                 }
                 else {
                     return invalidCommand();
                 }
             }
-            
-            // if the second command is not a direction
             else{
                 return invalidCommand();
             }
-
         }
 
         // if the player is in neither a room or an elevator

@@ -16,6 +16,7 @@
 
 class PhysicalObject;
 class Passage;
+class Elevator;
 
 // ------------------------------------------------------------------------------------------------------
 // Location classes
@@ -40,6 +41,23 @@ public:
     virtual string getDescription();
 };
 
+// ------------------------------------------------
+// Location
+// ------------------------------------------------
+class ElevatorCallButton {
+private:
+    Elevator* elevator;
+    bool visibility;
+public:
+    // checks
+    bool isVisible();
+    // setters
+    void setVisibility(bool visibility);
+    void setElevator(Elevator* new_elevator);
+    // getters
+    Elevator* getElevator();
+};
+
 
 // ------------------------------------------------
 // Room
@@ -49,13 +67,16 @@ class Room : public Location {
 private:
     int floor;
     OffsetArray<Passage*, DIRECTIONS_min, DIRECTIONS_max> exits;
-    OffsetArray<bool, DIRECTIONS_min, DIRECTIONS_max> call_buttons;
+    OffsetArray<ElevatorCallButton*, DIRECTIONS_min, DIRECTIONS_max> call_buttons;
     
 public:
+    // destructor
+    ~Room();
     // init
     void initCallButtons();
+    void updateButtonVisibility();
     // checks
-    bool hasCallButton(int direction);
+    bool hasVisibleButton(int direction);
     // setters
     void setFloor(int new_floor);
     void setExit(int direction, Passage* exit);
@@ -63,6 +84,7 @@ public:
     // getters
     int getFloor();
     Passage* getExit(int direction);
+    ElevatorCallButton* getButton(int direction);
     // overridden
     void overridden();
 };
