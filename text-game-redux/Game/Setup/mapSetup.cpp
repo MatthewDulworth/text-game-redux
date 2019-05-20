@@ -90,6 +90,7 @@ void Game::mapSetup(){
     managers_office.setDescription("a managers office");
     managers_office.setFloor(SECOND_FLOOR);
     managers_office.setExit(NORTH, &cubicleRoom_to_managersOffice);
+    managers_office.setExit(WEST, &managersOffice_to_llamaShrine);
     // LLAMA_SHRINE
     llama_shrine.setCode(LLAMA_SHRINE);
     llama_shrine.setName("LLAMA SHRINE");
@@ -156,7 +157,7 @@ void Game::mapSetup(){
     cubicleRoom_to_managersOffice.setLocation_2(&managers_office);
     // MANAGERS_OFFICE to LLAMA SHRINE
     managersOffice_to_llamaShrine.setCode(MANAGERS_OFFICE_TO_LLAMA_SHRINE);
-    managersOffice_to_llamaShrine.setLockState(LOCKED);
+    managersOffice_to_llamaShrine.setLockState(UNLOCKED);
     managersOffice_to_llamaShrine.setVisibility(HIDDEN);
     managersOffice_to_llamaShrine.setKey_type(SILVER);
     managersOffice_to_llamaShrine.setLocation_1(&managers_office);
@@ -182,8 +183,16 @@ void Game::mapSetup(){
     elevator_1.setExit_direction(SOUTH);                            // sets the direction the doors open
     elevator_1.setCurrent_floor(SECOND_FLOOR);                      // starting floor
     elevator_1.initButtons();                                       // initializes the elevator buttons
-   
     
+    // ----- init call buttons ----- //
+    lobby.initCallButtons();
+    street.initCallButtons();
+    cubicle_room.initCallButtons();
+    supply_closet.initCallButtons();
+    managers_office.initCallButtons();
+    llama_shrine.initCallButtons();
+    break_room.initCallButtons();
+   
     // --------------------------------------------------------------------------------------
     // admin locations
     // --------------------------------------------------------------------------------------
@@ -224,13 +233,6 @@ void Game::mapSetup(){
     passages[BREAK_ROOM_TO_LLAMA_SHRINE] = &breakRoom_to_llamaShrine;
     
     // ----- set player starting location ----- //
-    setPlayer_location(&llama_shrine);
-    
-    lobby.initCallButtons();
-    street.initCallButtons();
-    cubicle_room.initCallButtons();
-    supply_closet.initCallButtons();
-    managers_office.initCallButtons();
-    llama_shrine.initCallButtons();
-    break_room.initCallButtons();
+    setPlayer_location(&lobby);
+    player_location->incrementEnteredCount();
 }

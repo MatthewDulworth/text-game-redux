@@ -37,6 +37,7 @@ int Game::theGOcommand(){
                         if(current_passage->isVisible() ){
                             if(current_passage->isUnlocked() ){
                                 movePlayerThroughPassage(current_passage);
+                                player_location->incrementEnteredCount();
                                 cout << "you went " << current_direction->getName() << endl;
                                 cout << "you are in " << player_location->getDescription() << endl;
                                 return true;
@@ -78,6 +79,7 @@ int Game::theGOcommand(){
                                 }
                             }
                             movePlayerThroughPassage(current_passage);
+                            player_location->incrementEnteredCount();
                             cout << "you went " << current_direction->getName() << endl;
                             cout << "you are in " << player_location->getDescription() << endl;
                             return true;

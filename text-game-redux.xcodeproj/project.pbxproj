@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		345A07A62290C91200E560CF /* enactEvents().cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07A52290C91200E560CF /* enactEvents().cpp */; };
+		345A07A62290C91200E560CF /* enactEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07A52290C91200E560CF /* enactEvents.cpp */; };
 		345A07AA22918E4300E560CF /* text_functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07A822918E4300E560CF /* text_functions.cpp */; };
 		345A07AD2291996900E560CF /* gazedUponTheLlamaGod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07AC2291996900E560CF /* gazedUponTheLlamaGod.cpp */; };
+		345A07B0229356A300E560CF /* devCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07AF229356A300E560CF /* devCommands.cpp */; };
 		346D9B2E224EF6AA00950AD7 /* enactCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */; };
 		346D9B30224F13D900950AD7 /* mapSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B2F224F13D900950AD7 /* mapSetup.cpp */; };
 		346D9B32224F140600950AD7 /* physicalObjectSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B31224F140600950AD7 /* physicalObjectSetup.cpp */; };
@@ -48,10 +49,11 @@
 
 /* Begin PBXFileReference section */
 		3426AFEA228E166A00EC5A31 /* OffsetArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OffsetArray.h; sourceTree = "<group>"; };
-		345A07A52290C91200E560CF /* enactEvents().cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "enactEvents().cpp"; sourceTree = "<group>"; };
+		345A07A52290C91200E560CF /* enactEvents.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enactEvents.cpp; sourceTree = "<group>"; };
 		345A07A822918E4300E560CF /* text_functions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = text_functions.cpp; sourceTree = "<group>"; };
 		345A07A922918E4300E560CF /* text_functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = text_functions.hpp; sourceTree = "<group>"; };
 		345A07AC2291996900E560CF /* gazedUponTheLlamaGod.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gazedUponTheLlamaGod.cpp; sourceTree = "<group>"; };
+		345A07AF229356A300E560CF /* devCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = devCommands.cpp; sourceTree = "<group>"; };
 		346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = enactCommands.cpp; path = "text-game-redux/Game/Command Loop/enactCommands.cpp"; sourceTree = SOURCE_ROOT; };
 		346D9B2F224F13D900950AD7 /* mapSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mapSetup.cpp; sourceTree = "<group>"; };
 		346D9B31224F140600950AD7 /* physicalObjectSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = physicalObjectSetup.cpp; sourceTree = "<group>"; };
@@ -130,7 +132,7 @@
 				34A2F8A1224EAEA500ABB248 /* createTokens.cpp */,
 				34A2F8A5224EB6AB00ABB248 /* parseTokens.cpp */,
 				346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */,
-				345A07A52290C91200E560CF /* enactEvents().cpp */,
+				345A07A52290C91200E560CF /* enactEvents.cpp */,
 				34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */,
 			);
 			name = "Command Loop";
@@ -178,6 +180,7 @@
 			children = (
 				34A2F89B224D110A00ABB248 /* Game.hpp */,
 				346D9B43224F295C00950AD7 /* Game.cpp */,
+				345A07AF229356A300E560CF /* devCommands.cpp */,
 				345A07AB2291992D00E560CF /* Events */,
 				34B0C2D422906B3700FD2C77 /* Commands */,
 				346D9B45224F297100950AD7 /* Command Loop */,
@@ -288,7 +291,7 @@
 				34A2F894224C49CC00ABB248 /* TypeChecks.cpp in Sources */,
 				34B0C2DB22906B9B00FD2C77 /* GET.cpp in Sources */,
 				34A2F8A6224EB6AB00ABB248 /* parseTokens.cpp in Sources */,
-				345A07A62290C91200E560CF /* enactEvents().cpp in Sources */,
+				345A07A62290C91200E560CF /* enactEvents.cpp in Sources */,
 				34B0C2D722906B5A00FD2C77 /* GO.cpp in Sources */,
 				346D9B30224F13D900950AD7 /* mapSetup.cpp in Sources */,
 				346D9B2E224EF6AA00950AD7 /* enactCommands.cpp in Sources */,
@@ -302,6 +305,7 @@
 				346D9B3B224F161E00950AD7 /* Passage.cpp in Sources */,
 				34B0C2D922906B8400FD2C77 /* LOOK.cpp in Sources */,
 				346D9B40224F290400950AD7 /* actionSetup.cpp in Sources */,
+				345A07B0229356A300E560CF /* devCommands.cpp in Sources */,
 				34F53A3B224BCD8500437F64 /* Base.cpp in Sources */,
 				345A07AD2291996900E560CF /* gazedUponTheLlamaGod.cpp in Sources */,
 				34F53A33224BCD6500437F64 /* main.cpp in Sources */,

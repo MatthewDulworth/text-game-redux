@@ -79,10 +79,12 @@ private:
     bool noExit();
     
     // run methods
+    bool devCommands(string player_input);
     void createTokens(string player_input);
     void parseTokens();
     bool enactCommands();
     bool enactEvents();
+    
     
     
 public:

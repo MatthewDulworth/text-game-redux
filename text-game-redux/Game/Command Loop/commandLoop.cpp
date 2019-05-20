@@ -19,11 +19,7 @@ void Game::commandLoop(){
             parseTokens();                  // creates a command based of the tokens
             enactCommands();                // if the command is valid, run the command
             cout << endl;
-        
-            if(enactEvents()){
-                cout << endl;
-            }
-            
+            enactEvents();
         }
         tokens.clear();
         commands.clear();

@@ -20,6 +20,7 @@
 // ------------------------------------------------
 // Location methods
 // ------------------------------------------------
+
 // ----- addObject ----- //
 void Location::addObject(PhysicalObject* object){
     contents.push_back(object);
@@ -27,6 +28,14 @@ void Location::addObject(PhysicalObject* object){
 // ----- removeObject ----- //
 void Location::removeObject(PhysicalObject* object){
     contents.erase(std::remove(contents.begin(), contents.end(), object ), contents.end() );
+}
+// ----- incrementEnteredCount ----- //
+void Location::incrementEnteredCount(){
+    entered_count++;
+}
+// ----- locationHasBeenEntered ----- //
+bool Location::locationHasBeenEntered(){
+    return (entered_count > 0) ? true : false;
 }
 // ----- setDescription ----- //
 void Location::setDescription(string new_description){
@@ -65,6 +74,9 @@ Elevator* ElevatorCallButton::getElevator(){
 // ------------------------------------------------
 // Room methods
 // ------------------------------------------------
+Room::Room(){
+    entered_count = 0;
+}
 Room::~Room(){
     for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
         if(call_buttons[i] != 0){
@@ -174,7 +186,9 @@ int ElevatorFloorButton::getFloor(){
 // ------------------------------------------------
 // Elevator methods
 // ------------------------------------------------
-// ----- destructor ----- //
+Elevator::Elevator(){
+    entered_count = 0;
+}
 Elevator::~Elevator(){
     for(int i=FLOORS_min; i<FLOORS_max; i++){
         delete floor_buttons[i];

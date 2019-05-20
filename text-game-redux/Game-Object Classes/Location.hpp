@@ -29,12 +29,16 @@ class Elevator;
 // abstract, first level subclass
 class Location : public Base {
 protected:
+    int entered_count;
     string description;
     vector<PhysicalObject*> contents;
 public:
-    // vector admin
+    // admin
     virtual void addObject(PhysicalObject* object);
     virtual void removeObject(PhysicalObject* object);
+    virtual void incrementEnteredCount();
+    // checks
+    virtual bool locationHasBeenEntered();
     // setters
     virtual void setDescription(string new_string);
     // getters
@@ -70,7 +74,8 @@ private:
     OffsetArray<ElevatorCallButton*, DIRECTIONS_min, DIRECTIONS_max> call_buttons;
     
 public:
-    // destructor
+    // structors
+    Room();
     ~Room();
     // init
     void initCallButtons();
@@ -120,7 +125,8 @@ private:
     Passage* current_exit;
     
 public:
-    // destructor
+    // structors
+    Elevator();
     ~Elevator();
     // init
     void initButtons();
