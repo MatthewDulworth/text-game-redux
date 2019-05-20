@@ -41,11 +41,13 @@ private:
     OffsetArray<Action*, ACTIONS_min, ACTIONS_max> actions;
     OffsetArray<Direction*, DIRECTIONS_min, DIRECTIONS_max> directions;
     OffsetArray<Word*, WORDS_min, WORDS_max> words;
-    // run vars
     
+    // run vars
     vector<string> tokens;
     vector<int> commands;
     
+    // event vars
+    int last_successfull_action;
     
     
     // ------------------------------------------------
@@ -68,6 +70,9 @@ private:
     int theDROPcommand();
     int theUSEcommand();
     
+    // evetns methods
+    bool gazedUponTheLlamaGod();
+    
     // methods used in commands
     void movePlayerThroughPassage(Passage* passage);
     bool invalidCommand();
@@ -77,7 +82,7 @@ private:
     void createTokens(string player_input);
     void parseTokens();
     bool enactCommands();
-    void enactEvents();
+    bool enactEvents();
     
     
 public:

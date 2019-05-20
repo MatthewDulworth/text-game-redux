@@ -7,10 +7,17 @@
 //
 
 #include "Game.hpp"
+#include <unistd.h>
 
 // ------------------------------------------------------------------------------------------------------
 // enactEvents
 // ------------------------------------------------------------------------------------------------------
-void Game::enactEvents(){
+
+bool Game::enactEvents(){
     
+    if(gazedUponTheLlamaGod() == true){
+        return true;
+    }
+    
+    return false;
 }

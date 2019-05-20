@@ -42,7 +42,7 @@ int Game::theGOcommand(){
                                 return true;
                             }else{
                                 cout << "this floor is locked" << endl;
-                                return true;
+                                return false;
                             }
                         }else{
                             return invalidCommand();
@@ -55,7 +55,7 @@ int Game::theGOcommand(){
                 }
                 else {
                     cout << "The elevator doors do not open in that direction" << endl;
-                    return true;
+                    return false;
                 }
             }
             
@@ -74,7 +74,7 @@ int Game::theGOcommand(){
                                 
                                 if(target_elevator->getCurrent_floor() != current_room->getFloor() ){
                                     cout << target_elevator->getName() << " is not on your floor" << endl;
-                                    return true;
+                                    return false;
                                 }
                             }
                             movePlayerThroughPassage(current_passage);
@@ -84,7 +84,7 @@ int Game::theGOcommand(){
                         }
                         else{
                             cout << "that door is locked" << endl;
-                            return true;
+                            return false;
                         }
                     }
                     else{
@@ -92,8 +92,7 @@ int Game::theGOcommand(){
                     }
                 }
                 else{
-                    cout << "there is no exit in that direction" << endl;
-                    return false;
+                    return noExit();
                 }
             }
             

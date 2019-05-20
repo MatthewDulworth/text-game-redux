@@ -34,7 +34,7 @@ int Game::thePRESScommand(){
                 }
                 else {
                     cout << "you are already on that floor" << endl;
-                    return true;
+                    return false;
                 }
             }
             else {
@@ -69,7 +69,7 @@ int Game::thePRESScommand(){
                                 }
                                 else{
                                     cout << target_elevator->getName() << " is already on your floor" << endl;
-                                    return true;
+                                    return false;
                                 }
                             }
                         }

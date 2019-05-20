@@ -58,7 +58,7 @@ int Game::theUSEcommand(){
                     if(current_passage->isVisible()){
                         if(current_passage->isUnlocked()){
                             cout << "that exit is already unlocked" << endl;
-                            return true;
+                            return false;
                         }
                         else {
                             if(current_key->canUnlock(current_passage)){
@@ -68,7 +68,7 @@ int Game::theUSEcommand(){
                             }
                             else {
                                 cout << "that key cannot unlock that door" << endl;
-                                return true;
+                                return false;
                             }
                         }
                     }

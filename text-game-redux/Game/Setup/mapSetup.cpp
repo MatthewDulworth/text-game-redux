@@ -203,7 +203,7 @@ void Game::mapSetup(){
     // --------------------------------------------------------------------------------------
     // ----- set locations array ----- //
     locations[LOBBY] = &lobby;
-    locations[STREET] = &lobby;
+    locations[STREET] = &street;
     locations[ELEVATOR_ONE] = &elevator_1;
     locations[CUBICLE_ROOM] = &cubicle_room;
     locations[SUPPLY_CLOSET] = &supply_closet;
@@ -224,7 +224,7 @@ void Game::mapSetup(){
     passages[BREAK_ROOM_TO_LLAMA_SHRINE] = &breakRoom_to_llamaShrine;
     
     // ----- set player starting location ----- //
-    setPlayer_location(&lobby);
+    setPlayer_location(&llama_shrine);
     
     lobby.initCallButtons();
     street.initCallButtons();
