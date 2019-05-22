@@ -32,7 +32,7 @@ public:
     void removeObjectFromInventory(PhysicalObject* item);
     // setters
     void setName(string name);
-    void changeLocation(Location* location);
+    void moveTo(Location* location);
     // getters
     string getName();
     Location* getLocation();

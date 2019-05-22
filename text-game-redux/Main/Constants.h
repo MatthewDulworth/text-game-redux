@@ -27,26 +27,36 @@ const int WRONG_COMMAND = -1;
 // -------------------------------------------
 // FLOORS
 // -------------------------------------------
-const int FLOORS = 2;
+const int FLOORS = 7;
 const int FLOORS_min = 100;
 const int FLOORS_max = (FLOORS_min + FLOORS);
 
 enum enum_FLOORS {
     FIRST_FLOOR = 100,
-    SECOND_FLOOR
+    SECOND_FLOOR,
+    THIRD_FLOOR,
+    FOURTH_FLOOR,
+    FIFTH_FLOOR,
+    SIXTH_FLOOR,
+    SEVENTH_FLOOR
 };
 
 
 // -------------------------------------------
 // NUMBERS
 // -------------------------------------------
-const int NUMBERS = 2;
+const int NUMBERS = 7;
 const int NUMBERS_min = 200;
 const int NUMBERS_max = (NUMBERS_min + NUMBERS);
 
 enum enum_NUMBERS {
     ONE = 200,
-    TWO
+    TWO,
+    THREE,
+    FOUR,
+    FIVE,
+    SIX,
+    SEVEN
 };
 
 
@@ -68,20 +78,12 @@ enum enum_DIRECTIONS {
 // -------------------------------------------
 // LOCATIONS
 // -------------------------------------------
-const int LOCATIONS = 10;
+const int LOCATIONS = 2;
 const int LOCATIONS_min = 400;
 const int LOCATIONS_max = (LOCATIONS_min + LOCATIONS);
 
 enum enum_LOCATIONS {
-    LOBBY = 400,
-    STREET,
-    ELEVATOR_ONE,
-    CUBICLE_ROOM,
-    SUPPLY_CLOSET,
-    MANAGERS_OFFICE,
-    LLAMA_SHRINE,
-    BREAK_ROOM,
-    INVENTORY,
+    INVENTORY = 400,
     TRASH
 };
 
@@ -89,19 +91,12 @@ enum enum_LOCATIONS {
 // -------------------------------------------
 // PASSAGES
 // -------------------------------------------
-const int PASSAGES = 8;
+const int PASSAGES = 0;
 const int PASSAGES_min = 500;
 const int PASSAGES_max = (PASSAGES_min + PASSAGES);
 
 enum enum_PASSAGES {
-    LOBBY_TO_ELEVATOR_1 = 500,
-    LOBBY_TO_STREET,
-    CUBICLE_ROOM_TO_ELEVATOR_1,
-    CUBICLE_ROOM_TO_SUPPLY_CLOSET,
-    CUBICLE_ROOM_TO_BREAK_ROOM,
-    CUBICLE_ROOM_TO_MANAGERS_OFFICE,
-    BREAK_ROOM_TO_LLAMA_SHRINE,
-    MANAGERS_OFFICE_TO_LLAMA_SHRINE
+    
 };
 
 
@@ -114,19 +109,18 @@ const int DOOR_TYPES_max = (DOOR_TYPES_min + DOOR_TYPES);
 
 enum enum_DOOR_TYPES{
     NONE = 600,
-    SILVER
 };
 
 
 // -------------------------------------------
 // PHYSICAL OBJECTS
 // -------------------------------------------
-const int PHYSICAL_OBJECTS = 1;
+const int PHYSICAL_OBJECTS = 0;
 const int PHYSICAL_OBJECTS_min = 700;
 const int PHYSICAL_OBJECTS_max = (PHYSICAL_OBJECTS_min + PHYSICAL_OBJECTS);
 
 enum enum_OBJECTS {
-    SILVER_KEY = 700
+    
 };
 
 

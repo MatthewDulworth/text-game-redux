@@ -15,39 +15,36 @@
 void Game::actionSetup(){
     
     // ----- object declarations ----- //
-    static Action go, look, press, get, drop, use;
+    actions[GO] = new Action();
+    actions[LOOK] = new Action();
+    actions[PRESS] = new Action();
+    actions[GET] = new Action();
+    actions[DROP] = new Action();
+    actions[USE] = new Action();
     
     // ----- set attributes ----- //
     // GO
-    go.setCode(GO);
-    go.setName("GO");
-    go.setSynonym("GO");
+    actions[GO]->setCode(GO);
+    actions[GO]->setName("GO");
+    actions[GO]->setSynonym("MOVE");
     // LOOK
-    look.setCode(LOOK);
-    look.setName("LOOK");
-    look.setSynonym("LOOK");
+    actions[LOOK]->setCode(LOOK);
+    actions[LOOK]->setName("LOOK");
+    actions[LOOK]->setSynonym("LOOK");
     // PRESS
-    press.setCode(PRESS);
-    press.setName("PRESS");
-    press.setSynonym("PUSH");
+    actions[PRESS]->setCode(PRESS);
+    actions[PRESS]->setName("PRESS");
+    actions[PRESS]->setSynonym("PUSH");
     // GET
-    get.setCode(GET);
-    get.setName("GET");
-    get.setSynonym("GET");
+    actions[GET]->setCode(GET);
+    actions[GET]->setName("GET");
+    actions[GET]->setSynonym("PICK");
     // DROP
-    drop.setCode(DROP);
-    drop.setName("DROP");
-    drop.setSynonym("DROP");
-    //USE
-    use.setCode(USE);
-    use.setName("USE");
-    use.setSynonym("USE");
-    
-    // ----- set array ----- //
-    actions[GO] = &go;
-    actions[LOOK] = &look;
-    actions[PRESS] = &press;
-    actions[GET] = &get;
-    actions[DROP] = &drop;
-    actions[USE] = &use;
+    actions[DROP]->setCode(DROP);
+    actions[DROP]->setName("DROP");
+    actions[DROP]->setSynonym("DROP");
+    // USE
+    actions[USE]->setCode(USE);
+    actions[USE]->setName("USE");
+    actions[USE]->setSynonym("USE");
 }

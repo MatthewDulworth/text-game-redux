@@ -36,7 +36,7 @@ void Player::setName(string name){
     this->name = name;
 }
 
-void Player:: changeLocation(Location* location){
+void Player:: moveTo(Location* location){
     this->location = location;
 }
 

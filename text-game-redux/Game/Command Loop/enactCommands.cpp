@@ -14,69 +14,53 @@ bool Game::enactCommands(){
     int return_value;
     last_successfull_action = NONE;
     
-    // ------------------------------------------------
-    // no command entered
-    // ------------------------------------------------
+    // ----- no command entered ----- //
     if(commands.size() == 0){
         return invalidCommand();
     }
     
-    // ------------------------------------------------
-    // GO
-    // ------------------------------------------------
+    // ----- GO ----- //
     return_value = theGOcommand();
     if(return_value != WRONG_COMMAND){
         if(return_value == true) last_successfull_action = GO;
         return return_value;
     }
 
-    // ------------------------------------------------
-    // LOOK
-    // ------------------------------------------------
+    // ----- LOOK ----- //
     return_value = theLOOKcommand();
     if(return_value != WRONG_COMMAND){
         if(return_value == true) last_successfull_action = LOOK;
         return return_value;
     }
     
-    // ------------------------------------------------
-    // PRESS
-    // ------------------------------------------------
+    // ----- PRESS ----- //
     return_value = thePRESScommand();
     if(return_value != WRONG_COMMAND){
         if(return_value == true) last_successfull_action = PRESS;
         return return_value;
     }
     
-    // ------------------------------------------------
-    // GET
-    // ------------------------------------------------
+    // ----- GET ----- //
     return_value = theGETcommand();
     if(return_value != WRONG_COMMAND){
         if(return_value == true) last_successfull_action = GET;
         return return_value;
     }
 
-    // ------------------------------------------------
-    // DROP
-    // ------------------------------------------------
+    // ----- DROP ----- //
     return_value = theDROPcommand();
     if(return_value != WRONG_COMMAND){
         if(return_value == true) last_successfull_action = DROP;
         return return_value;
     }
     
-    // ------------------------------------------------
-    // DROP
-    // ------------------------------------------------
+    // ----- USE ----- //
     return_value = theUSEcommand();
     if(return_value != WRONG_COMMAND){
         if(return_value == true) last_successfull_action = USE;
         return return_value;
     }
 
-    // ------------------------------------------------
-    // no valid command entered
-    // ------------------------------------------------
+    // ----- no valid command entered ----- //
     return invalidCommand();
 }

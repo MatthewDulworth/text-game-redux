@@ -15,15 +15,10 @@
 void Game::physicalObjectSetup(){
     
     // ----- object declarations ----- //
-    static Key silver_key;
     
     // ----- set variables ----- //
-    silver_key.setCode(SILVER_KEY);
-    silver_key.setName("SILVER");
-    silver_key.setDescription("a silver key");
-    silver_key.setDoor_Type(SILVER);
-    silver_key.setLocation(locations[INVENTORY]);
+    
 
     // ----- set arrays ----- //
-    physical_objects[SILVER_KEY] = &silver_key;
+    
 }

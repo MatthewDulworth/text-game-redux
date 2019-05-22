@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		345A07A62290C91200E560CF /* enactEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07A52290C91200E560CF /* enactEvents.cpp */; };
 		345A07AA22918E4300E560CF /* text_functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07A822918E4300E560CF /* text_functions.cpp */; };
-		345A07AD2291996900E560CF /* gazedUponTheLlamaGod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07AC2291996900E560CF /* gazedUponTheLlamaGod.cpp */; };
 		345A07B0229356A300E560CF /* devCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07AF229356A300E560CF /* devCommands.cpp */; };
 		346D9B2E224EF6AA00950AD7 /* enactCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */; };
 		346D9B30224F13D900950AD7 /* mapSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B2F224F13D900950AD7 /* mapSetup.cpp */; };
@@ -53,7 +52,6 @@
 		345A07A52290C91200E560CF /* enactEvents.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enactEvents.cpp; sourceTree = "<group>"; };
 		345A07A822918E4300E560CF /* text_functions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = text_functions.cpp; sourceTree = "<group>"; };
 		345A07A922918E4300E560CF /* text_functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = text_functions.hpp; sourceTree = "<group>"; };
-		345A07AC2291996900E560CF /* gazedUponTheLlamaGod.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = gazedUponTheLlamaGod.cpp; sourceTree = "<group>"; };
 		345A07AF229356A300E560CF /* devCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = devCommands.cpp; sourceTree = "<group>"; };
 		346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = enactCommands.cpp; path = "text-game-redux/Game/Command Loop/enactCommands.cpp"; sourceTree = SOURCE_ROOT; };
 		346D9B2F224F13D900950AD7 /* mapSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mapSetup.cpp; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		345A07AB2291992D00E560CF /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				345A07AC2291996900E560CF /* gazedUponTheLlamaGod.cpp */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -313,7 +310,6 @@
 				346D9B40224F290400950AD7 /* actionSetup.cpp in Sources */,
 				345A07B0229356A300E560CF /* devCommands.cpp in Sources */,
 				34F53A3B224BCD8500437F64 /* Base.cpp in Sources */,
-				345A07AD2291996900E560CF /* gazedUponTheLlamaGod.cpp in Sources */,
 				34F53A33224BCD6500437F64 /* main.cpp in Sources */,
 				346D9B32224F140600950AD7 /* physicalObjectSetup.cpp in Sources */,
 				34A2F888224BE8F600ABB248 /* Location.cpp in Sources */,

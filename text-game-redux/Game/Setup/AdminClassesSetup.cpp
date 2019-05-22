@@ -17,69 +17,85 @@ void Game::adminClassesSetup(){
     // Directions
     // ------------------------------------------------
     
-    // ----- declarations ----- //
-    static Direction north, south, east, west;
+    // ----- create new objects ----- //
+    directions[NORTH] = new Direction();
+    directions[SOUTH] = new Direction();
+    directions[EAST] = new Direction();
+    directions[WEST] = new Direction();
     
     // ----- set variables ----- //
     // NORTH
-    north.setCode(NORTH);
-    north.setName("NORTH");
+    directions[NORTH]->setCode(NORTH);
+    directions[NORTH]->setName("NORTH");
     // SOUTH
-    south.setCode(SOUTH);
-    south.setName("SOUTH");
+    directions[SOUTH]->setCode(SOUTH);
+    directions[SOUTH]->setName("SOUTH");
     // EAST
-    east.setCode(EAST);
-    east.setName("EAST");
+    directions[EAST]->setCode(EAST);
+    directions[EAST]->setName("EAST");
     // WEST
-    west.setCode(WEST);
-    west.setName("WEST");
+    directions[WEST]->setCode(WEST);
+    directions[WEST]->setName("WEST");
     
-    // ----- set array ----- //
-    directions[NORTH] = &north;
-    directions[SOUTH] = &south;
-    directions[EAST] = &east;
-    directions[WEST] = &west;
     
-
     // ------------------------------------------------
     // Numbers
     // ------------------------------------------------
     
-    // ----- declarations ----- //
-    static Number one, two;
+    // ----- create new objects ----- //
+    numbers[ONE] = new Number();
+    numbers[TWO] = new Number();
+    numbers[THREE] = new Number();
+    numbers[FOUR] = new Number();
+    numbers[FIVE] = new Number();
+    numbers[SIX] = new Number();
+    numbers[SEVEN] = new Number();
     
     // ----- set variables ----- //
     // ONE
-    one.setCode(ONE);
-    one.setName("ONE");
-    one.setSynonym("1");
+    numbers[ONE]->setCode(ONE);
+    numbers[ONE]->setName("ONE");
+    numbers[ONE]->setSynonym("1");
     // TWO
-    two.setCode(TWO);
-    two.setName("TWO");
-    two.setSynonym("2");
-    
-    // ----- set array ----- //
-    numbers[ONE] = &one;
-    numbers[TWO] = &two;
-    
+    numbers[TWO]->setCode(TWO);
+    numbers[TWO]->setName("TWO");
+    numbers[TWO]->setSynonym("2");
+    // THREE
+    numbers[THREE]->setCode(THREE);
+    numbers[THREE]->setName("THREE");
+    numbers[THREE]->setSynonym("3");
+    // FOUR
+    numbers[FOUR]->setCode(FOUR);
+    numbers[FOUR]->setName("FOUR");
+    numbers[FOUR]->setSynonym("4");
+    // FIVE
+    numbers[FIVE]->setCode(FIVE);
+    numbers[FIVE]->setName("FIVE");
+    numbers[FIVE]->setSynonym("5");
+    // SIX
+    numbers[SIX]->setCode(SIX);
+    numbers[SIX]->setName("SIX");
+    numbers[SIX]->setSynonym("6");
+    // SEVEN
+    numbers[SEVEN]->setCode(SEVEN);
+    numbers[SEVEN]->setName("SEVEN");
+    numbers[SEVEN]->setSynonym("7");
+
     
     // ------------------------------------------------
     // WORDS
     // ------------------------------------------------
     
-    // ----- declarations ----- //
-    static Word exit, elevator, button, key;
+    // ----- create new objects ----- //
+    words[EXIT] = new Word();
+    words[ELEVATOR] = new Word();
     
     // ----- set variables ----- //
     // EXIT
-    exit.setCode(EXIT);
-    exit.setName("EXIT");
+    words[EXIT]->setCode(EXIT);
+    words[EXIT]->setName("EXIT");
     // ELEVATOR
-    elevator.setCode(ELEVATOR);
-    elevator.setName("ELEVATOR");
-
-    // ----- set array ----- //
-    words[EXIT] = &exit;
-    words[ELEVATOR] = &elevator;
+    words[ELEVATOR]->setCode(ELEVATOR);
+    words[ELEVATOR]->setName("ELEVATOR");
 }
 
