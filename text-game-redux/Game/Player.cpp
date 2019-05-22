@@ -18,8 +18,10 @@ Player::Player(Location* starting_location){
 
 bool Player::isInInventory(PhysicalObject* item){
     
-    
-    return false;
+    if(find(inventory.begin(), inventory.end(), item) != inventory.end()){
+        return true;
+    }
+    else return false;
 }
 
 void Player::addObjectToInventory(PhysicalObject* item){
