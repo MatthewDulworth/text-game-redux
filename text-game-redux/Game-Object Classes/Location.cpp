@@ -79,9 +79,7 @@ Room::Room(){
 }
 Room::~Room(){
     for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
-        if(call_buttons[i] != 0){
-            delete call_buttons[i];
-        }
+        delete call_buttons[i];
     }
 }
 // ----- initCallButtons ----- //
