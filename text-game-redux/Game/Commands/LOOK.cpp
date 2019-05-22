@@ -10,6 +10,7 @@
 #include "Location.hpp"
 #include "Passage.hpp"
 #include "PhysicalObject.hpp"
+#include "Player.hpp"
 
 // --------------------------------------------------------------------------------------------------
 // LOOK
@@ -18,8 +19,8 @@ int Game::theLOOKcommand(){
     if(commands.at(0) == LOOK){
         
         // if the player is in an elevator 
-        if( isType<Elevator>(player_location)){
-            Elevator* current_elevator = static_cast<Elevator*>(player_location);
+        if( isType<Elevator>(player->getLocation())){
+            Elevator* current_elevator = static_cast<Elevator*>(player->getLocation());
             Passage* current_passage = current_elevator->getCurrent_exit();
             bool passage_flag = false;
             
@@ -48,9 +49,9 @@ int Game::theLOOKcommand(){
         }
         
         // if the player is in a room
-        else if(isType<Room>(player_location)){
-            Room* current_room = static_cast<Room*>(player_location);
-            cout << "you are in " << player_location->getDescription() << endl;
+        else if(isType<Room>(player->getLocation())){
+            Room* current_room = static_cast<Room*>(player->getLocation());
+            cout << "you are in " << player->getLocation()->getDescription() << endl;
             
             for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
                 Passage* current_passage = current_room->getExit(i);
@@ -58,7 +59,7 @@ int Game::theLOOKcommand(){
                 
                 if(current_passage != 0){
                     if(current_passage->isVisible() ){
-                        Location* target_location = getTargetLocation(current_passage, player_location);
+                        Location* target_location = getTargetLocation(current_passage, player->getLocation());
                         
                         if(isType<Elevator>(target_location)){
                             
@@ -106,7 +107,7 @@ int Game::theLOOKcommand(){
         
         // output all physical object in the room
         for(int i=PHYSICAL_OBJECTS_min; i<PHYSICAL_OBJECTS_max; i++){
-            if(physical_objects[i]->getLocation() == player_location){
+            if(physical_objects[i]->getLocation() == player->getLocation()){
                 cout << "there is " << physical_objects[i]->getDescription() << endl;
             }
         }

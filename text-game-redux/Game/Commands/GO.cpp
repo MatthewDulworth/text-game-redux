@@ -9,6 +9,7 @@
 #include "Location.hpp"
 #include "Passage.hpp"
 #include "PhysicalObject.hpp"
+#include "Player.hpp"
 
 
 // --------------------------------------------------------------------------------------------------
@@ -27,8 +28,8 @@ int Game::theGOcommand(){
             Base* current_direction = directions[commands.at(1)];
             
             // if the player is in an elevator
-            if( isType<Elevator>(player_location) ){
-                Elevator* current_elevator = static_cast<Elevator*>(player_location);
+            if( isType<Elevator>(player->getLocation()) ){
+                Elevator* current_elevator = static_cast<Elevator*>(player->getLocation());
                 
                 if(current_elevator->getExit_direction() == current_direction->getCode() ){
                     Passage* current_passage = current_elevator->getCurrent_exit();
@@ -37,9 +38,9 @@ int Game::theGOcommand(){
                         if(current_passage->isVisible() ){
                             if(current_passage->isUnlocked() ){
                                 movePlayerThroughPassage(current_passage);
-                                player_location->incrementEnteredCount();
+                                player->getLocation()->incrementEnteredCount();
                                 cout << "you went " << current_direction->getName() << endl;
-                                cout << "you are in " << player_location->getDescription() << endl;
+                                cout << "you are in " << player->getLocation()->getDescription() << endl;
                                 return true;
                             }else{
                                 cout << "this floor is locked" << endl;
@@ -61,15 +62,15 @@ int Game::theGOcommand(){
             }
             
             // if the player is in a room
-            else if( isType<Room>(player_location) ){
-                Room* current_room = static_cast<Room*>(player_location);
+            else if( isType<Room>(player->getLocation()) ){
+                Room* current_room = static_cast<Room*>(player->getLocation());
                 Passage* current_passage = current_room->getExit( current_direction->getCode() );
                 
                 if(current_passage != 0){
                     if(current_passage->isVisible() ){
                         if(current_passage->isUnlocked() ){
                             
-                            Location* target_location = getTargetLocation(current_passage, player_location);
+                            Location* target_location = getTargetLocation(current_passage, player->getLocation());
                             if(isType<Elevator>(target_location)){
                                 Elevator* target_elevator = static_cast<Elevator*>(target_location);
                                 
@@ -79,9 +80,9 @@ int Game::theGOcommand(){
                                 }
                             }
                             movePlayerThroughPassage(current_passage);
-                            player_location->incrementEnteredCount();
+                            player->getLocation()->incrementEnteredCount();
                             cout << "you went " << current_direction->getName() << endl;
-                            cout << "you are in " << player_location->getDescription() << endl;
+                            cout << "you are in " << player->getLocation()->getDescription() << endl;
                             return true;
                         }
                         else{

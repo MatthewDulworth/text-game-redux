@@ -20,6 +20,7 @@ class PhysicalObject;
 class Action;
 class Direction;
 class Number;
+class Player;
 
 // ------------------------------------------------------------------------------------------------------
 // Game class
@@ -31,7 +32,7 @@ private:
     // ------------------------------------------------
     
     // the location of the player
-    Location* player_location;
+    Player* player;
     
     // arrays of pointers to game-objects
     OffsetArray<Location*, LOCATIONS_min, LOCATIONS_max> locations;
@@ -60,7 +61,6 @@ private:
     void physicalObjectSetup();
     void actionSetup();
     void adminClassesSetup();
-    void setPlayer_location(Location* new_location);
     
     // command methods
     int theGOcommand();

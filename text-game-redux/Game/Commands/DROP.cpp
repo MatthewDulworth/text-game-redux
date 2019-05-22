@@ -7,6 +7,7 @@
 //
 #include "Game.hpp"
 #include "PhysicalObject.hpp"
+#include "Player.hpp"
 
 // --------------------------------------------------------------------------------------------------
 // DROP
@@ -27,7 +28,7 @@ int Game::theDROPcommand(){
             if(current_object->getLocation() == locations[INVENTORY] ){
                 if(isType<Item>(current_object)){
                     Item* current_item = static_cast<Item*>(current_object);
-                    current_item->moveTo(player_location);
+                    current_item->moveTo(player->getLocation());
                     cout << "you dropped " << current_item->getDescription() << endl;
                     return true;
                 }

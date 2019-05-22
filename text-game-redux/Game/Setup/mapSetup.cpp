@@ -8,6 +8,7 @@
 #include "Game.hpp"
 #include "Location.hpp"
 #include "Passage.hpp"
+#include "Player.hpp"
 
 // ------------------------------------------------------------------------------------------------------
 // mapSetup
@@ -48,6 +49,10 @@ void Game::mapSetup(){
     static Passage cubicleRoom_to_elevator1, cubicleRoom_to_supplyCloset, cubicleRoom_to_breakRoom;
     static Passage breakRoom_to_llamaShrine, managersOffice_to_llamaShrine, cubicleRoom_to_managersOffice;
     
+    // ------------------------------------------------
+    // player declaration
+    // ------------------------------------------------
+    static Player current_player(&lobby);
     
     
     // --------------------------------------------------------------------------------------
@@ -232,7 +237,6 @@ void Game::mapSetup(){
     passages[MANAGERS_OFFICE_TO_LLAMA_SHRINE] = &managersOffice_to_llamaShrine;
     passages[BREAK_ROOM_TO_LLAMA_SHRINE] = &breakRoom_to_llamaShrine;
     
-    // ----- set player starting location ----- //
-    setPlayer_location(&lobby);
-    player_location->incrementEnteredCount();
+    // ----- set player ----- //
+    player = &current_player;
 }

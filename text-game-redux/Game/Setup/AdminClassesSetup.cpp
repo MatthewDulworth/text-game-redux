@@ -77,13 +77,9 @@ void Game::adminClassesSetup(){
     // ELEVATOR
     elevator.setCode(ELEVATOR);
     elevator.setName("ELEVATOR");
-    // BUTTON
-    button.setCode(BUTTON);
-    button.setName("BUTTON");
 
     // ----- set array ----- //
     words[EXIT] = &exit;
     words[ELEVATOR] = &elevator;
-    words[BUTTON] = &button;
 }
 

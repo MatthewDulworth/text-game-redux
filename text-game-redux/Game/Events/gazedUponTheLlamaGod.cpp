@@ -7,11 +7,12 @@
 //
 
 #include "Game.hpp"
+#include "Player.hpp"
 #include "text_functions.hpp"
 
 bool Game::gazedUponTheLlamaGod(){
     
-    if(player_location == locations[LLAMA_SHRINE] && last_successfull_action == LOOK){
+    if(player->getLocation() == locations[LLAMA_SHRINE] && last_successfull_action == LOOK){
         typeText("You hear a voice booming through your head: ");
         typeText("\"MORTAl! YOU DARE GAZE UPON THE SHRINE OF THE LLAMA GOD!?\"");
         typeText("\"HAS YOUR ARROGANCE NO BOUNDS?\"");

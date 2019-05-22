@@ -150,14 +150,13 @@ enum enum_ACTIONS {
 // -------------------------------------------
 // WORDS
 // -------------------------------------------
-const int WORDS = 3;
+const int WORDS = 2;
 const int WORDS_min = 900;
 const int WORDS_max = (WORDS_min + WORDS);
 
 enum enum_WORDS {
     EXIT = 900,
     ELEVATOR,
-    BUTTON,
 };
 
 

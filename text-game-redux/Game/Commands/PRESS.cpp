@@ -8,6 +8,7 @@
 
 #include "Game.hpp"
 #include "Location.hpp"
+#include "Player.hpp"
 
 // --------------------------------------------------------------------------------------------------
 // PRESS
@@ -21,8 +22,8 @@ int Game::thePRESScommand(){
         }
 
         // if the player is in an elevator
-        if(isType<Elevator>(player_location)){
-            Elevator* current_elevator = static_cast<Elevator*>(player_location);
+        if(isType<Elevator>(player->getLocation())){
+            Elevator* current_elevator = static_cast<Elevator*>(player->getLocation());
 
             if(isNumber(commands.at(1)) ){
                 int target_floor = commands.at(1) - 100;
@@ -43,8 +44,8 @@ int Game::thePRESScommand(){
         }
 
         // if the player is in a room
-        else if(isType<Room>(player_location)){
-            Room* current_room = static_cast<Room*>(player_location);
+        else if(isType<Room>(player->getLocation())){
+            Room* current_room = static_cast<Room*>(player->getLocation());
             
             // if the command is only one word long, no valid command entered
             if(commands.size() < 3){

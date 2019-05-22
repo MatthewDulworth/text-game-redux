@@ -9,6 +9,7 @@
 #include "PhysicalObject.hpp"
 #include "Location.hpp"
 #include "Passage.hpp"
+#include "Player.hpp"
 
 // --------------------------------------------------------------------------------------------------
 // USE
@@ -38,8 +39,8 @@ int Game::theUSEcommand(){
                 }
                 
                 // if the player is in an elevator
-                if(isType<Elevator>(player_location)){
-                    Elevator* current_elevator = static_cast<Elevator*>(player_location);
+                if(isType<Elevator>(player->getLocation())){
+                    Elevator* current_elevator = static_cast<Elevator*>(player->getLocation());
                     
                     if(current_elevator->getExit_direction() == current_direction->getCode()){
                         current_passage = current_elevator->getCurrent_exit();
@@ -49,8 +50,8 @@ int Game::theUSEcommand(){
                     }
                 }
                 // if the player in a room
-                else if(isType<Room>(player_location)){
-                    Room* current_room = static_cast<Room*>(player_location);
+                else if(isType<Room>(player->getLocation())){
+                    Room* current_room = static_cast<Room*>(player->getLocation());
                     current_passage = current_room->getExit(current_direction->getCode());
                 }
                 

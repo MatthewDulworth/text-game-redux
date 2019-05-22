@@ -7,6 +7,7 @@
 //
 #include "Game.hpp"
 #include "PhysicalObject.hpp"
+#include "Player.hpp"
 
 // --------------------------------------------------------------------------------------------------
 // GET
@@ -23,7 +24,7 @@ int Game::theGETcommand(){
         if(isPhysical_object(commands.at(1)) ){
             PhysicalObject* current_object = physical_objects[commands.at(1)];
             
-            if(current_object->getLocation() == player_location){
+            if(current_object->getLocation() == player->getLocation()){
                 if(isType<Item>(current_object)){
                     Item* current_item = static_cast<Item*>(current_object);
                     current_item->moveTo(locations[INVENTORY]);
