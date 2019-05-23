@@ -55,8 +55,12 @@ private:
     // private methods
     // ------------------------------------------------
     
+    // loads and saves
+    void loadNewGame();
+    void loadSavedGame();
+    void saveGame();
+    
     // setup methods
-    void test();
     void mapSetup();
     void physicalObjectSetup();
     void actionSetup();
@@ -70,8 +74,7 @@ private:
     int theDROPcommand();
     int theUSEcommand();
     
-    // evetns methods
-    bool gazedUponTheLlamaGod();
+    // events methods
     
     // methods used in commands
     void movePlayerThroughPassage(Passage* passage);
@@ -86,13 +89,12 @@ private:
     bool enactEvents();
     
     
-    
 public:
     // ------------------------------------------------
     // public methods
     // ------------------------------------------------
     ~Game();
-    void setup();
+    void gameMenu();
     void commandLoop();
 };
 

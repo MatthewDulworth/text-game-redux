@@ -42,7 +42,7 @@ Game::~Game(){
 }
 
 // calls all setup methods
-void Game::setup(){
+void Game::loadNewGame(){
     adminClassesSetup();
     actionSetup();
     mapSetup();
