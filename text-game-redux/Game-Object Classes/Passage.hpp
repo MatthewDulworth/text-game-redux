@@ -17,7 +17,8 @@ class Location;
 // connects locations together
 // abstract, first level subclass
 class Passage : public Base {
-protected:
+private:
+    typedef Base super;
     bool lock_state;
     bool visibility;
     int key_type;

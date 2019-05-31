@@ -20,6 +20,7 @@
 // ------------------------------------------------
 class Action : public Base {
 private:
+    typedef Base super;
     string synonym;
 public:
     // setters
@@ -35,6 +36,8 @@ public:
 // Direction
 // ------------------------------------------------
 class Direction : public Base {
+private:
+    typedef Base super;
 public:
     // overridden
     void overridden();
@@ -46,6 +49,7 @@ public:
 // ------------------------------------------------
 class Number : public Base {
 private:
+    typedef Base super;
     string synonym;
 public:
     // setters
@@ -60,6 +64,8 @@ public:
 // Number
 // ------------------------------------------------
 class Word : public Base {
+private:
+    typedef Base super;
 public:
     // overridden
     void overridden();

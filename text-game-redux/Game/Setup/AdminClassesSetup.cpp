@@ -18,10 +18,9 @@ void Game::adminClassesSetup(){
     // ------------------------------------------------
     
     // ----- create new objects ----- //
-    directions[NORTH] = new Direction();
-    directions[SOUTH] = new Direction();
-    directions[EAST] = new Direction();
-    directions[WEST] = new Direction();
+    for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){
+        directions[i] = new Direction();
+    }
     
     // ----- set variables ----- //
     // NORTH
@@ -43,13 +42,9 @@ void Game::adminClassesSetup(){
     // ------------------------------------------------
     
     // ----- create new objects ----- //
-    numbers[ONE] = new Number();
-    numbers[TWO] = new Number();
-    numbers[THREE] = new Number();
-    numbers[FOUR] = new Number();
-    numbers[FIVE] = new Number();
-    numbers[SIX] = new Number();
-    numbers[SEVEN] = new Number();
+    for(int i=NUMBERS_min; i<NUMBERS_max; i++){
+        numbers[i] = new Number();
+    }
     
     // ----- set variables ----- //
     // ONE
@@ -87,8 +82,9 @@ void Game::adminClassesSetup(){
     // ------------------------------------------------
     
     // ----- create new objects ----- //
-    words[EXIT] = new Word();
-    words[ELEVATOR] = new Word();
+    for(int i=WORDS_min; i<WORDS_max; i++){
+        words[i] = new Word();
+    }
     
     // ----- set variables ----- //
     // EXIT

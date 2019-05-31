@@ -24,6 +24,8 @@ class Passage;
 // PhysicalObject
 // ------------------------------------------------
 class PhysicalObject : public Base {
+private:
+    typedef Base super;
 protected:
     string description;
     Location* location;
@@ -42,6 +44,8 @@ public:
 // Item
 // ------------------------------------------------
 class Item : public PhysicalObject {
+private:
+    typedef PhysicalObject super;
 public:
     // var management
     virtual void moveTo(Location* location);
@@ -56,6 +60,7 @@ public:
 // ------------------------------------------------
 class Key : public Item {
 private:
+    typedef Item super;
     int key_type;
 public:
     // checks
@@ -71,6 +76,7 @@ public:
 // ------------------------------------------------
 class Money : public Item {
 private:
+    typedef Item super;
     double value;
 public:
     // setters
@@ -83,6 +89,7 @@ public:
 // ImmovableObject
 // ------------------------------------------------
 class ImmovableObject : public PhysicalObject {
+    typedef PhysicalObject super;
 public:
     // overridden
     void overridden();

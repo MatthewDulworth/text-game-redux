@@ -35,5 +35,12 @@ public:
     virtual string getName();
 };
 
+// all derived class use a version of the follwoing to emulate the super keyword in java.
+//
+// typedef Base super;
+//
+// with base being whatever the immeadiate superclass of the current class.
+// source: https://stackoverflow.com/questions/180601/using-super-in-c
+
 #endif /* BaseClass_hpp */
 

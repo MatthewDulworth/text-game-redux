@@ -8,6 +8,14 @@
 
 #include "Game.hpp"
 
+void Game::loadNewGame(){
+    adminClassesSetup();
+    actionSetup();
+    mapSetup();
+    physicalObjectSetup();
+}
+
 void Game::loadSavedGame(){
-    
+    adminClassesSetup();
+    actionSetup();
 }

@@ -8,14 +8,15 @@
 
 #include "Game.hpp"
 #include "text_functions.hpp"
+#include "Player.hpp"
 #include <string>
 
 void Game::gameMenu(){
     
     while(true){
         string selection;
-        string new_game = "new game";
-        string load_game = "load save";
+        string new_game = "new";
+        string load_game = "load";
         
         cout << "To begin a new game, type \"" << new_game << "\"" << endl;
         cout << "To continue a previous, type \"" << load_game << "\"" << endl;
@@ -24,14 +25,20 @@ void Game::gameMenu(){
         
         if(selection == new_game){
             loadNewGame();
+            
+            string player_name;
+            cout << endl << "Enter your charecter's first name. " << endl;
+            cout << ">>> "; getline(cin, player_name);
+            player->setName(player_name);
+            
             break;
         }
-        else if (selection == load_game){
-            loadNewGame();
-            break;
-        }
+//        else if (selection == load_game){
+//            loadSavedGame();
+//            break;
+//        }
         else {
-            cout << "no valid command entered " << endl;
+            cout << "no valid command entered " << endl << endl;
         }
     }
     clearConsole();

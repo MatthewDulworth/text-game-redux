@@ -28,6 +28,8 @@ class Elevator;
 // locations that physical objects and the player can be in
 // abstract, first level subclass
 class Location : public Base {
+private:
+    typedef Base super;
 protected:
     int entered_count;
     string description;
@@ -69,10 +71,10 @@ public:
 // map locations, have exits, connect to other locations
 class Room : public Location {
 private:
+    typedef Location super;
     int floor;
     OffsetArray<Passage*, DIRECTIONS_min, DIRECTIONS_max> exits;
     OffsetArray<ElevatorCallButton*, DIRECTIONS_min, DIRECTIONS_max> call_buttons;
-    
 public:
     // structors
     Room();
@@ -118,12 +120,12 @@ public:
 // ------------------------------------------------
 class Elevator : public Location {
 private:
+    typedef Location super;
     int exit_direction;
     int current_floor;
     OffsetArray<ElevatorFloorButton*, FLOORS_min, FLOORS_max> floor_buttons;
     OffsetArray<Passage*, FLOORS_min, FLOORS_max> exits;
     Passage* current_exit;
-    
 public:
     // structors
     Elevator();

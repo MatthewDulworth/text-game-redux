@@ -14,13 +14,10 @@
 // popluates the actions array
 void Game::actionSetup(){
     
-    // ----- object declarations ----- //
-    actions[GO] = new Action();
-    actions[LOOK] = new Action();
-    actions[PRESS] = new Action();
-    actions[GET] = new Action();
-    actions[DROP] = new Action();
-    actions[USE] = new Action();
+    // ----- create objects ----- //
+    for(int i = ACTIONS_min; i<ACTIONS_max; i++){
+        actions[i] = new Action();
+    }
     
     // ----- set attributes ----- //
     // GO

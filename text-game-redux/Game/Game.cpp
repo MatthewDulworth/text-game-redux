@@ -41,14 +41,6 @@ Game::~Game(){
     }
 }
 
-// calls all setup methods
-void Game::loadNewGame(){
-    adminClassesSetup();
-    actionSetup();
-    mapSetup();
-    physicalObjectSetup();
-}
-
 // moves the player through a passage
 void Game::movePlayerThroughPassage(Passage* passage){
     Location* target_location = getTargetLocation(passage, player->getLocation());

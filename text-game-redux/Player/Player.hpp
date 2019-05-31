@@ -20,6 +20,7 @@ class PhysicalObject;
 class Player {
 private:
     string name;
+    int health;
     Location* location;
     vector<PhysicalObject*> inventory;
     
