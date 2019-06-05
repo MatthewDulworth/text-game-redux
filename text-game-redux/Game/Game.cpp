@@ -16,12 +16,8 @@
 Game::~Game(){
     delete player;
     
-    for(int i=PHYSICAL_OBJECTS_min; i<PHYSICAL_OBJECTS_max; i++){
-        delete physical_objects[i];
-    }
-    
-    for(int i=LOCATIONS_min; i<LOCATIONS_max; i++){
-        delete locations[i];
+    for(int i=PASSAGES_min; i<PASSAGES_max; i++){
+        delete passages[i];
     }
     
     for(int i=ACTIONS_min; i<ACTIONS_max; i++){
