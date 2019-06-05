@@ -74,30 +74,18 @@ void Game::mapSetup(){
     bedroom_hallway->setDescription("hallway");
     bedroom_hallway->setFloor(FIRST_FLOOR);
     bedroom_hallway->setExit(NORTH, passages[BEDROOM_to_BEDROOM_HALLWAY]);
-    
-    // --------------------------------------------------------------------------------------
-    // elevators
-    // --------------------------------------------------------------------------------------
-    // ELEVATOR_ONE
-    Elevator* elevator_one = static_cast<Elevator*>(locations[ELEVATOR_ONE]);
-    elevator_one->setCode(ELEVATOR_ONE);
-    elevator_one->setName("ELEVATOR ONE");
-    elevator_one->setExit_direction(WEST);
-    elevator_one->setExit(FIRST_FLOOR, passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]);
-    elevator_one->setCurrent_floor(FIRST_FLOOR);
-    elevator_one->initButtons();
 
     
     // --------------------------------------------------------------------------------------
     // passages
     // --------------------------------------------------------------------------------------
     // BEDROOM_to_BEDROOM_HALLWAY
-    passages[BEDROOM_HALLWAY]->setCode(BEDROOM_HALLWAY);
-    passages[BEDROOM_HALLWAY]->setLockState(UNLOCKED);
-    passages[BEDROOM_HALLWAY]->setVisibility(VISIBLE);
-    passages[BEDROOM_HALLWAY]->setLocation_1(bedroom);
-    passages[BEDROOM_HALLWAY]->setLocation_2(bedroom_hallway);
-    passages[BEDROOM_HALLWAY]->setKey_type(ACCESS_LVL_1);
+    passages[BEDROOM_to_BEDROOM_HALLWAY]->setCode(BEDROOM_to_BEDROOM_HALLWAY);
+    passages[BEDROOM_to_BEDROOM_HALLWAY]->setLockState(UNLOCKED);
+    passages[BEDROOM_to_BEDROOM_HALLWAY]->setVisibility(VISIBLE);
+    passages[BEDROOM_to_BEDROOM_HALLWAY]->setLocation_1(bedroom);
+    passages[BEDROOM_to_BEDROOM_HALLWAY]->setLocation_2(bedroom_hallway);
+    passages[BEDROOM_to_BEDROOM_HALLWAY]->setKey_type(ACCESS_LVL_1);
     // BEDROOM_to_BATHROOM
     passages[BEDROOM_to_BATHROOM]->setCode(BEDROOM_to_BATHROOM);
     passages[BEDROOM_to_BATHROOM]->setLockState(UNLOCKED);
@@ -110,8 +98,21 @@ void Game::mapSetup(){
     passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setLockState(LOCKED);
     passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setVisibility(VISIBLE);
     passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setLocation_1(bedroom_hallway);
-    passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setLocation_2(elevator_one);
+    passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setLocation_2(locations[ELEVATOR_ONE]);
     passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setKey_type(ACCESS_LVL_2);
+    
+    
+    // --------------------------------------------------------------------------------------
+    // elevators
+    // --------------------------------------------------------------------------------------
+    // ELEVATOR_ONE
+    Elevator* elevator_one = static_cast<Elevator*>(locations[ELEVATOR_ONE]);
+    elevator_one->setCode(ELEVATOR_ONE);
+    elevator_one->setName("ELEVATOR ONE");
+    elevator_one->setExit_direction(WEST);
+    elevator_one->setExit(FIRST_FLOOR, passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]);
+    elevator_one->setCurrent_floor(FIRST_FLOOR);
+    elevator_one->initButtons();
 
     
     // --------------------------------------------------------------------------------------
