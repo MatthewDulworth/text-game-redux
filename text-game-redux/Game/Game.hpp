@@ -10,7 +10,7 @@
 
 #include <string>
 #include <vector>
-#include "TypeChecks.hpp"
+#include "GeneralFunctions.hpp"
 #include "OffsetArray.h"
 
 class Base;
@@ -73,6 +73,7 @@ private:
     int theGETcommand();
     int theDROPcommand();
     int theUSEcommand();
+    int theMARVINcommand();
     
     // events methods
     
@@ -83,7 +84,6 @@ private:
     
     // run methods
     bool devCommands(string player_input);
-    void createTokens(string player_input);
     void parseTokens();
     bool enactCommands();
     bool enactEvents();

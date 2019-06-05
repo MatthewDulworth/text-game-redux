@@ -6,6 +6,7 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 #include "Game.hpp"
+#include "GeneralFunctions.hpp"
 
 void Game::commandLoop(){
     string player_input;
@@ -15,7 +16,7 @@ void Game::commandLoop(){
         getline(cin, player_input);
         
         if(player_input != "quit"){
-            createTokens(player_input);     
+            tokens = createTokens(player_input);
             parseTokens();
             enactCommands();
             cout << endl;

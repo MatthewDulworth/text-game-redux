@@ -9,7 +9,7 @@
 #include "Location.hpp"
 #include "Passage.hpp"
 #include "PhysicalObject.hpp"
-#include "typeChecks.hpp"
+#include "GeneralFunctions.hpp"
 #include <algorithm>
 
 

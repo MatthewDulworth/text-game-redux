@@ -1,5 +1,5 @@
 //
-//  TypeChecks.hpp
+//  GeneralFunctions.hpp
 //  text-game-redux
 //  Checks the class type of an object
 //
@@ -7,8 +7,8 @@
 //  Copyright © 2019 Matthew Dulworth. All rights reserved.
 //
 
-#ifndef TypeChecks_hpp
-#define TypeChecks_hpp
+#ifndef GeneralFunctions_hpp
+#define GeneralFunctions_hpp
 
 #include "AdminClasses.hpp"
 
@@ -21,6 +21,7 @@ bool isNumber(int);
 bool isAction(int);
 bool isDirection(int);
 Location* getTargetLocation(Passage*, Location*);
+vector<string> createTokens(string);
 
 // ------- isType ------- //
 // checks if an object is a given type or is derived from a given type
@@ -30,4 +31,4 @@ bool isType(const SrcType* src){
     return dynamic_cast<const DstType*>(src) != nullptr;
 }
 
-#endif /* TypeChecks_hpp */
+#endif /* GeneralFunctions_hpp */
