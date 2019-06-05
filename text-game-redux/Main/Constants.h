@@ -22,6 +22,7 @@ const bool HIDDEN = false;
 // integer constants
 // -------------------------------------------
 const int WRONG_COMMAND = -1;
+const int NONE = -100;
 
 
 // -------------------------------------------
@@ -78,37 +79,44 @@ enum enum_DIRECTIONS {
 // -------------------------------------------
 // LOCATIONS
 // -------------------------------------------
-const int LOCATIONS = 2;
+const int LOCATIONS = 5;
 const int LOCATIONS_min = 400;
 const int LOCATIONS_max = (LOCATIONS_min + LOCATIONS);
 
 enum enum_LOCATIONS {
     INVENTORY = 400,
-    TRASH
+    TRASH,
+    BEDROOM,
+    BATHROOM,
+    BEDROOM_HALLWAY,
+    ELEVATOR_ONE
 };
 
 
 // -------------------------------------------
 // PASSAGES
 // -------------------------------------------
-const int PASSAGES = 0;
+const int PASSAGES = 3;
 const int PASSAGES_min = 500;
 const int PASSAGES_max = (PASSAGES_min + PASSAGES);
 
 enum enum_PASSAGES {
-    
+    BEDROOM_to_BEDROOM_HALLWAY = 500,
+    BEDROOM_to_BATHROOM,
+    BEDROOM_HALLWAY_to_ELEVATOR_ONE
 };
 
 
 // -------------------------------------------
 // DOOR TYPES
 // -------------------------------------------
-const int DOOR_TYPES = 1;
+const int DOOR_TYPES = 2;
 const int DOOR_TYPES_min = 600;
 const int DOOR_TYPES_max = (DOOR_TYPES_min + DOOR_TYPES);
 
 enum enum_DOOR_TYPES{
-    NONE = 600,
+    ACCESS_LVL_1 = 600,
+    ACCESS_LVL_2
 };
 
 

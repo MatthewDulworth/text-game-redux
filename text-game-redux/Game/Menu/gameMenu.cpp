@@ -13,6 +13,9 @@
 
 void Game::gameMenu(){
     
+    loadNewGame();
+    
+    /*
     while(true){
         string selection;
         string new_game = "new";
@@ -42,4 +45,5 @@ void Game::gameMenu(){
         }
     }
     clearConsole();
+    */
 }

@@ -25,7 +25,7 @@ int Game::theGOcommand(){
         
         // if the second command is a direction
         if(isDirection(commands.at(1))){
-            Base* current_direction = directions[commands.at(1)];
+            Direction* current_direction = directions[commands.at(1)];
             
             // if the player is in an elevator
             if( isType<Elevator>(player->getLocation()) ){

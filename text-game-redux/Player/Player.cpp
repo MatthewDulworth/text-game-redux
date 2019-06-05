@@ -13,7 +13,6 @@
 using namespace std;
 
 Player::Player(Location* starting_location){
-    health = 100;
     location = starting_location;
 }
 
