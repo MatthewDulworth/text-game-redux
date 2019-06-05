@@ -68,7 +68,7 @@ void Game::mapSetup(){
     bathroom->setExit(EAST, passages[BEDROOM_to_BATHROOM]);
     
     // BEDROOM_HALLWAY
-    Room* bedroom_hallway = static_cast<Room*>(locations[BEDROOM_to_BEDROOM_HALLWAY]);
+    Room* bedroom_hallway = static_cast<Room*>(locations[BEDROOM_HALLWAY]);
     bedroom_hallway->setCode(BEDROOM_HALLWAY);
     bedroom_hallway->setName("BEDROOM HALLWAY");
     bedroom_hallway->setDescription("hallway");
