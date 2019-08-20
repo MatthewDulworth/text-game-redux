@@ -1,5 +1,5 @@
 //
-//  parseTokens.cpp
+//  parseTokensToCommands.cpp
 //  text-game-redux
 //
 //  Created by Matthew Dulworth on 3/29/19.
@@ -10,12 +10,12 @@
 #include "PhysicalObject.hpp"
 
 // ------------------------------------------------
-// parseTokens
+// parseTokensToCommands
 // ------------------------------------------------
 /// parses tokens into commands
 /// if a token matches the name of action, direction, number, or physical object,
 /// push back the code of the instance into commands
-void Game::parseTokens(){
+void Game::parseTokensToCommands(){
     
     // loop once for each token in tokens
     for(int i=0; i<tokens.size(); i++){
@@ -39,8 +39,8 @@ void Game::parseTokens(){
             }
         }
         
-        // ------- Words ------- //
-        for(j=WORDS_min; j<WORDS_max; j++){
+        // ------- CommandWords ------- //
+        for(j=COMMAND_WORDS_min; j<COMMAND_WORDS_max; j++){
             if(tokens.at(i) == words[j]->getName() ){
                 commands.push_back(words[j]->getCode() );
                 goto end_of_loop;

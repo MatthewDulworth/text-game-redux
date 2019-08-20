@@ -61,13 +61,6 @@ bool Game::enactCommands(){
         return return_value;
     }
     
-    // ----- MARVIN ----- //
-    return_value = theMARVINcommand();
-    if(return_value != WRONG_COMMAND){
-        if(return_value == true) last_successfull_action = MARVIN;
-        return return_value;
-    }
-
     // ----- no valid command entered ----- //
     return invalidCommand();
 }

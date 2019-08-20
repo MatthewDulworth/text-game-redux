@@ -10,6 +10,7 @@
 
 #include "Base.hpp"
 #include <string>
+#include <vector>
 
 // ------------------------------------------------------------------------------------------------------
 // Admin Classes
@@ -61,14 +62,28 @@ public:
 };
 
 // ------------------------------------------------
-// Number
+// CommandWord
 // ------------------------------------------------
-class Word : public Base {
+class CommandWord : public Base {
 private:
     typedef Base super;
 public:
     // overridden
     void overridden();
+};
+
+// ------------------------------------------------
+// Word
+// ------------------------------------------------
+class Word {
+private:
+    int code;
+    vector<string> synonyms;
+public:
+    void setCode(int code);
+    void addSynonym(string word);
+    int getCode();
+    string getSynonym(int i);
 };
 
 #endif /* Direction_hpp */

@@ -44,8 +44,4 @@ void Game::actionSetup(){
     actions[USE]->setCode(USE);
     actions[USE]->setName("USE");
     actions[USE]->setSynonym("USE");
-    // MARVIN
-    actions[MARVIN]->setCode(MARVIN);
-    actions[MARVIN]->setName("MARVIN");
-    actions[MARVIN]->setSynonym("MARVIN");
 }

@@ -28,7 +28,7 @@ Game::~Game(){
         delete directions[i];
     }
     
-    for(int i=WORDS_min; i<WORDS_max; i++){
+    for(int i=COMMAND_WORDS_min; i<COMMAND_WORDS_max; i++){
         delete words[i];
     }
     

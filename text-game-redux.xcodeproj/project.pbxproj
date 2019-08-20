@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34168E4322A588B300D97017 /* Caretaker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34168E4122A588B300D97017 /* Caretaker.cpp */; };
+		3442B4C222A97CE8003CF721 /* parseTokensToWords.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3442B4C122A97CE8003CF721 /* parseTokensToWords.cpp */; };
 		345A07A62290C91200E560CF /* enactEvents.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07A52290C91200E560CF /* enactEvents.cpp */; };
 		345A07AA22918E4300E560CF /* text_functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07A822918E4300E560CF /* text_functions.cpp */; };
 		345A07B0229356A300E560CF /* devCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 345A07AF229356A300E560CF /* devCommands.cpp */; };
@@ -20,12 +21,11 @@
 		346D9B42224F291900950AD7 /* AdminClassesSetup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B41224F291900950AD7 /* AdminClassesSetup.cpp */; };
 		346D9B44224F295C00950AD7 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 346D9B43224F295C00950AD7 /* Game.cpp */; };
 		3479B0E72295BB31003E9AFD /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3479B0E52295BB31003E9AFD /* Player.cpp */; };
-		347E7B5B22A6E2F700BF991A /* MARVIN.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 347E7B5A22A6E2F700BF991A /* MARVIN.cpp */; };
 		34A2F888224BE8F600ABB248 /* Location.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F886224BE8F600ABB248 /* Location.cpp */; };
 		34A2F88B224BE90400ABB248 /* PhysicalObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F889224BE90400ABB248 /* PhysicalObject.cpp */; };
 		34A2F894224C49CC00ABB248 /* GeneralFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F892224C49CC00ABB248 /* GeneralFunctions.cpp */; };
 		34A2F8A4224EB69D00ABB248 /* commandLoop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */; };
-		34A2F8A6224EB6AB00ABB248 /* parseTokens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F8A5224EB6AB00ABB248 /* parseTokens.cpp */; };
+		34A2F8A6224EB6AB00ABB248 /* parseTokensToCommands.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34A2F8A5224EB6AB00ABB248 /* parseTokensToCommands.cpp */; };
 		34B0C2D722906B5A00FD2C77 /* GO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34B0C2D522906B5A00FD2C77 /* GO.cpp */; };
 		34B0C2D922906B8400FD2C77 /* LOOK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34B0C2D822906B8400FD2C77 /* LOOK.cpp */; };
 		34B0C2DB22906B9B00FD2C77 /* GET.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34B0C2DA22906B9B00FD2C77 /* GET.cpp */; };
@@ -56,10 +56,12 @@
 		34168E4222A588B300D97017 /* Caretaker.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Caretaker.hpp; sourceTree = "<group>"; };
 		3420790A229F3D6F001900FD /* saveData.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = saveData.txt; sourceTree = "<group>"; };
 		3426AFEA228E166A00EC5A31 /* OffsetArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OffsetArray.h; sourceTree = "<group>"; };
+		3442B4C122A97CE8003CF721 /* parseTokensToWords.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parseTokensToWords.cpp; sourceTree = "<group>"; };
 		345A07A52290C91200E560CF /* enactEvents.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = enactEvents.cpp; sourceTree = "<group>"; };
 		345A07A822918E4300E560CF /* text_functions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = text_functions.cpp; sourceTree = "<group>"; };
 		345A07A922918E4300E560CF /* text_functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = text_functions.hpp; sourceTree = "<group>"; };
 		345A07AF229356A300E560CF /* devCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = devCommands.cpp; sourceTree = "<group>"; };
+		3465457422CE519800F67E91 /* dialogue.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = dialogue.txt; sourceTree = "<group>"; };
 		346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = enactCommands.cpp; path = "text-game-redux/Game/Command Loop/enactCommands.cpp"; sourceTree = SOURCE_ROOT; };
 		346D9B2F224F13D900950AD7 /* mapSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mapSetup.cpp; sourceTree = "<group>"; };
 		346D9B31224F140600950AD7 /* physicalObjectSetup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = physicalObjectSetup.cpp; sourceTree = "<group>"; };
@@ -72,7 +74,6 @@
 		346D9B43224F295C00950AD7 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		3479B0E52295BB31003E9AFD /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		3479B0E62295BB31003E9AFD /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
-		347E7B5A22A6E2F700BF991A /* MARVIN.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MARVIN.cpp; sourceTree = "<group>"; };
 		34A2F886224BE8F600ABB248 /* Location.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Location.cpp; sourceTree = "<group>"; };
 		34A2F887224BE8F600ABB248 /* Location.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Location.hpp; sourceTree = "<group>"; };
 		34A2F889224BE90400ABB248 /* PhysicalObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicalObject.cpp; sourceTree = "<group>"; };
@@ -82,7 +83,7 @@
 		34A2F893224C49CC00ABB248 /* GeneralFunctions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GeneralFunctions.hpp; sourceTree = "<group>"; };
 		34A2F89B224D110A00ABB248 /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 		34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = commandLoop.cpp; sourceTree = "<group>"; };
-		34A2F8A5224EB6AB00ABB248 /* parseTokens.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parseTokens.cpp; sourceTree = "<group>"; };
+		34A2F8A5224EB6AB00ABB248 /* parseTokensToCommands.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parseTokensToCommands.cpp; sourceTree = "<group>"; };
 		34B0C2D522906B5A00FD2C77 /* GO.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GO.cpp; sourceTree = "<group>"; };
 		34B0C2D822906B8400FD2C77 /* LOOK.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LOOK.cpp; sourceTree = "<group>"; };
 		34B0C2DA22906B9B00FD2C77 /* GET.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GET.cpp; sourceTree = "<group>"; };
@@ -142,7 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				345A07AF229356A300E560CF /* devCommands.cpp */,
-				34A2F8A5224EB6AB00ABB248 /* parseTokens.cpp */,
+				34A2F8A5224EB6AB00ABB248 /* parseTokensToCommands.cpp */,
+				3442B4C122A97CE8003CF721 /* parseTokensToWords.cpp */,
 				346D9B2D224EF6AA00950AD7 /* enactCommands.cpp */,
 				345A07A52290C91200E560CF /* enactEvents.cpp */,
 				34A2F8A3224EB69D00ABB248 /* commandLoop.cpp */,
@@ -150,6 +152,13 @@
 			name = "Command Loop";
 			path = "text-game-redux/Game/Command Loop";
 			sourceTree = SOURCE_ROOT;
+		};
+		349ED6AF22A88BC9003DF55A /* Events */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Events;
+			sourceTree = "<group>";
 		};
 		34A2F88F224BE94200ABB248 /* Game-Object Classes */ = {
 			isa = PBXGroup;
@@ -174,6 +183,7 @@
 				34F53A32224BCD6500437F64 /* main.cpp */,
 				34A2F891224BEBBB00ABB248 /* Constants.h */,
 				3420790A229F3D6F001900FD /* saveData.txt */,
+				3465457422CE519800F67E91 /* dialogue.txt */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -194,6 +204,7 @@
 				346D9B43224F295C00950AD7 /* Game.cpp */,
 				34F6F7B12296F6A100ACCC27 /* Menu */,
 				34B0C2D422906B3700FD2C77 /* Commands */,
+				349ED6AF22A88BC9003DF55A /* Events */,
 				346D9B45224F297100950AD7 /* Command Loop */,
 				346D9B3D224F28A700950AD7 /* Setup */,
 			);
@@ -209,7 +220,6 @@
 				34B0C2DA22906B9B00FD2C77 /* GET.cpp */,
 				34F5464F22907A6E00E1B77B /* DROP.cpp */,
 				34F54651229085DD00E1B77B /* USE.cpp */,
-				347E7B5A22A6E2F700BF991A /* MARVIN.cpp */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -334,7 +344,7 @@
 				34A2F894224C49CC00ABB248 /* GeneralFunctions.cpp in Sources */,
 				34B0C2DB22906B9B00FD2C77 /* GET.cpp in Sources */,
 				34F6F7B62296F92200ACCC27 /* saveGame.cpp in Sources */,
-				34A2F8A6224EB6AB00ABB248 /* parseTokens.cpp in Sources */,
+				34A2F8A6224EB6AB00ABB248 /* parseTokensToCommands.cpp in Sources */,
 				345A07A62290C91200E560CF /* enactEvents.cpp in Sources */,
 				34B0C2D722906B5A00FD2C77 /* GO.cpp in Sources */,
 				346D9B30224F13D900950AD7 /* mapSetup.cpp in Sources */,
@@ -348,11 +358,11 @@
 				34168E4322A588B300D97017 /* Caretaker.cpp in Sources */,
 				346D9B44224F295C00950AD7 /* Game.cpp in Sources */,
 				346D9B3B224F161E00950AD7 /* Passage.cpp in Sources */,
-				347E7B5B22A6E2F700BF991A /* MARVIN.cpp in Sources */,
 				34B0C2D922906B8400FD2C77 /* LOOK.cpp in Sources */,
 				346D9B40224F290400950AD7 /* actionSetup.cpp in Sources */,
 				345A07B0229356A300E560CF /* devCommands.cpp in Sources */,
 				34F53A3B224BCD8500437F64 /* Base.cpp in Sources */,
+				3442B4C222A97CE8003CF721 /* parseTokensToWords.cpp in Sources */,
 				34F53A33224BCD6500437F64 /* main.cpp in Sources */,
 				346D9B32224F140600950AD7 /* physicalObjectSetup.cpp in Sources */,
 				34A2F888224BE8F600ABB248 /* Location.cpp in Sources */,

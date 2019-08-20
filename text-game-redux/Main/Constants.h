@@ -135,7 +135,7 @@ enum enum_OBJECTS {
 // -------------------------------------------
 // ACTIONS
 // -------------------------------------------
-const int ACTIONS = 7;
+const int ACTIONS = 6;
 const int ACTIONS_min = 800;
 const int ACTIONS_max = (ACTIONS_min + ACTIONS);
 
@@ -146,20 +146,51 @@ enum enum_ACTIONS {
     GET,
     DROP,
     USE,
-    MARVIN
 };
 
 
 // -------------------------------------------
-// WORDS
+// COMMAND_WORDS
 // -------------------------------------------
+const int COMMAND_WORDS = 2;
+const int COMMAND_WORDS_min = 900;
+const int COMMAND_WORDS_max = (COMMAND_WORDS_min + COMMAND_WORDS);
+
+enum enum_COMMAND_WORDS {
+    _EXIT = 900,
+    _ELEVATOR,
+};
+
+// --------------------------------------------
+// WORDS
+// --------------------------------------------
 const int WORDS = 2;
-const int WORDS_min = 900;
+const int WORDS_min = 1000;
 const int WORDS_max = (WORDS_min + WORDS);
 
 enum enum_WORDS {
-    EXIT = 900,
-    ELEVATOR,
+    
+    // Nouns
+    ELEVATOR = 0,
+    EXIT,
+    MARVIN,
+    
+    // Verbs
+    
+    // Adjectives
+    GOOD,
+    BAD,
+    
+    // Adverbs
+    
+    // Interjections
+    HELLO,
+    
+    // Prepositions
+    WHERE,
+    WHEN,
+    HOW,
+    WHO,
 };
 
 

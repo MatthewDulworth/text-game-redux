@@ -21,7 +21,7 @@ int Game::theDROPcommand(){
         }
         
         // if the second command is a physical object
-        if(isPhysical_object(commands.at(1)) ){
+        if(isPhysicalObject(commands.at(1)) ){
             PhysicalObject* current_object = physical_objects[commands.at(1)];
             
             // if the object is in the player's inventory

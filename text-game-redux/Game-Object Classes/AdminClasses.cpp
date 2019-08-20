@@ -26,6 +26,7 @@ string Action::getSynonym(){
 // ------------------------------------------------
 void Direction::overridden(){}
 
+
 // ------------------------------------------------
 // Number methods
 // ------------------------------------------------
@@ -41,6 +42,27 @@ string Number::getSynonym(){
 void Number::overridden(){}
 
 // ------------------------------------------------
+// CommandWord methods
+// ------------------------------------------------
+void CommandWord::overridden(){}
+
+
+// ------------------------------------------------
 // Word methods
 // ------------------------------------------------
-void Word::overridden(){}
+// ----- setCode ----- //
+void Word::setCode(int code){
+    this->code = code;
+}
+// ----- addSynonym ----- //
+void Word::addSynonym(string word){
+    synonyms.push_back(word);
+}
+// ----- getCode ----- //
+int Word::getCode(){
+    return code;
+}
+// ----- getSynonym ----- //
+string Word::getSynonym(int i){
+    return synonyms.at(i);
+}

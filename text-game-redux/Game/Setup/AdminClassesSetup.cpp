@@ -78,20 +78,20 @@ void Game::adminClassesSetup(){
 
     
     // ------------------------------------------------
-    // WORDS
+    // COMMAND_WORDS
     // ------------------------------------------------
     
     // ----- create new objects ----- //
-    for(int i=WORDS_min; i<WORDS_max; i++){
-        words[i] = new Word();
+    for(int i=COMMAND_WORDS_min; i<COMMAND_WORDS_max; i++){
+        words[i] = new CommandWord();
     }
     
     // ----- set variables ----- //
     // EXIT
-    words[EXIT]->setCode(EXIT);
-    words[EXIT]->setName("EXIT");
+    words[_EXIT]->setCode(_EXIT);
+    words[_EXIT]->setName("EXIT");
     // ELEVATOR
-    words[ELEVATOR]->setCode(ELEVATOR);
-    words[ELEVATOR]->setName("ELEVATOR");
+    words[_ELEVATOR]->setCode(_ELEVATOR);
+    words[_ELEVATOR]->setName("ELEVATOR");
 }
 

@@ -21,6 +21,8 @@ class Action;
 class Direction;
 class Number;
 class Player;
+class Caretaker;
+
 
 // ------------------------------------------------------------------------------------------------------
 // Game class
@@ -31,8 +33,9 @@ private:
     // member variables
     // ------------------------------------------------
     
-    // the location of the player
+    // Charecters
     Player* player;
+    Caretaker* marvin;
     
     // arrays of pointers to game-objects
     OffsetArray<Location*, LOCATIONS_min, LOCATIONS_max> locations;
@@ -41,7 +44,8 @@ private:
     OffsetArray<Number*, NUMBERS_min, NUMBERS_max> numbers;
     OffsetArray<Action*, ACTIONS_min, ACTIONS_max> actions;
     OffsetArray<Direction*, DIRECTIONS_min, DIRECTIONS_max> directions;
-    OffsetArray<Word*, WORDS_min, WORDS_max> words;
+    OffsetArray<CommandWord*, COMMAND_WORDS_min, COMMAND_WORDS_max> words;
+    
     
     // run vars
     vector<string> tokens;
@@ -84,7 +88,8 @@ private:
     
     // run methods
     bool devCommands(string player_input);
-    void parseTokens();
+    void parseTokensToCommands();
+    void parseTokensToWords();
     bool enactCommands();
     bool enactEvents();
     

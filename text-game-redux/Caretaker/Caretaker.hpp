@@ -17,10 +17,11 @@ class Player;
 class Caretaker {
 private:
     string name;
-    vector<string> tokens;
+    char con_char;
 public:
-    Caretaker(string name);
-    bool conversation();
+    Caretaker(string name, char con_char);
+    void setCon_char(char c);
+    char getChar();
 };
 
 

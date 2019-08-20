@@ -11,6 +11,15 @@
 #include "Caretaker.hpp"
 using namespace std;
 
-Caretaker::Caretaker(string name){
+Caretaker::Caretaker(string name, char con_char){
     this->name = name;
+    this->con_char = con_char;
+}
+
+void Caretaker::setCon_char(char c){
+    con_char = c;
+}
+
+char Caretaker::getChar(){
+    return con_char;
 }
