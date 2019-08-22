@@ -45,7 +45,7 @@ void Game::movePlayerThroughPassage(Passage* passage){
 
 bool Game::invalidCommand(){
     cout << "no valid command entered" << endl;
-    return false; 
+    return false;
 }
 
 bool Game::noExit(){
