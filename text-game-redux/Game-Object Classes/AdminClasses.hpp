@@ -62,21 +62,11 @@ public:
 };
 
 // ------------------------------------------------
-// CommandWord
-// ------------------------------------------------
-class CommandWord : public Base {
-private:
-    typedef Base super;
-public:
-    // overridden
-    void overridden();
-};
-
-// ------------------------------------------------
 // Word
 // ------------------------------------------------
-class Word {
+class Word : public Base{
 private:
+    typedef Base super;
     int code;
     vector<string> synonyms;
 public:
@@ -84,6 +74,7 @@ public:
     void addSynonym(string word);
     int getCode();
     string getSynonym(int i);
+    void overridden();
 };
 
 #endif /* Direction_hpp */

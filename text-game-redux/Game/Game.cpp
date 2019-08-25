@@ -28,10 +28,6 @@ Game::~Game(){
         delete directions[i];
     }
     
-    for(int i=COMMAND_WORDS_min; i<COMMAND_WORDS_max; i++){
-        delete words[i];
-    }
-    
     for(int i=NUMBERS_min; i<NUMBERS_max; i++){
         delete numbers[i];
     }
@@ -53,3 +49,10 @@ bool Game::noExit(){
     return false;
 }
 
+// game setup
+void Game::setup(){
+    mapSetup();
+    actionSetup();
+    physicalObjectSetup();
+    adminClassesSetup();
+}

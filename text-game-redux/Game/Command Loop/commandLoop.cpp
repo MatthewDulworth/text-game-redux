@@ -7,7 +7,6 @@
 //
 #include "Game.hpp"
 #include "GeneralFunctions.hpp"
-#include "Caretaker.hpp"
 
 void Game::commandLoop(){
     string player_input;
@@ -19,14 +18,11 @@ void Game::commandLoop(){
         if(player_input != "quit"){
             tokens = createTokens(player_input);
             
-            if(player_input.at(0) == marvin->getChar() ){
-                parseTokensToWords();
-            }
-            else{
+           
                 parseTokensToCommands();
                 enactCommands();
                 cout << endl;
-            }
+            
             enactEvents();
         }
         tokens.clear();

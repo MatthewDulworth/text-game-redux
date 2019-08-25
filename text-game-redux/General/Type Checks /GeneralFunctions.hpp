@@ -15,7 +15,7 @@
 class Location;
 class Passage;
 
-bool isCommandWord(int);
+bool isWord(int);
 bool isPhysicalObject(int);
 bool isNumber(int);
 bool isAction(int);

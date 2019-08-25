@@ -52,9 +52,9 @@ int Game::thePRESScommand(){
                 return invalidCommand();
             }
             
-            if(commands.at(1) == _ELEVATOR){
+            if(commands.at(1) == ELEVATOR){
                 if(isNumber(commands.at(2))){
-                    string elevator_string = words[_ELEVATOR]->getName();
+                    string elevator_string = words[ELEVATOR]->getName();
                     string number_string = numbers[commands.at(2)]->getName();
                     
                     for(int i=DIRECTIONS_min; i<DIRECTIONS_max; i++){

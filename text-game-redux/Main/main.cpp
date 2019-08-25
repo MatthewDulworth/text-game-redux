@@ -22,7 +22,7 @@ using namespace std;
 int main() {
     
     Game game;
-    game.gameMenu();
+    game.setup();
     game.commandLoop();
     
     return 0;

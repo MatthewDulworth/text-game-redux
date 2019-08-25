@@ -23,14 +23,14 @@ int Game::theUSEcommand(){
         }
         
         // if the second command is a physical_object
-        if(isPhysicalObject(commands.at(1)) && isDirection(commands.at(2)) && isCommandWord(commands.at(3))) {
+        if(isPhysicalObject(commands.at(1)) && isDirection(commands.at(2)) && isWord(commands.at(3))) {
             
             Direction* current_direction = directions[commands.at(2)];
-            CommandWord* current_word = words[commands.at(3)];
+            Word* current_word = words[commands.at(3)];
             PhysicalObject* current_object = physical_objects[commands.at(1)];
             
             // if the object is a key and the 4th command is EXIT
-            if(isType<Key>(current_object) && current_word->getCode() == _EXIT){
+            if(isType<Key>(current_object) && current_word->getCode() == EXIT){
                 Key* current_key = static_cast<Key*>(current_object);
                 Passage* current_passage = 0;
                 

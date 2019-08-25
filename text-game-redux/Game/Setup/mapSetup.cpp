@@ -9,7 +9,6 @@
 #include "Location.hpp"
 #include "Passage.hpp"
 #include "Player.hpp"
-#include "Caretaker.hpp"
 
 // ------------------------------------------------------------------------------------------------------
 // mapSetup
@@ -30,14 +29,13 @@ void Game::mapSetup(){
     locations[TRASH] = &trash;
     
     // first floor
-    static Room bedroom, bathroom, bedroom_hallway;
-    static Elevator elevator_one;
+    static Room atrium, atrium_hallway;
+    //static Elevator elevator_one;
     
     // fill array;
-    locations[BEDROOM] = &bedroom;
-    locations[BATHROOM] = &bathroom;
-    locations[BEDROOM_HALLWAY] = &bedroom_hallway;
-    locations[ELEVATOR_ONE] = &elevator_one;
+    locations[ATRIUM] = &atrium;
+    locations[ATRIUM_HALLWAY] = &atrium_hallway;
+    // locations[ELEVATOR_ONE] = &elevator_one;
     
     
     // ------------------------------------------------
@@ -51,73 +49,49 @@ void Game::mapSetup(){
     // ------------------------------------------------
     // charecters
     // ------------------------------------------------
-    player = new Player(&bedroom);
-    marvin = new Caretaker("Marvin", '$');
+    player = new Player(&atrium);
     
     
     // --------------------------------------------------------------------------------------
     // rooms
     // --------------------------------------------------------------------------------------
-    // BEDROOM
-    bedroom.setCode(BEDROOM);
-    bedroom.setName("BEDROOM");
-    bedroom.setDescription("bedroom");
-    bedroom.setFloor(FIRST_FLOOR);
-    bedroom.setExit(SOUTH, passages[BEDROOM_to_BEDROOM_HALLWAY]);
-    bedroom.setExit(EAST, passages[BEDROOM_to_BATHROOM]);
+    // ATRIUM
+    atrium.setCode(ATRIUM);
+    atrium.setName("ATRIUM");
+    atrium.setDescription("the atrium");
+    atrium.setFloor(FIRST_FLOOR);
+    atrium.setExit(SOUTH, passages[ATRIUM_to_ATRIUM_HALLWAY]);
     
-    // BATHROOM
-    bathroom.setCode(BATHROOM);
-    bathroom.setName("BATHROOM");
-    bathroom.setDescription("bathroom");
-    bathroom.setFloor(FIRST_FLOOR);
-    bathroom.setExit(WEST, passages[BEDROOM_to_BATHROOM]);
-    
-    // BEDROOM_HALLWAY
-    bedroom_hallway.setCode(BEDROOM_HALLWAY);
-    bedroom_hallway.setName("BEDROOM HALLWAY");
-    bedroom_hallway.setDescription("hallway");
-    bedroom_hallway.setFloor(FIRST_FLOOR);
-    bedroom_hallway.setExit(NORTH, passages[BEDROOM_to_BEDROOM_HALLWAY]);
-    bedroom_hallway.setExit(EAST, passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]);
+    // ATRIUM_HALLWAY
+    atrium_hallway.setCode(ATRIUM_HALLWAY);
+    atrium_hallway.setName("ATRIUM_HALLWAY");
+    atrium_hallway.setDescription("hallway");
+    atrium_hallway.setFloor(FIRST_FLOOR);
+    atrium_hallway.setExit(NORTH, passages[ATRIUM_to_ATRIUM_HALLWAY]);
     
 
-    // --------------------------------------------------------------------------------------
+    // --------------------- -----------------------------------------------------------------
     // passages
     // --------------------------------------------------------------------------------------
-    // BEDROOM_to_BEDROOM_HALLWAY
-    passages[BEDROOM_to_BEDROOM_HALLWAY]->setCode(BEDROOM_to_BEDROOM_HALLWAY);
-    passages[BEDROOM_to_BEDROOM_HALLWAY]->setLockState(UNLOCKED);
-    passages[BEDROOM_to_BEDROOM_HALLWAY]->setVisibility(VISIBLE);
-    passages[BEDROOM_to_BEDROOM_HALLWAY]->setLocation_1(&bedroom);
-    passages[BEDROOM_to_BEDROOM_HALLWAY]->setLocation_2(&bedroom_hallway);
-    passages[BEDROOM_to_BEDROOM_HALLWAY]->setKey_type(ACCESS_LVL_1);
-    // BEDROOM_to_BATHROOM
-    passages[BEDROOM_to_BATHROOM]->setCode(BEDROOM_to_BATHROOM);
-    passages[BEDROOM_to_BATHROOM]->setLockState(UNLOCKED);
-    passages[BEDROOM_to_BATHROOM]->setVisibility(VISIBLE);
-    passages[BEDROOM_to_BATHROOM]->setLocation_1(&bedroom);
-    passages[BEDROOM_to_BATHROOM]->setLocation_2(&bathroom);
-    passages[BEDROOM_to_BATHROOM]->setKey_type(ACCESS_LVL_1);
-    // BEDROOM_HALLWAY_to_ELEVATOR_ONE
-    passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setCode(BEDROOM_HALLWAY_to_ELEVATOR_ONE);
-    passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setLockState(LOCKED);
-    passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setVisibility(VISIBLE);
-    passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setLocation_1(&bedroom_hallway);
-    passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setLocation_2(&elevator_one);
-    passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]->setKey_type(ACCESS_LVL_2);
+    // ATRIUM_to_ATRIUM_HALLWAY
+    passages[ATRIUM_to_ATRIUM_HALLWAY]->setCode(ATRIUM_to_ATRIUM_HALLWAY);
+    passages[ATRIUM_to_ATRIUM_HALLWAY]->setLockState(UNLOCKED);
+    passages[ATRIUM_to_ATRIUM_HALLWAY]->setVisibility(VISIBLE);
+    passages[ATRIUM_to_ATRIUM_HALLWAY]->setLocation_1(&atrium);
+    passages[ATRIUM_to_ATRIUM_HALLWAY]->setLocation_2(&atrium_hallway);
+    passages[ATRIUM_to_ATRIUM_HALLWAY]->setKey_type(ACCESS_LVL_1);
     
     
     // --------------------------------------------------------------------------------------
     // elevators
     // --------------------------------------------------------------------------------------
     // ELEVATOR_ONE
-    elevator_one.setCode(ELEVATOR_ONE);
-    elevator_one.setName("ELEVATOR ONE");
-    elevator_one.setExit_direction(WEST);
-    elevator_one.setExit(FIRST_FLOOR, passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]);
-    elevator_one.setCurrent_floor(FIRST_FLOOR);
-    elevator_one.initButtons();
+//    elevator_one.setCode(ELEVATOR_ONE);
+//    elevator_one.setName("ELEVATOR ONE");
+//    elevator_one.setExit_direction(WEST);
+//    elevator_one.setExit(FIRST_FLOOR, passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]);
+//    elevator_one.setCurrent_floor(FIRST_FLOOR);
+//    elevator_one.initButtons();
 
     
     // --------------------------------------------------------------------------------------

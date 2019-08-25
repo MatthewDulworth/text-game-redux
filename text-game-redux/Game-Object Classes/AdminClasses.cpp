@@ -42,12 +42,6 @@ string Number::getSynonym(){
 void Number::overridden(){}
 
 // ------------------------------------------------
-// CommandWord methods
-// ------------------------------------------------
-void CommandWord::overridden(){}
-
-
-// ------------------------------------------------
 // Word methods
 // ------------------------------------------------
 // ----- setCode ----- //
@@ -66,3 +60,4 @@ int Word::getCode(){
 string Word::getSynonym(int i){
     return synonyms.at(i);
 }
+void Word::overridden(){}

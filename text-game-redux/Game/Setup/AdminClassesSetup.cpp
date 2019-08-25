@@ -75,23 +75,4 @@ void Game::adminClassesSetup(){
     numbers[SEVEN]->setCode(SEVEN);
     numbers[SEVEN]->setName("SEVEN");
     numbers[SEVEN]->setSynonym("7");
-
-    
-    // ------------------------------------------------
-    // COMMAND_WORDS
-    // ------------------------------------------------
-    
-    // ----- create new objects ----- //
-    for(int i=COMMAND_WORDS_min; i<COMMAND_WORDS_max; i++){
-        words[i] = new CommandWord();
-    }
-    
-    // ----- set variables ----- //
-    // EXIT
-    words[_EXIT]->setCode(_EXIT);
-    words[_EXIT]->setName("EXIT");
-    // ELEVATOR
-    words[_ELEVATOR]->setCode(_ELEVATOR);
-    words[_ELEVATOR]->setName("ELEVATOR");
 }
-

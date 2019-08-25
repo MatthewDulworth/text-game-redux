@@ -13,16 +13,6 @@
 #include <typeinfo>
 
 // ------------------------------------------------
-// isCommandWord
-// ------------------------------------------------
-bool isCommandWord(int code){
-    if(code >= COMMAND_WORDS_min && code<COMMAND_WORDS_max){
-        return true;
-    }
-    else return false;
-}
-
-// ------------------------------------------------
 // isPhysicalObject
 // ------------------------------------------------
 bool isPhysicalObject(int code){
@@ -51,6 +41,17 @@ bool isAction(int code){
     }
     else return false;
 }
+
+// ------------------------------------------------
+// isWord
+// ------------------------------------------------
+bool isWord(int code){
+    if(code >= WORDS_min && code<WORDS_max){
+        return true;
+    }
+    else return false;
+}
+
 
 // ------------------------------------------------
 // isDirection

@@ -79,31 +79,27 @@ enum enum_DIRECTIONS {
 // -------------------------------------------
 // LOCATIONS
 // -------------------------------------------
-const int LOCATIONS = 6;
+const int LOCATIONS = 4;
 const int LOCATIONS_min = 400;
 const int LOCATIONS_max = (LOCATIONS_min + LOCATIONS);
 
 enum enum_LOCATIONS {
     INVENTORY = 400,
     TRASH,
-    BEDROOM,
-    BATHROOM,
-    BEDROOM_HALLWAY,
-    ELEVATOR_ONE
+    ATRIUM,
+    ATRIUM_HALLWAY
 };
 
 
 // -------------------------------------------
 // PASSAGES
 // -------------------------------------------
-const int PASSAGES = 3;
+const int PASSAGES = 1;
 const int PASSAGES_min = 500;
 const int PASSAGES_max = (PASSAGES_min + PASSAGES);
 
 enum enum_PASSAGES {
-    BEDROOM_to_BEDROOM_HALLWAY = 500,
-    BEDROOM_to_BATHROOM,
-    BEDROOM_HALLWAY_to_ELEVATOR_ONE
+    ATRIUM_to_ATRIUM_HALLWAY = 500,
 };
 
 
@@ -149,18 +145,6 @@ enum enum_ACTIONS {
 };
 
 
-// -------------------------------------------
-// COMMAND_WORDS
-// -------------------------------------------
-const int COMMAND_WORDS = 2;
-const int COMMAND_WORDS_min = 900;
-const int COMMAND_WORDS_max = (COMMAND_WORDS_min + COMMAND_WORDS);
-
-enum enum_COMMAND_WORDS {
-    _EXIT = 900,
-    _ELEVATOR,
-};
-
 // --------------------------------------------
 // WORDS
 // --------------------------------------------
@@ -169,28 +153,8 @@ const int WORDS_min = 1000;
 const int WORDS_max = (WORDS_min + WORDS);
 
 enum enum_WORDS {
-    
-    // Nouns
-    ELEVATOR = 0,
+    ELEVATOR = 1000,
     EXIT,
-    MARVIN,
-    
-    // Verbs
-    
-    // Adjectives
-    GOOD,
-    BAD,
-    
-    // Adverbs
-    
-    // Interjections
-    HELLO,
-    
-    // Prepositions
-    WHERE,
-    WHEN,
-    HOW,
-    WHO,
 };
 
 
