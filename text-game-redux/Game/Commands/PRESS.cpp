@@ -27,7 +27,14 @@ int Game::thePRESScommand(){
 
             if(isNumber(commands.at(1)) ){
                 int target_floor = commands.at(1) - 100;
-
+                int floor_number = commands.at(1) - 199;
+                
+                if(floor_number > current_elevator->getFloors()){
+                    cout << "there is no button labeled " << floor_number << endl;;
+                    return false;
+                }
+                
+                
                 if(current_elevator->getCurrent_floor() != target_floor){
                     current_elevator->setCurrent_floor(target_floor);
                     cout << "you are now on floor: " << current_elevator->getCurrentFloorNumber() << endl;

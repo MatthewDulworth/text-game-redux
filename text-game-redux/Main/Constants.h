@@ -79,27 +79,29 @@ enum enum_DIRECTIONS {
 // -------------------------------------------
 // LOCATIONS
 // -------------------------------------------
-const int LOCATIONS = 4;
+const int LOCATIONS = 5;
 const int LOCATIONS_min = 400;
 const int LOCATIONS_max = (LOCATIONS_min + LOCATIONS);
 
 enum enum_LOCATIONS {
     INVENTORY = 400,
     TRASH,
-    ATRIUM,
-    ATRIUM_HALLWAY
+    LOBBY,
+    SUBWAY_STATION,
+    ELEVATOR_ONE,
 };
 
 
 // -------------------------------------------
 // PASSAGES
 // -------------------------------------------
-const int PASSAGES = 1;
+const int PASSAGES = 2;
 const int PASSAGES_min = 500;
 const int PASSAGES_max = (PASSAGES_min + PASSAGES);
 
 enum enum_PASSAGES {
-    ATRIUM_to_ATRIUM_HALLWAY = 500,
+    SUBWAY_STATION_to_LOBBY = 500,
+    LOBBY_to_ELEVATOR_ONE,
 };
 
 
@@ -131,7 +133,7 @@ enum enum_OBJECTS {
 // -------------------------------------------
 // ACTIONS
 // -------------------------------------------
-const int ACTIONS = 6;
+const int ACTIONS = 7;
 const int ACTIONS_min = 800;
 const int ACTIONS_max = (ACTIONS_min + ACTIONS);
 
@@ -142,6 +144,7 @@ enum enum_ACTIONS {
     GET,
     DROP,
     USE,
+    EXAMINE
 };
 
 

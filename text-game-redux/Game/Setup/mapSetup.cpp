@@ -28,14 +28,14 @@ void Game::mapSetup(){
     locations[INVENTORY] = &inventory;
     locations[TRASH] = &trash;
     
-    // first floor
-    static Room atrium, atrium_hallway;
-    //static Elevator elevator_one;
+    // rooms
+    static Room lobby, subway_station;
+    static Elevator elevator_one;
     
     // fill array;
-    locations[ATRIUM] = &atrium;
-    locations[ATRIUM_HALLWAY] = &atrium_hallway;
-    // locations[ELEVATOR_ONE] = &elevator_one;
+    locations[LOBBY] = &lobby;
+    locations[SUBWAY_STATION] = &subway_station;
+    locations[ELEVATOR_ONE] = &elevator_one;
     
     
     // ------------------------------------------------
@@ -47,51 +47,64 @@ void Game::mapSetup(){
     
     
     // ------------------------------------------------
-    // charecters
+    // player
     // ------------------------------------------------
-    player = new Player(&atrium);
+    player = new Player(&lobby);
     
     
     // --------------------------------------------------------------------------------------
     // rooms
     // --------------------------------------------------------------------------------------
-    // ATRIUM
-    atrium.setCode(ATRIUM);
-    atrium.setName("ATRIUM");
-    atrium.setDescription("the atrium");
-    atrium.setFloor(FIRST_FLOOR);
-    atrium.setExit(SOUTH, passages[ATRIUM_to_ATRIUM_HALLWAY]);
+    // SUBWAY_STATION
+    subway_station.setCode(SUBWAY_STATION);
+    subway_station.setName("SUBWAY_STATION");
+    subway_station.setDescription("subway station");
+    subway_station.setFloor(FIRST_FLOOR);
+    subway_station.setExit(SOUTH, passages[SUBWAY_STATION_to_LOBBY]);
     
-    // ATRIUM_HALLWAY
-    atrium_hallway.setCode(ATRIUM_HALLWAY);
-    atrium_hallway.setName("ATRIUM_HALLWAY");
-    atrium_hallway.setDescription("hallway");
-    atrium_hallway.setFloor(FIRST_FLOOR);
-    atrium_hallway.setExit(NORTH, passages[ATRIUM_to_ATRIUM_HALLWAY]);
+    // LOBBY
+    lobby.setCode(LOBBY);
+    lobby.setName("LOBBY");
+    lobby.setDescription("the lobby of an office building");
+    lobby.setFloor(FIRST_FLOOR);
+    lobby.setExit(SOUTH, passages[LOBBY_to_ELEVATOR_ONE]);
     
 
     // --------------------- -----------------------------------------------------------------
     // passages
     // --------------------------------------------------------------------------------------
-    // ATRIUM_to_ATRIUM_HALLWAY
-    passages[ATRIUM_to_ATRIUM_HALLWAY]->setCode(ATRIUM_to_ATRIUM_HALLWAY);
-    passages[ATRIUM_to_ATRIUM_HALLWAY]->setLockState(UNLOCKED);
-    passages[ATRIUM_to_ATRIUM_HALLWAY]->setVisibility(VISIBLE);
-    passages[ATRIUM_to_ATRIUM_HALLWAY]->setLocation_1(&atrium);
-    passages[ATRIUM_to_ATRIUM_HALLWAY]->setLocation_2(&atrium_hallway);
-    passages[ATRIUM_to_ATRIUM_HALLWAY]->setKey_type(ACCESS_LVL_1);
+    // SUBWAY_STATION_to_LOBBY
     
+    passages[SUBWAY_STATION_to_LOBBY]->setCode(SUBWAY_STATION_to_LOBBY);
+    passages[SUBWAY_STATION_to_LOBBY]->setLockState(UNLOCKED);
+    passages[SUBWAY_STATION_to_LOBBY]->setVisibility(VISIBLE);
+    passages[SUBWAY_STATION_to_LOBBY]->setLocation_1(&lobby);
+    passages[SUBWAY_STATION_to_LOBBY]->setLocation_2(&subway_station);
+    passages[SUBWAY_STATION_to_LOBBY]->setKey_type(ACCESS_LVL_1);
+    
+    // ATRIUM_HALLWAY_to_CONNECTING_ROOM
+    passages[LOBBY_to_ELEVATOR_ONE]->setCode(LOBBY_to_ELEVATOR_ONE);
+    passages[LOBBY_to_ELEVATOR_ONE]->setLockState(UNLOCKED);
+    passages[LOBBY_to_ELEVATOR_ONE]->setVisibility(VISIBLE);
+    passages[LOBBY_to_ELEVATOR_ONE]->setLocation_1(&lobby);
+    passages[LOBBY_to_ELEVATOR_ONE]->setLocation_2(&elevator_one);
+    passages[LOBBY_to_ELEVATOR_ONE]->setKey_type(ACCESS_LVL_1);
+
     
     // --------------------------------------------------------------------------------------
     // elevators
     // --------------------------------------------------------------------------------------
     // ELEVATOR_ONE
-//    elevator_one.setCode(ELEVATOR_ONE);
-//    elevator_one.setName("ELEVATOR ONE");
-//    elevator_one.setExit_direction(WEST);
-//    elevator_one.setExit(FIRST_FLOOR, passages[BEDROOM_HALLWAY_to_ELEVATOR_ONE]);
-//    elevator_one.setCurrent_floor(FIRST_FLOOR);
-//    elevator_one.initButtons();
+    elevator_one.setCode(ELEVATOR_ONE);
+    elevator_one.setName("ELEVATOR ONE");
+    elevator_one.setExit_direction(WEST);
+    elevator_one.setExit(FIRST_FLOOR, passages[LOBBY_to_ELEVATOR_ONE]);
+    elevator_one.setCurrent_floor(FIRST_FLOOR);
+    elevator_one.initButtons();
+    
+    // init buttons
+    lobby.initCallButtons();
+    subway_station.initCallButtons();
 
     
     // --------------------------------------------------------------------------------------

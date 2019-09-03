@@ -140,6 +140,7 @@ public:
     void setExit(int floor, Passage* exit);
     void setCurrent_floor(int floor);
     // getters
+    int getFloors();
     int getCurrent_floor();
     int getExit_direction();
     int getCurrentFloorNumber();

@@ -239,6 +239,17 @@ void Elevator::setCurrent_floor(int floor){
     current_floor = floor;
     current_exit = exits[current_floor];
 }
+// ----- getFloors ----- //
+int Elevator::getFloors(){
+    int floors = 0;
+    
+    for(int i=FLOORS_min; i<FLOORS_max; i++){
+        if(floor_buttons[i]->isVisible()){
+            floors++;
+        }
+    }
+    return floors;
+}
 // ----- getCurrent_floor ----- //
 int Elevator::getCurrent_floor(){
     return current_floor;

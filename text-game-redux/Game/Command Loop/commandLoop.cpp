@@ -17,12 +17,9 @@ void Game::commandLoop(){
         
         if(player_input != "quit"){
             tokens = createTokens(player_input);
-            
-           
-                parseTokensToCommands();
-                enactCommands();
-                cout << endl;
-            
+            parseTokensToCommands();
+            enactCommands();
+            cout << endl;
             enactEvents();
         }
         tokens.clear();
