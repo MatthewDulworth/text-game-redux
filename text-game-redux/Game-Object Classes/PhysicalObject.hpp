@@ -28,14 +28,17 @@ private:
     typedef Base super;
 protected:
     string description;
+    string details;
     Location* location;
 public:
     // setters
     virtual void setDescription(string new_description);
     virtual void setLocation(Location* new_location);
+    virtual void setDetails(string new_details);
     // getters
     virtual string getDescription();
     virtual Location* getLocation();
+    virtual string getDetails();
     // output
     virtual void printDescription();
 };

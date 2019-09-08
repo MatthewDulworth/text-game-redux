@@ -26,9 +26,17 @@ void PhysicalObject::setDescription(string new_description){
 void PhysicalObject::setLocation(Location* new_location){
     location = new_location;
 }
+// ----- setDetails ----- //
+void PhysicalObject::setDetails(string new_details){
+    details = new_details;
+}
 // ----- getDescription ----- //
 string PhysicalObject::getDescription(){
     return description;
+};
+// ----- getDetails ----- //
+string PhysicalObject::getDetails(){
+    return details;
 };
 // ----- getLocation ----- //
 Location* PhysicalObject::getLocation(){
