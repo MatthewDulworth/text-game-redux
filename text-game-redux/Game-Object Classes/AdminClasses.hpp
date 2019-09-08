@@ -57,6 +57,7 @@ public:
     void setSynonym(string synonym);
     // getters
     string getSynonym();
+    int getValue();
     // overridden
     void overridden();
 };

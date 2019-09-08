@@ -13,54 +13,22 @@
 #include <typeinfo>
 
 // ------------------------------------------------
-// isPhysicalObject
+// type checks by code
 // ------------------------------------------------
 bool isPhysicalObject(int code){
-    if(code >= PHYSICAL_OBJECTS_min && code<PHYSICAL_OBJECTS_max){
-        return true;
-    }
-    else return false;
+    return (code >= PHYSICAL_OBJECTS_min && code<PHYSICAL_OBJECTS_max);
 }
-
-// ------------------------------------------------
-// isNumber
-// ------------------------------------------------
 bool isNumber(int code){
-    if(code >= NUMBERS_min && code<NUMBERS_max){
-        return true;
-    }
-    else return false;
+    return (code >= NUMBERS_min && code<NUMBERS_max);
 }
-
-// ------------------------------------------------
-// isAction
-// ------------------------------------------------
 bool isAction(int code){
-    if(code >= ACTIONS_min && code<ACTIONS_max){
-        return true;
-    }
-    else return false;
+    return (code >= ACTIONS_min && code<ACTIONS_max);
 }
-
-// ------------------------------------------------
-// isWord
-// ------------------------------------------------
 bool isWord(int code){
-    if(code >= WORDS_min && code<WORDS_max){
-        return true;
-    }
-    else return false;
+    return (code >= WORDS_min && code<WORDS_max);
 }
-
-
-// ------------------------------------------------
-// isDirection
-// ------------------------------------------------
 bool isDirection(int code){
-    if(code >= DIRECTIONS_min && code < DIRECTIONS_max){
-        return true;
-    }
-    else return false;
+    return (code >= DIRECTIONS_min && code < DIRECTIONS_max);
 }
 
 // ------------------------------------------------

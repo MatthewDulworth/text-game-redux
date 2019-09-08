@@ -38,6 +38,10 @@ void Number::setSynonym(string synonym){
 string Number::getSynonym(){
     return synonym;
 }
+// ----- getValue----- //
+int Number::getValue(){
+    return (code - NUMBERS_min);
+}
 // ----- overridden ----- //
 void Number::overridden(){}
 

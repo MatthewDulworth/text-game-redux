@@ -28,18 +28,13 @@ const int NONE = -100;
 // -------------------------------------------
 // FLOORS
 // -------------------------------------------
-const int FLOORS = 7;
+const int FLOORS = 2;
 const int FLOORS_min = 100;
 const int FLOORS_max = (FLOORS_min + FLOORS);
 
 enum enum_FLOORS {
     FIRST_FLOOR = 100,
     SECOND_FLOOR,
-    THIRD_FLOOR,
-    FOURTH_FLOOR,
-    FIFTH_FLOOR,
-    SIXTH_FLOOR,
-    SEVENTH_FLOOR
 };
 
 
@@ -57,7 +52,7 @@ enum enum_NUMBERS {
     FOUR,
     FIVE,
     SIX,
-    SEVEN
+    SEVEN,
 };
 
 
@@ -121,12 +116,13 @@ enum enum_DOOR_TYPES{
 // -------------------------------------------
 // PHYSICAL OBJECTS
 // -------------------------------------------
-const int PHYSICAL_OBJECTS = 0;
+const int PHYSICAL_OBJECTS = 2;
 const int PHYSICAL_OBJECTS_min = 700;
 const int PHYSICAL_OBJECTS_max = (PHYSICAL_OBJECTS_min + PHYSICAL_OBJECTS);
 
 enum enum_OBJECTS {
-    
+    LLAMA_TOKEN = 700,
+    KEY_CARD_1
 };
 
 

@@ -49,7 +49,7 @@ void Game::mapSetup(){
     // ------------------------------------------------
     // player
     // ------------------------------------------------
-    player = new Player(&lobby);
+    player = new Player(&subway_station);
     
     
     // --------------------------------------------------------------------------------------
@@ -68,6 +68,7 @@ void Game::mapSetup(){
     lobby.setDescription("the lobby of an office building");
     lobby.setFloor(FIRST_FLOOR);
     lobby.setExit(SOUTH, passages[LOBBY_to_ELEVATOR_ONE]);
+    lobby.setExit(NORTH, passages[SUBWAY_STATION_to_LOBBY]);
     
 
     // --------------------- -----------------------------------------------------------------
@@ -97,6 +98,7 @@ void Game::mapSetup(){
     // ELEVATOR_ONE
     elevator_one.setCode(ELEVATOR_ONE);
     elevator_one.setName("ELEVATOR ONE");
+    elevator_one.setDescription("an elevator");
     elevator_one.setExit_direction(WEST);
     elevator_one.setExit(FIRST_FLOOR, passages[LOBBY_to_ELEVATOR_ONE]);
     elevator_one.setCurrent_floor(FIRST_FLOOR);

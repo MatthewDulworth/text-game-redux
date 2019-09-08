@@ -22,7 +22,10 @@ bool Game::enactCommands(){
     // ----- GO ----- //
     return_value = theGOcommand();
     if(return_value != WRONG_COMMAND){
-        if(return_value == true) last_successfull_action = GO;
+        if(return_value == true){
+            last_successfull_action = GO;
+            
+        }
         return return_value;
     }
 

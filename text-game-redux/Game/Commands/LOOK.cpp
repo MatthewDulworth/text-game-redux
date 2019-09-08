@@ -90,7 +90,7 @@ int Game::theLOOKcommand(){
                     Location* target_location = getTargetLocation(current_passage, current_room);
                     
                     if(isType<Elevator>(target_location)){
-                        cout << "there is an elevator call button labeled: " << target_location->getName() << endl;
+                        cout << "there is an elevator button on the wall" << endl;
                     }
                     else{
                         cout << "ERROR: " << __FILE__ << ", " << __LINE__ << endl;

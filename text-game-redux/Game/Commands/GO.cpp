@@ -40,7 +40,7 @@ int Game::theGOcommand(){
                                 movePlayerThroughPassage(current_passage);
                                 player->getLocation()->incrementEnteredCount();
                                 cout << "you went " << current_direction->getName() << endl;
-                                cout << "you are in " << player->getLocation()->getName() << endl;
+                                cout << "you are in " << player->getLocation()->getDescription() << endl;
                                 return true;
                             }else{
                                 cout << "this floor is locked" << endl;
