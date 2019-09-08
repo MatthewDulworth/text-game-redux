@@ -64,6 +64,20 @@ bool Game::enactCommands(){
         return return_value;
     }
     
+    // ----- INSPECT ----- //
+    return_value = theINSPECTcommand();
+    if(return_value != WRONG_COMMAND){
+        if(return_value == true) last_successfull_action = INSPECT;
+        return return_value;
+    }
+    
+    // ----- INVENTORY ----- //
+    return_value = theINVENTORYcommand();
+    if(return_value != WRONG_COMMAND){
+        if(return_value == true) last_successfull_action = INVENTORY;
+        return return_value;
+    }
+    
     // ----- no valid command entered ----- //
     return invalidCommand();
 }

@@ -79,7 +79,7 @@ const int LOCATIONS_min = 400;
 const int LOCATIONS_max = (LOCATIONS_min + LOCATIONS);
 
 enum enum_LOCATIONS {
-    INVENTORY = 400,
+    INV = 400,
     TRASH,
     LOBBY,
     SUBWAY_STATION,
@@ -129,7 +129,7 @@ enum enum_OBJECTS {
 // -------------------------------------------
 // ACTIONS
 // -------------------------------------------
-const int ACTIONS = 7;
+const int ACTIONS = 8;
 const int ACTIONS_min = 800;
 const int ACTIONS_max = (ACTIONS_min + ACTIONS);
 
@@ -140,7 +140,8 @@ enum enum_ACTIONS {
     GET,
     DROP,
     USE,
-    EXAMINE
+    INSPECT,
+    INVENTORY
 };
 
 

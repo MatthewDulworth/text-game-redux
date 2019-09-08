@@ -36,7 +36,7 @@ Location* PhysicalObject::getLocation(){
 }
 // ----- printDescription ----- //
 void PhysicalObject::printDescription(){
-    cout << description;
+    cout << description << endl;
 }
 
 
@@ -49,7 +49,7 @@ void Item::moveTo(Location* location){
 }
 // ----- isInInventory ----- //
 bool Item::isInInventory(){
-    if(location->getCode() == INVENTORY) return true;
+    if(location->getCode() == INV) return true;
     else return false;
 }
 // ----- overridden ----- //

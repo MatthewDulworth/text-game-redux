@@ -25,7 +25,7 @@ void Game::mapSetup(){
     // ------------------------------------------------
     // admin locations
     static AdminLocation inventory, trash;
-    locations[INVENTORY] = &inventory;
+    locations[INV] = &inventory;
     locations[TRASH] = &trash;
     
     // rooms
@@ -113,10 +113,10 @@ void Game::mapSetup(){
     // admin locations
     // --------------------------------------------------------------------------------------
     // ----- set adminlocations ----- //
-    // INVENTORY
-    locations[INVENTORY]->setCode(INVENTORY);
-    locations[INVENTORY]->setName("INVENTORY");
-    locations[INVENTORY]->setDescription("the players inventory");
+    // INV
+    locations[INV]->setCode(INV);
+    locations[INV]->setName("INV");
+    locations[INV]->setDescription("the players inventory");
     // TRASH
     locations[TRASH]->setCode(TRASH);
     locations[TRASH]->setName("TRASH");

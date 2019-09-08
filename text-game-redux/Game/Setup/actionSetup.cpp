@@ -44,4 +44,12 @@ void Game::actionSetup(){
     actions[USE]->setCode(USE);
     actions[USE]->setName("USE");
     actions[USE]->setSynonym("USE");
+    // INSPECT
+    actions[INSPECT]->setCode(INSPECT);
+    actions[INSPECT]->setName("INSPECT");
+    actions[INSPECT]->setSynonym("EXAMINE");
+    // INVENTORY
+    actions[INVENTORY]->setCode(INVENTORY);
+    actions[INVENTORY]->setName("INVENTORY");
+    actions[INVENTORY]->setSynonym("I");
 }

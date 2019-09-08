@@ -70,7 +70,8 @@ private:
     int theGETcommand();
     int theDROPcommand();
     int theUSEcommand();
-    int theMARVINcommand();
+    int theINVENTORYcommand();
+    int theINSPECTcommand();
     
     // events methods
     

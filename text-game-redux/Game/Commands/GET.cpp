@@ -27,7 +27,7 @@ int Game::theGETcommand(){
             if(current_object->getLocation() == player->getLocation()){
                 if(isType<Item>(current_object)){
                     Item* current_item = static_cast<Item*>(current_object);
-                    current_item->moveTo(locations[INVENTORY]);
+                    current_item->moveTo(locations[INV]);
                     cout << current_item->getDescription() << " is now in your inventory" << endl;
                     return true;
                 }

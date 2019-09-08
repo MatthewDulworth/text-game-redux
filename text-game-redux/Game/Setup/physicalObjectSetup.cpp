@@ -23,13 +23,13 @@ void Game::physicalObjectSetup(){
     llamaToken.setCode(LLAMA_TOKEN);
     llamaToken.setName("LLAMA TOKEN");
     llamaToken.setDescription("a small figure of a llama");
-    llamaToken.setLocation(locations[LOBBY]);
+    llamaToken.setLocation(locations[SUBWAY_STATION]);
     
     // KEY_CARD_1
     key_card_1.setCode(KEY_CARD_1);
     key_card_1.setName("KEY CARD 1");
     key_card_1.setDescription("a key card");
-    key_card_1.setLocation(locations[SUBWAY_STATION]);
+    key_card_1.setLocation(locations[INV]);
     key_card_1.setDoor_Type(ACCESS_LVL_1);
 
 

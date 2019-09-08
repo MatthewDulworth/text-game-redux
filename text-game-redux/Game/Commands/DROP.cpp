@@ -25,7 +25,7 @@ int Game::theDROPcommand(){
             PhysicalObject* current_object = physical_objects[commands.at(1)];
             
             // if the object is in the player's inventory
-            if(current_object->getLocation() == locations[INVENTORY] ){
+            if(current_object->getLocation() == locations[INV] ){
                 if(isType<Item>(current_object)){
                     Item* current_item = static_cast<Item*>(current_object);
                     current_item->moveTo(player->getLocation());

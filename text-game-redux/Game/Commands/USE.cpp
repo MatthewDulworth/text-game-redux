@@ -34,7 +34,7 @@ int Game::theUSEcommand(){
                 Key* current_key = static_cast<Key*>(current_object);
                 Passage* current_passage = 0;
                 
-                if(current_key->getLocation() != locations[INVENTORY]){
+                if(current_key->getLocation() != locations[INV]){
                     return invalidCommand();
                 }
                 
