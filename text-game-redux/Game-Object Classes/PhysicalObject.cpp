@@ -61,20 +61,8 @@ void Item::overridden(){}
 // ------------------------------------------------
 // ----- canUnlock ----- //
 bool Key::canUnlock(Passage* door){
-    if(key_type == door->getKey_type() )
-        return true;
-    else
-        return false;
+    return (code == door->getKey() );
 }
-// ----- setDoor_Type ----- //
-void Key::setDoor_Type(int type){
-    key_type = type;
-}
-// ----- getKey_type ----- //
-int Key::getKey_type(){
-    return key_type;
-}
-
 
 // ------------------------------------------------
 // Money methods

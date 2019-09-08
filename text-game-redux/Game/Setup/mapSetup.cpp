@@ -81,15 +81,13 @@ void Game::mapSetup(){
     passages[SUBWAY_STATION_to_LOBBY]->setVisibility(VISIBLE);
     passages[SUBWAY_STATION_to_LOBBY]->setLocation_1(&lobby);
     passages[SUBWAY_STATION_to_LOBBY]->setLocation_2(&subway_station);
-    passages[SUBWAY_STATION_to_LOBBY]->setKey_type(ACCESS_LVL_1);
     
-    // ATRIUM_HALLWAY_to_CONNECTING_ROOM
+    // LOBBY_to_ELEVATOR_ONE
     passages[LOBBY_to_ELEVATOR_ONE]->setCode(LOBBY_to_ELEVATOR_ONE);
     passages[LOBBY_to_ELEVATOR_ONE]->setLockState(UNLOCKED);
     passages[LOBBY_to_ELEVATOR_ONE]->setVisibility(VISIBLE);
     passages[LOBBY_to_ELEVATOR_ONE]->setLocation_1(&lobby);
     passages[LOBBY_to_ELEVATOR_ONE]->setLocation_2(&elevator_one);
-    passages[LOBBY_to_ELEVATOR_ONE]->setKey_type(ACCESS_LVL_1);
 
     
     // --------------------------------------------------------------------------------------

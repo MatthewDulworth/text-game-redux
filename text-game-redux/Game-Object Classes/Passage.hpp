@@ -21,7 +21,7 @@ private:
     typedef Base super;
     bool lock_state;
     bool visibility;
-    int key_type;
+    int key;
     Location* location_1;
     Location* location_2;
 public:
@@ -31,11 +31,11 @@ public:
     // setters
     void setLockState(bool state);
     void setVisibility(bool state);
-    void setKey_type(int type);
+    void setKey(int key);
     void setLocation_1(Location* new_location);
     void setLocation_2(Location* new_location);
     // getters
-    int getKey_type();
+    int getKey();
     Location* getLocation_1();
     Location* getLocation_2();
     // overridden

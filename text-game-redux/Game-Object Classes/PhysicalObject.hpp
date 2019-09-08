@@ -61,14 +61,9 @@ public:
 class Key : public Item {
 private:
     typedef Item super;
-    int key_type;
 public:
     // checks
     bool canUnlock(Passage* door);
-    // setters
-    void setDoor_Type(int type);
-    // getters
-    int getKey_type();
 };
 
 // ------------------------------------------------

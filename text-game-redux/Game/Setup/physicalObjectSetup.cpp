@@ -27,10 +27,9 @@ void Game::physicalObjectSetup(){
     
     // KEY_CARD_1
     key_card_1.setCode(KEY_CARD_1);
-    key_card_1.setName("KEY CARD 1");
-    key_card_1.setDescription("a key card");
+    key_card_1.setName("ID");
+    key_card_1.setDescription("an employee id card");
     key_card_1.setLocation(locations[INV]);
-    key_card_1.setDoor_Type(ACCESS_LVL_1);
 
 
     // ----- set arrays ----- //

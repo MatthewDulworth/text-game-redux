@@ -33,7 +33,7 @@ const int FLOORS_min = 100;
 const int FLOORS_max = (FLOORS_min + FLOORS);
 
 enum enum_FLOORS {
-    FIRST_FLOOR = 100,
+    FIRST_FLOOR = FLOORS_min,
     SECOND_FLOOR,
 };
 
@@ -46,7 +46,7 @@ const int NUMBERS_min = 200;
 const int NUMBERS_max = (NUMBERS_min + NUMBERS);
 
 enum enum_NUMBERS {
-    ONE = 200,
+    ONE = NUMBERS_min,
     TWO,
     THREE,
     FOUR,
@@ -64,7 +64,7 @@ const int DIRECTIONS_min = 300;
 const int DIRECTIONS_max = (DIRECTIONS_min + DIRECTIONS);
 
 enum enum_DIRECTIONS {
-    NORTH = 300,
+    NORTH = DIRECTIONS_min,
     SOUTH,
     EAST,
     WEST,
@@ -79,7 +79,7 @@ const int LOCATIONS_min = 400;
 const int LOCATIONS_max = (LOCATIONS_min + LOCATIONS);
 
 enum enum_LOCATIONS {
-    INV = 400,
+    INV = LOCATIONS_min,
     TRASH,
     LOBBY,
     SUBWAY_STATION,
@@ -95,21 +95,8 @@ const int PASSAGES_min = 500;
 const int PASSAGES_max = (PASSAGES_min + PASSAGES);
 
 enum enum_PASSAGES {
-    SUBWAY_STATION_to_LOBBY = 500,
+    SUBWAY_STATION_to_LOBBY = PASSAGES_min,
     LOBBY_to_ELEVATOR_ONE,
-};
-
-
-// -------------------------------------------
-// DOOR TYPES
-// -------------------------------------------
-const int DOOR_TYPES = 2;
-const int DOOR_TYPES_min = 600;
-const int DOOR_TYPES_max = (DOOR_TYPES_min + DOOR_TYPES);
-
-enum enum_DOOR_TYPES{
-    ACCESS_LVL_1 = 600,
-    ACCESS_LVL_2
 };
 
 
@@ -117,11 +104,11 @@ enum enum_DOOR_TYPES{
 // PHYSICAL OBJECTS
 // -------------------------------------------
 const int PHYSICAL_OBJECTS = 2;
-const int PHYSICAL_OBJECTS_min = 700;
+const int PHYSICAL_OBJECTS_min = 600;
 const int PHYSICAL_OBJECTS_max = (PHYSICAL_OBJECTS_min + PHYSICAL_OBJECTS);
 
 enum enum_OBJECTS {
-    LLAMA_TOKEN = 700,
+    LLAMA_TOKEN = PHYSICAL_OBJECTS_min,
     KEY_CARD_1
 };
 
@@ -130,11 +117,11 @@ enum enum_OBJECTS {
 // ACTIONS
 // -------------------------------------------
 const int ACTIONS = 8;
-const int ACTIONS_min = 800;
+const int ACTIONS_min = 700;
 const int ACTIONS_max = (ACTIONS_min + ACTIONS);
 
 enum enum_ACTIONS {
-    GO = 800,
+    GO = ACTIONS_min,
     LOOK,
     PRESS,
     GET,
@@ -149,11 +136,11 @@ enum enum_ACTIONS {
 // WORDS
 // --------------------------------------------
 const int WORDS = 2;
-const int WORDS_min = 1000;
+const int WORDS_min = 800;
 const int WORDS_max = (WORDS_min + WORDS);
 
 enum enum_WORDS {
-    ELEVATOR = 1000,
+    ELEVATOR = WORDS_min,
     EXIT,
 };
 
