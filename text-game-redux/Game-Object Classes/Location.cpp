@@ -90,7 +90,6 @@ void Room::initCallButtons(){
         
         if(current_passage != 0){
             Location* target_location = getTargetLocation(current_passage, this);
-            call_buttons[i];
             
             if(isType<Elevator>(target_location)){
                 call_buttons[i] = new ElevatorCallButton();
@@ -102,6 +101,12 @@ void Room::initCallButtons(){
                      call_buttons[i]->setVisibility(HIDDEN);
                 }
             }
+            else{
+                call_buttons[i] = 0;
+            }
+        }
+        else {
+            call_buttons[i] = 0;
         }
     }
 }

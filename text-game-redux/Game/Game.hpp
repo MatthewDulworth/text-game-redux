@@ -63,17 +63,9 @@ private:
     void physicalObjectSetup();
     void actionSetup();
     void adminClassesSetup();
-    
-    Room* createRoom(
-        int code,
-        string name,
-        string description,
-        int floor,
-        int exit_north,
-        int exit_south,
-        int exit_east,
-        int exit_west
-    );
+    void createMapElements();
+    void setupRoom(int code, string name, string description, int floor, int exit_north, int exit_south, int exit_east, int exit_west);
+    void initCallButtons();
     
     // command methods
     int theGOcommand();

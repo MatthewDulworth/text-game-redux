@@ -23,7 +23,7 @@ void Game::physicalObjectSetup(){
     llamaToken.setCode(LLAMA_TOKEN);
     llamaToken.setName("LLAMA TOKEN");
     llamaToken.setDescription("a small statue of a llama");
-    llamaToken.setLocation(locations[SUBWAY_STATION]);
+    llamaToken.setLocation(locations[STATION]);
     llamaToken.setDetails("a small staatue of a llama\nhas MADE IN CHINA etched onto the underside");
     
     // KEY_CARD_1
