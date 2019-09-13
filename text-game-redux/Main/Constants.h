@@ -74,7 +74,7 @@ enum enum_DIRECTIONS {
 // -------------------------------------------
 // LOCATIONS
 // -------------------------------------------
-const int LOCATIONS = 5;
+const int LOCATIONS = 6;
 const int LOCATIONS_min = 400;
 const int LOCATIONS_max = (LOCATIONS_min + LOCATIONS);
 
@@ -84,6 +84,7 @@ enum enum_LOCATIONS {
     LOBBY,
     SUBWAY_STATION,
     ELEVATOR_ONE,
+    X
 };
 
 

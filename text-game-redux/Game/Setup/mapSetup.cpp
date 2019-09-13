@@ -37,6 +37,17 @@ void Game::mapSetup(){
     locations[SUBWAY_STATION] = &subway_station;
     locations[ELEVATOR_ONE] = &elevator_one;
     
+    createRoom(
+        /*CODE*/ X,
+        /*NAME*/ "X",
+        /*DESCRIPTION*/ "x",
+        /*FLOOR*/ FIRST_FLOOR,
+        /*NORTH EXIT*/ 0,
+        /*SOUTH EXIT*/ 0,
+        /*EAST EXIT*/ 0,
+        /*WEST EXIT*/ 0
+   );
+    
     
     // ------------------------------------------------
     // passages
@@ -49,7 +60,7 @@ void Game::mapSetup(){
     // ------------------------------------------------
     // player
     // ------------------------------------------------
-    player = new Player(&subway_station);
+    player = new Player(locations[X]);
     
     
     // --------------------------------------------------------------------------------------

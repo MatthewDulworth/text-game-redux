@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include "GeneralFunctions.hpp"
+#include "Location.hpp"
 #include "OffsetArray.h"
 
 class Base;
@@ -62,6 +63,17 @@ private:
     void physicalObjectSetup();
     void actionSetup();
     void adminClassesSetup();
+    
+    Room* createRoom(
+        int code,
+        string name,
+        string description,
+        int floor,
+        int exit_north,
+        int exit_south,
+        int exit_east,
+        int exit_west
+    );
     
     // command methods
     int theGOcommand();

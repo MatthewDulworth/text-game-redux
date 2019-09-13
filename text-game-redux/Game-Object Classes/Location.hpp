@@ -87,7 +87,7 @@ public:
     // setters
     void setFloor(int new_floor);
     void setExit(int direction, Passage* exit);
-    void setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down);
+    void setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west);
     // getters
     int getFloor();
     Passage* getExit(int direction);

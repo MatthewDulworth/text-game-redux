@@ -125,7 +125,7 @@ void Room::setExit(int direction, Passage* exit){
     exits[direction] = exit;
 }
 // ----- setAllExits ----- //
-void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west, Passage* exit_up, Passage* exit_down){
+void Room::setAllExits(Passage* exit_north, Passage* exit_south, Passage* exit_east, Passage* exit_west){
     exits[NORTH] = exit_north;
     exits[SOUTH] = exit_south;
     exits[EAST] = exit_east;
