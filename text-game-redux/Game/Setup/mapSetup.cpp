@@ -16,90 +16,38 @@
 // popluates the loctions and passages arrays
 void Game::mapSetup(){
     
+    // --------------------------------------------------------------------------------------
+    // init
+    // --------------------------------------------------------------------------------------
     createMapElements();
     player = new Player(locations[STATION]);
-    
-    static AdminLocation inventory, trash;
-    locations[INV] = &inventory;
-    locations[TRASH] = &trash;
-    static Elevator elevator_one;
-    
     
     // --------------------------------------------------------------------------------------
     // rooms
     // --------------------------------------------------------------------------------------
-    
-    // LOBBY
-    setupRoom(
-       /*CODE*/        LOBBY,
-       /*NAME*/        "LOBBY",
-       /*DESCRIPTION*/ "lobby",
-       /*FLOOR*/       FIRST_FLOOR,
-       /*NORTH EXIT*/  STATION_to_LOBBY,
-       /*SOUTH EXIT*/  0,
-       /*EAST EXIT*/   0,
-       /*WEST EXIT*/   0
-    );
-    
-    // STATION
-    setupRoom(
-       /*CODE*/        STATION,
-       /*NAME*/        "STATION",
-       /*DESCRIPTION*/ "station",
-       /*FLOOR*/       FIRST_FLOOR,
-       /*NORTH EXIT*/  0,
-       /*SOUTH EXIT*/  STATION_to_LOBBY,
-       /*EAST EXIT*/   0,
-       /*WEST EXIT*/   0
-    );
+    setupRoom(LOBBY,"LOBBY", "a lobby of an office building", FIRST_FLOOR, STATION_to_LOBBY, 0, 0, 0);
+    setupRoom(STATION, "STATION", "an empty subway station", FIRST_FLOOR, 0, STATION_to_LOBBY, 0, 0);
     
     
-    
-    // --------------------- -----------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------
     // passages
-    // --------------------------------------------------------------------------------------
-    // SUBWAY_STATION_to_LOBBY
-    
-    passages[STATION_to_LOBBY]->setCode(STATION_to_LOBBY);
-    passages[STATION_to_LOBBY]->setLockState(UNLOCKED);
-    passages[STATION_to_LOBBY]->setVisibility(VISIBLE);
-    passages[STATION_to_LOBBY]->setLocation_1(locations[LOBBY]);
-    passages[STATION_to_LOBBY]->setLocation_2(locations[STATION]);
-    
-    // LOBBY_to_ELEVATOR_ONE
-    passages[LOBBY_to_ELEVATOR_ONE]->setCode(LOBBY_to_ELEVATOR_ONE);
-    passages[LOBBY_to_ELEVATOR_ONE]->setLockState(UNLOCKED);
-    passages[LOBBY_to_ELEVATOR_ONE]->setVisibility(VISIBLE);
-    passages[LOBBY_to_ELEVATOR_ONE]->setLocation_1(locations[LOBBY]);
-    passages[LOBBY_to_ELEVATOR_ONE]->setLocation_2(locations[ELEVATOR_ONE]);
+    // ---------------------------------------------------------------------------------------
+    setupPassage(STATION_to_LOBBY, UNLOCKED, VISIBLE, locations[LOBBY], locations[STATION]);
+    setupPassage(LOBBY_to_ELEVATOR_ONE, UNLOCKED, VISIBLE, locations[LOBBY], locations[ELEVATOR_ONE]);
 
     
     // --------------------------------------------------------------------------------------
-    // elevators
+    // elevator
     // --------------------------------------------------------------------------------------
-    // ELEVATOR_ONE
-    elevator_one.setCode(ELEVATOR_ONE);
-    elevator_one.setName("ELEVATOR ONE");
-    elevator_one.setDescription("an elevator");
-    elevator_one.setExit_direction(WEST);
-    elevator_one.setExit(FIRST_FLOOR, passages[LOBBY_to_ELEVATOR_ONE]);
-    elevator_one.setCurrent_floor(FIRST_FLOOR);
-    elevator_one.initButtons();
+    setupElevator( ELEVATOR_ONE, "ELEVATOR ONE", "an elevator", SECOND_FLOOR, WEST, (Passage*[]){passages[LOBBY_to_ELEVATOR_ONE], 0});
     
-    // init buttons
-    initCallButtons();
-    
-    
+
     // --------------------------------------------------------------------------------------
     // admin locations
     // --------------------------------------------------------------------------------------
-    // ----- set adminlocations ----- //
-    // INV
-    locations[INV]->setCode(INV);
-    locations[INV]->setName("INV");
-    locations[INV]->setDescription("the players inventory");
-    // TRASH
-    locations[TRASH]->setCode(TRASH);
-    locations[TRASH]->setName("TRASH");
-    locations[TRASH]->setDescription("trash for unneeded physical objects");
+    setupAdminLocation(TRASH,"TRASH","trash");
+    setupAdminLocation(INV, "INV", "the players inventory");
+    
+    // init buttons
+    initCallButtons();
 }

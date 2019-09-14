@@ -64,7 +64,10 @@ private:
     void actionSetup();
     void adminClassesSetup();
     void createMapElements();
+    void setupAdminLocation(int code, string name, string description);
     void setupRoom(int code, string name, string description, int floor, int exit_north, int exit_south, int exit_east, int exit_west);
+    void setupElevator(int code, string name, string description, int startingFloor, int exitDirection, Passage* exits[]);
+    void setupPassage(int code, bool lockState, bool visibility, Location* location_1, Location* location_2);
     void initCallButtons();
     
     // command methods
