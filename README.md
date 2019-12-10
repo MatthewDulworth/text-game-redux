@@ -10,11 +10,18 @@ Don't be afriad to add extra words in your commands to make more grammatical sen
 the parser will (hopefully) ignore them. 
 
 # Commands (llamaDemo)
-look: shows the room that the player is in, its contents, and its exits.\n
-go *direction*: move the plaayer in that direction\n
-use *object* on *object*: use an object on another objectn\n
-get *object*: pick up an object\n
-drop *object*: drop that object\n
-press *number*: to press that button in an elevator\n
-press *name of elevator*: to call the elevator to your floor where applicable\n
-inventory: shows the players inventory\n
+look: shows the room that the player is in, its contents, and its exits.
+
+go *direction*: move the plaayer in that direction
+
+use *object* on *object*: use an object on another object
+
+get *object*: pick up an object
+
+drop *object*: drop that object
+
+press *number*: to press that button in an elevator
+
+press *name of elevator*: to call the elevator to your floor where applicable
+
+inventory: shows the players inventory
